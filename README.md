@@ -1,4 +1,4 @@
-                                                                           INTRODUCCIÓN DEL PROYECTO LABSALUT
+                                      INTRODUCCIÓN DEL PROYECTO LABSALUT
 
 
 
