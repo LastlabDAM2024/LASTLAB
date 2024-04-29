@@ -11,7 +11,6 @@ public class CitaMedica extends AppCompatActivity {
     private Date fecha;
     private String descripcion;
     private Date recordatorio;
-    private Usuario usuario;
 
     public CitaMedica(int idCita, String nombre, Date fecha, String descripcion, Date recordatorio, Usuario usuario) {
         this.idCita = idCita;
@@ -19,7 +18,6 @@ public class CitaMedica extends AppCompatActivity {
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.recordatorio = recordatorio;
-        this.usuario = usuario;
     }
 
     // Getters, Setters
