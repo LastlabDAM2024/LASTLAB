@@ -1,27 +1,57 @@
 package es.ifp.labsalut;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Medicamento extends AppCompatActivity {
-
+public class Medicamento {
     private int idMedicamento;
     private String nombre;
     private int dosis;
-    private int frecuencia;
-    private int recordatorio;
-    private Usuario usuario;
+    private float frecuencia;
+    private float recordatorio;
 
-    public Medicamento(int idMedicamento, String nombre, int dosis, int frecuencia, int recordatorio, Usuario usuario) {
-        this.idMedicamento = idMedicamento;
+    public Medicamento(String nombre, int dosis, float frecuencia, float recordatorio) {
         this.nombre = nombre;
         this.dosis = dosis;
         this.frecuencia = frecuencia;
         this.recordatorio = recordatorio;
-        this.usuario = usuario;
+    }
+    public int getIdMedicamento() {
+        return idMedicamento;
     }
 
-    // Getters, Setters
+    public void setIdMedicamento(int idMedicamento) {
+        this.idMedicamento = idMedicamento;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getDosis() {
+        return dosis;
+    }
+
+    public void setDosis(int dosis) {
+        this.dosis = dosis;
+    }
+
+    public float getFrecuencia() {
+        return frecuencia;
+    }
+
+    public void setFrecuencia(float frecuencia) {
+        this.frecuencia = frecuencia;
+    }
+
+    public float getRecordatorio() {
+        return recordatorio;
+    }
+
+    public void setRecordatorio(float recordatorio) {
+        this.recordatorio = recordatorio;
+    }
+
+
 }
-
-
-
