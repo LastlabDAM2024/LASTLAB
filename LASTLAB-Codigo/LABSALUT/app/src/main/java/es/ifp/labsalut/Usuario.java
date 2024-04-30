@@ -1,6 +1,4 @@
 package es.ifp.labsalut;
-
-
 import java.util.ArrayList;
 
 public class Usuario {
