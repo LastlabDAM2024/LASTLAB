@@ -7,6 +7,7 @@ public class Usuario {
     private int fechaNacimiento;
     private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
     private ArrayList<CitaMedica> citaMedica = new ArrayList<CitaMedica>();
+    private Suscripcion suscripcion = new Suscripcion();
 
     public Usuario(int idUsuario, String nombre, int fechaNacimiento) {
         this.idUsuario = idUsuario;

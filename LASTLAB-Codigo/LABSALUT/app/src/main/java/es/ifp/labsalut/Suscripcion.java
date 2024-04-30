@@ -8,7 +8,12 @@ public class Suscripcion {
     private boolean esSuscrito;
     private Date finSuscripcion;
 
-    public Suscripcion(String email, boolean esSuscrito, Date finSuscripcion, Usuario usuario) {
+    public Suscripcion() {
+        this.email = "";
+        this.esSuscrito = false;
+        this.finSuscripcion = new Date();
+    }
+    public Suscripcion(String email, boolean esSuscrito, Date finSuscripcion) {
         this.email = email;
         this.esSuscrito = esSuscrito;
         this.finSuscripcion = finSuscripcion;
