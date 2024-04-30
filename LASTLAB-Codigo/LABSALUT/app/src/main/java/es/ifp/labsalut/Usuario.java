@@ -9,7 +9,6 @@ public class Usuario {
     private int fechaNacimiento;
     private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
     private ArrayList<CitaMedica> citaMedica = new ArrayList<CitaMedica>();
-    private int prueba=8;
 
     public Usuario(int idUsuario, String nombre, int fechaNacimiento) {
         this.idUsuario = idUsuario;
