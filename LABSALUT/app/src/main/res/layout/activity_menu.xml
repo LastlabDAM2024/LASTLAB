@@ -8,7 +8,7 @@
     tools:context=".MenuActivity">
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listaMedicamento_menu"
         android:layout_width="0dp"
         android:layout_height="244dp"
         android:layout_marginStart="16dp"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toBottomOf="@+id/medicamentoText_menu">
 
     </ListView>
 
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nombreUser_menu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/layoutBotonesMedicamentos_menu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -54,7 +54,7 @@
         android:weightSum="7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView">
+        app:layout_constraintTop_toBottomOf="@+id/listaMedicamento_menu">
 
         <Space
             android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listView3"
+        android:id="@+id/listaCitaMedica_Menu"
         android:layout_width="367dp"
         android:layout_height="229dp"
         android:layout_marginStart="16dp"
@@ -101,9 +101,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/CitaMedicaText_menu" />
 
     <LinearLayout
+        android:id="@+id/layoutBotonesCitas_Menu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -112,7 +113,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView3">
+        app:layout_constraintTop_toBottomOf="@+id/listaCitaMedica_Menu">
 
         <Space
             android:layout_width="wrap_content"
@@ -151,7 +152,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/medicamentoText_menu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -164,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/usuarioText_menu" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/CitaMedicaText_menu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -174,6 +175,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutBotonesMedicamentos_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

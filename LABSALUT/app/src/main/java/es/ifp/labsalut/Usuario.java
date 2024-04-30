@@ -7,15 +7,13 @@ public class Usuario {
     private int idUsuario;
     private String nombre;
     private int fechaNacimiento;
-    private ArrayList medicamentos;
-    private ArrayList citaMedica;
+    private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
+    private ArrayList<CitaMedica> citaMedica = new ArrayList<CitaMedica>();
 
-    public Usuario(int idUsuario, String nombre, int fechaNacimiento, ArrayList medicamentos, ArrayList citaMedica) {
+    public Usuario(int idUsuario, String nombre, int fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
-        this.medicamentos = medicamentos;
-        this.citaMedica = citaMedica;
     }
 
     public int getIdUsuario() {
@@ -42,19 +40,20 @@ public class Usuario {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public ArrayList getMedicamentos() {
-        return medicamentos;
+    public Medicamento getMedicamentos(int idMedicamento) {
+        return this.medicamentos.get(idMedicamento);
     }
 
-    public void setMedicamentos(ArrayList medicamentos) {
-        this.medicamentos = medicamentos;
+    public void setMedicamentos(Medicamento medicamentos) {
+
+        this.medicamentos.add(medicamentos);
     }
 
-    public ArrayList getCitaMedica() {
-        return citaMedica;
+    public CitaMedica getCitaMedica(int idCita) {
+        return this.citaMedica.get(idCita);
     }
 
-    public void setCitaMedica(ArrayList citaMedica) {
-        this.citaMedica = citaMedica;
+    public void setCitaMedica(CitaMedica citaMedica) {
+        this.citaMedica.add(citaMedica);
     }
 }
