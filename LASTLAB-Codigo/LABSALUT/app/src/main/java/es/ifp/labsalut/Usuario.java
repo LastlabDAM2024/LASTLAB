@@ -5,14 +5,17 @@ public class Usuario {
     private int idUsuario;
     private String nombre;
     private int fechaNacimiento;
-    private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
-    private ArrayList<CitaMedica> citaMedica = new ArrayList<CitaMedica>();
-    private Suscripcion suscripcion = new Suscripcion();
+    private ArrayList<Medicamento> medicamentos;
+    private ArrayList<CitaMedica> citaMedica;
+    private Suscripcion suscripcion;
 
     public Usuario(int idUsuario, String nombre, int fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
+        this.medicamentos = new ArrayList<Medicamento>();
+        this.citaMedica = new ArrayList<CitaMedica>();
+        this.suscripcion = new Suscripcion();
     }
 
     public int getIdUsuario() {
