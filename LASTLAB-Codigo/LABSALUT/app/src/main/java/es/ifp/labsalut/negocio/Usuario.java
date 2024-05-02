@@ -9,16 +9,19 @@ public class Usuario {
     private String fechaNacimiento;
     private String email;
     private BigInteger contrasena;
+    private BigInteger e;
+    private BigInteger n;
     private ArrayList<Medicamento> medicamentos;
     private ArrayList<CitaMedica> citaMedica;
     private Suscripcion suscripcion;
 
-    public Usuario(int idUsuario, String nombre, String fechaNacimiento, String email) {
-        this.idUsuario = idUsuario;
+    public Usuario(String nombre, String fechaNacimiento, String email, BigInteger pass, BigInteger claveE, BigInteger claveN) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.email = email;
-        //Hacer cifrado RSA1024 para contraseña
+        this.contrasena = pass;
+        this.e = claveE;
+        this.n = claveN;
         this.medicamentos = new ArrayList<Medicamento>();
         this.citaMedica = new ArrayList<CitaMedica>();
         this.suscripcion = new Suscripcion();
@@ -57,12 +60,21 @@ public class Usuario {
         this.medicamentos.add(medicamentos);
     }
 
+    public void removeMedicamentos(Medicamento medicamentos) {
+
+        this.medicamentos.remove(medicamentos);
+    }
+
     public CitaMedica getCitaMedica(int idCita) {
         return this.citaMedica.get(idCita);
     }
 
     public void setCitaMedica(CitaMedica citaMedica) {
         this.citaMedica.add(citaMedica);
+    }
+
+    public void removeCitaMedica(CitaMedica citaMedica) {
+        this.citaMedica.remove(citaMedica);
     }
 
     public String getEmail() {
@@ -87,5 +99,21 @@ public class Usuario {
 
     public void setSuscripcion(Suscripcion suscripcion) {
         this.suscripcion = suscripcion;
+    }
+
+    public BigInteger getE() {
+        return e;
+    }
+
+    public void setE(BigInteger e) {
+        this.e = e;
+    }
+
+    public BigInteger getN() {
+        return n;
+    }
+
+    public void setN(BigInteger n) {
+        this.n = n;
     }
 }
