@@ -1,4 +1,4 @@
-package es.ifp.labsalut;
+package es.ifp.labsalut.activities;
 
 import android.os.Bundle;
 
@@ -8,12 +8,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class RegistroActivity extends AppCompatActivity {
+import es.ifp.labsalut.R;
+
+public class CitaMedicaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
-
+        setContentView(R.layout.activity_cita_medica);
     }
 }

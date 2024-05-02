@@ -1,4 +1,4 @@
-package es.ifp.labsalut;
+package es.ifp.labsalut.negocio;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

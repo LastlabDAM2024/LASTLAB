@@ -1,4 +1,4 @@
-package es.ifp.labsalut;
+package es.ifp.labsalut.negocio;
 
 public class Medicamento {
     private int idMedicamento;
