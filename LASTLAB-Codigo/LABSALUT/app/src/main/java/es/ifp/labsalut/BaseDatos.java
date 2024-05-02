@@ -85,6 +85,11 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.update("Suscripcion", values, "email = ?", new String[]{suscripcion.getEmail()});
         db.close();
     }
+    /*
+
+    @NELLA ESTO NO TIENE SENTIDO EN UNA CLASE DE TIPO DE BASE DE DATOS
+    ESTO DEBERIA DE IR EN EL .JAVA QUE VAYA VINCULADO A LA ACTIVIDAD SUSCRIPCION, EN ESTE CASO
+    SUSCRIPCIONACTIVITY
 
     // Método para mostrar un diálogo de confirmación de cancelación
     public void confirmarCancelacion(Context context, DialogInterface.OnClickListener confirmListener) {
@@ -100,4 +105,6 @@ public class BaseDatos extends SQLiteOpenHelper {
         });
         builder.show();
     }
+    */
+
 }
