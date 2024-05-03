@@ -65,6 +65,10 @@ public class Usuario {
         this.medicamentos.remove(medicamentos);
     }
 
+    public ArrayList<Medicamento> getAllMedicamentos() {
+        return this.medicamentos;
+    }
+
     public CitaMedica getCitaMedica(int idCita) {
         return this.citaMedica.get(idCita);
     }
@@ -75,6 +79,10 @@ public class Usuario {
 
     public void removeCitaMedica(CitaMedica citaMedica) {
         this.citaMedica.remove(citaMedica);
+    }
+
+    public ArrayList<CitaMedica> getAllCitas() {
+        return this.citaMedica;
     }
 
     public String getEmail() {

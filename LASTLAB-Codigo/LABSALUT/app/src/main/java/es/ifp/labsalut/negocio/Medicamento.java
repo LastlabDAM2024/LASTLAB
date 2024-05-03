@@ -7,6 +7,12 @@ public class Medicamento {
     private float frecuencia;
     private float recordatorio;
 
+    public Medicamento() {
+        this.nombre = "";
+        this.dosis = 0;
+        this.frecuencia = 0f;
+        this.recordatorio = 0f;
+    }
     public Medicamento(String nombre, int dosis, float frecuencia, float recordatorio) {
         this.nombre = nombre;
         this.dosis = dosis;

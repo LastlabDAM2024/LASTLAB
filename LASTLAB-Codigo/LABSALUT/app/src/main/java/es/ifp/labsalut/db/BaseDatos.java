@@ -1,13 +1,16 @@
 package es.ifp.labsalut.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.DatabaseUtils;
 
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
@@ -83,19 +86,29 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     /*
-    Metodo que borra la tabla Medicamentos
+    Metodo que borra las medicamentos del Usuario
      */
-    public void borrarAllMedicamentos() {
+    public void borrarAllMedicamentos(Usuario user) {
         db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM Medicamento");
+        ArrayList<Medicamento> medicamentos = user.getAllMedicamentos();
+        int id = 0;
+        for (int i = 0; i < medicamentos.size(); i++) {
+            id = medicamentos.get(i).getIdMedicamento();
+            db.execSQL("DELETE FROM Medicamentos WHERE id=" + id);
+        }
     }
 
     /*
-    Metodo que borra la tabla CitaMedica
+    Metodo que borra las citasMedicas del Usuario
      */
-    public void borrarAllCitas() {
+    public void borrarAllCitas(Usuario user) {
         db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM CitaMedica");
+        ArrayList<CitaMedica> citas = user.getAllCitas();
+        int id = 0;
+        for (int i = 0; i < citas.size(); i++) {
+            id = citas.get(i).getIdCita();
+            db.execSQL("DELETE FROM CitaMedica WHERE id=" + id);
+        }
     }
 
 
@@ -109,6 +122,20 @@ public class BaseDatos extends SQLiteOpenHelper {
         BigInteger claveE = usuario.getE();
         BigInteger claveN = usuario.getN();
         db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass,claveE,claveN) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "','" + claveE + "','" + claveN + "')");
+    }
+
+    public void addUserMedi(Usuario user, Medicamento medicamento) {
+        db = this.getWritableDatabase();
+        int idUser = user.getIdUsuario();
+        int idMedi = medicamento.getIdMedicamento();
+        db.execSQL("INSERT INTO UsuarioMedicamento (idUser,idMedicamento) VALUES ('" + idUser + "','" + idMedi + "')");
+    }
+
+    public void addUserCita(Usuario user, CitaMedica cita) {
+        db = this.getWritableDatabase();
+        int idUser = user.getIdUsuario();
+        int idCita = cita.getIdCita();
+        db.execSQL("INSERT INTO UsuarioCitaMedica (idUser,idCitaMedica) VALUES ('" + idUser + "','" + idCita + "')");
     }
 
     // Método para añadir un medicamento a la base de datos
@@ -147,7 +174,93 @@ public class BaseDatos extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         String email = suscripcion.getEmail();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("UPDATE Suscipcion SET esSuscrito='"+esSuscrito+"' WHERE email="+email);
+        db.execSQL("UPDATE Suscipcion SET esSuscrito='" + esSuscrito + "' WHERE email=" + email);
+    }
+
+
+    public ArrayList<Medicamento> getAllMedicamentos(Usuario user) {
+        ArrayList<Medicamento> listMedi = new ArrayList<Medicamento>();
+        int id = user.getIdUsuario();
+        Cursor resultado = null;
+        Medicamento contenido = new Medicamento();
+        if (this.numTotalMedicamentos() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT * FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido.setIdMedicamento(resultado.getInt(resultado.getColumnIndex("id")));
+                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
+                contenido.setDosis(resultado.getInt(resultado.getColumnIndex("dosis")));
+                contenido.setFrecuencia(resultado.getFloat(resultado.getColumnIndex("frecuencia")));
+                contenido.setRecordatorio(resultado.getFloat(resultado.getColumnIndex("recordatorio")));
+                resultado.moveToNext();
+                listMedi.add(contenido);
+            }
+
+        }
+        return listMedi;
+    }
+
+
+    public ArrayList<String> getAllNombreMedi(Usuario user) {
+        ArrayList<String> listNombresMedi = new ArrayList<String>();
+        int id = user.getIdUsuario();
+        Cursor resultado = null;
+        String contenido = "";
+        if (this.numTotalMedicamentos() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT * FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido = resultado.getString(resultado.getColumnIndex("nombre")));
+                resultado.moveToNext();
+                listNombresMedi.add(contenido);
+            }
+        }
+        return listNombresMedi;
+    }
+
+
+
+    public ArrayList<CitaMedica> getAllCitas(Usuario user) {
+        ArrayList<CitaMedica> listMedi = new ArrayList<CitaMedica>();
+        int id = user.getIdUsuario();
+        Cursor resultado = null;
+        CitaMedica contenido = new CitaMedica();
+        if (this.numTotalCitas() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido.setIdCita(resultado.getInt(resultado.getColumnIndex("id")));
+                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
+                contenido.setFecha(resultado.getString(resultado.getColumnIndex("fecha")));
+                contenido.setHora(resultado.getString(resultado.getColumnIndex("hora")));
+                contenido.setDescripcion(resultado.getString(resultado.getColumnIndex("descripcion")));
+                contenido.setRecordatorio(resultado.getFloat(resultado.getColumnIndex("recordatorio")));
+                resultado.moveToNext();
+                listMedi.add(contenido);
+            }
+        }
+        return listMedi;
+    }
+
+    public ArrayList<String> getAllNombreMedi(Usuario user) {
+        ArrayList<String> listNombresCitas = new ArrayList<String>();
+        int id = user.getIdUsuario();
+        Cursor resultado = null;
+        String contenido = "";
+        if (this.numTotalMedicamentos() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido = resultado.getString(resultado.getColumnIndex("nombre")));
+                resultado.moveToNext();
+                listNombresCitas.add(contenido);
+            }
+        }
+        return listNombresCitas;
     }
 
     /*

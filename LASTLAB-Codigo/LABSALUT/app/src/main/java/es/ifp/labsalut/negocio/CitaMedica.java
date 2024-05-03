@@ -11,6 +11,14 @@ public class CitaMedica {
     private String descripcion;
     private float recordatorio;
 
+
+    public CitaMedica() {
+        this.nombre = "";
+        this.fecha = "";
+        this.hora = "";
+        this.descripcion = "";
+        this.recordatorio = 0f;
+    }
     public CitaMedica(String nombre, String fecha, String hora, String descripcion, float recordatorio) {
         this.nombre = nombre;
         this.fecha = fecha;
