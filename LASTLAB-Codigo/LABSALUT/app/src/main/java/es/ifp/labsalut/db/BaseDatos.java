@@ -1,13 +1,11 @@
 package es.ifp.labsalut.db;
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.DatabaseUtils;
-
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -209,10 +207,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         String contenido = "";
         if (this.numTotalMedicamentos() > 0) {
             db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT * FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
+            resultado = db.rawQuery("SELECT nombre FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
             while (resultado.isAfterLast() == false) {
-                contenido = resultado.getString(resultado.getColumnIndex("nombre")));
+                contenido = resultado.getString(resultado.getColumnIndex("nombre"));
                 resultado.moveToNext();
                 listNombresMedi.add(contenido);
             }
@@ -245,7 +243,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         return listMedi;
     }
 
-    public ArrayList<String> getAllNombreMedi(Usuario user) {
+    public ArrayList<String> getAllNombreCitas(Usuario user) {
         ArrayList<String> listNombresCitas = new ArrayList<String>();
         int id = user.getIdUsuario();
         Cursor resultado = null;
@@ -255,7 +253,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
             while (resultado.isAfterLast() == false) {
-                contenido = resultado.getString(resultado.getColumnIndex("nombre")));
+                contenido = resultado.getString(resultado.getColumnIndex("nombre"));
                 resultado.moveToNext();
                 listNombresCitas.add(contenido);
             }

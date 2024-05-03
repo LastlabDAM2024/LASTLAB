@@ -1,8 +1,5 @@
 package es.ifp.labsalut.negocio;
 
-import java.sql.Time;
-import java.util.Date;
-
 public class CitaMedica {
     private int idCita;
     private String nombre;

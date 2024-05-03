@@ -1,7 +1,5 @@
 package es.ifp.labsalut.negocio;
 
-import java.util.Date;
-
 public class Suscripcion {
 
     private String email;

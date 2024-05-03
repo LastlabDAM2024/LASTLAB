@@ -11,7 +11,6 @@ id anyo_registro
 id appointmentButton
 id botonGuardar_Cita
 id btnCancelar_Suscripcion
-id btnSuscripciones
 id btnVolver_Suscripcion
 id btn_Suscribirse
 id cancelar_registro
@@ -57,7 +56,6 @@ id passText_registro
 id password_main
 id recordatorioEditText_Cita
 id recordatorioText_Cita
-id textView
 id textView2
 id textView5
 id textView6

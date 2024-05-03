@@ -4,7 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-29:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-3\\c880200ff2b0ebad03ba35c6d23daf0a\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-3\\eff6ade032d6fb6849813639e26f4c11\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
