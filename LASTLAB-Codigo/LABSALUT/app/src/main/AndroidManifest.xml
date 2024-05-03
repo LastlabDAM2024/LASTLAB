@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-sdk android:minSdkVersion="19"
+        android:targetSdkVersion="34"
+        android:maxSdkVersion="34" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,8 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LABSALUT"
-        tools:targetApi="18">
+        android:theme="@style/Theme.LABSALUT">
+
         <activity
             android:name=".activities.OptionsActivity"
             android:exported="false" />
