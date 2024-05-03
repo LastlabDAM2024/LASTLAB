@@ -27,7 +27,7 @@ public class Suscripcion {
         this.email = email;
     }
 
-    public boolean isEsSuscrito() {
+    public boolean getEsSuscrito() {
         return esSuscrito;
     }
 

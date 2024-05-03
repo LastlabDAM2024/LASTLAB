@@ -6,12 +6,12 @@ import java.util.Date;
 public class CitaMedica {
     private int idCita;
     private String nombre;
-    private Date fecha;
-    private Time hora;
+    private String fecha;
+    private String hora;
     private String descripcion;
     private float recordatorio;
 
-    public CitaMedica(String nombre, Date fecha, Time hora, String descripcion, float recordatorio) {
+    public CitaMedica(String nombre, String fecha, String hora, String descripcion, float recordatorio) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
@@ -23,16 +23,20 @@ public class CitaMedica {
         return idCita;
     }
 
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
     public void setRecordatorio(float recordatorio) {
         this.recordatorio = recordatorio;
+    }
+
+    public float getRecordatorio() {
+        return recordatorio;
     }
 
     public void setIdCita(int idCita) {
@@ -47,11 +51,11 @@ public class CitaMedica {
         this.nombre = nombre;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

@@ -16,7 +16,12 @@ public class MainActivity extends AppCompatActivity {
     protected EditText usernameEditText;
     protected EditText passwordEditText;
     protected Button loginButton;
+    protected Button registroButton;
     protected TextView titleLabel;
+    private Intent pasarPantalla;
+    private String user;
+    private String password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         usernameEditText = findViewById(R.id.username_main);
         passwordEditText = findViewById(R.id.password_main);
         loginButton = findViewById(R.id.acceptButton_main);
+        registroButton = findViewById(R.id.newUserBoton_main);
 
         // Configurar el título de la aplicación centrado en un fondo negro y blanco
         titleLabel.setBackgroundColor(getResources().getColor(R.color.black));
@@ -38,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Verificar el usuario y la contraseña
-                String username = usernameEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
+                user = usernameEditText.getText().toString();
+                password = passwordEditText.getText().toString();
 
                 // Verificar si el usuario y la contraseña son correctos
-                if (isValidCredentials(username, password)) {
+                if (isValidCredentials(user, password)) {
                     // Si son correctos, redirigir al usuario a la clase Usuario
-                    Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                    startActivity(intent);
+                    pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+                    startActivity(pasarPantalla);
                 } else {
                     // Si no son correctos, mostrar un mensaje de error
                     // (puedes implementar esto según tu preferencia)
@@ -53,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        registroButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pasarPantalla = new Intent(MainActivity.this, RegistroActivity.class);
+                startActivity(pasarPantalla);
+            }
+        });
+
     }
 
     // Método para verificar las credenciales del usuario
