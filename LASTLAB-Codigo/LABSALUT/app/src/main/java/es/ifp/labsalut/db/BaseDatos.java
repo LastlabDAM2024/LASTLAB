@@ -26,7 +26,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Aquí se crean las tablas si no existen
-        db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass BIGINTEGER, claveE BIGINTEGER, claveN BIGINTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT, claveE TEXT, claveN TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis INTEGER, frecuencia FLOAT, recordatorio FLOAT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio FLOAT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
@@ -111,15 +111,52 @@ public class BaseDatos extends SQLiteOpenHelper {
 
 
     // Método para añadir un usuario a la base de datos
-    public void addUser(Usuario usuario) {
+    public int addUser(Usuario usuario) {
         db = this.getWritableDatabase();
         String nombreUser = usuario.getNombre();
         String fechaNacimiento = usuario.getFechaNacimiento();
         String email = usuario.getEmail();
-        BigInteger pass = usuario.getContrasena();
-        BigInteger claveE = usuario.getE();
-        BigInteger claveN = usuario.getN();
+        String pass = usuario.getContrasena().toString();
+        String claveE = usuario.getE().toString();
+        String claveN = usuario.getN().toString();
         db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass,claveE,claveN) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "','" + claveE + "','" + claveN + "')");
+        int id = -1;
+        Cursor resultado = null;
+        int contenido = -1;
+        if (this.numTotalUsers() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT id FROM Usuario WHERE (nombre='" + nombreUser + "' AND email='" + email + "')", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido = resultado.getInt(resultado.getColumnIndex("id"));
+                resultado.moveToNext();
+                id = contenido;
+            }
+        }
+        return id;
+    }
+
+    public Usuario getUser(String nombre) {
+
+        Cursor resultado = null;
+        Usuario contenido = new Usuario();
+        if (this.numTotalUsers() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT * FROM Usuario WHERE nombre='" + nombre + "'", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido.setIdUsuario(resultado.getInt(resultado.getColumnIndex("id")));
+                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
+                contenido.setFechaNacimiento(resultado.getString(resultado.getColumnIndex("fechaNacimiento")));
+                contenido.setEmail(resultado.getString(resultado.getColumnIndex("email")));
+                contenido.setContrasena(new BigInteger(resultado.getString(resultado.getColumnIndex("pass"))));
+                contenido.setE(new BigInteger(resultado.getString(resultado.getColumnIndex("claveE"))));
+                contenido.setN(new BigInteger(resultado.getString(resultado.getColumnIndex("claveN"))));
+                resultado.moveToNext();
+            }
+
+        }
+        return contenido;
     }
 
     public void addUserMedi(Usuario user, Medicamento medicamento) {
@@ -137,18 +174,30 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     // Método para añadir un medicamento a la base de datos
-    public void addMedicamento(Medicamento medicamento) {
+    public int addMedicamento(Medicamento medicamento) {
         db = this.getWritableDatabase();
         String nombre = medicamento.getNombre();
         int dosis = medicamento.getDosis();
         float frecuencia = medicamento.getFrecuencia();
         float recordatorio = medicamento.getRecordatorio();
         db.execSQL("INSERT INTO Medicamento (nombre,dosis,frecuencia,recordatorio) VALUES ('" + nombre + "','" + dosis + "','" + frecuencia + "','" + recordatorio + "')");
-
+        int id = -1;
+        Cursor resultado = null;
+        int contenido = -1;
+        if (this.numTotalMedicamentos() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT id FROM Medicamento WHERE nombre='" + nombre + "'AND dosis='" + dosis + "'AND frecuencia='" + frecuencia + "' ORDER BY id DESC", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido = resultado.getInt(resultado.getColumnIndex("id"));
+                resultado.moveToNext();
+            }
+        }
+        return id;
     }
 
     // Método para añadir una cita médica a la base de datos
-    public void addCita(CitaMedica citaMedica) {
+    public int addCita(CitaMedica citaMedica) {
         db = this.getWritableDatabase();
         String nombre = citaMedica.getNombre();
         String fecha = citaMedica.getFecha();
@@ -156,7 +205,21 @@ public class BaseDatos extends SQLiteOpenHelper {
         String descripcion = citaMedica.getDescripcion();
         float recordatorio = citaMedica.getRecordatorio();
         db.execSQL("INSERT INTO CitaMedica (nombre,fecha,hora,descripcion,recordatorio) VALUES ('" + nombre + "','" + fecha + "','" + hora + "','" + descripcion + "','" + recordatorio + "')");
+        int id = -1;
+        Cursor resultado = null;
+        int contenido = -1;
+        if (this.numTotalCitas() > 0) {
+            db = this.getReadableDatabase();
+            resultado = db.rawQuery("SELECT id FROM CitaMedica WHERE nombre='" + nombre + "'AND fecha='" + fecha + "'AND hora='" + hora + "' ORDER BY id DESC", null);
+            resultado.moveToFirst();
+            while (resultado.isAfterLast() == false) {
+                contenido = resultado.getInt(resultado.getColumnIndex("id"));
+                resultado.moveToNext();
+            }
+        }
+        return id;
     }
+
 
     // Método para añadir una suscripción a la base de datos
     public void addSuscripcion(Suscripcion suscripcion) {
@@ -172,7 +235,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         String email = suscripcion.getEmail();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("UPDATE Suscipcion SET esSuscrito='" + esSuscrito + "' WHERE email=" + email);
+        db.execSQL("UPDATE Suscipcion SET esSuscrito='" + esSuscrito + "' WHERE email='" + email+"'");
     }
 
 
@@ -217,7 +280,6 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
         return listNombresMedi;
     }
-
 
 
     public ArrayList<CitaMedica> getAllCitas(Usuario user) {

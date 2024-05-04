@@ -6,10 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.db.BaseDatos;
+import es.ifp.labsalut.negocio.Usuario;
+import es.ifp.labsalut.seguridad.CifradoRSA;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
     private Intent pasarPantalla;
     private String user;
     private String password;
+    private BaseDatos db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        db = new BaseDatos(this);
         // Obtener referencias de los elementos de la interfaz
         titleLabel = findViewById(R.id.logo_main);
         usernameEditText = findViewById(R.id.username_main);
@@ -43,12 +48,10 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Verificar el usuario y la contraseña
                 user = usernameEditText.getText().toString();
                 password = passwordEditText.getText().toString();
-
                 // Verificar si el usuario y la contraseña son correctos
-                if (isValidCredentials(user, password)) {
+                if (validarCredenciales(user, password)) {
                     // Si son correctos, redirigir al usuario a la clase Usuario
                     pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
                     startActivity(pasarPantalla);
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     // Si no son correctos, mostrar un mensaje de error
                     // (puedes implementar esto según tu preferencia)
                     // Por ejemplo, un Toast o un TextView debajo del EditText
+                    Toast.makeText(MainActivity.this, "La contraseña no es correcta", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -70,10 +74,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Método para verificar las credenciales del usuario
-    private boolean isValidCredentials(String username, String password) {
+    private boolean validarCredenciales(String username, String password) {
         // Lógica para verificar si el usuario y la contraseña son correctos
         // Puedes implementar la lógica de verificación aquí o en un método separado
         // Por ejemplo, comparar con datos almacenados en la base de datos o en una lista
-        return true; // En este ejemplo, siempre devuelve true para simplificar
+        boolean result = false;
+        if (username.equals("") || password.equals("")) {
+            Toast.makeText(this, "Los campos Usuario y Contraseña no pueden estar vacíos", Toast.LENGTH_SHORT).show();
+        } else {
+            Usuario usuario = db.getUser(username);
+            CifradoRSA rsa = new CifradoRSA();
+            rsa.setE(usuario.getE());
+            rsa.setN(usuario.getN());
+            if (rsa.cifrar(rsa.convertirString(password)).equals(usuario.getContrasena())) {
+                result = true;
+            }
+        }
+        return result; // En este ejemplo, siempre devuelve true para simplificar
     }
 }

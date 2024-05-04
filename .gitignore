@@ -1,1 +1,13 @@
-
+.idea/
+.gradle/
+/LASTLAB-Codigo/LABSALUT/.gradle/8.4/dependencies-accessors/dependencies-accessors.lock
+/LASTLAB-Codigo/LABSALUT/.gradle/8.4/executionHistory/executionHistory.bin
+/LASTLAB-Codigo/LABSALUT/.gradle/8.4/executionHistory/executionHistory.lock
+/LASTLAB-Codigo/LABSALUT/.gradle/8.4/fileHashes/fileHashes.bin
+/LASTLAB-Codigo/LABSALUT/.gradle/8.4/fileHashes/fileHashes.lock
+/LASTLAB-Codigo/LABSALUT/.gradle/8.4/fileHashes/resourceHashesCache.bin
+/LASTLAB-Codigo/LABSALUT/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/LASTLAB-Codigo/LABSALUT/.gradle/buildOutputCleanup/outputFiles.bin
+/LASTLAB-Codigo/LABSALUT/.gradle/file-system.probe
+/LASTLAB-Codigo/LABSALUT/.idea/deploymentTargetDropDown.xml
+/LASTLAB-Codigo/LABSALUT/.idea/workspace.xml

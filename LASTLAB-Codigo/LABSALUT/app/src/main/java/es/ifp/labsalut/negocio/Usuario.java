@@ -15,6 +15,18 @@ public class Usuario {
     private ArrayList<CitaMedica> citaMedica;
     private Suscripcion suscripcion;
 
+
+    public Usuario() {
+        this.nombre = "";
+        this.fechaNacimiento = "";
+        this.email = "";
+        this.contrasena = new BigInteger(String.valueOf(0));
+        this.e = new BigInteger(String.valueOf(0));;
+        this.n = new BigInteger(String.valueOf(0));;
+        this.medicamentos = new ArrayList<Medicamento>();
+        this.citaMedica = new ArrayList<CitaMedica>();
+        this.suscripcion = new Suscripcion();
+    }
     public Usuario(String nombre, String fechaNacimiento, String email, BigInteger pass, BigInteger claveE, BigInteger claveN) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;

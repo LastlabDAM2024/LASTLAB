@@ -17,6 +17,8 @@ public class CifradoRSA {
 
 
     public CifradoRSA() {
+        e = BigInteger.ZERO;
+        n = BigInteger.ZERO;
     }
 
     public CifradoRSA(int bits) {
