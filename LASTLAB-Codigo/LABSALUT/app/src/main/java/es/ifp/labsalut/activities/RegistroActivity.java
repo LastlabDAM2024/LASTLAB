@@ -53,21 +53,27 @@ public class RegistroActivity extends AppCompatActivity {
         aceptarBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Asignacion de la fecha en un String y cifrado de la contraseña en RSA con la clave publica y privada para su descifrado.
                 //fechaNacimiento = dia.getSelectedItem().toString() + "/" + mes.getSelectedItem().toString() + "/" + anyo.getSelectedItem().toString();
                 aes = new CifradoAES();
-                String semilla = email.getText().toString()+pass.getText().toString();
-                SecretKey secretKey=aes.generarSecretKey(semilla);
-                byte[] encrypt=null;
+                String semilla = email.getText().toString() + pass.getText().toString();
+                SecretKey secretKey = aes.generarSecretKey(semilla);
+                String encryptNombre = "";
+                String encryptEmail = "";
+                String encryptPass = "";
+                String encryptFecha = "";
+
                 try {
-                    encrypt = aes.encrypt(pass.getText().toString().getBytes(), secretKey);
+                    encryptNombre = Arrays.toString(aes.encrypt(pass.getText().toString().getBytes(), secretKey));
+                    encryptEmail = Arrays.toString(aes.encrypt(nombre.getText().toString().getBytes(), secretKey));
+                    encryptPass = Arrays.toString(aes.encrypt(email.getText().toString().getBytes(), secretKey));
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                Usuario user = new Usuario(nombre.getText().toString(), fechaNacimiento, email.getText().toString(), Arrays.toString(encrypt), secretKey);
+                Usuario user = new Usuario(encryptNombre, encryptFecha, encryptEmail, encryptPass, secretKey);
                 user.setIdUsuario(db.addUser(user));
                 pasarPantalla = new Intent(RegistroActivity.this, MainActivity.class);
                 startActivity(pasarPantalla);
+                finish();
             }
         });
 
@@ -76,6 +82,7 @@ public class RegistroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pasarPantalla = new Intent(RegistroActivity.this, MainActivity.class);
                 startActivity(pasarPantalla);
+                finish();
             }
         });
 

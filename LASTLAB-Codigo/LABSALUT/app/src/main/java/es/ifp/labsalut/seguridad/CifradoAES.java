@@ -19,15 +19,15 @@ private byte[] IV = new byte[32];
     public SecretKey generarSecretKey(String semilla) {
         SecretKey secreto=null;
         try {
-            // Convertir el string a un arreglo de bytes usando UTF-8
+            // Convertir el string a un array de bytes usando UTF-8
             byte[] seedBytes = semilla.getBytes(StandardCharsets.UTF_8);
 
             // Calcular el hash SHA-256 de los bytes de la semilla
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hashBytes = digest.digest(seedBytes);
 
-            // Utilizar solo los primeros 16 bytes para la clave AES (128 bits)
-            byte[] aesKeyBytes = new byte[32];  // Tamaño de clave AES: 128 bits
+            // Utilizar solo los primeros 32 bytes para la clave AES (256 bits)
+            byte[] aesKeyBytes = new byte[32];  // Tamaño de clave AES: 256 bits
             System.arraycopy(hashBytes, 0, aesKeyBytes, 0, aesKeyBytes.length);
 
             // Crear una instancia de SecretKeySpec para la clave AES
