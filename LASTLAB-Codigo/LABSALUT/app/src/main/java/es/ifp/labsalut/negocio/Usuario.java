@@ -3,14 +3,16 @@ package es.ifp.labsalut.negocio;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+
 public class Usuario {
     private int idUsuario;
     private String nombre;
     private String fechaNacimiento;
     private String email;
-    private BigInteger contrasena;
-    private BigInteger e;
-    private BigInteger n;
+    private String contrasena;
+    private SecretKey key;
     private ArrayList<Medicamento> medicamentos;
     private ArrayList<CitaMedica> citaMedica;
     private Suscripcion suscripcion;
@@ -20,20 +22,18 @@ public class Usuario {
         this.nombre = "";
         this.fechaNacimiento = "";
         this.email = "";
-        this.contrasena = new BigInteger(String.valueOf(0));
-        this.e = new BigInteger(String.valueOf(0));;
-        this.n = new BigInteger(String.valueOf(0));;
+        this.contrasena = "";
+        this.key = null;
         this.medicamentos = new ArrayList<Medicamento>();
         this.citaMedica = new ArrayList<CitaMedica>();
         this.suscripcion = new Suscripcion();
     }
-    public Usuario(String nombre, String fechaNacimiento, String email, BigInteger pass, BigInteger claveE, BigInteger claveN) {
+    public Usuario(String nombre, String fechaNacimiento, String email, String pass, SecretKey clave) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.email = email;
         this.contrasena = pass;
-        this.e = claveE;
-        this.n = claveN;
+        this.key = clave;
         this.medicamentos = new ArrayList<Medicamento>();
         this.citaMedica = new ArrayList<CitaMedica>();
         this.suscripcion = new Suscripcion();
@@ -105,11 +105,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public BigInteger getContrasena() {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(BigInteger contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 
@@ -121,19 +121,12 @@ public class Usuario {
         this.suscripcion = suscripcion;
     }
 
-    public BigInteger getE() {
-        return e;
+    public SecretKey getKey() {
+        return key;
     }
 
-    public void setE(BigInteger e) {
-        this.e = e;
+    public void setKey(String e) {
+        this.key= new SecretKeySpec(e.getBytes(), "AES");;
     }
 
-    public BigInteger getN() {
-        return n;
-    }
-
-    public void setN(BigInteger n) {
-        this.n = n;
-    }
 }

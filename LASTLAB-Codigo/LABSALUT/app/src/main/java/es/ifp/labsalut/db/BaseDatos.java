@@ -26,7 +26,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Aquí se crean las tablas si no existen
-        db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT, claveE TEXT, claveN TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT, claveSecreta TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis INTEGER, frecuencia FLOAT, recordatorio FLOAT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio FLOAT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
@@ -117,9 +117,8 @@ public class BaseDatos extends SQLiteOpenHelper {
         String fechaNacimiento = usuario.getFechaNacimiento();
         String email = usuario.getEmail();
         String pass = usuario.getContrasena().toString();
-        String claveE = usuario.getE().toString();
-        String claveN = usuario.getN().toString();
-        db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass,claveE,claveN) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "','" + claveE + "','" + claveN + "')");
+        String key = usuario.getKey().toString();
+        db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass,claveSecreta) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "','" + key + "')");
         int id = -1;
         Cursor resultado = null;
         int contenido = -1;
@@ -149,9 +148,8 @@ public class BaseDatos extends SQLiteOpenHelper {
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
                 contenido.setFechaNacimiento(resultado.getString(resultado.getColumnIndex("fechaNacimiento")));
                 contenido.setEmail(resultado.getString(resultado.getColumnIndex("email")));
-                contenido.setContrasena(new BigInteger(resultado.getString(resultado.getColumnIndex("pass"))));
-                contenido.setE(new BigInteger(resultado.getString(resultado.getColumnIndex("claveE"))));
-                contenido.setN(new BigInteger(resultado.getString(resultado.getColumnIndex("claveN"))));
+                contenido.setContrasena(resultado.getString(resultado.getColumnIndex("pass")));
+                contenido.setKey(resultado.getString(resultado.getColumnIndex("claveSecreta")));
                 resultado.moveToNext();
             }
 

@@ -9,12 +9,14 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.math.BigInteger;
+import java.util.Arrays;
+
+import javax.crypto.SecretKey;
 
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.Usuario;
-import es.ifp.labsalut.seguridad.CifradoRSA;
+import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class RegistroActivity extends AppCompatActivity {
     protected Button aceptarBoton;
     protected Button cancelarBoton;
     private String fechaNacimiento;
-    private CifradoRSA rsa;
+    private CifradoAES aes;
     private BaseDatos db;
     private Intent pasarPantalla;
 
@@ -53,9 +55,16 @@ public class RegistroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Asignacion de la fecha en un String y cifrado de la contraseña en RSA con la clave publica y privada para su descifrado.
                 //fechaNacimiento = dia.getSelectedItem().toString() + "/" + mes.getSelectedItem().toString() + "/" + anyo.getSelectedItem().toString();
-                rsa = new CifradoRSA(1024);
-                BigInteger cifrado = rsa.cifrar(rsa.convertirString(pass.getText().toString()));
-                Usuario user = new Usuario(nombre.getText().toString(), fechaNacimiento, email.getText().toString(), cifrado, rsa.getE(), rsa.getN());
+                aes = new CifradoAES();
+                String semilla = email.getText().toString()+pass.getText().toString();
+                SecretKey secretKey=aes.generarSecretKey(semilla);
+                byte[] encrypt=null;
+                try {
+                    encrypt = aes.encrypt(pass.getText().toString().getBytes(), secretKey);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                Usuario user = new Usuario(nombre.getText().toString(), fechaNacimiento, email.getText().toString(), Arrays.toString(encrypt), secretKey);
                 user.setIdUsuario(db.addUser(user));
                 pasarPantalla = new Intent(RegistroActivity.this, MainActivity.class);
                 startActivity(pasarPantalla);
