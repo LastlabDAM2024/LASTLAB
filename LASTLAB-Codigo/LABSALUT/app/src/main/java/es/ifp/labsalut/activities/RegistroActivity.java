@@ -64,9 +64,9 @@ public class RegistroActivity extends AppCompatActivity {
                 String encryptFecha = "";
 
                 try {
-                    encryptNombre = aes.encrypt(pass.getText().toString().getBytes(), secretKey);
-                    encryptEmail = aes.encrypt(nombre.getText().toString().getBytes(), secretKey);
-                    encryptPass = aes.encrypt(email.getText().toString().getBytes(), secretKey);
+                    encryptNombre = aes.encrypt(nombre.getText().toString().getBytes(), secretKey);
+                    encryptEmail = aes.encrypt(email.getText().toString().getBytes(), secretKey);
+                    encryptPass = aes.encrypt(pass.getText().toString().getBytes(), secretKey);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }

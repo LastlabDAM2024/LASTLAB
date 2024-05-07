@@ -54,8 +54,7 @@ private byte[] IV = new byte[32];
         if (hexString.length() % 2 != 0) {
             throw new IllegalArgumentException("La cadena hexadecimal debe tener una longitud par");
         }
-
-        // Creamos un arreglo de bytes para almacenar el resultado
+        // Creamos un array de bytes para almacenar el resultado
         int len = hexString.length();
         byte[] result = new byte[len / 2];
 
@@ -63,8 +62,7 @@ private byte[] IV = new byte[32];
         for (int i = 0; i < len; i += 2) {
             // Obtenemos el substring de dos caracteres hexadecimales
             String hex = hexString.substring(i, i + 2);
-
-            // Convertimos el substring a un byte y lo almacenamos en el arreglo resultante
+            // Convertimos el substring a un byte y lo almacenamos en el array resultante
             result[i / 2] = (byte) Integer.parseInt(hex, 16);
         }
 

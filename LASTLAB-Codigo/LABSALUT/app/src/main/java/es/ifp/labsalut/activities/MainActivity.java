@@ -60,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
                     if (validarCredenciales(email, password)) {
                         // Si son correctos, redirigir al usuario a la clase Usuario
                         pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
-                        startActivity(pasarPantalla);
+                        pasarPantalla.putExtra("EMAIL", email);
+                        pasarPantalla.putExtra("PASS", password);
                         finish();
+                        startActivity(pasarPantalla);
                     } else {
                         // Si no son correctos, mostrar un mensaje de error
                         // (puedes implementar esto según tu preferencia)
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         // Lógica para verificar si el email y la contraseña son correctos
 
         boolean result = false;
-        if (email.equals("") || password.equals("")) {
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Los campos Usuario y Contraseña no pueden estar vacíos", Toast.LENGTH_SHORT).show();
         } else {
             CifradoAES aes = new CifradoAES();
@@ -106,16 +108,11 @@ public class MainActivity extends AppCompatActivity {
             }
             Usuario usuario = db.getUser(encrypt2);
             if (encrypt.equals(usuario.getContrasena())&&
-                    encrypt2.equals(usuario.getNombre())){
+                    encrypt2.equals(usuario.getEmail())){
                 result = true;
-                user.setIdUsuario(usuario.getIdUsuario());
-                user.setNombre(aes.decrypt(usuario.getNombre(),secretKey));
-                user.setFechaNacimiento(usuario.getFechaNacimiento());
-                user.setEmail(aes.decrypt(usuario.getEmail(),secretKey));
-                user.setContrasena(usuario.getContrasena());
             }
         }
-        return result; // En este ejemplo, siempre devuelve true para simplificar
+        return result;
     }
 
 }

@@ -17,6 +17,11 @@
           <theme>@style/Theme.LABSALUT</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml">
+        <config>
+          <theme>@style/Theme.LABSALUT</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml">
         <config>
           <theme>@style/Theme.LABSALUT</theme>
@@ -33,10 +38,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MenuActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MenuActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/RegistroActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/RegistroActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/seguridad/CifradoAES.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/seguridad/CifradoAES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +50,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\josea\.android\avd\Pixel_5_API_19.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Samsung\.android\avd\Pixel_5_API_19.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -98,7 +102,7 @@
     "com.android.tools.idea.streaming.emulator.frame.visible": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/PruebaCifrado"
+    "last_opened_file_path": "C:/Users/Samsung/Desktop/MP08_UF02_MorenoFdez_JoseAntonio/PracticaUF2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -199,23 +203,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MainActivity.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
-          <line>142</line>
+          <line>144</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/RegistroActivity.java</url>
-          <line>59</line>
+          <line>74</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MenuActivity.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MainActivity.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/RegistroActivity.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
