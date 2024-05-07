@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.db.BaseDatos;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -22,12 +23,14 @@ public class MenuActivity extends AppCompatActivity {
     protected ListView listaMedicamentos;
     protected ListView listaCitas;
     private Intent pasarPantalla;
+    private BaseDatos db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        db = new BaseDatos(this);
         crearMedicamento = (Button) findViewById(R.id.crearMedicamentoBoton_menu);
         crearCitaMedica = (Button) findViewById(R.id.crearCitaMedicaBoton_menu);
         editarMedicamento = (Button) findViewById(R.id.editarMedicamentoBoton_main);
@@ -41,6 +44,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pasarPantalla = new Intent(MenuActivity.this, MedicamentoActivity.class);
                 startActivity(pasarPantalla);
+                finish();
             }
         });
 
@@ -49,6 +53,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pasarPantalla = new Intent(MenuActivity.this, CitaMedicaActivity.class);
                 startActivity(pasarPantalla);
+                finish();
             }
         });
 

@@ -10,10 +10,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+import javax.crypto.SecretKey;
+
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Suscripcion;
 import es.ifp.labsalut.negocio.Usuario;
+import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class BaseDatos extends SQLiteOpenHelper {
 
@@ -26,7 +29,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Aquí se crean las tablas si no existen
-        db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT, claveSecreta TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis INTEGER, frecuencia FLOAT, recordatorio FLOAT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio FLOAT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
@@ -116,9 +119,8 @@ public class BaseDatos extends SQLiteOpenHelper {
         String nombreUser = usuario.getNombre();
         String fechaNacimiento = usuario.getFechaNacimiento();
         String email = usuario.getEmail();
-        String pass = usuario.getContrasena().toString();
-        String key = usuario.getKey().toString();
-        db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass,claveSecreta) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "','" + key + "')");
+        String pass = usuario.getContrasena();
+        db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "')");
         int id = -1;
         Cursor resultado = null;
         int contenido = -1;
@@ -126,36 +128,37 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT id FROM Usuario WHERE (nombre='" + nombreUser + "' AND email='" + email + "')", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()) {
                 contenido = resultado.getInt(resultado.getColumnIndex("id"));
                 resultado.moveToNext();
                 id = contenido;
+
             }
         }
         return id;
     }
 
-    public Usuario getUser(String nombre) {
+    public Usuario getUser(String email) {
 
         Cursor resultado = null;
         Usuario contenido = new Usuario();
         if (this.numTotalUsers() > 0) {
             db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT * FROM Usuario WHERE nombre='" + nombre + "'", null);
+            resultado = db.rawQuery("SELECT * FROM Usuario WHERE email='" + email + "'", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()) {
                 contenido.setIdUsuario(resultado.getInt(resultado.getColumnIndex("id")));
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
                 contenido.setFechaNacimiento(resultado.getString(resultado.getColumnIndex("fechaNacimiento")));
                 contenido.setEmail(resultado.getString(resultado.getColumnIndex("email")));
                 contenido.setContrasena(resultado.getString(resultado.getColumnIndex("pass")));
-                contenido.setKey(resultado.getString(resultado.getColumnIndex("claveSecreta")));
                 resultado.moveToNext();
             }
 
         }
         return contenido;
     }
+
 
     public void addUserMedi(Usuario user, Medicamento medicamento) {
         db = this.getWritableDatabase();
@@ -186,7 +189,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT id FROM Medicamento WHERE nombre='" + nombre + "'AND dosis='" + dosis + "'AND frecuencia='" + frecuencia + "' ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()){
                 contenido = resultado.getInt(resultado.getColumnIndex("id"));
                 resultado.moveToNext();
             }
@@ -210,7 +213,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT id FROM CitaMedica WHERE nombre='" + nombre + "'AND fecha='" + fecha + "'AND hora='" + hora + "' ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()) {
                 contenido = resultado.getInt(resultado.getColumnIndex("id"));
                 resultado.moveToNext();
             }
@@ -233,7 +236,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         String email = suscripcion.getEmail();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("UPDATE Suscipcion SET esSuscrito='" + esSuscrito + "' WHERE email='" + email+"'");
+        db.execSQL("UPDATE Suscipcion SET esSuscrito='" + esSuscrito + "' WHERE email='" + email + "'");
     }
 
 
@@ -246,7 +249,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT * FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()) {
                 contenido.setIdMedicamento(resultado.getInt(resultado.getColumnIndex("id")));
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
                 contenido.setDosis(resultado.getInt(resultado.getColumnIndex("dosis")));
@@ -270,7 +273,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT nombre FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()){
                 contenido = resultado.getString(resultado.getColumnIndex("nombre"));
                 resultado.moveToNext();
                 listNombresMedi.add(contenido);
@@ -289,7 +292,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()) {
                 contenido.setIdCita(resultado.getInt(resultado.getColumnIndex("id")));
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
                 contenido.setFecha(resultado.getString(resultado.getColumnIndex("fecha")));
@@ -312,7 +315,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (resultado.isAfterLast() == false) {
+            while (!resultado.isAfterLast()) {
                 contenido = resultado.getString(resultado.getColumnIndex("nombre"));
                 resultado.moveToNext();
                 listNombresCitas.add(contenido);

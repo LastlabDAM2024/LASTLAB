@@ -9,6 +9,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import javax.crypto.SecretKey;
@@ -63,13 +64,13 @@ public class RegistroActivity extends AppCompatActivity {
                 String encryptFecha = "";
 
                 try {
-                    encryptNombre = Arrays.toString(aes.encrypt(pass.getText().toString().getBytes(), secretKey));
-                    encryptEmail = Arrays.toString(aes.encrypt(nombre.getText().toString().getBytes(), secretKey));
-                    encryptPass = Arrays.toString(aes.encrypt(email.getText().toString().getBytes(), secretKey));
+                    encryptNombre = aes.encrypt(pass.getText().toString().getBytes(), secretKey);
+                    encryptEmail = aes.encrypt(nombre.getText().toString().getBytes(), secretKey);
+                    encryptPass = aes.encrypt(email.getText().toString().getBytes(), secretKey);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                Usuario user = new Usuario(encryptNombre, encryptFecha, encryptEmail, encryptPass, secretKey);
+                Usuario user = new Usuario(encryptNombre, encryptFecha, encryptEmail, encryptPass);
                 user.setIdUsuario(db.addUser(user));
                 pasarPantalla = new Intent(RegistroActivity.this, MainActivity.class);
                 startActivity(pasarPantalla);

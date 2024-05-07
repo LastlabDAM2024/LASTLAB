@@ -1,5 +1,7 @@
 package es.ifp.labsalut.seguridad;
 
+import android.util.Base64;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -47,22 +49,45 @@ private byte[] IV = new byte[32];
         return result.toString();
     }
 
-    public byte[] encrypt(byte[] plaintext, SecretKey key) throws Exception {
+    private static byte[] hexToBytes(String hexString) {
+        // Aseguramos que la longitud de la cadena hexadecimal sea par
+        if (hexString.length() % 2 != 0) {
+            throw new IllegalArgumentException("La cadena hexadecimal debe tener una longitud par");
+        }
+
+        // Creamos un arreglo de bytes para almacenar el resultado
+        int len = hexString.length();
+        byte[] result = new byte[len / 2];
+
+        // Convertimos cada par de caracteres hexadecimales a bytes
+        for (int i = 0; i < len; i += 2) {
+            // Obtenemos el substring de dos caracteres hexadecimales
+            String hex = hexString.substring(i, i + 2);
+
+            // Convertimos el substring a un byte y lo almacenamos en el arreglo resultante
+            result[i / 2] = (byte) Integer.parseInt(hex, 16);
+        }
+
+        return result;
+    }
+
+    public String encrypt(byte[] plaintext, SecretKey key) throws Exception {
         Cipher cipher = Cipher.getInstance("AES");
         SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
         IvParameterSpec ivSpec = new IvParameterSpec(this.IV);
         cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
         byte[] cipherText = cipher.doFinal(plaintext);
-        return cipherText;
+        return bytesToHex(cipherText);
     }
 
-    public  String decrypt(byte[] cipherText, SecretKey key) {
+    public  String decrypt(String cipherText, SecretKey key) {
         try {
             Cipher cipher = Cipher.getInstance("AES");
             SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
             IvParameterSpec ivSpec = new IvParameterSpec(this.IV);
             cipher.init(Cipher.DECRYPT_MODE, keySpec, ivSpec);
-            byte[] decryptedText = cipher.doFinal(cipherText);
+            byte[] cifrado = hexToBytes(cipherText);
+            byte[] decryptedText = cipher.doFinal(cifrado);
             return new String(decryptedText);
         } catch (Exception e) {
             e.printStackTrace();

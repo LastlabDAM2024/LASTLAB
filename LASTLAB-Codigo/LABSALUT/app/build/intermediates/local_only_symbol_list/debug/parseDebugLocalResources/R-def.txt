@@ -22,6 +22,7 @@ id descripText_Cita
 id dia_registro
 id editarCitaMedicaBoton_main
 id editarMedicamentoBoton_main
+id emailText_main
 id fechaEditText_Cita
 id fechaText_Cita
 id horaEditText_Cita
@@ -63,8 +64,7 @@ id tituloText_registro
 id titulo_Cita
 id tvTitulo
 id userButton
-id username_main
-id usuarioText_main
+id userEmail_main
 id usuarioText_menu
 layout activity_cita_medica
 layout activity_main

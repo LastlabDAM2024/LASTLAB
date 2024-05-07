@@ -21,7 +21,7 @@ import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected EditText usernameEditText;
+    protected EditText emailEditText;
     protected EditText passwordEditText;
     protected Button loginButton;
     protected Button registroButton;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private String email;
     private String password;
     private BaseDatos db;
+    private Usuario user = new Usuario();
 
 
     @Override
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         db = new BaseDatos(this);
         // Obtener referencias de los elementos de la interfaz
         titleLabel = findViewById(R.id.logo_main);
-        usernameEditText = findViewById(R.id.username_main);
+        emailEditText = findViewById(R.id.userEmail_main);
         passwordEditText = findViewById(R.id.password_main);
         loginButton = findViewById(R.id.acceptButton_main);
         registroButton = findViewById(R.id.newUserBoton_main);
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email = usernameEditText.getText().toString();
+                email = emailEditText.getText().toString();
                 password = passwordEditText.getText().toString();
                 // Verificar si el usuario y la contraseña son correctos
                 try {
@@ -94,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
             CifradoAES aes = new CifradoAES();
             String semilla = email+password;
             SecretKey secretKey=aes.generarSecretKey(semilla);
-            byte[] encrypt=null;
-            byte[] encrypt2=null;
+            String encrypt=null;
+            String encrypt2=null;
             try {
                 encrypt = aes.encrypt(password.getBytes(), secretKey);
                 encrypt2 = aes.encrypt(email.getBytes(), secretKey);
@@ -103,12 +104,18 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            Usuario usuario = db.getUser(Arrays.toString(encrypt2));
-            if (Arrays.toString(encrypt).equals(usuario.getContrasena())&&
-                    Arrays.toString(encrypt2).equals(usuario.getNombre())){
+            Usuario usuario = db.getUser(encrypt2);
+            if (encrypt.equals(usuario.getContrasena())&&
+                    encrypt2.equals(usuario.getNombre())){
                 result = true;
+                user.setIdUsuario(usuario.getIdUsuario());
+                user.setNombre(aes.decrypt(usuario.getNombre(),secretKey));
+                user.setFechaNacimiento(usuario.getFechaNacimiento());
+                user.setEmail(aes.decrypt(usuario.getEmail(),secretKey));
+                user.setContrasena(usuario.getContrasena());
             }
         }
         return result; // En este ejemplo, siempre devuelve true para simplificar
     }
+
 }

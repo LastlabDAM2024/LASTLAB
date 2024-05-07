@@ -24,18 +24,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/username_main"
+        android:id="@+id/userEmail_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Nombre de usuario"
+        android:hint="Correo electronico"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuarioText_main" />
+        app:layout_constraintTop_toBottomOf="@+id/emailText_main" />
 
     <Button
         android:id="@+id/acceptButton_main"
@@ -55,7 +55,7 @@
         android:id="@+id/password_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/username_main"
+        android:layout_below="@id/userEmail_main"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -82,13 +82,13 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_main" />
 
     <TextView
-        android:id="@+id/usuarioText_main"
+        android:id="@+id/emailText_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:text="Usuario:"
+        android:text="Email:"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +105,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_main" />
+        app:layout_constraintTop_toBottomOf="@+id/userEmail_main" />
 
     <Button
         android:id="@+id/newUserBoton_main"

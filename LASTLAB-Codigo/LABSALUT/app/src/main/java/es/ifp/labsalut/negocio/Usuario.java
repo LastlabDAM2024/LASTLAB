@@ -12,7 +12,6 @@ public class Usuario {
     private String fechaNacimiento;
     private String email;
     private String contrasena;
-    private SecretKey key;
     private ArrayList<Medicamento> medicamentos;
     private ArrayList<CitaMedica> citaMedica;
     private Suscripcion suscripcion;
@@ -23,17 +22,15 @@ public class Usuario {
         this.fechaNacimiento = "";
         this.email = "";
         this.contrasena = "";
-        this.key = null;
         this.medicamentos = new ArrayList<Medicamento>();
         this.citaMedica = new ArrayList<CitaMedica>();
         this.suscripcion = new Suscripcion();
     }
-    public Usuario(String nombre, String fechaNacimiento, String email, String pass, SecretKey clave) {
+    public Usuario(String nombre, String fechaNacimiento, String email, String pass) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.email = email;
         this.contrasena = pass;
-        this.key = clave;
         this.medicamentos = new ArrayList<Medicamento>();
         this.citaMedica = new ArrayList<CitaMedica>();
         this.suscripcion = new Suscripcion();
@@ -121,12 +118,5 @@ public class Usuario {
         this.suscripcion = suscripcion;
     }
 
-    public SecretKey getKey() {
-        return key;
-    }
-
-    public void setKey(String e) {
-        this.key= new SecretKeySpec(e.getBytes(), "AES");;
-    }
 
 }
