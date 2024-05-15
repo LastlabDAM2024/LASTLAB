@@ -1,15 +1,15 @@
 package es.ifp.labsalut.seguridad;
 
-import android.util.Base64;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+
 public class CifradoAES {
 private byte[] IV = new byte[32];
     public CifradoAES(){

@@ -1,12 +1,9 @@
 package es.ifp.labsalut.negocio;
 
-import java.math.BigInteger;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-
-public class Usuario {
+public class Usuario implements Serializable {
     private int idUsuario;
     private String nombre;
     private String fechaNacimiento;

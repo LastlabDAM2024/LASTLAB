@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_menu">
+
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="es.ifp.labsalut.ui.HomeFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_medicamentos"
+        android:name="es.ifp.labsalut.ui.MedicamentosFragment"
+        android:label="Medicamentos"
+        tools:layout="@layout/fragment_medicamentos" />
+
+    <fragment
+        android:id="@+id/nav_suscripcion"
+        android:name="es.ifp.labsalut.ui.SuscripcionFragment"
+        android:label="suscripcion"
+        tools:layout="@layout/fragment_suscripcion" />
+
+    <fragment
+        android:id="@+id/nav_ajustes"
+        android:name="es.ifp.labsalut.ui.SettingsFragment"
+        android:label="ajustes"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_citas"
+        android:name="es.ifp.labsalut.ui.CitasFragment"
+        android:label="Citas Medicas"
+        tools:layout="@layout/fragment_citas" />
+
+</navigation>

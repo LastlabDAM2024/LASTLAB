@@ -1,22 +1,17 @@
 package es.ifp.labsalut.db;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
-
-import javax.crypto.SecretKey;
 
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Suscripcion;
 import es.ifp.labsalut.negocio.Usuario;
-import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class BaseDatos extends SQLiteOpenHelper {
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu"
+            android:title="Menú principal" />
+        <item
+            android:id="@+id/nav_medicamentos"
+            android:title="Medicamentos" />
+        <item
+            android:id="@+id/nav_citas"
+            android:title="Citas Médicas" />
+        <item
+            android:id="@+id/nav_suscripcion"
+            android:title="Suscripción" />
+        <item
+            android:id="@+id/nav_ajustes"
+            android:title="Ajustes" />
+    </group>
+</menu>
