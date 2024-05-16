@@ -39,10 +39,10 @@ es.ifp.labsalut.app-savedstate-ktx-1.2.1-37 C:\Users\josea\.gradle\caches\transf
 es.ifp.labsalut.app-lifecycle-viewmodel-2.6.1-38 C:\Users\josea\.gradle\caches\transforms-4\ea69fb6694622b52cd63e4e27c0551d4\transformed\lifecycle-viewmodel-2.6.1\res
 es.ifp.labsalut.app-startup-runtime-1.1.1-39 C:\Users\josea\.gradle\caches\transforms-4\f49b360f31e5bb8cae1f1e9986c4b915\transformed\startup-runtime-1.1.1\res
 es.ifp.labsalut.app-cardview-1.0.0-40 C:\Users\josea\.gradle\caches\transforms-4\fdb13484025102ffb5bd9ea92e1833f9\transformed\cardview-1.0.0\res
-es.ifp.labsalut.app-pngs-41 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\build\generated\res\pngs\debug
-es.ifp.labsalut.app-resValues-42 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\build\generated\res\resValues\debug
-es.ifp.labsalut.app-packageDebugResources-43 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-es.ifp.labsalut.app-packageDebugResources-44 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-es.ifp.labsalut.app-debug-45 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\build\intermediates\merged_res\debug\mergeDebugResources
-es.ifp.labsalut.app-debug-46 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\src\debug\res
-es.ifp.labsalut.app-main-47 C:\Users\josea\AndroidStudioProjects\LabSalut2\app\src\main\res
+es.ifp.labsalut.app-pngs-41 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\build\generated\res\pngs\debug
+es.ifp.labsalut.app-resValues-42 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\build\generated\res\resValues\debug
+es.ifp.labsalut.app-packageDebugResources-43 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+es.ifp.labsalut.app-packageDebugResources-44 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+es.ifp.labsalut.app-debug-45 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\build\intermediates\merged_res\debug\mergeDebugResources
+es.ifp.labsalut.app-debug-46 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\src\debug\res
+es.ifp.labsalut.app-main-47 C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\src\main\res

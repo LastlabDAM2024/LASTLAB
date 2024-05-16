@@ -4,17 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-43:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\da7cc05a09a5e353e62d3053a9403f22\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\AndroidStudioProjects\\LabSalut2\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "source": "C:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\src\\main\\res\\values-land\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "264",
                         "endColumns": "41",
                         "endOffsets": "301"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\da7cc05a09a5e353e62d3053a9403f22\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
                     }
                 },
                 {
