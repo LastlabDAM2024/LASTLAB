@@ -20,12 +20,12 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-47:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-45:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-47:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-45:\\layout_activity_registro.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-47:\\layout\\activity_registro.xml"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-45:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-47:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-45:\\layout_fragment_suscripcion.xml.flat",
