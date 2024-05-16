@@ -1,6 +1,8 @@
 package es.ifp.labsalut.negocio;
 
-public class Medicamento {
+import java.io.Serializable;
+
+public class Medicamento implements Serializable {
     private int idMedicamento;
     private String nombre;
     private int dosis;

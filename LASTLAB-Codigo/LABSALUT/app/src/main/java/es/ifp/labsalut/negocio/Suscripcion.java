@@ -1,6 +1,8 @@
 package es.ifp.labsalut.negocio;
 
-public class Suscripcion {
+import java.io.Serializable;
+
+public class Suscripcion implements Serializable {
 
     private String email;
     private boolean esSuscrito;

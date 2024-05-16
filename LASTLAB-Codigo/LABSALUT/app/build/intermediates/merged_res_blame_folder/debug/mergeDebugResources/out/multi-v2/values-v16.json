@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-43:/values-v16/values-v16.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-44:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\da7cc05a09a5e353e62d3053a9403f22\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\8bc60ae41b625f9e09662d660e087b32\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

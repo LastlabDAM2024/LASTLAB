@@ -1,6 +1,8 @@
 package es.ifp.labsalut.negocio;
 
-public class CitaMedica {
+import java.io.Serializable;
+
+public class CitaMedica implements Serializable {
     private int idCita;
     private String nombre;
     private String fecha;

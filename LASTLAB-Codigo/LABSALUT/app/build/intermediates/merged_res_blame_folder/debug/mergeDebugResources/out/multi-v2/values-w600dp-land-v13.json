@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-43:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-44:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3bcfc4b801e2daefe83f2664b9491a0c\\transformed\\material-1.10.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

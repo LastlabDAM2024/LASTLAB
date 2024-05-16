@@ -37,10 +37,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     protected TextView nombreUsuario_nav;
     protected TextView email_nav;
     private Bundle extras;
-    private String email;
-    private String pass;
-    private BaseDatos db;
-    private final Usuario user = new Usuario();
+    private Usuario user = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +58,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         extras = getIntent().getExtras();
 
         if (extras != null) {
-            email = extras.getString("EMAIL");
-            pass = extras.getString("PASS");
-            recuperarUsuario();
+            user = (Usuario) extras.getSerializable("USUARIO");
         }
 
         navigationView.setNavigationItemSelectedListener(this);
@@ -100,7 +95,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
 
         nombreUsuario_nav.setText(user.getNombre());
-        email_nav.setText(email);
+        email_nav.setText(user.getEmail());
     }
 
     @Override
@@ -111,47 +106,25 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 titulo.setText("Menú principal");
                 break;
             case R.id.nav_medicamentos:
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, MedicamentosFragment.newInstance(email, pass)).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, MedicamentosFragment.newInstance(user)).commit();
                 titulo.setText("Medicamentos");
                 break;
             case R.id.nav_citas:
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, CitasFragment.newInstance(email, pass)).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, CitasFragment.newInstance(user)).commit();
                 titulo.setText("Citas Médicas");
                 break;
             case R.id.nav_suscripcion:
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SuscripcionFragment.newInstance(email, pass)).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SuscripcionFragment.newInstance(user)).commit();
                 titulo.setText("Suscripción");
                 break;
             case R.id.nav_ajustes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SettingsFragment.newInstance(email, pass)).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SettingsFragment.newInstance(user)).commit();
                 titulo.setText("Ajustes");
                 break;
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-
-    private void recuperarUsuario() {
-        db = new BaseDatos(this);
-        CifradoAES aes = new CifradoAES();
-        String semilla = email + pass;
-        SecretKey secretKey = aes.generarSecretKey(semilla);
-        String encrypt2 = null;
-        try {
-            encrypt2 = aes.encrypt(email.getBytes(), secretKey);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        Usuario usuario = db.getUser(encrypt2);
-        if (encrypt2.equals(usuario.getEmail())) {
-            user.setIdUsuario(usuario.getIdUsuario());
-            user.setNombre(aes.decrypt(usuario.getNombre(), secretKey));
-            user.setFechaNacimiento(usuario.getFechaNacimiento());
-            user.setEmail(aes.decrypt(usuario.getEmail(), secretKey));
-            user.setContrasena(usuario.getContrasena());
-        }
     }
 
 

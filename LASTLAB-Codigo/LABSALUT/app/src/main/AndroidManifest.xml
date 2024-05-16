@@ -16,7 +16,7 @@
             android:name=".MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.OptionsActivity"
+            android:name=".seguridad.FingerprintActivity"
             android:exported="false" />
         <activity
             android:name=".ui.RegistroActivity"

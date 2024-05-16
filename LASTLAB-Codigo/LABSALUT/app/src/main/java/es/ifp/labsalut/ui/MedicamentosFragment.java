@@ -8,11 +8,14 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.negocio.Usuario;
 
 public class MedicamentosFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_USER = "USUARIO";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -27,6 +30,14 @@ public class MedicamentosFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static MedicamentosFragment newInstance(Usuario user) {
+        MedicamentosFragment fragment = new MedicamentosFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_USER, user);
         fragment.setArguments(args);
         return fragment;
     }

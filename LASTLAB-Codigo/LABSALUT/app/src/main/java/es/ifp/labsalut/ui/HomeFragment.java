@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
     protected Button editarCitaMedica;
     protected ListView listaMedicamentos;
     protected ListView listaCitas;
-    private Usuario user = new Usuario();
+    private Usuario user = null;
 
 
     public HomeFragment() {
