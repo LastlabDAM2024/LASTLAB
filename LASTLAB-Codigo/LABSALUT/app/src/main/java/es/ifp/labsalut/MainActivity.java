@@ -2,8 +2,11 @@ package es.ifp.labsalut;
 
 import static es.ifp.labsalut.ui.SettingsFragment.MY_PREFS_HUELLA;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,17 +15,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
 
 import javax.crypto.SecretKey;
 
 import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
-import es.ifp.labsalut.seguridad.FingerprintActivity;
+import es.ifp.labsalut.seguridad.FingerprintHandler;
 import es.ifp.labsalut.ui.RegistroActivity;
+import es.ifp.labsalut.ui.SettingsFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FingerprintHandler.AuthenticationCallback {
 
     public static final String MY_PREFS_USER = "RECORDARUSUARIO";
     protected EditText emailEditText;
@@ -36,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private String password;
     private BaseDatos db;
     private Usuario user = null;
-    private Bundle extras;
+    private FingerprintHandler finger = null;
+    private boolean activacionHuella = false;
 
 
     @Override
@@ -66,23 +73,20 @@ public class MainActivity extends AppCompatActivity {
             String password = prefs.getString("PASS", "");
             emailEditText.setText(email);
             passwordEditText.setText(password);
-            extras=getIntent().getExtras();
-            if(extras!=null){
-                SharedPreferences.Editor editor_huella = getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
-                editor_huella.putString("HUELLA", "NO");
-                editor_huella.apply();
-            }
-            String huellaActiva = prefs_huella.getString("HUELLA", "");
+
+            String huellaActiva = prefs.getString("FINGER", "");
             if (huellaActiva.equals("SI")) {
+                activacionHuella = false;
                 try {
                     user = validarCredenciales(db, email, password);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                pasarPantalla = new Intent(MainActivity.this, FingerprintActivity.class);
-                pasarPantalla.putExtra("USUARIO", user);
-                finish();
-                startActivity(pasarPantalla);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    finger = new FingerprintHandler(this, this);
+                    finger.startAuth();
+                }
+
             }
         } else {
             recordarUser.setChecked(false);
@@ -110,20 +114,49 @@ public class MainActivity extends AppCompatActivity {
                                 editor.putString("PASS", "");
                             }
                             editor.apply();
-                            if(extras!=null){
-                                SharedPreferences.Editor editor_huella = getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
-                                editor_huella.putString("HUELLA", "SI");
-                                editor_huella.apply();
-                            }
 
-                            // Si son correctos, redirigir al usuario a la clase Usuario
-                            pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
-                            pasarPantalla.putExtra("USUARIO", user);
-                            finish();
-                            startActivity(pasarPantalla);
+                            String primeravezHuella = prefs_huella.getString("PRIMERAVEZ" + user.getNombre(), "");
+
+                            if (!primeravezHuella.equals("NO")) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                builder.setTitle("¿Quiere activar la huella digital para iniciar sesión?");
+                                builder.setMessage("");
+                                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+                                            activacionHuella = true;
+                                            MainActivity.this.runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    FingerprintHandler fingerFirst = new FingerprintHandler(MainActivity.this, MainActivity.this);
+                                                    fingerFirst.startAuth();
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+                                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+                                        pasarPantalla.putExtra("USUARIO", user);
+                                        activacionHuella = false;
+                                        finish();
+                                        startActivity(pasarPantalla);
+                                    }
+                                });
+                                AlertDialog dialog = builder.create();
+                                dialog.show();
+                            } else {
+                                pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+                                pasarPantalla.putExtra("USUARIO", user);
+                                activacionHuella = false;
+                                finish();
+                                startActivity(pasarPantalla);
+                            }
                         } else {
                             // Si no son correctos, mostrar un mensaje de error
-                            // (puedes implementar esto según tu preferencia)
                             Toast.makeText(MainActivity.this, "El usuario o la contraseña no es correcta", Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
@@ -170,11 +203,49 @@ public class MainActivity extends AppCompatActivity {
             usuario.setFechaNacimiento(aes.decrypt(usuario.getFechaNacimiento(), secretKey));
             usuario.setEmail(aes.decrypt(usuario.getEmail(), secretKey));
             usuario.setContrasena(aes.decrypt(usuario.getContrasena(), secretKey));
-        }else{
-            usuario =null;
+        } else {
+            usuario = null;
         }
 
         return usuario;
     }
+
+    @Override
+    public void onAuthenticationSucceeded() {
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor_user = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
+        if (activacionHuella) {
+            editor.putString("HUELLA" + user.getNombre(), "SI");
+            editor.putString("PRIMERAVEZ" + user.getNombre(), "NO");
+            editor_user.putString("FINGER", "SI");
+        }
+        editor.apply();
+        editor_user.apply();
+        pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+        pasarPantalla.putExtra("USUARIO", user);
+        finish();
+        startActivity(pasarPantalla);
+    }
+
+    @Override
+    public void onAuthenticationFailed() {
+        // Handle failed authentication
+        Toast.makeText(this, "Autenticación fallida", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onAuthenticationError(int errorCode, CharSequence errString) {
+        // Handle authentication error
+        if (errorCode != BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
+            Toast.makeText(this, "Error de autenticación: " + errString, Toast.LENGTH_SHORT).show();
+            if (activacionHuella) {
+                pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+                pasarPantalla.putExtra("USUARIO", user);
+                finish();
+                startActivity(pasarPantalla);
+            }
+        }
+    }
+
 
 }

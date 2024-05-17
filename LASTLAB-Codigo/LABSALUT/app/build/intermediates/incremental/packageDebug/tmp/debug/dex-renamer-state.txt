@@ -1,4 +1,4 @@
-#Fri May 17 00:57:27 CEST 2024
+#Sat May 18 01:19:11 CEST 2024
 base.0=C\:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex

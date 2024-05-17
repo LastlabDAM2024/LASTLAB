@@ -46,7 +46,6 @@ id checkRecordatorio_Cita
 id content_menu
 id crearCitaMedicaBoton_menu
 id crearMedicamentoBoton_menu
-id desc
 id descripEditText_Cita
 id descripText_Cita
 id drawer_layout
@@ -54,21 +53,18 @@ id editarCitaMedicaBoton_main
 id editarMedicamentoBoton_main
 id emailText_main
 id email_nav_header
-id errorText_finger
 id fab
 id fechaEditText_Cita
 id fechaText_Cita
 id fecha_cita
 id fecha_registro
 id fragment_home
-id headerLayout
 id horaText_Cita
 id hora_cita
 id horarioBoton_citas
 id horasText_Cita
 id horasText_medicamento
 id huellaText_ajustes
-id icon
 id imageView
 id inicioSesion_main
 id layoutBotonesCitas_Menu
@@ -114,7 +110,6 @@ id tvTitulo
 id userButton
 id userEmail_main
 id usuario_nav_header
-layout activity_fingerprint
 layout activity_main
 layout activity_menu
 layout activity_registro

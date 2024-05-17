@@ -16,24 +16,24 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-48:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-pngs-42:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-48:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-pngs-42:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-pngs-42:\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\xml_root_preferences.xml.flat",
-        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-48:\\xml\\root_preferences.xml"
-    },
-    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-pngs-42:\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\xml_root_preferences.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-48:\\xml\\root_preferences.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-46:\\layout_app_bar_menu.xml.flat",

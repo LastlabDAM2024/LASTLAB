@@ -6,8 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.negocio.Usuario;
@@ -82,7 +85,10 @@ public class HomeFragment extends Fragment {
             user = (Usuario) getArguments().getSerializable(ARG_USER);
 
         }
+
     }
+
+
 
     @Override
     public void onDestroyView() {
