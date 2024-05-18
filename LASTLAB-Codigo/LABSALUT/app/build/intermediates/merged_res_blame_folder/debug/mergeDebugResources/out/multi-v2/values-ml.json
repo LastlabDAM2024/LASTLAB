@@ -4,24 +4,24 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-44:/values-ml/values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\6ac1f8763f53212a8b7c59bb67e48986\\transformed\\biometric-1.1.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\ff3032bbf395f5e26360b3177b17a458\\transformed\\preference-1.2.0\\res\\values-ml\\values-ml.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,170,259,382,510,639,769,905,1046,1148,1307,1453",
-                        "endColumns": "114,88,122,127,128,129,135,140,101,158,145,128",
-                        "endOffsets": "165,254,377,505,634,764,900,1041,1143,1302,1448,1577"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,177,266,352,493,662,744",
+                        "endColumns": "71,88,85,140,168,81,75",
+                        "endOffsets": "172,261,347,488,657,739,815"
                     },
                     "to": {
-                        "startLines": "41,43,47,48,49,50,51,52,53,54,55,56",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3821,4008,4350,4473,4601,4730,4860,4996,5137,5239,5398,5544",
-                        "endColumns": "114,88,122,127,128,129,135,140,101,158,145,128",
-                        "endOffsets": "3931,4092,4468,4596,4725,4855,4991,5132,5234,5393,5539,5668"
+                        "startLines": "42,45,116,118,121,122,123",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "3936,4162,10627,10797,11122,11291,11373",
+                        "endColumns": "71,88,85,140,168,81,75",
+                        "endOffsets": "4003,4246,10708,10933,11286,11368,11444"
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,41 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\c458bde47ed7da9454a09cf0dae57d83\\transformed\\navigation-ui-2.6.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\6ac1f8763f53212a8b7c59bb67e48986\\transformed\\biometric-1.1.0\\res\\values-ml\\values-ml.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,180",
-                        "endColumns": "124,118",
-                        "endOffsets": "175,294"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,170,259,382,510,639,769,905,1046,1148,1307,1453",
+                        "endColumns": "114,88,122,127,128,129,135,140,101,158,145,128",
+                        "endOffsets": "165,254,377,505,634,764,900,1041,1143,1302,1448,1577"
                     },
                     "to": {
-                        "startLines": "114,115",
-                        "startColumns": "4,4",
-                        "startOffsets": "10383,10508",
-                        "endColumns": "124,118",
-                        "endOffsets": "10503,10622"
+                        "startLines": "41,43,47,48,49,50,51,52,53,54,55,56",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3821,4008,4350,4473,4601,4730,4860,4996,5137,5239,5398,5544",
+                        "endColumns": "114,88,122,127,128,129,135,140,101,158,145,128",
+                        "endOffsets": "3931,4092,4468,4596,4725,4855,4991,5132,5234,5393,5539,5668"
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "120",
-                        "startColumns": "4",
-                        "startOffsets": "11021",
-                        "endColumns": "100",
-                        "endOffsets": "11117"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,20 +74,37 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\ff3032bbf395f5e26360b3177b17a458\\transformed\\preference-1.2.0\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\c458bde47ed7da9454a09cf0dae57d83\\transformed\\navigation-ui-2.6.0\\res\\values-ml\\values-ml.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,177,266,352,493,662,744",
-                        "endColumns": "71,88,85,140,168,81,75",
-                        "endOffsets": "172,261,347,488,657,739,815"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,180",
+                        "endColumns": "124,118",
+                        "endOffsets": "175,294"
                     },
                     "to": {
-                        "startLines": "42,45,116,118,121,122,123",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "3936,4162,10627,10797,11122,11291,11373",
-                        "endColumns": "71,88,85,140,168,81,75",
-                        "endOffsets": "4003,4246,10708,10933,11286,11368,11444"
+                        "startLines": "114,115",
+                        "startColumns": "4,4",
+                        "startOffsets": "10383,10508",
+                        "endColumns": "124,118",
+                        "endOffsets": "10503,10622"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "120",
+                        "startColumns": "4",
+                        "startOffsets": "11021",
+                        "endColumns": "100",
+                        "endOffsets": "11117"
                     }
                 }
             ]

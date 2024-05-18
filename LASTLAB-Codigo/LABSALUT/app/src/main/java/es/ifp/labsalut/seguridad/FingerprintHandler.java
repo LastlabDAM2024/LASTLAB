@@ -81,7 +81,7 @@ public class FingerprintHandler extends BiometricPrompt.AuthenticationCallback {
         });
 
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("LabSalut")
+                .setTitle("Desbloquea LabSalut para poder usarlo")
                 .setNegativeButtonText("Cancelar")
                 .build();
 

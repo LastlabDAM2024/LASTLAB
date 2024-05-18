@@ -85,8 +85,8 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         super.onViewCreated(root, savedInstanceState);
         huella = (Switch) root.findViewById(R.id.switchHuella_ajustes);
         Context context = requireContext();
-        SharedPreferences prefs = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE);
-        String huellaActiva = prefs.getString("HUELLA"+user.getNombre(), null);
+        SharedPreferences prefs_huella = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE);
+        String huellaActiva = prefs_huella.getString("HUELLA" + user.getNombre(), null);
         if (huellaActiva != null) {
             if (huellaActiva.equals("SI")) {
                 huella.setChecked(true);
@@ -100,41 +100,25 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     @Override
     public void onAuthenticationSucceeded() {
         Context context = requireContext();
-        SharedPreferences.Editor editor = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor_huella = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
         SharedPreferences.Editor editor_user = context.getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
 
         if (huella.isChecked()) {
-            editor.putString("HUELLA"+user.getNombre(), "SI");
+            editor_huella.putString("HUELLA" + user.getNombre(), "SI");
             editor_user.putString("FINGER", "SI");
 
         } else {
-            editor.putString("HUELLA"+user.getNombre(), "NO");
+            editor_huella.putString("HUELLA" + user.getNombre(), "NO");
             editor_user.putString("FINGER", "NO");
         }
-        editor.apply();
+        editor_huella.apply();
         editor_user.apply();
 
     }
 
     @Override
     public void onAuthenticationFailed() {
-        Activity activity = getActivity();
 
-        if (activity != null) {
-            // Ejecutamos el código en el hilo principal de la actividad
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    huella.setOnCheckedChangeListener(null);
-                    if (huella.isChecked()) {
-                        huella.setChecked(false);
-                    } else {
-                        huella.setChecked(true);
-                    }
-                    reiniciarHuellaListener(activity);
-                }
-            });
-        }
     }
 
     @Override
@@ -153,9 +137,14 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
                         huella.setChecked(true);
                     }
                     reiniciarHuellaListener(activity);
+                    if(errorCode == BiometricPrompt.ERROR_TIMEOUT || errorCode == BiometricPrompt.ERROR_LOCKOUT ){
+                        Toast.makeText(activity, "Vuelva a intentarlo en 30 segundos", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             });
         }
+
     }
 
     public void onDestroyView() {

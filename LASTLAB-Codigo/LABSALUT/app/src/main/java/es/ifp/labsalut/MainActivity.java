@@ -15,9 +15,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.view.GravityCompat;
 
 import javax.crypto.SecretKey;
 
@@ -25,6 +27,7 @@ import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
+import es.ifp.labsalut.ui.HomeFragment;
 import es.ifp.labsalut.ui.RegistroActivity;
 import es.ifp.labsalut.ui.SettingsFragment;
 
@@ -118,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                             String primeravezHuella = prefs_huella.getString("PRIMERAVEZ" + user.getNombre(), "");
 
                             if (!primeravezHuella.equals("NO")) {
+
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                 builder.setTitle("¿Quiere activar la huella digital para iniciar sesión?");
                                 builder.setMessage("");
@@ -148,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                 });
                                 AlertDialog dialog = builder.create();
                                 dialog.show();
+
                             } else {
                                 pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
                                 pasarPantalla.putExtra("USUARIO", user);
@@ -179,6 +184,14 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                 startActivity(pasarPantalla);
             }
         });
+
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
 
     }
 
@@ -223,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             editor_huella.putString("HUELLA" + user.getNombre(), "SI");
             editor_huella.putString("PRIMERAVEZ" + user.getNombre(), "NO");
             editor_user.putString("FINGER", "SI");
+            activacionHuella = false;
         }
         editor_huella.apply();
         editor_user.apply();
@@ -234,21 +248,25 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
 
     @Override
     public void onAuthenticationFailed() {
-        // Handle failed authentication
-        Toast.makeText(this, "Autenticación fallida", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void onAuthenticationError(int errorCode, CharSequence errString) {
         // Handle authentication error
-        if (errorCode != BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
-            Toast.makeText(this, "Error de autenticación: " + errString, Toast.LENGTH_SHORT).show();
+        if (errorCode != BiometricPrompt.ERROR_NEGATIVE_BUTTON && errorCode != BiometricPrompt.ERROR_USER_CANCELED) {
             if (activacionHuella) {
                 pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
                 pasarPantalla.putExtra("USUARIO", user);
                 finish();
                 startActivity(pasarPantalla);
             }
+            MainActivity.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(MainActivity.this, "Vuelva a intentarlo en 30 segundos", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

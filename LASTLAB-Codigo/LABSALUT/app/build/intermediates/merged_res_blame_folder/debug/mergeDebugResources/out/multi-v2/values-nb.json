@@ -4,24 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-44:/values-nb/values-nb.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\c458bde47ed7da9454a09cf0dae57d83\\transformed\\navigation-ui-2.6.0\\res\\values-nb\\values-nb.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,113",
-                        "endOffsets": "156,270"
-                    },
-                    "to": {
-                        "startLines": "114,115",
-                        "startColumns": "4,4",
-                        "startOffsets": "9853,9959",
-                        "endColumns": "105,113",
-                        "endOffsets": "9954,10068"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,24 +40,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\6ac1f8763f53212a8b7c59bb67e48986\\transformed\\biometric-1.1.0\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\c458bde47ed7da9454a09cf0dae57d83\\transformed\\navigation-ui-2.6.0\\res\\values-nb\\values-nb.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,161,249,371,515,650,786,913,1054,1154,1295,1439",
-                        "endColumns": "105,87,121,143,134,135,126,140,99,140,143,126",
-                        "endOffsets": "156,244,366,510,645,781,908,1049,1149,1290,1434,1561"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,113",
+                        "endOffsets": "156,270"
                     },
                     "to": {
-                        "startLines": "41,43,47,48,49,50,51,52,53,54,55,56",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3648,3824,4155,4277,4421,4556,4692,4819,4960,5060,5201,5345",
-                        "endColumns": "105,87,121,143,134,135,126,140,99,140,143,126",
-                        "endOffsets": "3749,3907,4272,4416,4551,4687,4814,4955,5055,5196,5340,5467"
+                        "startLines": "114,115",
+                        "startColumns": "4,4",
+                        "startOffsets": "9853,9959",
+                        "endColumns": "105,113",
+                        "endOffsets": "9954,10068"
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\ff3032bbf395f5e26360b3177b17a458\\transformed\\preference-1.2.0\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\ff3032bbf395f5e26360b3177b17a458\\transformed\\preference-1.2.0\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -91,7 +74,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\6ac1f8763f53212a8b7c59bb67e48986\\transformed\\biometric-1.1.0\\res\\values-nb\\values-nb.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,249,371,515,650,786,913,1054,1154,1295,1439",
+                        "endColumns": "105,87,121,143,134,135,126,140,99,140,143,126",
+                        "endOffsets": "156,244,366,510,645,781,908,1049,1149,1290,1434,1561"
+                    },
+                    "to": {
+                        "startLines": "41,43,47,48,49,50,51,52,53,54,55,56",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3648,3824,4155,4277,4421,4556,4692,4819,4960,5060,5201,5345",
+                        "endColumns": "105,87,121,143,134,135,126,140,99,140,143,126",
+                        "endOffsets": "3749,3907,4272,4416,4551,4687,4814,4955,5055,5196,5340,5467"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

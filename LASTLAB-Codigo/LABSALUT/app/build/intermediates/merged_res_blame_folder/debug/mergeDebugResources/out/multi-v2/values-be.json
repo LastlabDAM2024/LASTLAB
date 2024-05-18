@@ -4,24 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-44:/values-be/values-be.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "122",
-                        "startColumns": "4",
-                        "startOffsets": "11025",
-                        "endColumns": "100",
-                        "endOffsets": "11121"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +23,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\ff3032bbf395f5e26360b3177b17a458\\transformed\\preference-1.2.0\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\c458bde47ed7da9454a09cf0dae57d83\\transformed\\navigation-ui-2.6.0\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,164",
+                        "endColumns": "108,125",
+                        "endOffsets": "159,285"
+                    },
+                    "to": {
+                        "startLines": "116,117",
+                        "startColumns": "4,4",
+                        "startOffsets": "10407,10516",
+                        "endColumns": "108,125",
+                        "endOffsets": "10511,10637"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\f60780c7e36ac372340a1988e515567b\\transformed\\core-1.9.0\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "122",
+                        "startColumns": "4",
+                        "startOffsets": "11025",
+                        "endColumns": "100",
+                        "endOffsets": "11121"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\ff3032bbf395f5e26360b3177b17a458\\transformed\\preference-1.2.0\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -57,24 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\6ac1f8763f53212a8b7c59bb67e48986\\transformed\\biometric-1.1.0\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,167,261,391,542,681,810,937,1088,1187,1329,1481",
-                        "endColumns": "111,93,129,150,138,128,126,150,98,141,151,126",
-                        "endOffsets": "162,256,386,537,676,805,932,1083,1182,1324,1476,1603"
-                    },
-                    "to": {
-                        "startLines": "43,45,49,50,51,52,53,54,55,56,57,58",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3899,4085,4434,4564,4715,4854,4983,5110,5261,5360,5502,5654",
-                        "endColumns": "111,93,129,150,138,128,126,150,98,141,151,126",
-                        "endOffsets": "4006,4174,4559,4710,4849,4978,5105,5256,5355,5497,5649,5776"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\0fa6bcc9e92bc85f5624bd3fa3e9ad38\\transformed\\appcompat-1.6.1\\res\\values-be\\values-be.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,20 +91,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\c458bde47ed7da9454a09cf0dae57d83\\transformed\\navigation-ui-2.6.0\\res\\values-be\\values-be.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\6ac1f8763f53212a8b7c59bb67e48986\\transformed\\biometric-1.1.0\\res\\values-be\\values-be.xml",
                     "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,164",
-                        "endColumns": "108,125",
-                        "endOffsets": "159,285"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,167,261,391,542,681,810,937,1088,1187,1329,1481",
+                        "endColumns": "111,93,129,150,138,128,126,150,98,141,151,126",
+                        "endOffsets": "162,256,386,537,676,805,932,1083,1182,1324,1476,1603"
                     },
                     "to": {
-                        "startLines": "116,117",
-                        "startColumns": "4,4",
-                        "startOffsets": "10407,10516",
-                        "endColumns": "108,125",
-                        "endOffsets": "10511,10637"
+                        "startLines": "43,45,49,50,51,52,53,54,55,56,57,58",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3899,4085,4434,4564,4715,4854,4983,5110,5261,5360,5502,5654",
+                        "endColumns": "111,93,129,150,138,128,126,150,98,141,151,126",
+                        "endOffsets": "4006,4174,4559,4710,4849,4978,5105,5256,5355,5497,5649,5776"
                     }
                 }
             ]
