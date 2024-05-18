@@ -62,19 +62,20 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         // Configurar el título de la aplicación centrado en un fondo negro y blanco
         titleLabel.setBackgroundColor(getResources().getColor(R.color.black));
         titleLabel.setTextColor(getResources().getColor(R.color.white));
-
-        SharedPreferences prefs = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE);
+        SharedPreferences prefs_user = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE);
         SharedPreferences prefs_huella = getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE);
-        String restoredText = prefs.getString("EMAIL", null);
+        SharedPreferences.Editor editor_user = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
+
+        String restoredText = prefs_user.getString("EMAIL", null);
         if (restoredText != null) {
 
             recordarUser.setChecked(true);
-            String email = prefs.getString("EMAIL", "");
-            String password = prefs.getString("PASS", "");
+            String email = prefs_user.getString("EMAIL", "");
+            String password = prefs_user.getString("PASS", "");
             emailEditText.setText(email);
             passwordEditText.setText(password);
 
-            String huellaActiva = prefs.getString("FINGER", "");
+            String huellaActiva = prefs_user.getString("FINGER", "");
             if (huellaActiva.equals("SI")) {
                 activacionHuella = false;
                 try {
@@ -105,15 +106,14 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                     try {
                         user = validarCredenciales(db, email, password);
                         if (user != null) {
-                            SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
                             if (recordarUser.isChecked()) {
-                                editor.putString("EMAIL", user.getEmail());
-                                editor.putString("PASS", user.getContrasena());
+                                editor_user.putString("EMAIL", user.getEmail());
+                                editor_user.putString("PASS", user.getContrasena());
                             } else {
-                                editor.putString("EMAIL", "");
-                                editor.putString("PASS", "");
+                                editor_user.putString("EMAIL", "");
+                                editor_user.putString("PASS", "");
                             }
-                            editor.apply();
+                            editor_user.apply();
 
                             String primeravezHuella = prefs_huella.getString("PRIMERAVEZ" + user.getNombre(), "");
 
@@ -152,6 +152,11 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                 pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
                                 pasarPantalla.putExtra("USUARIO", user);
                                 activacionHuella = false;
+                                String huella = prefs_huella.getString("HUELLA" + user.getNombre(), "");
+                                if (huella.equals("SI")) {
+                                    editor_user.putString("FINGER", "SI");
+                                }
+                                editor_user.apply();
                                 finish();
                                 startActivity(pasarPantalla);
                             }
@@ -212,14 +217,14 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
 
     @Override
     public void onAuthenticationSucceeded() {
-        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor_huella = getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
         SharedPreferences.Editor editor_user = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
         if (activacionHuella) {
-            editor.putString("HUELLA" + user.getNombre(), "SI");
-            editor.putString("PRIMERAVEZ" + user.getNombre(), "NO");
+            editor_huella.putString("HUELLA" + user.getNombre(), "SI");
+            editor_huella.putString("PRIMERAVEZ" + user.getNombre(), "NO");
             editor_user.putString("FINGER", "SI");
         }
-        editor.apply();
+        editor_huella.apply();
         editor_user.apply();
         pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
         pasarPantalla.putExtra("USUARIO", user);
