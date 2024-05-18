@@ -70,15 +70,15 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         SharedPreferences.Editor editor_user = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
 
         String restoredText = prefs_user.getString("EMAIL", null);
-        if (restoredText != null) {
 
+        if (restoredText != null && !restoredText.isEmpty()) {
             recordarUser.setChecked(true);
             String email = prefs_user.getString("EMAIL", "");
             String password = prefs_user.getString("PASS", "");
             emailEditText.setText(email);
             passwordEditText.setText(password);
 
-            String huellaActiva = prefs_user.getString("FINGER", null);
+            String huellaActiva = prefs_user.getString("FINGER", "");
             if (huellaActiva.equals("SI")) {
                 activacionHuella = false;
                 try {
@@ -113,14 +113,14 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                 editor_user.putString("EMAIL", user.getEmail());
                                 editor_user.putString("PASS", user.getContrasena());
                             } else {
-                                editor_user.putString("EMAIL", null);
-                                editor_user.putString("PASS", null);
+                                editor_user.putString("EMAIL", "");
+                                editor_user.putString("PASS", "");
                             }
                             editor_user.apply();
 
-                            String primeravezHuella = prefs_huella.getString("PRIMERAVEZ" + user.getNombre(), null);
+                            String primeravezHuella = prefs_huella.getString("PRIMERAVEZ" + user.getNombre(), "");
 
-                            if (primeravezHuella!=null) {
+                            if (primeravezHuella.equals("SI")) {
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                 builder.setTitle("¿Quiere activar la huella digital para iniciar sesión?");
@@ -157,8 +157,8 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                 pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
                                 pasarPantalla.putExtra("USUARIO", user);
                                 activacionHuella = false;
-                                String huella = prefs_huella.getString("HUELLA" + user.getNombre(), null);
-                                if (huella!=null) {
+                                String huella = prefs_huella.getString("HUELLA" + user.getNombre(), "");
+                                if (!huella.isEmpty()) {
                                     editor_user.putString("FINGER", "SI");
                                 }
                                 editor_user.apply();
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         SharedPreferences.Editor editor_user = getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
         if (activacionHuella) {
             editor_huella.putString("HUELLA" + user.getNombre(), "SI");
-            editor_huella.putString("PRIMERAVEZ" + user.getNombre(), null);
+            editor_huella.putString("PRIMERAVEZ" + user.getNombre(), "NO");
             editor_user.putString("FINGER", "SI");
             activacionHuella = false;
         }

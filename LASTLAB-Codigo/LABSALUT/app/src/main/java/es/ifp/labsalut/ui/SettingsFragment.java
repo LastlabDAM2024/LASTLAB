@@ -86,8 +86,8 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         huella = (Switch) root.findViewById(R.id.switchHuella_ajustes);
         Context context = requireContext();
         SharedPreferences prefs_huella = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE);
-        String huellaActiva = prefs_huella.getString("HUELLA" + user.getNombre(), null);
-        if (huellaActiva != null) {
+        String huellaActiva = prefs_huella.getString("HUELLA" + user.getNombre(), "");
+        if (huellaActiva.equals("SI")) {
             huella.setChecked(true);
         } else {
             huella.setChecked(false);
@@ -106,8 +106,8 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
             editor_user.putString("FINGER", "SI");
 
         } else {
-            editor_huella.putString("HUELLA" + user.getNombre(), null);
-            editor_user.putString("FINGER", null);
+            editor_huella.putString("HUELLA" + user.getNombre(), "NO");
+            editor_user.putString("FINGER", "NO");
         }
         editor_huella.apply();
         editor_user.apply();
