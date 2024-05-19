@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "es.ifp.labsalut"
-        minSdk = 19
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -45,6 +45,8 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.preference)
     implementation(libs.biometric)
+    implementation(libs.security.crypto)
+    implementation(libs.material.v1120)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

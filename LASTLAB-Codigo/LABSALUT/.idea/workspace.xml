@@ -9,57 +9,72 @@
     <layouts>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_menu.xml">
         <config>
-          <theme>@style/Theme.LabSalut.NoActionBar</theme>
+          <theme>@style/Theme.Material3.Light.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_reg.xml">
+        <config>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/content_menu.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/content_reg.xml">
+        <config>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_citas.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_medicamentos.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_registro.xml">
+        <config>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_suscripcion.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_menu.xml">
         <config>
-          <theme>@style/Theme.LabSalut</theme>
+          <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/activity_menu_drawer.xml">
@@ -78,12 +93,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1d9d12a-6586-491e-84e8-9da3beb15f7d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-    </list>
+    <list default="true" id="b1d9d12a-6586-491e-84e8-9da3beb15f7d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +102,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RFCW70EACKA)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Samsung\.android\avd\Pixel_5_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -106,7 +116,30 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LabSalut" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LabSalut" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LabSalut" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LabSalut" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -116,9 +149,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
-        <option value="valueResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -132,7 +166,7 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2gQIQbjPiyWnqg5PN7zKP7Z5PM5" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -152,18 +186,19 @@
     "cidr.known.project.marker": "true",
     "com.android.tools.idea.streaming.emulator.frame.visible": "false",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/PracticaUF1"
+    "last_directory_selection": "C:/Users/Samsung/Desktop/AndroidStudio/LabSalut/app/src/main/res/values-night",
+    "last_opened_file_path": "C:/Users/Samsung/Desktop/AndroidStudio/LASTLAB/LASTLAB-Codigo/LabSalut",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Samsung\Desktop\AndroidStudio\LabSalut\app\src\main\res\values-night" />
+      <recent name="C:\Users\Samsung\Desktop\AndroidStudio\LabSalut\app\src\main\res\values" />
       <recent name="C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\src\main\res\layout" />
       <recent name="C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\src\main\java\es\ifp\labsalut\seguridad" />
       <recent name="C:\Users\josea\AndroidStudioProjects\LabSalut2\app\src\main\res\layout" />
-      <recent name="C:\Users\josea\AndroidStudioProjects\LabSalut2\app\src\main\java\es\ifp\labsalut" />
-      <recent name="C:\Users\josea\AndroidStudioProjects\LabSalut2\app\src\main\java\es\ifp\labsalut\ui\suscripcion" />
     </key>
     <key name="android.template.1128477479">
       <recent name="es.ifp.labsalut.ui.Settings" />
@@ -231,7 +266,7 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.MainActivity" />
+      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.activities.MainActivity" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
@@ -298,7 +333,7 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.MainActivity" />
+      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.activities.MainActivity" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
@@ -365,7 +400,7 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.MainActivity" />
+      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.activities.MainActivity" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
@@ -432,7 +467,7 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.MenuActivity" />
+      <option name="ACTIVITY_CLASS" value="es.ifp.labsalut.activities.MenuActivity" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
@@ -531,24 +566,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/SettingsFragment.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/MainActivity.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/SettingsFragment.java</url>
-          <line>125</line>
+          <line>151</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/RegistroFragment.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/RegistroFragment.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MainActivity.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MainActivity.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

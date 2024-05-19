@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="21"
         android:targetSdkVersion="34" />
 
     <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
@@ -29,18 +29,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.LabSalut.NoActionBar" >
+        android:theme="@style/Theme.Material3.DynamicColors.Light.NoActionBar" >
         <activity
-            android:name="es.ifp.labsalut.MenuActivity"
+            android:name="es.ifp.labsalut.activities.MenuActivity"
             android:exported="false" />
         <activity
-            android:name="es.ifp.labsalut.seguridad.FingerprintActivity"
+            android:name="es.ifp.labsalut.activities.RegistroActivity"
             android:exported="false" />
         <activity
-            android:name="es.ifp.labsalut.ui.RegistroActivity"
-            android:exported="false" />
-        <activity
-            android:name="es.ifp.labsalut.MainActivity"
+            android:name="es.ifp.labsalut.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>

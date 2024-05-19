@@ -6,19 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.SettingsFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="16dp"
-        android:text="SELECT AN OPTION"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="101dp" />
-
     <Button
-        android:id="@+id/medicationButton"
+        android:id="@+id/medi_sett"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -27,53 +16,54 @@
         android:text="MEDICATION"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appointmentButton" />
+        app:layout_constraintTop_toBottomOf="@+id/appint_sett" />
 
     <Button
-        android:id="@+id/userButton"
+        android:id="@+id/user_sett"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/medicationButton"
+        android:layout_below="@id/medi_sett"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:text="USER"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/appointmentButton"
+        android:id="@+id/appint_sett"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userButton"
+        android:layout_below="@id/user_sett"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="APPOINTMENT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userButton" />
+        app:layout_constraintTop_toBottomOf="@+id/user_sett" />
 
     <TextView
-        android:id="@+id/huellaText_ajustes"
+        android:id="@+id/textHuella_sett"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Activar huella digital"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/switchHuella_ajustes"
+        app:layout_constraintEnd_toStartOf="@+id/checkHuella_sett"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationButton" />
+        app:layout_constraintTop_toBottomOf="@+id/medi_sett" />
 
     <Switch
-        android:id="@+id/switchHuella_ajustes"
+        android:id="@+id/checkHuella_sett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationButton" />
+        app:layout_constraintTop_toBottomOf="@+id/medi_sett" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

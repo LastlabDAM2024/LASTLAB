@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.databinding.FragmentMedicamentosBinding;
+import es.ifp.labsalut.databinding.FragmentSettingsBinding;
 import es.ifp.labsalut.negocio.Usuario;
 
 public class MedicamentosFragment extends Fragment {
@@ -15,9 +17,8 @@ public class MedicamentosFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
+    private FragmentMedicamentosBinding binding;
 
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -25,6 +26,7 @@ public class MedicamentosFragment extends Fragment {
     public MedicamentosFragment() {
         // Required empty public constructor
     }
+
     public static MedicamentosFragment newInstance(String param1, String param2) {
         MedicamentosFragment fragment = new MedicamentosFragment();
         Bundle args = new Bundle();
@@ -41,6 +43,7 @@ public class MedicamentosFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +56,9 @@ public class MedicamentosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_medicamentos, container, false);
+        binding = FragmentMedicamentosBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        return root;
     }
 
     @Override

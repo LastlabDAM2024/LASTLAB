@@ -9,4 +9,30 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+    <string-array name="simple_items">
+        <item>1 hora</item>
+        <item>2 horas</item>
+        <item>3 horas</item>
+        <item>4 horas</item>
+        <item>5 horas</item>
+        <item>6 horas</item>
+        <item>7 horas</item>
+        <item>8 horas</item>
+        <item>9 horas</item>
+        <item>10 horas</item>
+        <item>11 horas</item>
+        <item>12 horas</item>
+        <item>13 horas</item>
+        <item>14 horas</item>
+        <item>15 horas</item>
+        <item>16 horas</item>
+        <item>17 horas</item>
+        <item>18 horas</item>
+        <item>19 horas</item>
+        <item>20 horas</item>
+        <item>21 horas</item>
+        <item>22 horas</item>
+        <item>23 horas</item>
+        <item>24 horas</item>
+    </string-array>
 </resources>

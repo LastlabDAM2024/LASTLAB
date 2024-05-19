@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.databinding.FragmentHomeBinding;
+import es.ifp.labsalut.databinding.FragmentSettingsBinding;
 import es.ifp.labsalut.negocio.Usuario;
 
 public class HomeFragment extends Fragment {
@@ -20,14 +22,10 @@ public class HomeFragment extends Fragment {
     private static final String ARG_PARAM1 = "EMAIL";
     private static final String ARG_PARAM2 = "PASS";
     private static final String ARG_USER = "USUARIO";
+    private FragmentHomeBinding binding;
     private String email;
     private String pass;
-    protected Button crearMedicamento;
-    protected Button crearCitaMedica;
-    protected Button editarMedicamento;
-    protected Button editarCitaMedica;
-    protected ListView listaMedicamentos;
-    protected ListView listaCitas;
+
     private Usuario user = null;
 
 
@@ -66,19 +64,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
         return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-        crearMedicamento = (Button) root.findViewById(R.id.crearMedicamentoBoton_menu);
-        crearCitaMedica = (Button) root.findViewById(R.id.crearCitaMedicaBoton_menu);
-        editarMedicamento = (Button) root.findViewById(R.id.editarMedicamentoBoton_main);
-        editarCitaMedica = (Button) root.findViewById(R.id.editarCitaMedicaBoton_main);
-        listaMedicamentos = (ListView) root.findViewById(R.id.listaMedicamento_menu);
-        listaCitas = (ListView) root.findViewById(R.id.listaCitaMedica_Menu);
         if (getArguments() != null) {
             email = getArguments().getString(ARG_PARAM1);
             pass = getArguments().getString(ARG_PARAM2);

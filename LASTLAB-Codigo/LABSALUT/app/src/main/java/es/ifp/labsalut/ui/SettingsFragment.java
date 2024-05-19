@@ -1,30 +1,29 @@
 package es.ifp.labsalut.ui;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import static es.ifp.labsalut.MainActivity.MY_PREFS_USER;
+import static es.ifp.labsalut.activities.MainActivity.MY_PREFS_USER;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.biometric.BiometricPrompt;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
+import androidx.security.crypto.EncryptedSharedPreferences;
+import androidx.security.crypto.MasterKey;
 
-import es.ifp.labsalut.R;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+
+import es.ifp.labsalut.databinding.FragmentSettingsBinding;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
 
@@ -34,12 +33,12 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
     public static final String MY_PREFS_HUELLA = "OPENHUELLA";
-
-
-    protected Switch huella;
+    private FragmentSettingsBinding binding;
     private String mParam1;
     private String mParam2;
     private Usuario user = null;
+    private SharedPreferences prefs_user = null;
+    private SharedPreferences prefs_huella = null;
 
 
     public SettingsFragment() {
@@ -76,21 +75,48 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        binding = FragmentSettingsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-        huella = (Switch) root.findViewById(R.id.switchHuella_ajustes);
+
         Context context = requireContext();
-        SharedPreferences prefs_huella = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE);
+        try {
+            // Crear MasterKey para EncryptedSharedPreferences
+            MasterKey masterKey = new MasterKey.Builder(context)
+                    .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+                    .build();
+
+            // Crear EncryptedSharedPreferences para MY_PREFS_USER
+            prefs_user = EncryptedSharedPreferences.create(
+                    context,
+                    MY_PREFS_USER,
+                    masterKey,
+                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            );
+
+            // Crear EncryptedSharedPreferences para MY_PREFS_HUELLA
+            prefs_huella = EncryptedSharedPreferences.create(
+                    context,
+                    MY_PREFS_HUELLA,
+                    masterKey,
+                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            );
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
+
         String huellaActiva = prefs_huella.getString("HUELLA" + user.getNombre(), "");
         if (huellaActiva.equals("SI")) {
-            huella.setChecked(true);
+            binding.checkHuellaSett.setChecked(true);
         } else {
-            huella.setChecked(false);
+            binding.checkHuellaSett.setChecked(false);
         }
         reiniciarHuellaListener(getActivity());
     }
@@ -98,10 +124,10 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     @Override
     public void onAuthenticationSucceeded() {
         Context context = requireContext();
-        SharedPreferences.Editor editor_huella = context.getSharedPreferences(MY_PREFS_HUELLA, MODE_PRIVATE).edit();
-        SharedPreferences.Editor editor_user = context.getSharedPreferences(MY_PREFS_USER, MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor_huella = prefs_huella.edit();
+        SharedPreferences.Editor editor_user = prefs_user.edit();
 
-        if (huella.isChecked()) {
+        if (binding.checkHuellaSett.isChecked()) {
             editor_huella.putString("HUELLA" + user.getNombre(), "SI");
             editor_user.putString("FINGER", "SI");
 
@@ -128,11 +154,11 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    huella.setOnCheckedChangeListener(null);
-                    if (huella.isChecked()) {
-                        huella.setChecked(false);
+                    binding.checkHuellaSett.setOnCheckedChangeListener(null);
+                    if (binding.checkHuellaSett.isChecked()) {
+                        binding.checkHuellaSett.setChecked(false);
                     } else {
-                        huella.setChecked(true);
+                        binding.checkHuellaSett.setChecked(true);
                     }
                     reiniciarHuellaListener(activity);
                     if(errorCode == BiometricPrompt.ERROR_TIMEOUT || errorCode == BiometricPrompt.ERROR_LOCKOUT ){
@@ -150,7 +176,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     }
 
     private void reiniciarHuellaListener(Activity activity) {
-        huella.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        binding.checkHuellaSett.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 

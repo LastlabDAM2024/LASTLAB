@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <ListView
-                android:id="@+id/listaMedicamento_menu"
+                android:id="@+id/listMedi_home"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="16dp"
@@ -28,7 +28,7 @@
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/medicamentoText_menu">
+                app:layout_constraintTop_toBottomOf="@+id/textListMedi_home">
 
             </ListView>
 
@@ -43,7 +43,7 @@
                 android:weightSum="7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/listaMedicamento_menu">
+                app:layout_constraintTop_toBottomOf="@+id/listMedi_home">
 
                 <Space
                     android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
                     android:layout_weight="2" />
 
                 <Button
-                    android:id="@+id/crearMedicamentoBoton_menu"
+                    android:id="@+id/crearMedi_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
@@ -65,7 +65,7 @@
                     android:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/editarMedicamentoBoton_main"
+                    android:id="@+id/editarMedi_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
@@ -80,7 +80,7 @@
             </LinearLayout>
 
             <ListView
-                android:id="@+id/listaCitaMedica_Menu"
+                android:id="@+id/listCita_home"
                 android:layout_width="367dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="16dp"
@@ -90,7 +90,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CitaMedicaText_menu" />
+                app:layout_constraintTop_toBottomOf="@+id/textListCita_home" />
 
             <LinearLayout
                 android:id="@+id/layoutBotonesCitas_Menu"
@@ -102,7 +102,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/listaCitaMedica_Menu">
+                app:layout_constraintTop_toBottomOf="@+id/listCita_home">
 
                 <Space
                     android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                     android:layout_weight="2" />
 
                 <Button
-                    android:id="@+id/crearCitaMedicaBoton_menu"
+                    android:id="@+id/crearCita_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
@@ -124,7 +124,7 @@
                     android:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/editarCitaMedicaBoton_main"
+                    android:id="@+id/editarCita_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
@@ -139,7 +139,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/medicamentoText_menu"
+                android:id="@+id/textListMedi_home"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -152,7 +152,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/CitaMedicaText_menu"
+                android:id="@+id/textListCita_home"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

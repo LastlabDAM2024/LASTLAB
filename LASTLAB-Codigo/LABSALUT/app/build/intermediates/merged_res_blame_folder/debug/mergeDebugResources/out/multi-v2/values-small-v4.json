@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-44:/values-small-v4/values-small-v4.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\b579b3e3f8bd0810cf103f2e550e14ad\\transformed\\material-1.10.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\d669becc4bf70dbf0a9a5fdce5ce08aa\\transformed\\material-1.12.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

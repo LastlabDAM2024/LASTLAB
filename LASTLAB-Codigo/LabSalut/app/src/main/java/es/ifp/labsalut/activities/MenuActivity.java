@@ -1,4 +1,4 @@
-package es.ifp.labsalut;
+package es.ifp.labsalut.activities;
 
 
 import android.content.Intent;
@@ -23,6 +23,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import javax.crypto.SecretKey;
 
+import es.ifp.labsalut.R;
+import es.ifp.labsalut.databinding.ActivityMainBinding;
+import es.ifp.labsalut.databinding.ActivityMenuBinding;
 import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
@@ -35,50 +38,46 @@ import es.ifp.labsalut.ui.SuscripcionFragment;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    protected DrawerLayout drawerLayout;
-    protected FloatingActionButton fab;
-    protected TextView titulo;
+    private ActivityMenuBinding binding;
     protected TextView nombreUsuario_nav;
     protected TextView email_nav;
+    protected FloatingActionButton fab;
     private Bundle extras;
     private Usuario user = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        titulo = (TextView) findViewById(R.id.toolbar_title);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        binding = ActivityMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.appBarMain.toolbar.setPopupTheme(com.google.android.material.R.style.Widget_Material3_Light_ActionBar_Solid);
+        binding.appBarMain.toolbar.setTitle("");
+
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        View headerView = navigationView.getHeaderView(0);
+        View headerView = binding.navView.getHeaderView(0);
         nombreUsuario_nav = (TextView) headerView.findViewById(R.id.usuario_nav_header);
         email_nav = (TextView) headerView.findViewById(R.id.email_nav_header);
-
         extras = getIntent().getExtras();
 
         if (extras != null) {
             user = (Usuario) extras.getSerializable("USUARIO");
         }
 
-        navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+        binding.navView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.appBarMain.toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
+        binding.drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
-            navigationView.setCheckedItem(R.id.nav_menu);
-            titulo.setText("Menú principal");
+            binding.navView.setCheckedItem(R.id.nav_menu);
+            binding.appBarMain.toolbarTitle.setText("Menú principal");
         }
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -90,11 +89,11 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                }else if(!titulo.getText().toString().equals("Menú principal")){
+                if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    binding.drawerLayout.closeDrawer(GravityCompat.START);
+                }else if(!binding.appBarMain.toolbarTitle.getText().toString().equals("Menú principal")){
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
-                    titulo.setText("Menú principal");
+                    binding.appBarMain.toolbarTitle.setText("Menú principal");
                 }else{
                     finish();
                 }
@@ -112,27 +111,27 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_menu:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
-                titulo.setText("Menú principal");
+                binding.appBarMain.toolbarTitle.setText("Menú principal");
                 break;
             case R.id.nav_medicamentos:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, MedicamentosFragment.newInstance(user)).commit();
-                titulo.setText("Medicamentos");
+                binding.appBarMain.toolbarTitle.setText("Medicamentos");
                 break;
             case R.id.nav_citas:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, CitasFragment.newInstance(user)).commit();
-                titulo.setText("Citas Médicas");
+                binding.appBarMain.toolbarTitle.setText("Citas Médicas");
                 break;
             case R.id.nav_suscripcion:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SuscripcionFragment.newInstance(user)).commit();
-                titulo.setText("Suscripción");
+                binding.appBarMain.toolbarTitle.setText("Suscripción");
                 break;
             case R.id.nav_ajustes:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SettingsFragment.newInstance(user)).commit();
-                titulo.setText("Ajustes");
+                binding.appBarMain.toolbarTitle.setText("Ajustes");
                 break;
         }
 
-        drawerLayout.closeDrawer(GravityCompat.START);
+        binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 

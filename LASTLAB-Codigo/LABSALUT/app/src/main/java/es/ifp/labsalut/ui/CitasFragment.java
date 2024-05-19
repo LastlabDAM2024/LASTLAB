@@ -1,27 +1,32 @@
 package es.ifp.labsalut.ui;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import static com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD;
+
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.timepicker.MaterialTimePicker;
+import com.google.android.material.timepicker.TimeFormat;
+
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Objects;
+import java.util.TimeZone;
 
-import es.ifp.labsalut.R;
+import es.ifp.labsalut.databinding.FragmentCitasBinding;
 import es.ifp.labsalut.negocio.Usuario;
 
 public class CitasFragment extends Fragment {
@@ -29,17 +34,9 @@ public class CitasFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
-
-
-    // TODO: Rename and change types of parameters
+    private FragmentCitasBinding binding;
     private String mParam1;
     private String mParam2;
-    protected TextView fecha;
-    protected TextView hora;
-    protected EditText nombre;
-    protected EditText descrip;
-    protected Button calendarioBoton;
-    protected Button horaBoton;
     private Usuario user = null;
 
 
@@ -55,6 +52,7 @@ public class CitasFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     public static CitasFragment newInstance(Usuario user) {
         CitasFragment fragment = new CitasFragment();
         Bundle args = new Bundle();
@@ -75,65 +73,40 @@ public class CitasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_citas, container, false);
+        binding = FragmentCitasBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-        fecha = (TextView) root.findViewById(R.id.fecha_cita);
-        hora = (TextView) root.findViewById(R.id.hora_cita);
-        nombre = (EditText) root.findViewById(R.id.nombreEditText_Cita);
-        descrip = (EditText) root.findViewById(R.id.descripEditText_Cita);
-        calendarioBoton = (Button) root.findViewById(R.id.calendarioBoton_citas);
-        horaBoton = (Button) root.findViewById(R.id.horarioBoton_citas);
 
-        calendarioBoton.setOnClickListener(new View.OnClickListener() {
+        binding.fechaCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar calendar = Calendar.getInstance();
-                int anyo = calendar.get(Calendar.YEAR);
-                int mes = calendar.get(Calendar.MONTH);
-                int dia = calendar.get(Calendar.DAY_OF_MONTH);
-
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    DatePickerDialog datePicker = new DatePickerDialog(root.getContext(), R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                            Locale locale = new Locale("es", "ES");
-                            Month mMonth = null;
-                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                                mMonth = Month.of(month + 1);
-                                String monthName = mMonth.getDisplayName(TextStyle.FULL, locale);
-                                String fechaText = dayOfMonth + " / " + monthName + " / " + year;
-                                fecha.setText(String.valueOf(fechaText));
-                            }
-                        }
-                    }, anyo, mes, dia);
-                    datePicker.show();
-                }
-
+                mostrarDatePicker();
             }
         });
 
-        horaBoton.setOnClickListener(new View.OnClickListener() {
+        binding.horaCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar calendar = Calendar.getInstance();
-                int horas = calendar.get(Calendar.HOUR_OF_DAY);
-                int minutos = calendar.get(Calendar.MINUTE);
+                mostrarTimePicker();
+            }
+        });
 
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    TimePickerDialog timePicker = new TimePickerDialog(root.getContext(), R.style.DialogTheme, new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                            hora.setText(hourOfDay + " : " + minute);
-                        }
-                    }, horas, minutos, true);
-                    timePicker.show();
-                }
+        binding.calendarioCita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarDatePicker();
+            }
+        });
 
+        binding.horarioCita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarTimePicker();
             }
         });
 
@@ -142,5 +115,72 @@ public class CitasFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+    }
+
+    private void mostrarDatePicker() {
+        MaterialDatePicker<Long> picker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Selecciona una fecha")
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .build();
+        picker.show(requireActivity().getSupportFragmentManager(), "tag");
+        picker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
+            @Override
+            public void onPositiveButtonClick(Long aLong) {
+                Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+                calendar.setTimeInMillis(aLong);
+
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                int month = calendar.get(Calendar.MONTH) + 1; // Enero es 0
+                int year = calendar.get(Calendar.YEAR);
+
+                Locale locale = new Locale("es", "ES");
+                Month mMonth = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    mMonth = Month.of(month);
+                    String monthName = mMonth.getDisplayName(TextStyle.FULL, locale);
+                    String fechaNacimiento="";
+                    if(day<10){
+                        fechaNacimiento= "0"+day + " / " + monthName + " / " + year;
+                    }else{
+                        fechaNacimiento = day + " / " + monthName + " / " + year;
+                    }
+                    binding.fechaCita.setText(fechaNacimiento);
+                }
+
+            }
+        });
+    }
+
+    private void mostrarTimePicker() {
+        Calendar calendar = Calendar.getInstance();
+        int horas = calendar.get(Calendar.HOUR_OF_DAY);
+        int minutos = calendar.get(Calendar.MINUTE);
+
+        MaterialTimePicker picker = new MaterialTimePicker.Builder()
+                .setInputMode(INPUT_MODE_KEYBOARD)
+                .setTimeFormat(TimeFormat.CLOCK_24H)
+                .setHour(horas)
+                .setMinute(minutos)
+                .setTitleText("Selecciona una hora")
+                .build();
+
+        picker.show(requireActivity().getSupportFragmentManager(), "tag");
+        picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (picker.getMinute() < 10) {
+                    if (picker.getHour() < 10) {
+                        binding.horaCita.setText("0" + picker.getHour() + " : " + "0" + picker.getMinute());
+
+                    } else {
+                        binding.horaCita.setText(picker.getHour() + " : " + "0" + picker.getMinute());
+                    }
+                } else {
+                    if (picker.getHour() < 10) {
+                        binding.horaCita.setText("0" + picker.getHour() + " : " + picker.getMinute());
+                    }
+                }
+            }
+        });
     }
 }

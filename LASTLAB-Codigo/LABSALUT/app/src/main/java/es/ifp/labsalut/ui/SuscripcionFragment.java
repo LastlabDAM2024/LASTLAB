@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.databinding.FragmentSettingsBinding;
+import es.ifp.labsalut.databinding.FragmentSuscripcionBinding;
 import es.ifp.labsalut.negocio.Usuario;
 
 public class SuscripcionFragment extends Fragment {
-
+    private FragmentSuscripcionBinding binding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
@@ -26,6 +28,7 @@ public class SuscripcionFragment extends Fragment {
     public SuscripcionFragment() {
         // Required empty public constructor
     }
+
     public static SuscripcionFragment newInstance(String param1, String param2) {
         SuscripcionFragment fragment = new SuscripcionFragment();
         Bundle args = new Bundle();
@@ -56,8 +59,9 @@ public class SuscripcionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_suscripcion, container, false);
+        binding = FragmentSuscripcionBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        return root;
     }
 
     @Override

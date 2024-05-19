@@ -19,33 +19,20 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/titulo_Cita"
+                android:id="@+id/textNombre_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="16dp"
-                android:text="Añadir Medicamento"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/nombreText_Cita"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Nombre:"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_Cita" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/nombreEditText_Cita"
+                android:id="@+id/nombre_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -56,10 +43,10 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombreText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/textNombre_med" />
 
             <TextView
-                android:id="@+id/fechaText_Cita"
+                android:id="@+id/textDosis_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -69,10 +56,10 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombreEditText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/nombre_med" />
 
             <EditText
-                android:id="@+id/fechaEditText_Cita"
+                android:id="@+id/dosis_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -83,10 +70,10 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fechaText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/textDosis_med" />
 
             <TextView
-                android:id="@+id/descripText_Cita"
+                android:id="@+id/textFrecuencia_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -96,10 +83,10 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fechaEditText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/dosis_med" />
 
             <EditText
-                android:id="@+id/descripEditText_Cita"
+                android:id="@+id/frecuencia_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -108,12 +95,12 @@
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/horasText_medicamento"
+                app:layout_constraintEnd_toStartOf="@+id/textHora_med"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descripText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/textFrecuencia_med" />
 
             <TextView
-                android:id="@+id/horasText_medicamento"
+                android:id="@+id/textHora_med"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -121,22 +108,22 @@
                 android:text="Horas"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descripText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/textFrecuencia_med" />
 
             <TextView
-                android:id="@+id/recordatorioText_Cita"
+                android:id="@+id/textRecord_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:text="Recordatorio:"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/checkRecordatorio_Cita"
+                app:layout_constraintEnd_toStartOf="@+id/checkRecord_med"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descripEditText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/frecuencia_med" />
 
             <EditText
-                android:id="@+id/recordatorioEditText_Cita"
+                android:id="@+id/record_med"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -144,12 +131,12 @@
                 android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                app:layout_constraintEnd_toStartOf="@+id/horasText_Cita"
+                app:layout_constraintEnd_toStartOf="@+id/textHoraRecord_med"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recordatorioText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/textRecord_med" />
 
             <TextView
-                android:id="@+id/horasText_Cita"
+                android:id="@+id/textHoraRecord_med"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -157,20 +144,20 @@
                 android:text="Horas"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recordatorioText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/textRecord_med" />
 
             <CheckBox
-                android:id="@+id/checkRecordatorio_Cita"
+                android:id="@+id/checkRecord_med"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Activar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descripEditText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/frecuencia_med" />
 
             <Button
-                android:id="@+id/botonGuardar_Cita"
+                android:id="@+id/guardar_cita"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -179,7 +166,7 @@
                 android:text="Guardar Medicamento"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recordatorioEditText_Cita" />
+                app:layout_constraintTop_toBottomOf="@+id/record_med" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

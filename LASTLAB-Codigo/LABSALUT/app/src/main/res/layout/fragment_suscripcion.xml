@@ -13,37 +13,21 @@
     <!-- Botón "Suscribirse" -->
 
     <!-- Botón "Volver" -->
-    <TextView
-        android:id="@+id/tvTitulo"
+
+    <Button
+        android:id="@+id/cancelar_suscrip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:text="SUSCRIPCIONES"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        android:text="Cancelar Suscripción"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCancelar_Suscripcion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        android:text="Cancelar Suscripción"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
-
-    <Button
-        android:id="@+id/btn_Suscribirse"
+        android:id="@+id/suscrip_suscrip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -52,10 +36,10 @@
         android:text="Suscribirse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCancelar_Suscripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/cancelar_suscrip" />
 
     <Button
-        android:id="@+id/btnVolver_Suscripcion"
+        android:id="@+id/volver_suscrip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -64,6 +48,6 @@
         android:text="Volver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Suscribirse" />
+        app:layout_constraintTop_toBottomOf="@+id/suscrip_suscrip" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
