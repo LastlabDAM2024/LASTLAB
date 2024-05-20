@@ -5,17 +5,17 @@ import java.io.Serializable;
 public class Medicamento implements Serializable {
     private int idMedicamento;
     private String nombre;
-    private int dosis;
-    private float frecuencia;
-    private float recordatorio;
+    private String dosis;
+    private String frecuencia;
+    private String recordatorio;
 
     public Medicamento() {
         this.nombre = "";
-        this.dosis = 0;
-        this.frecuencia = 0f;
-        this.recordatorio = 0f;
+        this.dosis = "";
+        this.frecuencia = "";
+        this.recordatorio = "";
     }
-    public Medicamento(String nombre, int dosis, float frecuencia, float recordatorio) {
+    public Medicamento(String nombre, String dosis, String frecuencia, String recordatorio) {
         this.nombre = nombre;
         this.dosis = dosis;
         this.frecuencia = frecuencia;
@@ -37,27 +37,27 @@ public class Medicamento implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getDosis() {
+    public String getDosis() {
         return dosis;
     }
 
-    public void setDosis(int dosis) {
+    public void setDosis(String dosis) {
         this.dosis = dosis;
     }
 
-    public float getFrecuencia() {
+    public String getFrecuencia() {
         return frecuencia;
     }
 
-    public void setFrecuencia(float frecuencia) {
+    public void setFrecuencia(String frecuencia) {
         this.frecuencia = frecuencia;
     }
 
-    public float getRecordatorio() {
+    public String getRecordatorio() {
         return recordatorio;
     }
 
-    public void setRecordatorio(float recordatorio) {
+    public void setRecordatorio(String recordatorio) {
         this.recordatorio = recordatorio;
     }
 

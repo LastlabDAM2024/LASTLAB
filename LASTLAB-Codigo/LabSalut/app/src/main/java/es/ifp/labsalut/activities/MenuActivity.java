@@ -48,6 +48,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     protected FloatingActionButton fab;
     private Bundle extras;
     private Usuario user = null;
+    private String settingFragment = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         setContentView(binding.getRoot());
         binding.appBarMain.toolbar.setPopupTheme(com.google.android.material.R.style.Widget_Material3_Light_ActionBar_Solid);
         binding.appBarMain.toolbar.setTitle("");
-        ColorStatusBar.colorDinamicStatusBar(this,ColorStatusBar.obtenerColorToolbar(binding.appBarMain.toolbar));
+        ColorStatusBar.colorDinamicStatusBar(this, ColorStatusBar.obtenerColorToolbar(binding.appBarMain.toolbar));
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         View headerView = binding.navView.getHeaderView(0);
@@ -66,6 +68,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
         if (extras != null) {
             user = (Usuario) extras.getSerializable("USUARIO");
+            settingFragment = extras.getString("SETTINGFRAGMENT");
         }
 
         binding.navView.setNavigationItemSelectedListener(this);
@@ -76,12 +79,20 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         binding.appBarMain.toolbarTitle.setTextColor(ColorStatusBar.obtenerColorBackground(this));
 
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
-            binding.navView.setCheckedItem(R.id.nav_menu);
-            binding.appBarMain.toolbarTitle.setText("Menú principal");
+        if (settingFragment != null) {
+            if (settingFragment.equals("SI")) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SettingsFragment.newInstance(user)).commit();
+                binding.navView.setCheckedItem(R.id.nav_menu);
+                binding.appBarMain.toolbarTitle.setText("Ajustes");
+            }
+        } else {
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
+                binding.navView.setCheckedItem(R.id.nav_menu);
+                binding.appBarMain.toolbarTitle.setText("Menú principal");
+            }
         }
+
 
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,10 +108,10 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             public void handleOnBackPressed() {
                 if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     binding.drawerLayout.closeDrawer(GravityCompat.START);
-                }else if(!binding.appBarMain.toolbarTitle.getText().toString().equals("Menú principal")){
+                } else if (!binding.appBarMain.toolbarTitle.getText().toString().equals("Menú principal")) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
                     binding.appBarMain.toolbarTitle.setText("Menú principal");
-                }else{
+                } else {
                     finish();
                 }
             }

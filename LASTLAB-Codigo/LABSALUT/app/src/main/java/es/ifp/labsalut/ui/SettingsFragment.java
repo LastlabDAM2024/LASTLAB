@@ -4,6 +4,7 @@ import static es.ifp.labsalut.activities.MainActivity.MY_PREFS_USER;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +24,8 @@ import androidx.security.crypto.MasterKey;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
+import es.ifp.labsalut.activities.MenuBottomActivity;
+import es.ifp.labsalut.activities.MenuActivity;
 import es.ifp.labsalut.databinding.FragmentSettingsBinding;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
@@ -36,6 +39,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     private FragmentSettingsBinding binding;
     private String mParam1;
     private String mParam2;
+    private Intent pasarPantalla;
     private Usuario user = null;
     private SharedPreferences prefs_user = null;
     private SharedPreferences prefs_huella = null;
@@ -83,7 +87,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-
+        Activity activity = getActivity();
         Context context = requireContext();
         try {
             // Crear MasterKey para EncryptedSharedPreferences
@@ -118,7 +122,16 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         } else {
             binding.checkHuellaSett.setChecked(false);
         }
-        reiniciarHuellaListener(getActivity());
+        reiniciarHuellaListener(activity);
+
+        String uiSecudaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(), "");
+
+        if (uiSecudaria.equals("SI")) {
+            binding.checkUISett.setChecked(true);
+        } else {
+            binding.checkUISett.setChecked(false);
+        }
+        uiListener(activity);
     }
 
     @Override
@@ -161,7 +174,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
                         binding.checkHuellaSett.setChecked(true);
                     }
                     reiniciarHuellaListener(activity);
-                    if(errorCode == BiometricPrompt.ERROR_TIMEOUT || errorCode == BiometricPrompt.ERROR_LOCKOUT ){
+                    if (errorCode == BiometricPrompt.ERROR_TIMEOUT || errorCode == BiometricPrompt.ERROR_LOCKOUT) {
                         Toast.makeText(activity, "Vuelva a intentarlo en 30 segundos", Toast.LENGTH_SHORT).show();
 
                     }
@@ -185,6 +198,31 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
                     FingerprintHandler finger = new FingerprintHandler(activity, SettingsFragment.this);
                     finger.startAuth();
                 }
+            }
+        });
+    }
+
+    private void uiListener(Activity activity) {
+        binding.checkUISett.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences.Editor editor_huella = prefs_huella.edit();
+                if (binding.checkUISett.isChecked()) {
+                    editor_huella.putString("UISECUNDARIA" + user.getNombre(), "SI");
+                    pasarPantalla = new Intent(activity, MenuBottomActivity.class);
+                    pasarPantalla.putExtra("USUARIO", user);
+                    pasarPantalla.putExtra("SETTINGFRAGMENT","SI");
+                    activity.finish();
+                    activity.startActivity(pasarPantalla);
+                } else {
+                    editor_huella.putString("UISECUNDARIA" + user.getNombre(), "NO");
+                    pasarPantalla = new Intent(activity, MenuActivity.class);
+                    pasarPantalla.putExtra("USUARIO", user);
+                    pasarPantalla.putExtra("SETTINGFRAGMENT","SI");
+                    activity.finish();
+                    activity.startActivity(pasarPantalla);
+                }
+                editor_huella.apply();
             }
         });
     }

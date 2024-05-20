@@ -16,6 +16,9 @@
             android:name=".activities.MenuActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.MenuBottomActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.RegistroActivity"
             android:exported="false" />
 

@@ -8,7 +8,7 @@ public class CitaMedica implements Serializable {
     private String fecha;
     private String hora;
     private String descripcion;
-    private float recordatorio;
+    private String recordatorio;
 
 
     public CitaMedica() {
@@ -16,9 +16,9 @@ public class CitaMedica implements Serializable {
         this.fecha = "";
         this.hora = "";
         this.descripcion = "";
-        this.recordatorio = 0f;
+        this.recordatorio = "";
     }
-    public CitaMedica(String nombre, String fecha, String hora, String descripcion, float recordatorio) {
+    public CitaMedica(String nombre, String fecha, String hora, String descripcion, String recordatorio) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
@@ -38,11 +38,11 @@ public class CitaMedica implements Serializable {
         this.hora = hora;
     }
 
-    public void setRecordatorio(float recordatorio) {
+    public void setRecordatorio(String recordatorio) {
         this.recordatorio = recordatorio;
     }
 
-    public float getRecordatorio() {
+    public String getRecordatorio() {
         return recordatorio;
     }
 

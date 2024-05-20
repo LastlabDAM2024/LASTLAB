@@ -25,8 +25,8 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Aquí se crean las tablas si no existen
         db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis INTEGER, frecuencia FLOAT, recordatorio FLOAT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio FLOAT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis TEXT, frecuencia TEXT, recordatorio TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (idUser INTEGER PRIMARY KEY, idMedicamento INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (idUser INTEGER PRIMARY KEY, idCitaMedica INTEGER)");
@@ -173,9 +173,9 @@ public class BaseDatos extends SQLiteOpenHelper {
     public int addMedicamento(Medicamento medicamento) {
         db = this.getWritableDatabase();
         String nombre = medicamento.getNombre();
-        int dosis = medicamento.getDosis();
-        float frecuencia = medicamento.getFrecuencia();
-        float recordatorio = medicamento.getRecordatorio();
+        String dosis = medicamento.getDosis();
+        String frecuencia = medicamento.getFrecuencia();
+        String recordatorio = medicamento.getRecordatorio();
         db.execSQL("INSERT INTO Medicamento (nombre,dosis,frecuencia,recordatorio) VALUES ('" + nombre + "','" + dosis + "','" + frecuencia + "','" + recordatorio + "')");
         int id = -1;
         Cursor resultado = null;
@@ -199,7 +199,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         String fecha = citaMedica.getFecha();
         String hora = citaMedica.getHora();
         String descripcion = citaMedica.getDescripcion();
-        float recordatorio = citaMedica.getRecordatorio();
+        String recordatorio = citaMedica.getRecordatorio();
         db.execSQL("INSERT INTO CitaMedica (nombre,fecha,hora,descripcion,recordatorio) VALUES ('" + nombre + "','" + fecha + "','" + hora + "','" + descripcion + "','" + recordatorio + "')");
         int id = -1;
         Cursor resultado = null;
@@ -247,9 +247,9 @@ public class BaseDatos extends SQLiteOpenHelper {
             while (!resultado.isAfterLast()) {
                 contenido.setIdMedicamento(resultado.getInt(resultado.getColumnIndex("id")));
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
-                contenido.setDosis(resultado.getInt(resultado.getColumnIndex("dosis")));
-                contenido.setFrecuencia(resultado.getFloat(resultado.getColumnIndex("frecuencia")));
-                contenido.setRecordatorio(resultado.getFloat(resultado.getColumnIndex("recordatorio")));
+                contenido.setDosis(resultado.getString(resultado.getColumnIndex("dosis")));
+                contenido.setFrecuencia(resultado.getString(resultado.getColumnIndex("frecuencia")));
+                contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
                 resultado.moveToNext();
                 listMedi.add(contenido);
             }
@@ -293,7 +293,7 @@ public class BaseDatos extends SQLiteOpenHelper {
                 contenido.setFecha(resultado.getString(resultado.getColumnIndex("fecha")));
                 contenido.setHora(resultado.getString(resultado.getColumnIndex("hora")));
                 contenido.setDescripcion(resultado.getString(resultado.getColumnIndex("descripcion")));
-                contenido.setRecordatorio(resultado.getFloat(resultado.getColumnIndex("recordatorio")));
+                contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
                 resultado.moveToNext();
                 listMedi.add(contenido);
             }

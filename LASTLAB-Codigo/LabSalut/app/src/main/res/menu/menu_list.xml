@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_1"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Editar" />
+    <item
+        android:id="@+id/option_2"
+        android:icon="?attr/actionModeSelectAllDrawable"
+        android:title="Ampliar" />
+</menu>
