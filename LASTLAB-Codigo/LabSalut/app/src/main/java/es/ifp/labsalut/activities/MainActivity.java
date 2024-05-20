@@ -31,6 +31,7 @@ import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
+import es.ifp.labsalut.ui.ColorStatusBar;
 
 public class MainActivity extends AppCompatActivity implements FingerprintHandler.AuthenticationCallback {
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ColorStatusBar.colorDinamicStatusBar(this,ColorStatusBar.obtenerColorBackground(this));
 
         db = new BaseDatos(this);
 

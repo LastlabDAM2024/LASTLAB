@@ -3,24 +3,36 @@ package es.ifp.labsalut.ui;
 import static com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.datepicker.CalendarConstraints;
+import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
+import java.time.Instant;
 import java.time.Month;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.TextStyle;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAccessor;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Objects;
@@ -81,21 +93,7 @@ public class CitasFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-
-        binding.fechaCita.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarDatePicker();
-            }
-        });
-
-        binding.horaCita.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarTimePicker();
-            }
-        });
-
+        Context context = requireContext();
         binding.calendarioCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +104,19 @@ public class CitasFragment extends Fragment {
         binding.horarioCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mostrarTimePicker();
+                mostrarTimePicker(context);
+            }
+        });
+
+        binding.checkRecordCita.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    binding.textRecordCita.setEnabled(true);
+                } else {
+                    binding.textRecordCita.setEnabled(false);
+                    binding.recordCita.setText("");
+                }
             }
         });
 
@@ -118,9 +128,18 @@ public class CitasFragment extends Fragment {
     }
 
     private void mostrarDatePicker() {
+        Instant instant = null;
+        long utcTimeInMillis = 0;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            instant = Instant.from(Instant.now().plus(1, ChronoUnit.DAYS));
+            utcTimeInMillis = instant.toEpochMilli();
+        }
+        CalendarConstraints constraintsBuilder = new CalendarConstraints.Builder()
+                .setValidator(DateValidatorPointForward.from(utcTimeInMillis)).build();
         MaterialDatePicker<Long> picker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Selecciona una fecha")
                 .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .setCalendarConstraints(constraintsBuilder)
                 .build();
         picker.show(requireActivity().getSupportFragmentManager(), "tag");
         picker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
@@ -135,24 +154,25 @@ public class CitasFragment extends Fragment {
 
                 Locale locale = new Locale("es", "ES");
                 Month mMonth = null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     mMonth = Month.of(month);
                     String monthName = mMonth.getDisplayName(TextStyle.FULL, locale);
-                    String fechaNacimiento="";
-                    if(day<10){
-                        fechaNacimiento= "0"+day + " / " + monthName + " / " + year;
-                    }else{
-                        fechaNacimiento = day + " / " + monthName + " / " + year;
+                    String fechaCita = "";
+                    if (day < 10) {
+                        fechaCita = "0" + day + "  /  " + monthName + "  /  " + year;
+                    } else {
+                        fechaCita = day + "  /  " + monthName + "  /  " + year;
                     }
-                    binding.fechaCita.setText(fechaNacimiento);
+                    binding.fechaCita.setText(fechaCita);
                 }
 
             }
         });
     }
 
-    private void mostrarTimePicker() {
-        Calendar calendar = Calendar.getInstance();
+    private void mostrarTimePicker(Context context) {
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         int horas = calendar.get(Calendar.HOUR_OF_DAY);
         int minutos = calendar.get(Calendar.MINUTE);
 
@@ -168,18 +188,19 @@ public class CitasFragment extends Fragment {
         picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String minutoFormateado = "";
+                String horaFormateada = "";
                 if (picker.getMinute() < 10) {
-                    if (picker.getHour() < 10) {
-                        binding.horaCita.setText("0" + picker.getHour() + " : " + "0" + picker.getMinute());
-
-                    } else {
-                        binding.horaCita.setText(picker.getHour() + " : " + "0" + picker.getMinute());
-                    }
+                    minutoFormateado = "0" + picker.getMinute();
                 } else {
-                    if (picker.getHour() < 10) {
-                        binding.horaCita.setText("0" + picker.getHour() + " : " + picker.getMinute());
-                    }
+                    minutoFormateado = String.valueOf(picker.getMinute());
                 }
+                if (picker.getHour() < 10) {
+                    horaFormateada = "0" + picker.getHour();
+                } else {
+                    horaFormateada = String.valueOf(picker.getHour());
+                }
+                binding.horaCita.setText(horaFormateada + " : " + minutoFormateado);
             }
         });
     }

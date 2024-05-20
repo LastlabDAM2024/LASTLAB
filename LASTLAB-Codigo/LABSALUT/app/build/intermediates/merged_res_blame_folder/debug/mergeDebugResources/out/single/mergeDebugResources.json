@@ -1,174 +1,174 @@
 [
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_settings.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_settings.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_app_bar_menu.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\app_bar_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xhdpi_ic_action_fingerprint.png.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xhdpi\\ic_action_fingerprint.png"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_content_reg.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\content_reg.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_registro.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_registro.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-pngs-43:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_medicamentos.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_medicamentos.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_citas.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_citas.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_registro.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_registro.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_root_preferences.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\root_preferences.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_camera.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_camera.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-mdpi_ic_action_fingerprint.png.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-mdpi\\ic_action_fingerprint.png"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_settings.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_slideshow.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_slideshow.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_suscripcion.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_suscripcion.xml"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-hdpi_ic_action_fingerprint.png.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-hdpi\\ic_action_fingerprint.png"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-anydpi_ic_action_fingerprint.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-anydpi\\ic_action_fingerprint.xml"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "es.ifp.labsalut.app-debug-47:/layout_fragment_citas.xml.flat",
         "source": "es.ifp.labsalut.app-main-49:/layout/fragment_citas.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\menu_activity_menu_drawer.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\menu\\activity_menu_drawer.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-anydpi_ic_action_fingerprint.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-anydpi\\ic_action_fingerprint.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_gallery.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_gallery.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable_side_nav_bar.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable\\side_nav_bar.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_slideshow.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_content_reg.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\content_reg.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xxhdpi_ic_action_fingerprint.png.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xxhdpi\\ic_action_fingerprint.png"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-pngs-43:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\navigation\\mobile_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_app_bar_menu.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\app_bar_menu.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_app_bar_reg.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\app_bar_reg.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-hdpi_ic_action_fingerprint.png.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-hdpi\\ic_action_fingerprint.png"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_registro.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_registro.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_menu.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_menu.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_app_bar_reg.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\app_bar_reg.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_registro.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_registro.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_citas.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_citas.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_root_preferences.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\root_preferences.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_nav_header_menu.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\nav_header_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_nav_header_menu.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\nav_header_menu.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_menu.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xhdpi_ic_action_fingerprint.png.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xhdpi\\ic_action_fingerprint.png"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable_side_nav_bar.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable\\side_nav_bar.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_gallery.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_medicamentos.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_medicamentos.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_content_menu.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\content_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_camera.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\navigation_mobile_navigation.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\navigation\\mobile_navigation.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_content_menu.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\content_menu.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_suscripcion.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_suscripcion.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\menu_activity_menu_drawer.xml.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\menu\\activity_menu_drawer.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xxhdpi_ic_action_fingerprint.png.flat",
-        "source": "C:\\Users\\Samsung\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xxhdpi\\ic_action_fingerprint.png"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-mdpi_ic_action_fingerprint.png.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-mdpi\\ic_action_fingerprint.png"
     }
 ]

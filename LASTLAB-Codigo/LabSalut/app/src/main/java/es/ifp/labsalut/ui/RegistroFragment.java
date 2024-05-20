@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,13 +22,18 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import com.google.android.material.datepicker.CalendarConstraints;
+import com.google.android.material.datepicker.DateValidatorPointBackward;
+import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.time.Instant;
 import java.time.Month;
 import java.time.format.TextStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -217,9 +223,20 @@ public class RegistroFragment extends Fragment {
     }
 
     private void mostrarDatePicker() {
+
+        Instant instant = null;
+        long utcTimeInMillis = 0;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            instant = Instant.from(Instant.now().minus(1, ChronoUnit.DAYS));
+            utcTimeInMillis = instant.toEpochMilli();
+        }
+
+        CalendarConstraints constraintsBuilder = new CalendarConstraints.Builder()
+                .setValidator(DateValidatorPointBackward.before(utcTimeInMillis)).build();
         MaterialDatePicker<Long> picker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Selecciona una fecha")
                 .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .setCalendarConstraints(constraintsBuilder)
                 .build();
         picker.show(requireActivity().getSupportFragmentManager(), "tag");
         picker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
@@ -232,15 +249,16 @@ public class RegistroFragment extends Fragment {
                 int month = calendar.get(Calendar.MONTH) + 1; // Enero es 0
                 int year = calendar.get(Calendar.YEAR);
 
+                mesNacimiento = month;
                 Locale locale = new Locale("es", "ES");
                 Month mMonth = null;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     mMonth = Month.of(month);
                     String monthName = mMonth.getDisplayName(TextStyle.FULL, locale);
-                    if(day<10){
-                        fechaNacimiento= "0"+day + " / " + monthName + " / " + year;
-                    }else{
-                        fechaNacimiento = day + " / " + monthName + " / " + year;
+                    if (day < 10) {
+                        fechaNacimiento = "0" + day + "  /  " + monthName + "  /  " + year;
+                    } else {
+                        fechaNacimiento = day + "  /  " + monthName + "  /  " + year;
                     }
                     binding.nacimientoReg.setText(fechaNacimiento);
                 }

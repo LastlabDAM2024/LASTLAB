@@ -4,24 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-bs/values-bs.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\9e36773cce1fffa21559893dd5726804\\transformed\\core-1.13.0\\res\\values-bs\\values-bs.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,353,457,561,663,780",
-                        "endColumns": "97,101,97,103,103,101,116,100",
-                        "endOffsets": "148,250,348,452,556,658,775,876"
-                    },
-                    "to": {
-                        "startLines": "39,40,41,42,43,44,45,135",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3539,3637,3739,3837,3941,4045,4147,12065",
-                        "endColumns": "97,101,97,103,103,101,116,100",
-                        "endOffsets": "3632,3734,3832,3936,4040,4142,4259,12161"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\668db103033da7bd3d0b19450ba1c184\\transformed\\biometric-1.1.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\668db103033da7bd3d0b19450ba1c184\\transformed\\biometric-1.1.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\79fccef32fce3cf3c3c810ccd7ced250\\transformed\\appcompat-1.6.1\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9e36773cce1fffa21559893dd5726804\\transformed\\core-1.13.0\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,353,457,561,663,780",
+                        "endColumns": "97,101,97,103,103,101,116,100",
+                        "endOffsets": "148,250,348,452,556,658,775,876"
+                    },
+                    "to": {
+                        "startLines": "39,40,41,42,43,44,45,135",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3539,3637,3739,3837,3941,4045,4147,12065",
+                        "endColumns": "97,101,97,103,103,101,116,100",
+                        "endOffsets": "3632,3734,3832,3936,4040,4142,4259,12161"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\79fccef32fce3cf3c3c810ccd7ced250\\transformed\\appcompat-1.6.1\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,24 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\9da04d03690caf669a4b54213c680bb9\\transformed\\navigation-ui-2.6.0\\res\\values-bs\\values-bs.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,158",
-                        "endColumns": "102,124",
-                        "endOffsets": "153,278"
-                    },
-                    "to": {
-                        "startLines": "126,127",
-                        "startColumns": "4,4",
-                        "startOffsets": "11210,11313",
-                        "endColumns": "102,124",
-                        "endOffsets": "11308,11433"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\d669becc4bf70dbf0a9a5fdce5ce08aa\\transformed\\material-1.12.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\d669becc4bf70dbf0a9a5fdce5ce08aa\\transformed\\material-1.12.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\3be40966ee3038c42264d02d38342371\\transformed\\preference-1.2.0\\res\\values-bs\\values-bs.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3be40966ee3038c42264d02d38342371\\transformed\\preference-1.2.0\\res\\values-bs\\values-bs.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -105,6 +88,23 @@
                         "startOffsets": "4676,4968,11438,11601,12166,12335,12422",
                         "endColumns": "70,86,82,137,168,86,82",
                         "endOffsets": "4742,5050,11516,11734,12330,12417,12500"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9da04d03690caf669a4b54213c680bb9\\transformed\\navigation-ui-2.6.0\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,158",
+                        "endColumns": "102,124",
+                        "endOffsets": "153,278"
+                    },
+                    "to": {
+                        "startLines": "126,127",
+                        "startColumns": "4,4",
+                        "startOffsets": "11210,11313",
+                        "endColumns": "102,124",
+                        "endOffsets": "11308,11433"
                     }
                 }
             ]

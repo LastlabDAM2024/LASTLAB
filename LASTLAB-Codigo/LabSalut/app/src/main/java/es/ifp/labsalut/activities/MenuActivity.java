@@ -2,6 +2,8 @@ package es.ifp.labsalut.activities;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +16,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -31,6 +34,7 @@ import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
 import es.ifp.labsalut.ui.CitasFragment;
+import es.ifp.labsalut.ui.ColorStatusBar;
 import es.ifp.labsalut.ui.HomeFragment;
 import es.ifp.labsalut.ui.MedicamentosFragment;
 import es.ifp.labsalut.ui.SettingsFragment;
@@ -52,7 +56,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         setContentView(binding.getRoot());
         binding.appBarMain.toolbar.setPopupTheme(com.google.android.material.R.style.Widget_Material3_Light_ActionBar_Solid);
         binding.appBarMain.toolbar.setTitle("");
-
+        ColorStatusBar.colorDinamicStatusBar(this,ColorStatusBar.obtenerColorToolbar(binding.appBarMain.toolbar));
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         View headerView = binding.navView.getHeaderView(0);
@@ -67,8 +71,10 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         binding.navView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, binding.appBarMain.toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.md_theme_onPrimary));
         binding.drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        binding.appBarMain.toolbarTitle.setTextColor(ColorStatusBar.obtenerColorBackground(this));
 
 
         if (savedInstanceState == null) {
@@ -134,7 +140,5 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 
 }

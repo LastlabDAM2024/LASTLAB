@@ -46,7 +46,7 @@
                 android:id="@+id/fecha_cita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="true" />
+                android:enabled="false" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,7 +79,7 @@
                 android:id="@+id/hora_cita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="true" />
+                android:enabled="false" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,6 +105,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
+            android:gravity="start"
             android:hint="Descripcion"
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +116,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descrip_cita"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="100dp"
+                android:gravity="start" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -140,13 +142,14 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:hint="Recordatorio en horas"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:hint="Recordatorio cada:"
+            android:enabled="false"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescrip_cita">
 
-            <AutoCompleteTextView
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/record_cita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

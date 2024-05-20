@@ -4,41 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\9da04d03690caf669a4b54213c680bb9\\transformed\\navigation-ui-2.6.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,125",
-                        "endOffsets": "163,289"
-                    },
-                    "to": {
-                        "startLines": "125,126",
-                        "startColumns": "4,4",
-                        "startOffsets": "11509,11622",
-                        "endColumns": "112,125",
-                        "endOffsets": "11617,11743"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\3be40966ee3038c42264d02d38342371\\transformed\\preference-1.2.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,175,272,349,492,661,747",
-                        "endColumns": "69,96,76,142,168,85,79",
-                        "endOffsets": "170,267,344,487,656,742,822"
-                    },
-                    "to": {
-                        "startLines": "49,53,127,129,135,136,137",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4726,5019,11748,11914,12490,12659,12745",
-                        "endColumns": "69,96,76,142,168,85,79",
-                        "endOffsets": "4791,5111,11820,12052,12654,12740,12820"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\d669becc4bf70dbf0a9a5fdce5ce08aa\\transformed\\material-1.12.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\d669becc4bf70dbf0a9a5fdce5ce08aa\\transformed\\material-1.12.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,24 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\668db103033da7bd3d0b19450ba1c184\\transformed\\biometric-1.1.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,173,265,386,549,703,837,968,1148,1251,1385,1548",
-                        "endColumns": "117,91,120,162,153,133,130,179,102,133,162,139",
-                        "endOffsets": "168,260,381,544,698,832,963,1143,1246,1380,1543,1683"
-                    },
-                    "to": {
-                        "startLines": "48,50,55,56,57,58,59,60,61,62,63,64",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4608,4796,5213,5334,5497,5651,5785,5916,6096,6199,6333,6496",
-                        "endColumns": "117,91,120,162,153,133,130,179,102,133,162,139",
-                        "endOffsets": "4721,4883,5329,5492,5646,5780,5911,6091,6194,6328,6491,6631"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\79fccef32fce3cf3c3c810ccd7ced250\\transformed\\appcompat-1.6.1\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\79fccef32fce3cf3c3c810ccd7ced250\\transformed\\appcompat-1.6.1\\res\\values-fr-rCA\\values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samsung\\.gradle\\caches\\transforms-4\\9e36773cce1fffa21559893dd5726804\\transformed\\core-1.13.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9e36773cce1fffa21559893dd5726804\\transformed\\core-1.13.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -105,6 +54,57 @@
                         "startOffsets": "3578,3676,3778,3877,3979,4083,4187,12389",
                         "endColumns": "97,101,98,101,103,103,113,100",
                         "endOffsets": "3671,3773,3872,3974,4078,4182,4296,12485"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9da04d03690caf669a4b54213c680bb9\\transformed\\navigation-ui-2.6.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endColumns": "112,125",
+                        "endOffsets": "163,289"
+                    },
+                    "to": {
+                        "startLines": "125,126",
+                        "startColumns": "4,4",
+                        "startOffsets": "11509,11622",
+                        "endColumns": "112,125",
+                        "endOffsets": "11617,11743"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\668db103033da7bd3d0b19450ba1c184\\transformed\\biometric-1.1.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,173,265,386,549,703,837,968,1148,1251,1385,1548",
+                        "endColumns": "117,91,120,162,153,133,130,179,102,133,162,139",
+                        "endOffsets": "168,260,381,544,698,832,963,1143,1246,1380,1543,1683"
+                    },
+                    "to": {
+                        "startLines": "48,50,55,56,57,58,59,60,61,62,63,64",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4608,4796,5213,5334,5497,5651,5785,5916,6096,6199,6333,6496",
+                        "endColumns": "117,91,120,162,153,133,130,179,102,133,162,139",
+                        "endOffsets": "4721,4883,5329,5492,5646,5780,5911,6091,6194,6328,6491,6631"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3be40966ee3038c42264d02d38342371\\transformed\\preference-1.2.0\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,175,272,349,492,661,747",
+                        "endColumns": "69,96,76,142,168,85,79",
+                        "endOffsets": "170,267,344,487,656,742,822"
+                    },
+                    "to": {
+                        "startLines": "49,53,127,129,135,136,137",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "4726,5019,11748,11914,12490,12659,12745",
+                        "endColumns": "69,96,76,142,168,85,79",
+                        "endOffsets": "4791,5111,11820,12052,12654,12740,12820"
                     }
                 }
             ]

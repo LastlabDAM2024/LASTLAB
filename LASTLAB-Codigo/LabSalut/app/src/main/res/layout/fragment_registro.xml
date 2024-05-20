@@ -46,9 +46,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nacimiento_reg"
-                    android:enabled="false"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:enabled="false" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +77,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Email"
                 app:endIconMode="clear_text"
+                app:helperTextEnabled="true"
+                app:helperText="email@example.com"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textoNaci_reg">
@@ -93,7 +95,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Contraseña"
                 app:endIconMode="password_toggle"
