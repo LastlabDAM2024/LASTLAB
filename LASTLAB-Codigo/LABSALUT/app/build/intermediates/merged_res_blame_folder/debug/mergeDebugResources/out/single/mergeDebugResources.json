@@ -12,10 +12,6 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "es.ifp.labsalut.app-debug-47:/layout_activity_main_bottom.xml.flat",
-        "source": "es.ifp.labsalut.app-main-49:/layout/activity_main_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_settings.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_settings.xml"
     },
@@ -60,12 +56,20 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_home.xml"
     },
     {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_boton_borrado.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\boton_borrado.xml"
+    },
+    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_nav_header_menu.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\nav_header_menu.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_menu.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "es.ifp.labsalut.app-debug-47:/layout_boton_borrado.xml.flat",
+        "source": "es.ifp.labsalut.app-main-49:/layout/boton_borrado.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_content_menu.xml.flat",
@@ -98,6 +102,10 @@
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_medicamentos.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\fragment_medicamentos.xml"
+    },
+    {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\color_bottom_nav_text_color_selector.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\color\\bottom_nav_text_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_registro.xml.flat",
@@ -142,10 +150,6 @@
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "es.ifp.labsalut.app-debug-47:/color_bottom_nav_text_color_selector.xml.flat",
-        "source": "es.ifp.labsalut.app-main-49:/color/bottom_nav_text_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-v21_ic_menu_slideshow.xml.flat",

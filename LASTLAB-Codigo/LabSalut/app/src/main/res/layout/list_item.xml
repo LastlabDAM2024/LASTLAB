@@ -1,10 +1,17 @@
-<!-- res/layout/list_item.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="10dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/md_theme_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
     <ImageView
         android:id="@+id/foto_list"
@@ -23,7 +30,7 @@
             android:id="@+id/nombre_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre medicamento / cita"
+            android:text="Nombre medi / cita"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -33,7 +40,7 @@
             android:layout_weight="0.5" />
 
         <TextView
-            android:id="@+id/freq_list"
+            android:id="@+id/descrip_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -81,3 +88,4 @@
 
 
 </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

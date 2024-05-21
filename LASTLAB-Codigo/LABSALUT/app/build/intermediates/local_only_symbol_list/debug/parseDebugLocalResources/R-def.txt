@@ -167,6 +167,7 @@ id app_bar_main
 id app_bar_reg
 id appint_sett
 id botonAceptar
+id btnDelete
 id calendario_cita
 id calendario_reg
 id cancelar_reg
@@ -179,6 +180,7 @@ id container
 id content_menu
 id content_reg
 id descrip_cita
+id descrip_list
 id dosis_med
 id drawer_layout
 id email
@@ -189,14 +191,11 @@ id fecha_list
 id foto_list
 id fragment_home
 id frecuencia_med
-id freq_list
 id guardar_cita
 id hora_cita
 id horario_cita
 id iconButton_list
 id imageView
-id listCita_home
-id listMedi_home
 id mail_reg
 id main
 id medi_sett
@@ -229,6 +228,8 @@ id record_cita
 id record_list
 id record_med
 id recordarUsuario
+id recyclerViewCita_home
+id recyclerViewMedi_home
 id spacioList_home
 id suscrip_suscrip
 id textDescrip_cita
@@ -265,6 +266,7 @@ layout activity_menu
 layout activity_registro
 layout app_bar_menu
 layout app_bar_reg
+layout boton_borrado
 layout content_menu
 layout content_reg
 layout fragment_citas

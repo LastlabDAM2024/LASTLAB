@@ -8,13 +8,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.MenuRes;
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
@@ -24,75 +25,75 @@ import java.util.List;
 
 import es.ifp.labsalut.R;
 
-public class ModListAdapter extends BaseAdapter {
+public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListViewHolder> {
 
+    private static final float ICON_MARGIN = 8;
     private Context context;
-    private ArrayList<Serializable> datos;
-    private static final int ICON_MARGIN = 8;
+    private ArrayList<Serializable> itemList; // Usa Object para contener tanto Medicamento como CitaMedica
 
-
-    public ModListAdapter(Context context, ArrayList<Serializable> datos) {
+    public ModListAdapter(Context context, ArrayList<Serializable> itemList) {
         this.context = context;
-        this.datos = datos;
+        this.itemList = itemList;
+    }
 
+    @NonNull
+    @Override
+    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        return new ListViewHolder(view);
     }
 
     @Override
-    public int getCount() {
-        return datos.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return datos.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
-        }
-
-        Serializable item = (Serializable) getItem(position);
-
-        ImageView image = convertView.findViewById(R.id.foto_list);
-        TextView nombre = convertView.findViewById(R.id.nombre_list);
-        TextView frecuencia = convertView.findViewById(R.id.freq_list);
-        TextView fecha = convertView.findViewById(R.id.fecha_list);
-        TextView record = convertView.findViewById(R.id.record_list);
-        Button menuButton = convertView.findViewById(R.id.iconButton_list);
+    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+        Object item = itemList.get(position);
 
         if (item instanceof Medicamento) {
-            Medicamento data = (Medicamento) item;
-            image.setImageResource(R.drawable.ic_launcher_foreground);
-            nombre.setText(data.getNombre());
-            frecuencia.setText(data.getFrecuencia());
-            fecha.setText(data.getDosis());
-            record.setText(data.getRecordatorio());
+            Medicamento medicamento = (Medicamento) item;
+            holder.titleText.setText(medicamento.getNombre());
+            holder.descriptionText.setText(medicamento.getFrecuencia());
+            holder.fechaText.setText(medicamento.getDosis());
+            holder.recordTex.setText(medicamento.getRecordatorio());
+            holder.avatarImage.setImageResource(R.drawable.ic_launcher_foreground);
+
         } else if (item instanceof CitaMedica) {
-            CitaMedica data = (CitaMedica) item;
-            image.setImageResource(R.drawable.ic_action_fingerprint);
-            nombre.setText(data.getNombre());
-            frecuencia.setText(data.getDescripcion());
-            fecha.setText(data.getFecha());
-            record.setText(data.getRecordatorio());
+            CitaMedica citaMedica = (CitaMedica) item;
+            holder.titleText.setText(citaMedica.getNombre());
+            holder.descriptionText.setText(citaMedica.getHora() + " - " + citaMedica.getDescripcion());
+            holder.fechaText.setText(citaMedica.getFecha());
+            holder.recordTex.setText(citaMedica.getRecordatorio());
+            holder.avatarImage.setImageResource(R.drawable.ic_action_fingerprint);
         }
-
-
-        // Configurar el evento del botón de menú
-        menuButton.setOnClickListener(new View.OnClickListener() {
+        holder.optionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showMenu(v, R.menu.menu_list);
             }
         });
+    }
 
-        return convertView;
+
+    @Override
+    public int getItemCount() {
+        return itemList.size();
+    }
+
+    static class ListViewHolder extends RecyclerView.ViewHolder {
+        ImageView avatarImage;
+        TextView titleText;
+        TextView descriptionText;
+        TextView fechaText;
+        TextView recordTex;
+        Button optionButton;
+
+        public ListViewHolder(@NonNull View itemView) {
+            super(itemView);
+            avatarImage = itemView.findViewById(R.id.foto_list);
+            titleText = itemView.findViewById(R.id.nombre_list);
+            descriptionText = itemView.findViewById(R.id.descrip_list);
+            fechaText = itemView.findViewById(R.id.fecha_list);
+            recordTex = itemView.findViewById(R.id.record_list);
+            optionButton = itemView.findViewById(R.id.iconButton_list);
+        }
     }
 
     private void showMenu(View v, @MenuRes int menuRes) {
