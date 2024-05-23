@@ -1,6 +1,7 @@
 package es.ifp.labsalut.negocio;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.InsetDrawable;
 import android.os.Build;
 import android.util.TypedValue;
@@ -11,25 +12,33 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.graphics.Color;
+
 
 import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+
 
 import es.ifp.labsalut.R;
+import es.ifp.labsalut.ui.DeslizarParaMover;
 
-public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListViewHolder> {
+public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListViewHolder> implements DeslizarParaMover.ItemTouchHelperContract {
 
     private static final float ICON_MARGIN = 8;
     private Context context;
-    private ArrayList<Serializable> itemList; // Usa Object para contener tanto Medicamento como CitaMedica
+    private ArrayList<Serializable> itemList;// Usa Object para contener tanto Medicamento como CitaMedica
+    private int colorBack;
 
     public ModListAdapter(Context context, ArrayList<Serializable> itemList) {
         this.context = context;
@@ -92,7 +101,35 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
         return itemList;
     }
 
-    static class ListViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public void onRowMoved(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(itemList, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(itemList, i, i - 1);
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public void onRowSelected(ListViewHolder myViewHolder) {
+        colorBack =  myViewHolder.itemView.getDrawingCacheBackgroundColor();
+        int color = context.getResources().getColor(R.color.md_theme_secondaryFixedDim);
+        myViewHolder.itemView.setBackgroundColor(color);
+
+    }
+
+    @Override
+    public void onRowClear(ListViewHolder myViewHolder) {
+        myViewHolder.itemView.setBackgroundColor(colorBack);
+
+    }
+
+    public static class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView avatarImage;
         TextView titleText;
         TextView descriptionText;

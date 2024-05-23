@@ -23,9 +23,8 @@ import es.ifp.labsalut.R;
 
 abstract class DeslizarParaBorrar extends ItemTouchHelper.SimpleCallback {
 
-        Context mContext;
+        private Context mContext;
         private Paint mClearPaint;
-        private ColorDrawable mBackground;
         private int backgroundColor;
         private Drawable deleteDrawable;
         private int intrinsicWidth;
@@ -35,7 +34,6 @@ abstract class DeslizarParaBorrar extends ItemTouchHelper.SimpleCallback {
         DeslizarParaBorrar(Context context) {
             super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
             mContext = context;
-            mBackground = new ColorDrawable();
             backgroundColor = Color.parseColor("#b80f0a");
             mClearPaint = new Paint();
             mClearPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
@@ -63,27 +61,27 @@ abstract class DeslizarParaBorrar extends ItemTouchHelper.SimpleCallback {
         @Override
         public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
             super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-
+            int constant= 40;
             View itemView = viewHolder.itemView;
             int itemHeight = itemView.getHeight();
 
             boolean isCancelled = dX == 0 && !isCurrentlyActive;
 
             if (isCancelled) {
-                clearCanvas(c, itemView.getLeft() + dX, (float) itemView.getTop(), (float) itemView.getRight() + dX, (float) itemView.getBottom());
+                clearCanvas(c, itemView.getLeft() + dX+constant, (float) itemView.getTop(), (float) itemView.getRight() + dX-constant, (float) itemView.getBottom());
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
                 return;
             }
 
             GradientDrawable shapeDrawable = new GradientDrawable();
             shapeDrawable.setColor(backgroundColor);
-            shapeDrawable.setCornerRadius(500);
+            shapeDrawable.setCornerRadius(60f);
 
             if (dX > 0) { // Swipe to the right
-                shapeDrawable.setBounds(itemView.getLeft(), itemView.getTop(), itemView.getLeft() + (int) dX, itemView.getBottom());
+                shapeDrawable.setBounds(itemView.getLeft(), itemView.getTop(), itemView.getLeft() + (int) dX+constant, itemView.getBottom());
                 deleteDrawable.setBounds(itemView.getLeft() + deleteDrawable.getIntrinsicWidth(), itemView.getTop() + (itemHeight - intrinsicHeight) / 2, itemView.getLeft() + deleteDrawable.getIntrinsicWidth() + intrinsicWidth, itemView.getTop() + (itemHeight + intrinsicHeight) / 2);
             } else if (dX < 0) { // Swipe to the left
-                shapeDrawable.setBounds(itemView.getRight() + (int) dX, itemView.getTop(), itemView.getRight(), itemView.getBottom());
+                shapeDrawable.setBounds(itemView.getRight() + (int) dX-constant, itemView.getTop(), itemView.getRight(), itemView.getBottom());
                 deleteDrawable.setBounds(itemView.getRight() - deleteDrawable.getIntrinsicWidth() - intrinsicWidth, itemView.getTop() + (itemHeight - intrinsicHeight) / 2, itemView.getRight() - deleteDrawable.getIntrinsicWidth(), itemView.getTop() + (itemHeight + intrinsicHeight) / 2);
             }
 

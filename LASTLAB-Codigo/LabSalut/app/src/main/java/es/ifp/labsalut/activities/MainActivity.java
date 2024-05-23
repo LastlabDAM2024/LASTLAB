@@ -18,6 +18,7 @@ import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                 email = binding.email.getText().toString();
                 password = binding.pass.getText().toString();
                 if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Los campos Usuario y Contraseña no pueden estar vacíos", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(binding.activityMain, "Los campos Usuario y Contraseña no pueden estar vacíos", Snackbar.LENGTH_LONG).show();
                 } else {
                     // Verificar si el usuario y la contraseña son correctos
                     try {
@@ -187,7 +188,14 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                         .show();
 
                             } else {
-                                pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+                                String uiSecundaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(),"");
+                                if(uiSecundaria.equals("SI")){
+                                    pasarPantalla = new Intent(MainActivity.this, MenuBottomActivity.class);
+
+                                }else{
+                                    pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+
+                                }
                                 pasarPantalla.putExtra("USUARIO", user);
                                 activacionHuella = false;
                                 String huella = prefs_huella.getString("HUELLA" + user.getNombre(), "");
@@ -200,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                             }
                         } else {
                             // Si no son correctos, mostrar un mensaje de error
-                            Toast.makeText(MainActivity.this, "El usuario o la contraseña no es correcta", Toast.LENGTH_SHORT).show();
+                            Snackbar.make(binding.activityMain, "El usuario o la contraseña no es correcta", Snackbar.LENGTH_LONG).show();
                         }
                     } catch (Exception e) {
                         throw new RuntimeException(e);
@@ -273,7 +281,14 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         }
         editor_huella.apply();
         editor_user.apply();
-        pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+        String uiSecundaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(),"");
+        if(uiSecundaria.equals("SI")){
+            pasarPantalla = new Intent(MainActivity.this, MenuBottomActivity.class);
+
+        }else{
+            pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
+
+        }
         pasarPantalla.putExtra("USUARIO", user);
         finish();
         startActivity(pasarPantalla);
@@ -297,7 +312,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(MainActivity.this, "Vuelva a intentarlo en 30 segundos", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(binding.activityMain, "Vuelva a intentarlo en 30 segundos", Snackbar.LENGTH_LONG).show();
                 }
             });
         }

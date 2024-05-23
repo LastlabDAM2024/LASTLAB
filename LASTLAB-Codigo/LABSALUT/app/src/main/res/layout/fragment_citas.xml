@@ -30,72 +30,56 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textFecha_cita"
+        <LinearLayout
+            android:id="@+id/linear_cita"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
-            android:hint="Fecha de la cita
-"
-            app:layout_constraintEnd_toStartOf="@+id/calendario_cita"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textNombre_cita">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fecha_cita"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFecha_cita"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.40"
+                android:layout_marginRight="6dp"
+                android:hint="Fecha"
+                app:startIconScaleType="center"
+                app:startIconDrawable="@drawable/ic_menu_camera">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fecha_cita"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:enabled="false" />
 
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/calendario_cita"
-            style="@style/Widget.Material3.Button.IconButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="12dp"
-            android:text="Seleccionar"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNombre_cita" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textHora_cita"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:hint="Hora"
+                app:startIconDrawable="@drawable/ic_menu_camera">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textHora_cita"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:hint="Hora de la cita"
-            app:layout_constraintEnd_toStartOf="@+id/horario_cita"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textFecha_cita">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hora_cita"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:enabled="false" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/hora_cita"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <Button
-            android:id="@+id/horario_cita"
-            style="@style/Widget.Material3.Button.IconButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="12dp"
-            android:text="Seleccionar"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textFecha_cita" />
+        </LinearLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -111,7 +95,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textHora_cita">
+            app:layout_constraintTop_toBottomOf="@+id/linear_cita">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descrip_cita"
@@ -137,14 +121,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textRecord_cita"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:hint="Recordatorio antes:"
             android:enabled="false"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:hint="Recordatorio antes:"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescrip_cita">
@@ -167,8 +151,6 @@
             android:text="Activar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textRecord_cita" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -27,6 +28,7 @@ import com.google.android.material.datepicker.DateValidatorPointBackward;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -114,7 +116,7 @@ public class RegistroFragment extends Fragment {
         Activity activity = getActivity();
 
         db = new BaseDatos(context);
-        binding.calendarioReg.setOnClickListener(new View.OnClickListener() {
+        binding.textoNaciReg.setStartIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mostrarDatePicker();
@@ -127,7 +129,7 @@ public class RegistroFragment extends Fragment {
                 if (binding.nombreReg.getText().toString().isEmpty() || binding.mailReg.getText().toString().isEmpty()
                         || fechaNacimiento.equals("dd  /  mes  /  aaaa") || binding.passReg.getText().toString().isEmpty()
                         || binding.passRepReg.getText().toString().isEmpty()) {
-                    Toast.makeText(context, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(binding.fragmentRegistro, "Todos los campos son obligatorios", Snackbar.LENGTH_LONG).show();
                 } else {
                     try {
                         // Crear MasterKey para EncryptedSharedPreferences
@@ -158,14 +160,14 @@ public class RegistroFragment extends Fragment {
                         if (mesNacimiento <= mes) {
                             if (Integer.parseInt(fechaNaci[0]) <= dia) {
                                 if (!esCorreoValido(binding.mailReg.getText().toString())) {
-                                    Toast.makeText(context, "El formato de correo electronico no es válido", Toast.LENGTH_SHORT).show();
+                                    Snackbar.make(binding.fragmentRegistro, "El formato de correo electronico no es válido", Snackbar.LENGTH_LONG).show();
                                 } else {
                                     Usuario usuario = db.getUser(binding.mailReg.getText().toString());
                                     if (!usuario.getEmail().isEmpty()) {
-                                        Toast.makeText(context, "El correo electronico ya esta registrado", Toast.LENGTH_SHORT).show();
+                                        Snackbar.make(binding.fragmentRegistro, "El correo electronico ya esta registrado", Snackbar.LENGTH_LONG).show();
                                     } else {
                                         if (!binding.passReg.getText().toString().equals(binding.passRepReg.getText().toString())) {
-                                            Toast.makeText(context, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                                            Snackbar.make(binding.fragmentRegistro, "Las contraseñas no coinciden", Snackbar.LENGTH_LONG).show();
                                         } else {
                                             aes = new CifradoAES();
                                             String semilla = binding.mailReg.getText().toString() + binding.passReg.getText().toString();
@@ -193,8 +195,6 @@ public class RegistroFragment extends Fragment {
                                         }
                                     }
                                 }
-                            } else {
-                                Toast.makeText(context, "La fecha no puede ser posterior a la actual", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

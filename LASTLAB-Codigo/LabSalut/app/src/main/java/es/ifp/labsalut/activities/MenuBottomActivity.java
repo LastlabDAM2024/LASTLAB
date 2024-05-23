@@ -25,7 +25,7 @@ public class MenuBottomActivity extends AppCompatActivity {
     private ActivityMainBottomBinding binding;
     private Usuario user = null;
     private Bundle extras;
-    private String settingFragment="";
+    private String settingFragment = "NO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,8 @@ public class MenuBottomActivity extends AppCompatActivity {
         extras = getIntent().getExtras();
         if (extras != null) {
             user = (Usuario) extras.getSerializable("USUARIO");
-            settingFragment = extras.getString("SETTINGFRAGMENT");
-            if(settingFragment.equals(null)){
-                settingFragment ="NO";
+            if (extras.size() > 1) {
+                settingFragment = extras.getString("SETTINGFRAGMENT");
             }
         }
         binding.navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -64,7 +63,7 @@ public class MenuBottomActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, selectedFragment);
                     fragmentTransaction.commit();
-                }else{
+                } else {
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, HomeFragment.newInstance(user));
@@ -77,7 +76,7 @@ public class MenuBottomActivity extends AppCompatActivity {
         if (settingFragment.equals("SI")) {
             binding.navView.setSelectedItemId(R.id.navigation_settings);
 
-        }else{
+        } else if (settingFragment.equals("NO")) {
             binding.navView.setSelectedItemId(R.id.navigation_home);
 
         }

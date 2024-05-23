@@ -36,8 +36,8 @@ public class HomeFragment extends Fragment {
     private String email;
     private String pass;
     private Usuario user = null;
-    private  ModListAdapter adapterMed= null;
-    private  ModListAdapter adapterCita= null;
+    private ModListAdapter adapterMed = null;
+    private ModListAdapter adapterCita = null;
 
 
     public HomeFragment() {
@@ -92,22 +92,51 @@ public class HomeFragment extends Fragment {
         ArrayList<Serializable> dataMed = new ArrayList<>();
         dataMed.add(new Medicamento("Paracetamol", "500mg", "Toma cada 8 horas", "5 min antes"));
         dataMed.add(new Medicamento("Ibuprofeno", "1000mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Desketoprofeo", "200mg", "Toma cada 8 horas", "5 min antes"));
+        dataMed.add(new Medicamento("Desketoprofeno", "200mg", "Toma cada 8 horas", "5 min antes"));
+        dataMed.add(new Medicamento("Aerius", "1000mg", "Toma cada 8 horas", "5 min antes"));
+        dataMed.add(new Medicamento("Ibuprofeno", "1000mg", "Toma cada 8 horas", "5 min antes"));
+        dataMed.add(new Medicamento("Desketoprofeno", "200mg", "Toma cada 8 horas", "5 min antes"));
+        dataMed.add(new Medicamento("Aerius", "1000mg", "Toma cada 8 horas", "5 min antes"));
 
         binding.recyclerViewMediHome.setLayoutManager(new LinearLayoutManager(context));
         adapterMed = new ModListAdapter(context, dataMed);
-        activarDeslizar(binding.recyclerViewMediHome,adapterMed);
+        activarDeslizar(binding.recyclerViewMediHome, adapterMed);
+        DeslizarParaMover deslizarParaMover = new DeslizarParaMover((DeslizarParaMover.ItemTouchHelperContract) adapterMed);
+        ItemTouchHelper touchHelper = new ItemTouchHelper(deslizarParaMover);
+        touchHelper.attachToRecyclerView(binding.recyclerViewMediHome);
         binding.recyclerViewMediHome.setAdapter(adapterMed);
 
         ArrayList<Serializable> dataCita = new ArrayList<>();
         dataCita.add(new CitaMedica("Neurologo", "12/05/2024", "08:00", "Ir en ayunas", "24 horas antes"));
         dataCita.add(new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
         dataCita.add(new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes"));
+        dataCita.add(new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
+        dataCita.add(new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
+        dataCita.add(new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes"));
+        dataCita.add(new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
 
         binding.recyclerViewCitaHome.setLayoutManager(new LinearLayoutManager(context));
         adapterCita = new ModListAdapter(context, dataCita);
-        activarDeslizar(binding.recyclerViewCitaHome,adapterCita);
+        activarDeslizar(binding.recyclerViewCitaHome, adapterCita);
+        ItemTouchHelper.SimpleCallback callback2 =
+                new DeslizarParaMover((DeslizarParaMover.ItemTouchHelperContract) adapterCita);
+        ItemTouchHelper touchHelper2 = new ItemTouchHelper(callback2);
+        touchHelper2.attachToRecyclerView(binding.recyclerViewCitaHome);
         binding.recyclerViewCitaHome.setAdapter(adapterCita);
+
+        int itemHeightInDp = 77;
+        int numberOfVisibleItems = 4;
+        float scale = getResources().getDisplayMetrics().density;
+        int itemHeightInPx = (int) (itemHeightInDp * scale);
+        int totalHeight = itemHeightInPx * numberOfVisibleItems;
+        ViewGroup.LayoutParams params = binding.recyclerViewMediHome.getLayoutParams();
+        params.height = totalHeight;
+        binding.recyclerViewMediHome.setLayoutParams(params);
+
+        ViewGroup.LayoutParams params2 = binding.recyclerViewCitaHome.getLayoutParams();
+        params2.height = totalHeight;
+        binding.recyclerViewCitaHome.setLayoutParams(params2);
+
 
     }
 

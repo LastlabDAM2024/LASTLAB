@@ -8,20 +8,8 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "es.ifp.labsalut.app-debug-47:/drawable-hdpi_recycler_bin.png.flat",
-        "source": "es.ifp.labsalut.app-main-49:/drawable-hdpi/recycler_bin.png"
-    },
-    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-tvdpi_recycler_bin.png.flat",
-        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-tvdpi\\recycler_bin.png"
-    },
-    {
-        "merged": "es.ifp.labsalut.app-debug-47:/drawable-xxhdpi_recycler_bin.png.flat",
-        "source": "es.ifp.labsalut.app-main-49:/drawable-xxhdpi/recycler_bin.png"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_settings.xml.flat",
@@ -72,6 +60,10 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\boton_borrado.xml"
     },
     {
+        "merged": "es.ifp.labsalut.app-debug-47:/layout_fragment_home.xml.flat",
+        "source": "es.ifp.labsalut.app-main-49:/layout/fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_nav_header_menu.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\nav_header_menu.xml"
     },
@@ -106,10 +98,6 @@
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_registro.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_registro.xml"
-    },
-    {
-        "merged": "es.ifp.labsalut.app-debug-47:/drawable-ldpi_recycler_bin.png.flat",
-        "source": "es.ifp.labsalut.app-main-49:/drawable-ldpi/recycler_bin.png"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_fragment_medicamentos.xml.flat",
@@ -152,10 +140,6 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-hdpi\\recycler_bin.png"
     },
     {
-        "merged": "es.ifp.labsalut.app-debug-47:/drawable-xhdpi_recycler_bin.png.flat",
-        "source": "es.ifp.labsalut.app-main-49:/drawable-xhdpi/recycler_bin.png"
-    },
-    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\menu_activity_menu_drawer.xml.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\menu\\activity_menu_drawer.xml"
     },
@@ -192,6 +176,10 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\backup_rules.xml"
     },
     {
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-ldpi_recycler_bin.png.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-ldpi\\recycler_bin.png"
+    },
+    {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -202,10 +190,6 @@
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xxhdpi_recycler_bin.png.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xxhdpi\\recycler_bin.png"
-    },
-    {
-        "merged": "es.ifp.labsalut.app-debug-47:/drawable-mdpi_recycler_bin.png.flat",
-        "source": "es.ifp.labsalut.app-main-49:/drawable-mdpi/recycler_bin.png"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_list_item.xml.flat",
@@ -244,15 +228,11 @@
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable_recycler_bin.xml.flat",
-        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable\\recycler_bin.xml"
+        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\menu_menu_list.xml.flat",
+        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\menu\\menu_list.xml"
     },
     {
         "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-mdpi_recycler_bin.png.flat",
         "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-mdpi\\recycler_bin.png"
-    },
-    {
-        "merged": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\menu_menu_list.xml.flat",
-        "source": "C:\\Users\\josea\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\menu\\menu_list.xml"
     }
 ]

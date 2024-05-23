@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_registro"
     tools:context=".ui.RegistroFragment">
 
 
@@ -38,34 +39,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:hint="Fecha de Nacimiento"
-                app:layout_constraintEnd_toStartOf="@+id/calendario_reg"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textnombre_reg">
+                app:layout_constraintTop_toBottomOf="@+id/textnombre_reg"
+                app:startIconDrawable="@drawable/ic_menu_camera">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nacimiento_reg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false" />
+                    android:enabled="false"
+                    android:gravity="center" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/calendario_reg"
-                style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="16dp"
-                android:text="Seleccionar"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textnombre_reg" />
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -79,6 +67,7 @@
                 app:endIconMode="clear_text"
                 app:helperTextEnabled="true"
                 app:helperText="email@example.com"
+                app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textoNaci_reg">

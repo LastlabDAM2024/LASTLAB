@@ -21,6 +21,8 @@ import androidx.fragment.app.Fragment;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
@@ -175,8 +177,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
                     }
                     reiniciarHuellaListener(activity);
                     if (errorCode == BiometricPrompt.ERROR_TIMEOUT || errorCode == BiometricPrompt.ERROR_LOCKOUT) {
-                        Toast.makeText(activity, "Vuelva a intentarlo en 30 segundos", Toast.LENGTH_SHORT).show();
-
+                        Snackbar.make(binding.fragmentSettings, "Vuelva a intentarlo en 30 segundos", Snackbar.LENGTH_LONG).show();
                     }
                 }
             });

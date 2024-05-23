@@ -94,14 +94,14 @@ public class CitasFragment extends Fragment {
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
         Context context = requireContext();
-        binding.calendarioCita.setOnClickListener(new View.OnClickListener() {
+        binding.textFechaCita.setStartIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mostrarDatePicker();
             }
         });
 
-        binding.horarioCita.setOnClickListener(new View.OnClickListener() {
+        binding.textHoraCita.setStartIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mostrarTimePicker(context);

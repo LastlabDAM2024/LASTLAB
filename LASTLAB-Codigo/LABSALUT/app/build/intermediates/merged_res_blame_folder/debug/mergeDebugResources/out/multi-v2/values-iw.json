@@ -4,7 +4,41 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-iw/values-iw.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\1b884aeb23ad93daeb2f28a448392b66\\transformed\\appcompat-1.6.1\\res\\values-iw\\values-iw.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3b3165e253c45a0f171d64d4b048e6cc\\transformed\\navigation-ui-2.6.0\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,119",
+                        "endOffsets": "156,276"
+                    },
+                    "to": {
+                        "startLines": "126,127",
+                        "startColumns": "4,4",
+                        "startOffsets": "10775,10881",
+                        "endColumns": "105,119",
+                        "endOffsets": "10876,10996"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\1c1e2b7bbea1bdc46525fad02f911009\\transformed\\biometric-1.1.0\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,252,370,499,622,753,867,994,1088,1231,1373",
+                        "endColumns": "105,90,117,128,122,130,113,126,93,142,141,112",
+                        "endOffsets": "156,247,365,494,617,748,862,989,1083,1226,1368,1481"
+                    },
+                    "to": {
+                        "startLines": "49,51,56,57,58,59,60,61,62,63,64,65",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4420,4595,4983,5101,5230,5353,5484,5598,5725,5819,5962,6104",
+                        "endColumns": "105,90,117,128,122,130,113,126,93,142,141,112",
+                        "endOffsets": "4521,4681,5096,5225,5348,5479,5593,5720,5814,5957,6099,6212"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-iw\\values-iw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +55,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\fc5140f18be29e8309333a31760a421a\\transformed\\material-1.12.0\\res\\values-iw\\values-iw.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\993b6c97eaa06c0c3403c3d65edd0d90\\transformed\\core-1.13.0\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,149,251,348,445,546,646,752",
+                        "endColumns": "93,101,96,96,100,99,105,100",
+                        "endOffsets": "144,246,343,440,541,641,747,848"
+                    },
+                    "to": {
+                        "startLines": "39,40,41,42,43,44,45,135",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3437,3531,3633,3730,3827,3928,4028,11592",
+                        "endColumns": "93,101,96,96,100,99,105,100",
+                        "endOffsets": "3526,3628,3725,3822,3923,4023,4129,11688"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-iw\\values-iw.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,58 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\58c9585d570ab2ca893ee22c949cfa98\\transformed\\biometric-1.1.0\\res\\values-iw\\values-iw.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,161,252,370,499,622,753,867,994,1088,1231,1373",
-                        "endColumns": "105,90,117,128,122,130,113,126,93,142,141,112",
-                        "endOffsets": "156,247,365,494,617,748,862,989,1083,1226,1368,1481"
-                    },
-                    "to": {
-                        "startLines": "49,51,56,57,58,59,60,61,62,63,64,65",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4420,4595,4983,5101,5230,5353,5484,5598,5725,5819,5962,6104",
-                        "endColumns": "105,90,117,128,122,130,113,126,93,142,141,112",
-                        "endOffsets": "4521,4681,5096,5225,5348,5479,5593,5720,5814,5957,6099,6212"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\f0ee7072a89d1764a9b3d7fe3c2eff54\\transformed\\core-1.13.0\\res\\values-iw\\values-iw.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,149,251,348,445,546,646,752",
-                        "endColumns": "93,101,96,96,100,99,105,100",
-                        "endOffsets": "144,246,343,440,541,641,747,848"
-                    },
-                    "to": {
-                        "startLines": "39,40,41,42,43,44,45,135",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3437,3531,3633,3730,3827,3928,4028,11592",
-                        "endColumns": "93,101,96,96,100,99,105,100",
-                        "endOffsets": "3526,3628,3725,3822,3923,4023,4129,11688"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\907d737615c6d9375b2971c8e08899db\\transformed\\navigation-ui-2.6.0\\res\\values-iw\\values-iw.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,119",
-                        "endOffsets": "156,276"
-                    },
-                    "to": {
-                        "startLines": "126,127",
-                        "startColumns": "4,4",
-                        "startOffsets": "10775,10881",
-                        "endColumns": "105,119",
-                        "endOffsets": "10876,10996"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\e16bdfc4283683ccea3fdf35c609ed9e\\transformed\\preference-1.2.0\\res\\values-iw\\values-iw.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\646da461a1a82caec84a3ec6c9a72706\\transformed\\preference-1.2.0\\res\\values-iw\\values-iw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
