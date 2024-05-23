@@ -160,6 +160,7 @@ drawable ic_menu_manage
 drawable ic_menu_send
 drawable ic_menu_share
 drawable ic_menu_slideshow
+drawable recycler_bin
 drawable side_nav_bar
 drawable vertical_points
 id aceptar_reg

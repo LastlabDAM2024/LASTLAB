@@ -77,6 +77,21 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
         return itemList.size();
     }
 
+
+    public void removeItem(int position) {
+        itemList.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void restoreItem(Serializable item, int position) {
+        itemList.add(position, item);
+        notifyItemInserted(position);
+    }
+
+    public ArrayList<Serializable> getData() {
+        return itemList;
+    }
+
     static class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView avatarImage;
         TextView titleText;
