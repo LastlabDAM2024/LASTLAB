@@ -10,18 +10,22 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+// Clase para el cifrado y descifrado de datos utilizando AES
 public class CifradoAES {
-private byte[] IV = new byte[32];
-    public CifradoAES(){
-        SecureRandom random;
-        random = new SecureRandom();
+    private byte[] IV = new byte[32]; // Vector de inicialización para AES
+
+    // Constructor de la clase
+    public CifradoAES() {
+        // Generar un vector de inicialización aleatorio
+        SecureRandom random = new SecureRandom();
         random.nextBytes(IV);
     }
 
+    // Método para generar una clave secreta a partir de una semilla
     public SecretKey generarSecretKey(String semilla) {
-        SecretKey secreto=null;
+        SecretKey secreto = null;
         try {
-            // Convertir el string a un array de bytes usando UTF-8
+            // Convertir la semilla a un array de bytes utilizando UTF-8
             byte[] seedBytes = semilla.getBytes(StandardCharsets.UTF_8);
 
             // Calcular el hash SHA-256 de los bytes de la semilla
@@ -29,7 +33,7 @@ private byte[] IV = new byte[32];
             byte[] hashBytes = digest.digest(seedBytes);
 
             // Utilizar solo los primeros 32 bytes para la clave AES (256 bits)
-            byte[] aesKeyBytes = new byte[32];  // Tamaño de clave AES: 256 bits
+            byte[] aesKeyBytes = new byte[32]; // Tamaño de clave AES: 256 bits
             System.arraycopy(hashBytes, 0, aesKeyBytes, 0, aesKeyBytes.length);
 
             // Crear una instancia de SecretKeySpec para la clave AES
@@ -41,6 +45,7 @@ private byte[] IV = new byte[32];
         return secreto;
     }
 
+    // Método para convertir un array de bytes a una cadena hexadecimal
     public static String bytesToHex(byte[] bytes) {
         StringBuilder result = new StringBuilder();
         for (byte b : bytes) {
@@ -49,26 +54,28 @@ private byte[] IV = new byte[32];
         return result.toString();
     }
 
+    // Método para convertir una cadena hexadecimal a un array de bytes
     private static byte[] hexToBytes(String hexString) {
-        // Aseguramos que la longitud de la cadena hexadecimal sea par
+        // Asegurar que la longitud de la cadena hexadecimal sea par
         if (hexString.length() % 2 != 0) {
             throw new IllegalArgumentException("La cadena hexadecimal debe tener una longitud par");
         }
-        // Creamos un array de bytes para almacenar el resultado
+        // Crear un array de bytes para almacenar el resultado
         int len = hexString.length();
         byte[] result = new byte[len / 2];
 
-        // Convertimos cada par de caracteres hexadecimales a bytes
+        // Convertir cada par de caracteres hexadecimales a bytes
         for (int i = 0; i < len; i += 2) {
-            // Obtenemos el substring de dos caracteres hexadecimales
+            // Obtener el substring de dos caracteres hexadecimales
             String hex = hexString.substring(i, i + 2);
-            // Convertimos el substring a un byte y lo almacenamos en el array resultante
+            // Convertir el substring a un byte y almacenarlo en el array resultante
             result[i / 2] = (byte) Integer.parseInt(hex, 16);
         }
 
         return result;
     }
 
+    // Método para cifrar datos utilizando AES
     public String encrypt(byte[] plaintext, SecretKey key) throws Exception {
         Cipher cipher = Cipher.getInstance("AES");
         SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
@@ -78,7 +85,8 @@ private byte[] IV = new byte[32];
         return bytesToHex(cipherText);
     }
 
-    public  String decrypt(String cipherText, SecretKey key) {
+    // Método para descifrar datos cifrados utilizando AES
+    public String decrypt(String cipherText, SecretKey key) {
         try {
             Cipher cipher = Cipher.getInstance("AES");
             SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");

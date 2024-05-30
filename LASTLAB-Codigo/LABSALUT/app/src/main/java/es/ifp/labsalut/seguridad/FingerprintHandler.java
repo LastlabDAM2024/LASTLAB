@@ -28,109 +28,115 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
-
 @RequiresApi(api = Build.VERSION_CODES.P)
 public class FingerprintHandler extends BiometricPrompt.AuthenticationCallback {
 
-    private Context context;
-    private Executor executor;
-    private KeyStore keyStore;
-    private static final String KEY_NAME = "lectorHuella";
-    private Cipher cipher;
-    private AuthenticationCallback callback;
+    private Context context; // Contexto de la aplicación
+    private Executor executor; // Ejecutor para manejar hilos
+    private KeyStore keyStore; // Almacen de claves
+    private static final String KEY_NAME = "lectorHuella"; // Nombre de la clave
+    private Cipher cipher; // Cifrado
+    private AuthenticationCallback callback; // Callback para manejar eventos de autenticación
 
+    // Interface para callbacks de autenticación
     public interface AuthenticationCallback {
-        void onAuthenticationSucceeded();
-        void onAuthenticationFailed();
-        void onAuthenticationError(int errorCode, CharSequence errString);
+        void onAuthenticationSucceeded(); // Método llamado cuando la autenticación es exitosa
+        void onAuthenticationFailed(); // Método llamado cuando la autenticación falla
+        void onAuthenticationError(int errorCode, CharSequence errString); // Método llamado cuando ocurre un error en la autenticación
     }
 
     // Constructor
     public FingerprintHandler(Context mContext, AuthenticationCallback cback) {
         context = mContext;
         callback = cback;
-        executor = Executors.newSingleThreadExecutor();
+        executor = Executors.newSingleThreadExecutor(); // Inicializa el ejecutor con un solo hilo
     }
 
+    // Método para iniciar la autenticación biométrica
     public void startAuth() {
+        // Verifica el permiso para usar la biometría
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        generateKey();
-        cipherInit();
+        generateKey(); // Genera la clave
+        cipherInit(); // Inicializa el cifrado
         FragmentActivity activity = (FragmentActivity) context;
 
+        // Crea una instancia de BiometricPrompt
         BiometricPrompt biometricPrompt = new BiometricPrompt(activity, executor, new BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
-                callback.onAuthenticationError(errorCode, errString);
+                callback.onAuthenticationError(errorCode, errString); // Llama al callback de error
             }
 
             @Override
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();
-                callback.onAuthenticationFailed();
+                callback.onAuthenticationFailed(); // Llama al callback de fallo
             }
 
             @Override
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                callback.onAuthenticationSucceeded();
+                callback.onAuthenticationSucceeded(); // Llama al callback de éxito
             }
         });
 
+        // Configura la información del prompt
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Desbloquea LabSalut para poder usarlo")
                 .setNegativeButtonText("Cancelar")
                 .build();
 
+        // Inicia la autenticación biométrica
         biometricPrompt.authenticate(promptInfo, new BiometricPrompt.CryptoObject(cipher));
     }
 
-
+    // Método para generar la clave en el AndroidKeyStore
     @RequiresApi(api = Build.VERSION_CODES.M)
     protected void generateKey() {
         try {
-            keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyStore = KeyStore.getInstance("AndroidKeyStore"); // Obtiene una instancia del KeyStore
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         KeyGenerator keyGenerator;
         try {
-            keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
+            keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore"); // Obtiene una instancia del KeyGenerator
         } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
             throw new RuntimeException("Error al obtener la instancia de KeyGenerator", e);
         }
 
         try {
-            keyStore.load(null);
+            keyStore.load(null); // Carga el KeyStore
             keyGenerator.init(new KeyGenParameterSpec.Builder(KEY_NAME,
                     KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT)
                     .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
                     .setUserAuthenticationRequired(true)
                     .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_PKCS7)
                     .build());
-            keyGenerator.generateKey();
+            keyGenerator.generateKey(); // Genera la clave
         } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException |
                  IOException | CertificateException e) {
             throw new RuntimeException(e);
         }
     }
 
+    // Método para inicializar el cifrado
     @RequiresApi(api = Build.VERSION_CODES.M)
     public boolean cipherInit() {
         try {
-            cipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/" + KeyProperties.BLOCK_MODE_CBC + "/" + KeyProperties.ENCRYPTION_PADDING_PKCS7);
+            cipher = Cipher.getInstance(KeyProperties.KEY_ALGORITHM_AES + "/" + KeyProperties.BLOCK_MODE_CBC + "/" + KeyProperties.ENCRYPTION_PADDING_PKCS7); // Obtiene una instancia del cifrado
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             throw new RuntimeException("Error al obtener el cifrado", e);
         }
 
         try {
-            keyStore.load(null);
-            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME, null);
-            cipher.init(Cipher.ENCRYPT_MODE, key);
+            keyStore.load(null); // Carga el KeyStore
+            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME, null); // Obtiene la clave
+            cipher.init(Cipher.ENCRYPT_MODE, key); // Inicializa el cifrado en modo de encriptación
             return true;
         } catch (KeyPermanentlyInvalidatedException e) {
             return false;

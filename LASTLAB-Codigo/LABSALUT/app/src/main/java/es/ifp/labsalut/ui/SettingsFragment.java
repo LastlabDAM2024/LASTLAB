@@ -34,6 +34,7 @@ import es.ifp.labsalut.seguridad.FingerprintHandler;
 
 public class SettingsFragment extends Fragment implements FingerprintHandler.AuthenticationCallback {
 
+    // Constantes utilizadas para pasar parámetros al fragmento
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
@@ -46,11 +47,10 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     private SharedPreferences prefs_user = null;
     private SharedPreferences prefs_huella = null;
 
+    // Constructor público requerido
+    public SettingsFragment() {}
 
-    public SettingsFragment() {
-        // Required empty public constructor
-    }
-
+    // Método de fábrica para crear una nueva instancia del fragmento usando parámetros proporcionados
     public static SettingsFragment newInstance(String param1, String param2) {
         SettingsFragment fragment = new SettingsFragment();
         Bundle args = new Bundle();
@@ -60,6 +60,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         return fragment;
     }
 
+    // Método de fábrica para crear una nueva instancia del fragmento usando un objeto Usuario
     public static SettingsFragment newInstance(Usuario user) {
         SettingsFragment fragment = new SettingsFragment();
         Bundle args = new Bundle();
@@ -71,6 +72,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Recupera los argumentos pasados al fragmento
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -81,6 +83,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Infla el diseño para este fragmento utilizando ViewBinding
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
@@ -118,6 +121,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
             e.printStackTrace();
         }
 
+        // Recupera el estado de la configuración de huella del usuario
         String huellaActiva = prefs_huella.getString("HUELLA" + user.getNombre(), "");
         if (huellaActiva.equals("SI")) {
             binding.checkHuellaSett.setChecked(true);
@@ -126,8 +130,8 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         }
         reiniciarHuellaListener(activity);
 
+        // Recupera el estado de la configuración de UI secundaria del usuario
         String uiSecudaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(), "");
-
         if (uiSecudaria.equals("SI")) {
             binding.checkUISett.setChecked(true);
         } else {
@@ -138,6 +142,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
 
     @Override
     public void onAuthenticationSucceeded() {
+        // Acción a realizar si la autenticación por huella digital es exitosa
         Context context = requireContext();
         SharedPreferences.Editor editor_huella = prefs_huella.edit();
         SharedPreferences.Editor editor_user = prefs_user.edit();
@@ -145,19 +150,17 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         if (binding.checkHuellaSett.isChecked()) {
             editor_huella.putString("HUELLA" + user.getNombre(), "SI");
             editor_user.putString("FINGER", "SI");
-
         } else {
             editor_huella.putString("HUELLA" + user.getNombre(), "NO");
             editor_user.putString("FINGER", "NO");
         }
         editor_huella.apply();
         editor_user.apply();
-
     }
 
     @Override
     public void onAuthenticationFailed() {
-
+        // Acción a realizar si la autenticación por huella digital falla
     }
 
     @Override
@@ -182,20 +185,19 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
                 }
             });
         }
-
     }
 
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
     }
 
+    // Reinicia el listener para el cambio en el estado de la configuración de huella digital
     private void reiniciarHuellaListener(Activity activity) {
         binding.checkHuellaSett.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-
                     FingerprintHandler finger = new FingerprintHandler(activity, SettingsFragment.this);
                     finger.startAuth();
                 }
@@ -203,6 +205,7 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
         });
     }
 
+    // Listener para el cambio en el estado de la configuración de UI secundaria
     private void uiListener(Activity activity) {
         binding.checkUISett.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -212,14 +215,14 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
                     editor_huella.putString("UISECUNDARIA" + user.getNombre(), "SI");
                     pasarPantalla = new Intent(activity, MenuBottomActivity.class);
                     pasarPantalla.putExtra("USUARIO", user);
-                    pasarPantalla.putExtra("SETTINGFRAGMENT","SI");
+                    pasarPantalla.putExtra("SETTINGFRAGMENT", "SI");
                     activity.finish();
                     activity.startActivity(pasarPantalla);
                 } else {
                     editor_huella.putString("UISECUNDARIA" + user.getNombre(), "NO");
                     pasarPantalla = new Intent(activity, MenuActivity.class);
                     pasarPantalla.putExtra("USUARIO", user);
-                    pasarPantalla.putExtra("SETTINGFRAGMENT","SI");
+                    pasarPantalla.putExtra("SETTINGFRAGMENT", "SI");
                     activity.finish();
                     activity.startActivity(pasarPantalla);
                 }

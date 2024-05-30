@@ -49,11 +49,6 @@ import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RegistroFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RegistroFragment extends Fragment {
 
     private FragmentRegistroBinding binding;
@@ -69,20 +64,19 @@ public class RegistroFragment extends Fragment {
     private Intent pasarPantalla;
     private SharedPreferences prefs_huella = null;
 
-
     public RegistroFragment() {
-        // Required empty public constructor
+        // Constructor público requerido
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * Usa este método de fábrica para crear una nueva instancia de
+     * este fragmento usando los parámetros proporcionados.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegistroFragment.
+     * @param param1 Parámetro 1.
+     * @param param2 Parámetro 2.
+     * @return Una nueva instancia del fragmento RegistroFragment.
      */
-    // TODO: Rename and change types and number of parameters
+    // Método de fábrica para crear una nueva instancia del fragmento con los parámetros proporcionados
     public static RegistroFragment newInstance(String param1, String param2) {
         RegistroFragment fragment = new RegistroFragment();
         Bundle args = new Bundle();
@@ -95,6 +89,7 @@ public class RegistroFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Recupera los argumentos pasados al fragmento
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -104,18 +99,23 @@ public class RegistroFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Infla el diseño para este fragmento utilizando ViewBinding
         binding = FragmentRegistroBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
     }
 
+    @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
 
         Context context = root.getContext();
         Activity activity = getActivity();
 
+        // Inicializa la base de datos
         db = new BaseDatos(context);
+
+        // Configura el icono de inicio en el campo de texto de la fecha de nacimiento para mostrar el DatePicker
         binding.textoNaciReg.setStartIconOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,9 +123,11 @@ public class RegistroFragment extends Fragment {
             }
         });
 
+        // Configura el botón de aceptar
         binding.aceptarReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Verifica si todos los campos están completos
                 if (binding.nombreReg.getText().toString().isEmpty() || binding.mailReg.getText().toString().isEmpty()
                         || fechaNacimiento.equals("dd  /  mes  /  aaaa") || binding.passReg.getText().toString().isEmpty()
                         || binding.passRepReg.getText().toString().isEmpty()) {
@@ -150,58 +152,56 @@ public class RegistroFragment extends Fragment {
 
                     SharedPreferences.Editor editor_huella = prefs_huella.edit();
 
-                    Calendar calendar = Calendar.getInstance();
-                    int anyo = calendar.get(Calendar.YEAR);
-                    int mes = calendar.get(Calendar.MONTH) + 1;
-                    int dia = calendar.get(Calendar.DAY_OF_MONTH);
+                    // Verifica si el formato del correo es válido
+                    if (!esCorreoValido(binding.mailReg.getText().toString())) {
+                        Snackbar.make(binding.fragmentRegistro, "El formato de correo electronico no es válido", Snackbar.LENGTH_LONG).show();
+                    } else {
+                        Usuario usuario = db.getUser(binding.mailReg.getText().toString());
+                        // Verifica si el correo ya está registrado
+                        if (!usuario.getEmail().isEmpty()) {
+                            Snackbar.make(binding.fragmentRegistro, "El correo electronico ya esta registrado", Snackbar.LENGTH_LONG).show();
+                        } else {
+                            // Verifica si las contraseñas coinciden
+                            if (!binding.passReg.getText().toString().equals(binding.passRepReg.getText().toString())) {
+                                Snackbar.make(binding.fragmentRegistro, "Las contraseñas no coinciden", Snackbar.LENGTH_LONG).show();
+                            } else {
+                                aes = new CifradoAES();
+                                String semilla = binding.mailReg.getText().toString() + binding.passReg.getText().toString();
+                                SecretKey secretKey = aes.generarSecretKey(semilla);
+                                String encryptNombre = "";
+                                String encryptEmail = "";
+                                String encryptPass = "";
+                                String encryptFecha = "";
 
-                    String[] fechaNaci = fechaNacimiento.split(" {2}/ {2}");
-                    if (Integer.parseInt(fechaNaci[2]) <= anyo) {
-                        if (mesNacimiento <= mes) {
-                            if (Integer.parseInt(fechaNaci[0]) <= dia) {
-                                if (!esCorreoValido(binding.mailReg.getText().toString())) {
-                                    Snackbar.make(binding.fragmentRegistro, "El formato de correo electronico no es válido", Snackbar.LENGTH_LONG).show();
-                                } else {
-                                    Usuario usuario = db.getUser(binding.mailReg.getText().toString());
-                                    if (!usuario.getEmail().isEmpty()) {
-                                        Snackbar.make(binding.fragmentRegistro, "El correo electronico ya esta registrado", Snackbar.LENGTH_LONG).show();
-                                    } else {
-                                        if (!binding.passReg.getText().toString().equals(binding.passRepReg.getText().toString())) {
-                                            Snackbar.make(binding.fragmentRegistro, "Las contraseñas no coinciden", Snackbar.LENGTH_LONG).show();
-                                        } else {
-                                            aes = new CifradoAES();
-                                            String semilla = binding.mailReg.getText().toString() + binding.passReg.getText().toString();
-                                            SecretKey secretKey = aes.generarSecretKey(semilla);
-                                            String encryptNombre = "";
-                                            String encryptEmail = "";
-                                            String encryptPass = "";
-                                            String encryptFecha = "";
-
-                                            try {
-                                                encryptNombre = aes.encrypt(binding.nombreReg.getText().toString().getBytes(), secretKey);
-                                                encryptEmail = aes.encrypt(binding.mailReg.getText().toString().getBytes(), secretKey);
-                                                encryptPass = aes.encrypt(binding.passReg.getText().toString().getBytes(), secretKey);
-                                                encryptFecha = aes.encrypt(fechaNacimiento.getBytes(), secretKey);
-                                            } catch (Exception e) {
-                                                throw new RuntimeException(e);
-                                            }
-                                            Usuario user = new Usuario(encryptNombre, encryptFecha, encryptEmail, encryptPass);
-                                            user.setIdUsuario(db.addUser(user));
-                                            editor_huella.putString("PRIMERAVEZ" + binding.nombreReg.getText().toString(), "SI");
-                                            editor_huella.apply();
-                                            pasarPantalla = new Intent(activity, MainActivity.class);
-                                            activity.startActivity(pasarPantalla);
-                                            activity.finish();
-                                        }
-                                    }
+                                try {
+                                    // Encripta los datos del usuario
+                                    encryptNombre = aes.encrypt(binding.nombreReg.getText().toString().getBytes(), secretKey);
+                                    encryptEmail = aes.encrypt(binding.mailReg.getText().toString().getBytes(), secretKey);
+                                    encryptPass = aes.encrypt(binding.passReg.getText().toString().getBytes(), secretKey);
+                                    encryptFecha = aes.encrypt(fechaNacimiento.getBytes(), secretKey);
+                                } catch (Exception e) {
+                                    throw new RuntimeException(e);
                                 }
+                                // Crea un nuevo usuario y lo guarda en la base de datos
+                                Usuario user = new Usuario(encryptNombre, encryptFecha, encryptEmail, encryptPass);
+                                user.setIdUsuario(db.addUser(user));
+                                // Guarda la información en EncryptedSharedPreferences
+                                editor_huella.putString("PRIMERAVEZ" + binding.nombreReg.getText().toString(), "SI");
+                                editor_huella.apply();
+                                // Navega a la pantalla principal
+                                pasarPantalla = new Intent(activity, MainActivity.class);
+                                activity.startActivity(pasarPantalla);
+                                activity.finish();
                             }
                         }
                     }
+
+
                 }
             }
         });
 
+        // Configura el botón de cancelar
         binding.cancelarReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -210,9 +210,9 @@ public class RegistroFragment extends Fragment {
                 activity.startActivity(pasarPantalla);
             }
         });
-
     }
 
+    // Método para validar el formato del correo electrónico
     private boolean esCorreoValido(String email) {
         String emailREGEX = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(emailREGEX);
@@ -222,8 +222,8 @@ public class RegistroFragment extends Fragment {
         return pattern.matcher(email).matches();
     }
 
+    // Método para mostrar el DatePicker y seleccionar una fecha de nacimiento
     private void mostrarDatePicker() {
-
         Instant instant = null;
         long utcTimeInMillis = 0;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -242,6 +242,7 @@ public class RegistroFragment extends Fragment {
         picker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
             @Override
             public void onPositiveButtonClick(Long aLong) {
+                // Obtiene la fecha seleccionada y la muestra en el campo correspondiente
                 Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
                 calendar.setTimeInMillis(aLong);
 
@@ -256,15 +257,17 @@ public class RegistroFragment extends Fragment {
                     mMonth = Month.of(month);
                     String monthName = mMonth.getDisplayName(TextStyle.FULL, locale);
                     if (day < 10) {
+                        // Formatea la fecha para que el día tenga un cero a la izquierda si es menor que 10
                         fechaNacimiento = "0" + day + "  /  " + monthName + "  /  " + year;
                     } else {
+                        // Formatea la fecha sin el cero a la izquierda
                         fechaNacimiento = day + "  /  " + monthName + "  /  " + year;
                     }
+                    // Muestra la fecha seleccionada en el campo de texto correspondiente
                     binding.nacimientoReg.setText(fechaNacimiento);
                 }
-
             }
         });
     }
-
 }
+

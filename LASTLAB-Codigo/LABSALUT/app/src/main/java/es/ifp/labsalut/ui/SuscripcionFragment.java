@@ -18,17 +18,15 @@ public class SuscripcionFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
 
-
-    // TODO: Rename and change types of parameters
+    // Parámetros de instancia
     private String mParam1;
     private String mParam2;
     private Usuario user = null;
 
+    // Constructor público requerido
+    public SuscripcionFragment() {}
 
-    public SuscripcionFragment() {
-        // Required empty public constructor
-    }
-
+    // Método de fábrica para crear una nueva instancia del fragmento utilizando parámetros de tipo String
     public static SuscripcionFragment newInstance(String param1, String param2) {
         SuscripcionFragment fragment = new SuscripcionFragment();
         Bundle args = new Bundle();
@@ -38,6 +36,7 @@ public class SuscripcionFragment extends Fragment {
         return fragment;
     }
 
+    // Método de fábrica para crear una nueva instancia del fragmento utilizando un objeto Usuario
     public static SuscripcionFragment newInstance(Usuario user) {
         SuscripcionFragment fragment = new SuscripcionFragment();
         Bundle args = new Bundle();
@@ -49,16 +48,17 @@ public class SuscripcionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Recupera los argumentos pasados al fragmento
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Infla el diseño para este fragmento utilizando ViewBinding
         binding = FragmentSuscripcionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;

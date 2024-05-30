@@ -12,7 +12,6 @@ import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Suscripcion;
 import es.ifp.labsalut.negocio.Usuario;
-
 public class BaseDatos extends SQLiteOpenHelper {
 
     protected SQLiteDatabase db;
@@ -221,9 +220,9 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void addSuscripcion(Suscripcion suscripcion) {
         db = this.getWritableDatabase();
         String email = suscripcion.getEmail();
-        String fechafin = suscripcion.getFinSuscripcion();
+        String finSuscripcion = suscripcion.getFinSuscripcion();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("INSERT INTO Suscripcion (email,esSuscrito,finSuscripcion) VALUES ('" + email + "','" + esSuscrito + "','" + fechafin + "')");
+        db.execSQL("INSERT INTO Suscripcion (email, esSuscrito, finSuscripcion) VALUES (?, ?, ?)", new Object[]{email, esSuscrito, finSuscripcion});
     }
 
     // Método para actualizar una suscripción en la base de datos
@@ -231,7 +230,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         String email = suscripcion.getEmail();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("UPDATE Suscipcion SET esSuscrito='" + esSuscrito + "' WHERE email='" + email + "'");
+        db.execSQL("UPDATE Suscripcion SET esSuscrito='" + esSuscrito + "' WHERE email='" + email + "'");
     }
 
 

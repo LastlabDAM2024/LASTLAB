@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
 
     public static final String MY_PREFS_USER = "RECORDARUSUARIO";
     private ActivityMainBinding binding;
-
     private Intent pasarPantalla;
     private String email;
     private String password;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        ColorStatusBar.colorDinamicStatusBar(this,ColorStatusBar.obtenerColorBackground(this));
+        ColorStatusBar.colorDinamicStatusBar(this, ColorStatusBar.obtenerColorBackground(this));
 
         db = new BaseDatos(this);
 
@@ -181,6 +180,9 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                                 pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
                                                 pasarPantalla.putExtra("USUARIO", user);
                                                 activacionHuella = false;
+                                                SharedPreferences.Editor editor_huella = prefs_huella.edit();
+                                                editor_huella.putString("PRIMERAVEZ" + user.getNombre(), "NO");
+                                                editor_huella.apply();
                                                 finish();
                                                 startActivity(pasarPantalla);
                                             }
@@ -188,11 +190,11 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                                         .show();
 
                             } else {
-                                String uiSecundaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(),"");
-                                if(uiSecundaria.equals("SI")){
+                                String uiSecundaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(), "");
+                                if (uiSecundaria.equals("SI")) {
                                     pasarPantalla = new Intent(MainActivity.this, MenuBottomActivity.class);
 
-                                }else{
+                                } else {
                                     pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
 
                                 }
@@ -281,11 +283,11 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         }
         editor_huella.apply();
         editor_user.apply();
-        String uiSecundaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(),"");
-        if(uiSecundaria.equals("SI")){
+        String uiSecundaria = prefs_huella.getString("UISECUNDARIA" + user.getNombre(), "");
+        if (uiSecundaria.equals("SI")) {
             pasarPantalla = new Intent(MainActivity.this, MenuBottomActivity.class);
 
-        }else{
+        } else {
             pasarPantalla = new Intent(MainActivity.this, MenuActivity.class);
 
         }
@@ -317,6 +319,5 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             });
         }
     }
-
-
 }
+

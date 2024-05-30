@@ -19,9 +19,9 @@ import es.ifp.labsalut.ui.CitasFragment;
 import es.ifp.labsalut.ui.HomeFragment;
 import es.ifp.labsalut.ui.MedicamentosFragment;
 import es.ifp.labsalut.ui.SettingsFragment;
-
 public class MenuBottomActivity extends AppCompatActivity {
 
+    // Declaración de variables
     private ActivityMainBottomBinding binding;
     private Usuario user = null;
     private Bundle extras;
@@ -30,9 +30,12 @@ public class MenuBottomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBottomBinding.inflate(getLayoutInflater());
 
+        // Inflar el layout usando View Binding
+        binding = ActivityMainBottomBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Obtener los extras del Intent
         extras = getIntent().getExtras();
         if (extras != null) {
             user = (Usuario) extras.getSerializable("USUARIO");
@@ -40,10 +43,13 @@ public class MenuBottomActivity extends AppCompatActivity {
                 settingFragment = extras.getString("SETTINGFRAGMENT");
             }
         }
+
+        // Configurar el listener para la navegación de la barra inferior
         binding.navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
+                // Seleccionar el fragmento basado en el item seleccionado
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         selectedFragment = HomeFragment.newInstance(user);
@@ -58,6 +64,8 @@ public class MenuBottomActivity extends AppCompatActivity {
                         selectedFragment = SettingsFragment.newInstance(user);
                         break;
                 }
+
+                // Reemplazar el fragmento en el contenedor
                 if (selectedFragment != null) {
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -73,13 +81,11 @@ public class MenuBottomActivity extends AppCompatActivity {
             }
         });
 
+        // Seleccionar el fragmento inicial basado en el valor de settingFragment
         if (settingFragment.equals("SI")) {
             binding.navView.setSelectedItemId(R.id.navigation_settings);
-
         } else if (settingFragment.equals("NO")) {
             binding.navView.setSelectedItemId(R.id.navigation_home);
-
         }
     }
-
 }

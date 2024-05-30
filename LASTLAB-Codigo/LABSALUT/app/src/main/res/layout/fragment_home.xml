@@ -11,6 +11,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <TextView
+            android:id="@+id/textListMedi_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Medicamentos añadidos:"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/deleteItemListMed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/deleteItemListMed"
+            android:layout_width="28dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/recycler_bin_black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewMedi_home"
             android:layout_width="0dp"
@@ -20,30 +45,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textListMedi_home" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCita_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:padding="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textListCita_home" />
-
-        <TextView
-            android:id="@+id/textListMedi_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="Medicamentos añadidos:"
-            android:textAlignment="viewStart"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/spacioList_home"
@@ -63,12 +64,32 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
             android:text="Citas agendadas:"
             android:textAlignment="viewStart"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteItemListCita"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spacioList_home" />
+
+        <Button
+            android:id="@+id/deleteItemListCita"
+            android:layout_width="28dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/recycler_bin_black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spacioList_home" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCita_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textListCita_home" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
