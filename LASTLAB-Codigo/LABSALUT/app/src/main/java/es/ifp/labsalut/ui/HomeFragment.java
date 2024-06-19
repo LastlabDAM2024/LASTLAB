@@ -17,16 +17,25 @@ import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.ChangeBounds;
+import androidx.transition.TransitionManager;
+import androidx.transition.TransitionSet;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.transition.platform.MaterialContainerTransform;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -42,7 +51,7 @@ import es.ifp.labsalut.negocio.ModListAdapter;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
 
-public class HomeFragment extends Fragment implements ModListAdapter.OnItemClickListener{
+public class HomeFragment extends Fragment implements ModListAdapter.OnItemClickListener {
 
     // Argumentos para la instancia del fragmento
     private static final String ARG_PARAM1 = "EMAIL";
@@ -108,7 +117,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-        Context context = getContext();
+        Context context = root.getContext();
         // Crea listas de datos de medicamentos y citas médicas
         ArrayList<Serializable> dataMed = new ArrayList<>();
         // Agrega datos de ejemplo a la lista de medicamentos
@@ -119,6 +128,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
         dataMed.add(new Medicamento("Ibuprofeno", "1000mg", "Toma cada 8 horas", "5 min antes"));
         dataMed.add(new Medicamento("Desketoprofeno", "200mg", "Toma cada 8 horas", "5 min antes"));
         dataMed.add(new Medicamento("Aerius", "1000mg", "Toma cada 8 horas", "5 min antes"));
+
 
         ArrayList<Serializable> dataCita = new ArrayList<>();
 
@@ -213,7 +223,10 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
                     binding.deleteItemListMed.setVisibility(View.GONE);
                 } else {
                     // Si no hay elementos seleccionados en ninguna lista, finaliza la actividad actual
-                    requireActivity().finish();
+                    FragmentActivity activity = getActivity();
+                    if (activity != null) {
+                        activity.finish();
+                    }
                 }
             }
         };
@@ -291,34 +304,28 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void onItemClick(View view, int position) {
 
-        if( binding.deleteItemListCita.getVisibility()==View.VISIBLE){
+        if (binding.deleteItemListCita.getVisibility() == View.VISIBLE) {
 
             adapterCita.performClickCheckBox(position);
-        }else {
+        } else {
             CitaMedica cita = user.getCitaMedica(position);
-            new MaterialAlertDialogBuilder(requireContext())
-                    .setTitle(cita.getNombre())
-                    .setMessage("Descripcion: "+cita.getDescripcion())
-                    .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
 
-                        }
-                    })
-                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+            CardDialogFragment dialog = CardDialogFragment.newInstance(cita);
+            dialog.show(requireActivity().getSupportFragmentManager(), "dialog");
 
-                        }
-                    })
-                    .show();
-        }
-        if( binding.deleteItemListMed.getVisibility()==View.VISIBLE){
+        }/*
+        if (binding.deleteItemListMed.getVisibility() == View.VISIBLE) {
             adapterMed.performClickCheckBox(position);
-        }else{
-            //codificar abrir la ficha al completo
+        } else {
+            CitaMedica cita = user.getCitaMedica(position);
+
+            CardDialogFragment dialog = CardDialogFragment.newInstance(cita);
+            dialog.show(requireActivity().getSupportFragmentManager(), "dialog");
         }
+        */
     }
+
+
 }

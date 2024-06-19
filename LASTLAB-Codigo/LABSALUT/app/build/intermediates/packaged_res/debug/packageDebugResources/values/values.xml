@@ -191,6 +191,7 @@
     <color name="md_theme_tertiary_mediumContrast">#523A58</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="botton_fragment">30dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
@@ -228,7 +229,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_fingerprint">Logueo con un toque</string>
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -278,6 +279,26 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
 
+    </style>
+    <style name="DialogExpandFromTouchAnimation">
+        <item name="android:windowEnterAnimation">@anim/expand_from_touch</item>
+        <item name="android:windowExitAnimation">@anim/shrink_and_fade_out</item>
+    </style>
+    <style name="DialogFadeAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="DialogRotateAnimation">
+        <item name="android:windowEnterAnimation">@anim/rotate_in</item>
+        <item name="android:windowExitAnimation">@anim/rotate_out</item>
+    </style>
+    <style name="DialogSlideAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+    <style name="DialogZoomAnimation">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
     </style>
     <style name="ThemeOverlay.AppTheme.HighContrast" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary_highContrast</item>

@@ -37,7 +37,7 @@
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/boton_borrado.xml">
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/automplete_fragment.xml">
         <config>
           <theme>@style/AppTheme</theme>
         </config>
@@ -50,6 +50,11 @@
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/content_reg.xml">
         <config>
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_card_dialog.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_citas.xml">
@@ -94,7 +99,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/activity_menu_drawer.xml">
         <config>
-          <theme>@style/Theme.LabSalut.NoActionBar</theme>
+          <theme>@style/AppTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/bottom_nav_menu.xml">
@@ -127,7 +132,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RFCW70EACKA)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\josea\.android\avd\Pixel_5_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -175,9 +180,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="XML Properties File" />
       </list>
     </option>
   </component>
@@ -202,7 +208,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Android App.MainActivity.executor": "Run",
-    "Android App.app.executor": "Debug",
+    "Android App.app.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -213,8 +219,13 @@
     "com.google.services.firebase.aqiPopupShown": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Samsung/Desktop/AndroidStudio/LabSalut/app/src/main/res/values-night",
-    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/LASTLAB/LASTLAB-Codigo/LabSalut/app/src/main/res/layout",
+    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/TomarUnaFotoCameraX",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -249,7 +260,6 @@
       <option name="MODE" value="specific_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -316,7 +326,6 @@
       <option name="MODE" value="specific_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -383,7 +392,6 @@
       <option name="MODE" value="specific_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -450,7 +458,6 @@
       <option name="MODE" value="specific_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -517,7 +524,6 @@
       <option name="MODE" value="default_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -627,11 +633,6 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
-          <line>174</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/SettingsFragment.java</url>
           <line>127</line>
           <option name="timeStamp" value="37" />
@@ -722,24 +723,29 @@
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MenuActivity.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="170" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MenuActivity.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="171" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
+          <line>225</line>
+          <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/activities/MenuActivity.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="172" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/HomeFragment.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="173" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CardDialogFragment.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

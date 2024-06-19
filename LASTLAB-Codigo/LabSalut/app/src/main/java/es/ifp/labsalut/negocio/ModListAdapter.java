@@ -48,8 +48,9 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
     public interface OnDataChangeListener {
         void onDataChanged(boolean select);
     }
+
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(View view,int position);
     }
 
     // Constructor del adaptador
@@ -73,6 +74,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
         Object item = itemList.get(position);
 
         holder.checkBox.setOnCheckedChangeListener(null);
+        holder.cardView.setTransitionName("shared_element_" + position);
         // Configuración de la vista según el estado de selección
         if (seleccionados.get(position, false)) {
             holder.checkBox.setChecked(true);
@@ -145,6 +147,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
             }
         });
 
+
     }
 
     // Configuración del listener de cambios de datos
@@ -157,7 +160,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
         mListener = onItemClick;
     }
 
-    public boolean getFlagMove(){
+    public boolean getFlagMove() {
         return select;
     }
 
@@ -193,6 +196,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
     public void setRecyclerView(RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
     }
+
     public ListViewHolder getViewHolder(int position) {
         RecyclerView.ViewHolder holder = recyclerView.findViewHolderForAdapterPosition(position);
         if (holder instanceof ListViewHolder) {
@@ -201,7 +205,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
         return null;
     }
 
-    public void performClickCheckBox(int position){
+    public void performClickCheckBox(int position) {
         ListViewHolder holder = getViewHolder(position);
         if (holder != null) {
             holder.checkBox.performClick();
@@ -261,7 +265,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                mListener.onItemClick(getAdapterPosition());
+                    mListener.onItemClick(itemView, getAdapterPosition());
                 }
             });
 

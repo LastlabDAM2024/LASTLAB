@@ -101,7 +101,7 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-        int constant = 40;
+        int constant = 60;
         View itemView = viewHolder.itemView;
         int itemHeight = itemView.getHeight();
 

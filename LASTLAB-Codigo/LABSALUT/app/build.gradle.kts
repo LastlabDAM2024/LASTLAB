@@ -47,7 +47,9 @@ dependencies {
     implementation(libs.biometric)
     implementation(libs.security.crypto)
     implementation(libs.material.v1120)
-    testImplementation(libs.junit)
+    implementation (libs.places)
+    implementation (libs.play.services.maps)
+    implementation (libs.play.services.location)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

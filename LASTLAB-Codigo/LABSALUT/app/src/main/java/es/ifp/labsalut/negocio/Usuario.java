@@ -94,6 +94,10 @@ public class Usuario implements Serializable {
         return listaMed;
     }
 
+    public void setAllMedicamentos (ArrayList<Serializable> list){
+        this.medicamentos = list;
+    }
+
     // Método getter para obtener una cita médica específica del usuario según su identificador
     public CitaMedica getCitaMedica(int idCita) {
         return (CitaMedica) this.citaMedica.get(idCita);
@@ -120,6 +124,9 @@ public class Usuario implements Serializable {
         }
 
         return listaCita;
+    }
+    public void setAllCitas (ArrayList<Serializable> list){
+        this.citaMedica = list;
     }
 
     // Método getter para obtener el correo electrónico del usuario

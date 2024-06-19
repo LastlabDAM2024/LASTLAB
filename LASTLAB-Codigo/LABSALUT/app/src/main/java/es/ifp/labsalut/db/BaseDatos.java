@@ -6,12 +6,14 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Suscripcion;
 import es.ifp.labsalut.negocio.Usuario;
+
 public class BaseDatos extends SQLiteOpenHelper {
 
     protected SQLiteDatabase db;
@@ -27,8 +29,8 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis TEXT, frecuencia TEXT, recordatorio TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (idUser INTEGER PRIMARY KEY, idMedicamento INTEGER)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (idUser INTEGER PRIMARY KEY, idCitaMedica INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idMedicamento INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idCitaMedica INTEGER)");
     }
 
     @Override
@@ -126,7 +128,6 @@ public class BaseDatos extends SQLiteOpenHelper {
                 contenido = resultado.getInt(resultado.getColumnIndex("id"));
                 resultado.moveToNext();
                 id = contenido;
-
             }
         }
         return id;
@@ -183,9 +184,10 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT id FROM Medicamento WHERE nombre='" + nombre + "'AND dosis='" + dosis + "'AND frecuencia='" + frecuencia + "' ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (!resultado.isAfterLast()){
+            while (!resultado.isAfterLast()) {
                 contenido = resultado.getInt(resultado.getColumnIndex("id"));
                 resultado.moveToNext();
+                id = contenido;
             }
         }
         return id;
@@ -210,6 +212,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             while (!resultado.isAfterLast()) {
                 contenido = resultado.getInt(resultado.getColumnIndex("id"));
                 resultado.moveToNext();
+                id = contenido;
             }
         }
         return id;
@@ -222,7 +225,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         String email = suscripcion.getEmail();
         String finSuscripcion = suscripcion.getFinSuscripcion();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("INSERT INTO Suscripcion (email, esSuscrito, finSuscripcion) VALUES (?, ?, ?)", new Object[]{email, esSuscrito, finSuscripcion});
+        db.execSQL("INSERT INTO Suscripcion (email, esSuscrito, finSuscripcion) VALUES ('" + email + "','" + esSuscrito + "')");
     }
 
     // Método para actualizar una suscripción en la base de datos
@@ -234,8 +237,8 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<Medicamento> getAllMedicamentos(Usuario user) {
-        ArrayList<Medicamento> listMedi = new ArrayList<Medicamento>();
+    public ArrayList<Serializable> getAllMedicamentos(Usuario user) {
+        ArrayList<Serializable> listMedi = new ArrayList<Serializable>();
         int id = user.getIdUsuario();
         Cursor resultado = null;
         Medicamento contenido = new Medicamento();
@@ -267,7 +270,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             db = this.getReadableDatabase();
             resultado = db.rawQuery("SELECT nombre FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
             resultado.moveToFirst();
-            while (!resultado.isAfterLast()){
+            while (!resultado.isAfterLast()) {
                 contenido = resultado.getString(resultado.getColumnIndex("nombre"));
                 resultado.moveToNext();
                 listNombresMedi.add(contenido);
@@ -277,8 +280,8 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<CitaMedica> getAllCitas(Usuario user) {
-        ArrayList<CitaMedica> listMedi = new ArrayList<CitaMedica>();
+    public ArrayList<Serializable> getAllCitasMedicas(Usuario user) {
+        ArrayList<Serializable> listMedi = new ArrayList<Serializable>();
         int id = user.getIdUsuario();
         Cursor resultado = null;
         CitaMedica contenido = new CitaMedica();

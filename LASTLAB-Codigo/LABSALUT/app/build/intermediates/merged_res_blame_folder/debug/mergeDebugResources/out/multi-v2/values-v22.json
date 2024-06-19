@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-v22/values-v22.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-49:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3933d499f6ca9fd42cb87a484a26150c\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

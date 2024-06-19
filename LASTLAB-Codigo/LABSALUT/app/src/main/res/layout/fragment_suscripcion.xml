@@ -14,7 +14,7 @@
 
     <!-- Botón "Volver" -->
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/cancelar_suscrip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/suscrip_suscrip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

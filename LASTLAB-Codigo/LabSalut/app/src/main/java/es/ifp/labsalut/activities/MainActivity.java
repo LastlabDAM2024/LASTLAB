@@ -264,6 +264,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             usuario.setFechaNacimiento(aes.decrypt(usuario.getFechaNacimiento(), secretKey));
             usuario.setEmail(aes.decrypt(usuario.getEmail(), secretKey));
             usuario.setContrasena(aes.decrypt(usuario.getContrasena(), secretKey));
+            usuario.setAllCitas(db.getAllCitasMedicas(usuario));
         } else {
             usuario = null;
         }
