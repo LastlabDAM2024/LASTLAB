@@ -44,7 +44,7 @@ import es.ifp.labsalut.activities.MenuActivity;
 import es.ifp.labsalut.databinding.FragmentCitasBinding;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Usuario;
-public class CitasFragment extends Fragment {
+public class CitasFragment extends Fragment { //Hola Jose//
 
     // Constantes para los argumentos del fragmento
     private static final String ARG_PARAM1 = "param1";
