@@ -3,7 +3,7 @@ package es.ifp.labsalut.negocio;
 import java.io.Serializable;
 
 
-// Clase CitaMedica que representa una cita médica
+// Clase CitaMedica que representa una cita médica //Prueba Tere
 public class CitaMedica implements Serializable {
     private int idCita; // Identificador único de la cita médica
     private String nombre; // Nombre de la cita médica
