@@ -210,8 +210,8 @@
     </string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="desc_fingerprint">Coloque la yema del dedo en el escáner para verificar su identidad</string>
-    <string name="google_maps_key" translatable="false"/>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="maps_api_key" translatable="false"/>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_home">Home</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -222,6 +222,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="note">(El inicio de sesión con la huella dactilar hace que la aplicación inicie sesión mucho más rápido. Su dispositivo debe tener al menos una huella digital registrada en la configuración del dispositivo)</string>
+    <string name="places_api_key" translatable="false"/>
     <string name="reply_title">Default reply action</string>
     <string name="signature_title">Your signature</string>
     <string name="sync_header">Sync</string>

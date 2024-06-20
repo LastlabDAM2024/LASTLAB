@@ -22,6 +22,11 @@
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pruba_maps.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml">
         <config>
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
@@ -184,11 +189,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="valueResourceFile" />
         <option value="Class" />
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="XML Properties File" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -214,6 +219,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Android App.MainActivity.executor": "Run",
     "Android App.app.executor": "Run",
+    "Gradle.LABSALUT:app [signingReport] (1).executor": "Run",
     "Gradle.LABSALUT:app [signingReport].executor": "Run",
     "Gradle.Load Gradle Dependencies.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -242,6 +248,9 @@
       <recent name="C:\Users\Samsung\Desktop\AndroidStudio\LabSalut\app\src\main\res\values-night" />
       <recent name="C:\Users\Samsung\Desktop\AndroidStudio\LabSalut\app\src\main\res\values" />
       <recent name="C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\src\main\java\es\ifp\labsalut\seguridad" />
+    </key>
+    <key name="android.template.1060878282">
+      <recent name="es.ifp.labsalut" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="es.ifp.labsalut.ui" />
@@ -585,6 +594,28 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LABSALUT:app [signingReport] (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="LABSALUT:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -609,6 +640,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LABSALUT:app [signingReport] (1)" />
         <item itemvalue="Gradle.LABSALUT:app [signingReport]" />
       </list>
     </recent_temporary>

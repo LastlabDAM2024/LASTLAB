@@ -18,22 +18,25 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Cargar los secretos desde secrets.properties
+        // Cargar desde secrets.properties
         val secretsPropertiesFile = rootProject.file("secrets.properties")
         if (secretsPropertiesFile.exists()) {
             val secretsProperties = Properties().apply {
                 load(secretsPropertiesFile.inputStream())
             }
-            // Convertir a String explícitamente para evitar problemas de tipos
-            val apiKey = secretsProperties.getProperty("MAPS_API_KEY") ?: ""
-            manifestPlaceholders["MAPS_API_KEY"] = apiKey
-            // Agregar el valor de la clave API como recurso string
-            resValue("string", "google_maps_key", apiKey)  // Aquí se usa directamente apiKey
+            val mapsApiKey: String = secretsProperties.getProperty("MAPS_API_KEY", "")
+            val placesApiKey: String = secretsProperties.getProperty("PLACES_API_KEY", "")
+            manifestPlaceholders["MAPS_API_KEY"] = mapsApiKey
+            manifestPlaceholders["PLACES_API_KEY"] = placesApiKey
+            resValue("string", "maps_api_key", mapsApiKey)
+            resValue("string", "places_api_key", placesApiKey)
         } else {
-            val apiKey = System.getenv("MAPS_API_KEY") ?: ""
-            manifestPlaceholders["MAPS_API_KEY"] = apiKey
-            // Agregar el valor de la clave API como recurso string
-            resValue("string", "google_maps_key", apiKey)  // Aquí se usa directamente apiKey
+            val mapsApiKey: String = System.getenv("MAPS_API_KEY") ?: ""
+            val placesApiKey: String = System.getenv("PLACES_API_KEY") ?: ""
+            manifestPlaceholders["MAPS_API_KEY"] = mapsApiKey
+            manifestPlaceholders["PLACES_API_KEY"] = placesApiKey
+            resValue("string", "maps_api_key", mapsApiKey)
+            resValue("string", "places_api_key", placesApiKey)
         }
     }
 
@@ -71,6 +74,7 @@ dependencies {
     implementation(libs.places)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
+    implementation(libs.activity)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

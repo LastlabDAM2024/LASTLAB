@@ -310,7 +310,7 @@ public class CitasFragment extends Fragment {
             AssetManager assetManager = context.getAssets();
             InputStream inputStream = assetManager.open("secrets.properties");
             properties.load(inputStream);
-            return properties.getProperty("MAPS_API_KEY");
+            return properties.getProperty("PLACES_API_KEY");
         } catch (IOException e) {
             Log.e(TAG, "Error al cargar la clave API desde assets", e);
             return ""; // Manejar el error según sea necesario

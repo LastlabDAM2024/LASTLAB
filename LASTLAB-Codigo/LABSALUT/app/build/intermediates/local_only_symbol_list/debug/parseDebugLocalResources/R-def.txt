@@ -328,8 +328,8 @@ string attachment_summary_off
 string attachment_summary_on
 string attachment_title
 string desc_fingerprint
-string google_maps_key
 string hello_blank_fragment
+string maps_api_key
 string menu_gallery
 string menu_home
 string menu_slideshow
@@ -340,6 +340,7 @@ string nav_header_title
 string navigation_drawer_close
 string navigation_drawer_open
 string note
+string places_api_key
 string reply_title
 string signature_title
 string sync_header

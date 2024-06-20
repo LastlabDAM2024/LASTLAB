@@ -37,7 +37,7 @@ import es.ifp.labsalut.negocio.CitaMedica;
 public class CardDialogFragment extends DialogFragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private static final String ARG_CITA = "CITA";
-    private static final int ANCHO_DIALOG = 800;
+    private static final int ANCHO_DIALOG = 750;
     private FragmentCardDialogBinding binding;
     private CitaMedica cita = null;
     private GoogleMap mMap;
@@ -135,12 +135,19 @@ public class CardDialogFragment extends DialogFragment implements OnMapReadyCall
 
     @Override
     public void onMapClick(@NonNull LatLng latLng) {
+
+        // Abre Google Maps con la ubicación de la cita y permite al usuario elegir el modo de transporte
         String label = cita.getDireccion();
-        Uri gmmIntentUri = Uri.parse("geo:" + latitud + "," + longitud + "?q=" + latitud + "," + longitud + "(" + label + ")");
+        Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/dir/?api=1&destination=" + latitud + "," + longitud + "&travelmode=driving");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps"); // Establece el paquete de Google Maps
+
+        // Verifica si Google Maps está instalado en el dispositivo
         if (mapIntent.resolveActivity(requireActivity().getPackageManager()) != null) {
             startActivity(mapIntent);
+        } else {
+            Log.e(TAG, "Google Maps no está instalado en tu dispositivo");
+            // Aquí podrías mostrar un mensaje al usuario indicando que necesita instalar Google Maps
         }
     }
 }
