@@ -230,6 +230,7 @@ id imageView
 id linear_cita
 id mail_reg
 id main
+id map_dialog
 id medi_sett
 id mobile_navigation
 id nacimiento_reg
@@ -302,7 +303,6 @@ layout activity_menu
 layout activity_registro
 layout app_bar_menu
 layout app_bar_reg
-layout automplete_fragment
 layout content_menu
 layout content_reg
 layout fragment_card_dialog
@@ -328,6 +328,7 @@ string attachment_summary_off
 string attachment_summary_on
 string attachment_title
 string desc_fingerprint
+string google_maps_key
 string hello_blank_fragment
 string menu_gallery
 string menu_home

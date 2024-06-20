@@ -37,11 +37,6 @@
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/automplete_fragment.xml">
-        <config>
-          <theme>@style/AppTheme</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/content_menu.xml">
         <config>
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
@@ -132,7 +127,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\josea\.android\avd\Pixel_5_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RFCW70EACKA)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -141,6 +136,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
         <task path="$PROJECT_DIR$/app">
           <activation />
         </task>
@@ -161,6 +159,13 @@
                 <item name="LabSalut" type="f1a62948:ProjectNode" />
                 <item name="app" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LabSalut" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -209,6 +214,8 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Android App.MainActivity.executor": "Run",
     "Android App.app.executor": "Run",
+    "Gradle.LABSALUT:app [signingReport].executor": "Run",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -219,8 +226,8 @@
     "com.google.services.firebase.aqiPopupShown": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Samsung/Desktop/AndroidStudio/LabSalut/app/src/main/res/values-night",
-    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/TomarUnaFotoCameraX",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/PruebaMaps",
+    "settings.editor.selected.configurable": "experimental"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -235,6 +242,9 @@
       <recent name="C:\Users\Samsung\Desktop\AndroidStudio\LabSalut\app\src\main\res\values-night" />
       <recent name="C:\Users\Samsung\Desktop\AndroidStudio\LabSalut\app\src\main\res\values" />
       <recent name="C:\Users\josea\AndroidStudioProjects\LASTLAB\LASTLAB-Codigo\LabSalut\app\src\main\java\es\ifp\labsalut\seguridad" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="es.ifp.labsalut.ui" />
     </key>
     <key name="android.template.1128477479">
       <recent name="es.ifp.labsalut.ui.Settings" />
@@ -575,6 +585,33 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LABSALUT:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.LABSALUT:app [signingReport]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -723,11 +760,6 @@
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
-          <line>158</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
           <line>225</line>
           <option name="timeStamp" value="176" />
@@ -738,14 +770,14 @@
           <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CardDialogFragment.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="179" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
+          <line>175</line>
+          <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
-          <line>176</line>
-          <option name="timeStamp" value="182" />
+          <line>109</line>
+          <option name="timeStamp" value="186" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -4,7 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-49:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3933d499f6ca9fd42cb87a484a26150c\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\6c546fe641d435688e75cad7d1353200\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

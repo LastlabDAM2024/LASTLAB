@@ -4,7 +4,7 @@ import static com.google.android.material.timepicker.MaterialTimePicker.INPUT_MO
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,21 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -35,6 +29,8 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.Instant;
 import java.time.Month;
 import java.time.format.TextStyle;
@@ -44,6 +40,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import es.ifp.labsalut.R;
@@ -55,8 +52,6 @@ import es.ifp.labsalut.negocio.Usuario;
 public class CitasFragment extends Fragment {
 
     // Constantes para los argumentos del fragmento
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
     private static final String TAG = "CitasFragment";
     private static final int AUTOCOMPLETE_REQUEST_CODE = 1;
@@ -89,6 +84,11 @@ public class CitasFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             user = (Usuario) getArguments().getSerializable(ARG_USER);
+        }
+        // Inicializar Places con la API key desde secrets.properties
+        String apiKey = loadApiKeyFromAssets(requireContext());
+        if (!Places.isInitialized()) {
+            Places.initialize(requireContext(), apiKey);
         }
     }
 
@@ -141,7 +141,7 @@ public class CitasFragment extends Fragment {
         binding.guardarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CitaMedica cita = new CitaMedica("Neurologo", "12/05/2024", "08:00", "Ir en ayunas", "24 horas antes");
+                CitaMedica cita = new CitaMedica("Neurologo", "12/05/2024", "08:00", "Fuenlabrada, Madrid, España", "Ir en ayunas", "24 horas antes");
 
 
 
@@ -173,23 +173,20 @@ public class CitasFragment extends Fragment {
         new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes");
         new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
 
-        // Configuración del autocompletado de lugares en el campo de dirección
-        binding.textDireccionCita.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               //Iniciar el fragment de autocompletado
-                toggleAutocompleteVisibility();
-                startAutocomplete();
-            }
-        });
-
         if (autocompleteDireccion != null) {
+            autocompleteDireccion.setHint("");
+            autocompleteDireccion.requireView().findViewById(com.google.android.libraries.places.R.id.places_autocomplete_search_button).setVisibility(View.INVISIBLE);
             autocompleteDireccion.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS));
             autocompleteDireccion.setOnPlaceSelectedListener(new PlaceSelectionListener() {
                 @Override
                 public void onPlaceSelected(@NonNull Place place) {
                     // Manejar el lugar seleccionado
                     binding.direccionCita.setText(place.getAddress());
+                    binding.direccionCita.setEnabled(true);
+                    // Limpiar texto ingresado
+                    autocompleteDireccion.setText("");
+                    // Ocultar AutocompleteSupportFragment
+                    toggleAutocompleteVisibility();
                 }
 
                 @Override
@@ -200,45 +197,18 @@ public class CitasFragment extends Fragment {
             });
         }
 
-    }
 
-
-    // Manejar el resultado de la actividad de autocompletado de lugares
-    private ActivityResultLauncher<Intent> autocompleteLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        // Manejar el resultado de la actividad aquí
-                        Intent data = result.getData();
-                        if (data != null) {
-                            Place place = Autocomplete.getPlaceFromIntent(data);
-                            binding.direccionCita.setText(place.getAddress());
-                        }
-                    } else if (result.getResultCode() == AutocompleteActivity.RESULT_ERROR) {
-                        // Manejar errores
-                        Intent data = result.getData();
-                        if (data != null) {
-                            Status status = Autocomplete.getStatusFromIntent(data);
-                            Log.i(TAG, status.getStatusMessage());
-                        }
-                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
-                        // El usuario canceló la operación.
-                    }
-                }
+        binding.textDireccionCita.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleAutocompleteVisibility();
+                autocompleteDireccion.setText("");
+                binding.direccionCita.setText("");
+                binding.direccionCita.setEnabled(false);
             }
-    );
+        });
 
-
-    // Método para iniciar Autocomplete
-    private void startAutocomplete() {
-        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS);
-        Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
-                .build(requireActivity());
-        autocompleteLauncher.launch(intent);
     }
-
 
     // Método para cambiar la visibilidad de AutocompleteSupportFragment
     private void toggleAutocompleteVisibility() {
@@ -252,12 +222,6 @@ public class CitasFragment extends Fragment {
         }
     }
 
-
-    // Método llamado cuando la vista del fragmento es destruida
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 
     // Método para mostrar el selector de fecha
     private void mostrarDatePicker() {
@@ -337,5 +301,26 @@ public class CitasFragment extends Fragment {
                 binding.horaCita.setText(horaFormateada + " : " + minutoFormateado);
             }
         });
+    }
+
+    // Método para cargar la clave de API desde el archivo secrets.properties en assets
+    private String loadApiKeyFromAssets(@NonNull Context context) {
+        Properties properties = new Properties();
+        try {
+            AssetManager assetManager = context.getAssets();
+            InputStream inputStream = assetManager.open("secrets.properties");
+            properties.load(inputStream);
+            return properties.getProperty("MAPS_API_KEY");
+        } catch (IOException e) {
+            Log.e(TAG, "Error al cargar la clave API desde assets", e);
+            return ""; // Manejar el error según sea necesario
+        }
+    }
+
+    // Método llamado cuando la vista del fragmento es destruida
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

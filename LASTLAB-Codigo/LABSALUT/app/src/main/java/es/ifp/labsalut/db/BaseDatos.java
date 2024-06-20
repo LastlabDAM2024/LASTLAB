@@ -27,7 +27,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         // Aquí se crean las tablas si no existen
         db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis TEXT, frecuencia TEXT, recordatorio TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT,direccion TEXT, descripcion TEXT, recordatorio TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idMedicamento INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idCitaMedica INTEGER)");
@@ -199,9 +199,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         String nombre = citaMedica.getNombre();
         String fecha = citaMedica.getFecha();
         String hora = citaMedica.getHora();
+        String direccion = citaMedica.getDireccion();
         String descripcion = citaMedica.getDescripcion();
         String recordatorio = citaMedica.getRecordatorio();
-        db.execSQL("INSERT INTO CitaMedica (nombre,fecha,hora,descripcion,recordatorio) VALUES ('" + nombre + "','" + fecha + "','" + hora + "','" + descripcion + "','" + recordatorio + "')");
+        db.execSQL("INSERT INTO CitaMedica (nombre,fecha,hora,direccion,descripcion,recordatorio) VALUES ('" + nombre + "','" + fecha + "','" + hora + "','" + direccion + "','" + descripcion + "','" + recordatorio + "')");
         int id = -1;
         Cursor resultado = null;
         int contenido = -1;
@@ -294,6 +295,7 @@ public class BaseDatos extends SQLiteOpenHelper {
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
                 contenido.setFecha(resultado.getString(resultado.getColumnIndex("fecha")));
                 contenido.setHora(resultado.getString(resultado.getColumnIndex("hora")));
+                contenido.setDireccion(resultado.getString(resultado.getColumnIndex("direccion")));
                 contenido.setDescripcion(resultado.getString(resultado.getColumnIndex("descripcion")));
                 contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
                 resultado.moveToNext();
@@ -321,27 +323,6 @@ public class BaseDatos extends SQLiteOpenHelper {
         return listNombresCitas;
     }
 
-    /*
-
-    @NELLA ESTO NO TIENE SENTIDO EN UNA CLASE DE TIPO DE BASE DE DATOS
-    ESTO DEBERIA DE IR EN EL .JAVA QUE VAYA VINCULADO A LA ACTIVIDAD SUSCRIPCION, EN ESTE CASO
-    SUSCRIPCIONACTIVITY
-
-    // Método para mostrar un diálogo de confirmación de cancelación
-    public void confirmarCancelacion(Context context, DialogInterface.OnClickListener confirmListener) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Confirmar Cancelación");
-        builder.setMessage("¿Estás seguro que deseas cancelar la suscripción?");
-        builder.setPositiveButton("OK", confirmListener);
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
-    */
     public void cerrarDB() {
         db.close();
     }

@@ -46,18 +46,18 @@
                 android:id="@+id/textFecha_cita"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.40"
                 android:layout_marginRight="6dp"
+                android:layout_weight="1.40"
                 android:hint="Fecha"
-                app:startIconScaleType="center"
-                app:startIconDrawable="@drawable/ic_menu_camera">
+                app:startIconDrawable="@drawable/ic_menu_camera"
+                app:startIconScaleType="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fecha_cita"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:enabled="false" />
+                    android:enabled="false"
+                    android:gravity="right" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,8 +65,8 @@
                 android:id="@+id/textHora_cita"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginLeft="6dp"
+                android:layout_weight="1"
                 android:hint="Hora"
                 app:startIconDrawable="@drawable/ic_menu_camera">
 
@@ -74,12 +74,13 @@
                     android:id="@+id/hora_cita"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:enabled="false" />
+                    android:enabled="false"
+                    android:gravity="right" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textDireccion_cita"
             android:layout_width="0dp"
@@ -87,10 +88,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:focusable="true"
             android:gravity="start"
             android:hint="Direccion"
-            android:clickable="true"
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -101,7 +100,8 @@
                 android:id="@+id/direccion_cita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="start"/>
+                android:enabled="false"
+                android:gravity="start" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,6 +176,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textRecord_cita" />
 
+        <fragment
+            android:id="@+id/autocomplete_direccion"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_cita" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

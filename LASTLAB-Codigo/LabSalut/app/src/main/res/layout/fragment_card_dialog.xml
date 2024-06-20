@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp">
+        >
 
         <ImageView
             android:id="@+id/foto_card"
@@ -22,12 +22,22 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_launcher_foreground"
-            android:visibility="visible" />
+            android:visibility="gone" />
+
+
+
+            <fragment
+                android:id="@+id/map_dialog"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:visibility="visible" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="12dp"
             android:orientation="vertical"
             android:paddingLeft="16dp"

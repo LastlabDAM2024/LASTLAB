@@ -1,44 +1,49 @@
 package es.ifp.labsalut.ui;
 
-import static android.widget.ListPopupWindow.WRAP_CONTENT;
-import static android.widget.ListPopupWindow.MATCH_PARENT;
-
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
+import android.location.Address;
+import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentCardDialogBinding;
-import es.ifp.labsalut.databinding.FragmentHomeBinding;
 import es.ifp.labsalut.negocio.CitaMedica;
-import es.ifp.labsalut.negocio.Usuario;
 
-
-public class CardDialogFragment extends DialogFragment {
+public class CardDialogFragment extends DialogFragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private static final String ARG_CITA = "CITA";
     private static final int ANCHO_DIALOG = 800;
-
-    private String mParam1;
-    private String mParam2;
     private FragmentCardDialogBinding binding;
     private CitaMedica cita = null;
+    private GoogleMap mMap;
+    private static final String TAG = "CardDialogFragment";
+    private double latitud;
+    private double longitud;
 
     public CardDialogFragment() {
     }
@@ -58,8 +63,11 @@ public class CardDialogFragment extends DialogFragment {
         if (getArguments() != null) {
             cita = (CitaMedica) getArguments().getSerializable(ARG_CITA);
         }
+
+        // Inflar el layout del fragmento
         binding = FragmentCardDialogBinding.inflate(getLayoutInflater());
 
+        // Configurar otros elementos de UI con datos de la cita
         binding.fotoCard.setImageResource(R.drawable.ic_action_fingerprint);
         binding.fechaCard.setText("Fecha: " + cita.getFecha());
         binding.horaCard.setText("Hora: " + cita.getHora());
@@ -67,15 +75,72 @@ public class CardDialogFragment extends DialogFragment {
         binding.descripCard.setText(cita.getDescripcion());
         binding.recordCard.setText("Recordatorio: " + cita.getRecordatorio());
 
-        Dialog dialog = new Dialog(requireContext());
+        // Configurar el diálogo
+        Dialog dialog = new Dialog(requireActivity());
         dialog.setContentView(binding.getRoot());
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().setGravity(Gravity.CENTER);
         dialog.getWindow().setLayout(ANCHO_DIALOG, WRAP_CONTENT);
         dialog.getWindow().setWindowAnimations(R.style.DialogExpandFromTouchAnimation);
 
+        // Configurar el fragmento de mapa
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map_dialog);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        } else {
+            Log.e(TAG, "Error al obtener el SupportMapFragment.");
+        }
 
         return dialog;
     }
 
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setOnMapClickListener(this);
+
+        // Obtener la dirección como cadena
+        String direccion = cita.getDireccion();
+
+        // Inicializar el objeto Geocoder
+        Geocoder geocoder = new Geocoder(requireContext(), Locale.getDefault());
+
+        try {
+            // Obtener la lista de direcciones a partir de la cadena
+            List<Address> addresses = geocoder.getFromLocationName(direccion, 1);
+
+            if (!addresses.isEmpty()) {
+                Address address = addresses.get(0);
+                latitud = address.getLatitude();
+                longitud = address.getLongitude();
+
+                // Crear la posición del marcador
+                LatLng markerPosition = new LatLng(latitud, longitud);
+
+                // Agregar el marcador al mapa
+                mMap.addMarker(new MarkerOptions().position(markerPosition).title(direccion));
+
+                // Mover la cámara a la posición del marcador con un nivel de zoom
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(markerPosition, 12f));
+            } else {
+                // Manejar el caso donde no se encontraron direcciones válidas
+                Log.e(TAG, "No se encontraron direcciones para: " + direccion);
+            }
+        } catch (IOException e) {
+            // Manejar errores de geocodificación
+            e.printStackTrace();
+            Log.e(TAG, "Error al geocodificar la dirección: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void onMapClick(@NonNull LatLng latLng) {
+        String label = cita.getDireccion();
+        Uri gmmIntentUri = Uri.parse("geo:" + latitud + "," + longitud + "?q=" + latitud + "," + longitud + "(" + label + ")");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps"); // Establece el paquete de Google Maps
+        if (mapIntent.resolveActivity(requireActivity().getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+    }
 }
