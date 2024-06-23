@@ -48,6 +48,12 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="dialogTheme">@style/MyDialogTheme</item>
 
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
 </resources>

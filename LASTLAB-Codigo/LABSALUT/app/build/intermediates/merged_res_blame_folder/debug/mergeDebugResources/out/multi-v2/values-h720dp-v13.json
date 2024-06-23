@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-49:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-51:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\231ca7f2baf69d97b7e6da418815af97\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9e29fca509454577790a50c9d1d52d10\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

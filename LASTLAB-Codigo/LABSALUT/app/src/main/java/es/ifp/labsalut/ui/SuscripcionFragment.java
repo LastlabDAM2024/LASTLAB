@@ -2,10 +2,19 @@ package es.ifp.labsalut.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.navigation.NavigationView;
 
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentSettingsBinding;
@@ -14,27 +23,12 @@ import es.ifp.labsalut.negocio.Usuario;
 
 public class SuscripcionFragment extends Fragment {
     private FragmentSuscripcionBinding binding;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
-
-    // Parámetros de instancia
-    private String mParam1;
-    private String mParam2;
     private Usuario user = null;
 
     // Constructor público requerido
     public SuscripcionFragment() {}
 
-    // Método de fábrica para crear una nueva instancia del fragmento utilizando parámetros de tipo String
-    public static SuscripcionFragment newInstance(String param1, String param2) {
-        SuscripcionFragment fragment = new SuscripcionFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     // Método de fábrica para crear una nueva instancia del fragmento utilizando un objeto Usuario
     public static SuscripcionFragment newInstance(Usuario user) {
@@ -50,8 +44,7 @@ public class SuscripcionFragment extends Fragment {
         super.onCreate(savedInstanceState);
         // Recupera los argumentos pasados al fragmento
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            user = (Usuario) getArguments().getSerializable(ARG_USER);
         }
     }
 
@@ -62,6 +55,39 @@ public class SuscripcionFragment extends Fragment {
         binding = FragmentSuscripcionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Maneja el comportamiento al presionar el botón de retroceso del dispositivo
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_menu, HomeFragment.newInstance(user))
+                        .addToBackStack(null)
+                        .commit();
+
+                // Actualiza el Navigation Drawer
+                DrawerLayout drawerLayout = requireActivity().findViewById(R.id.drawer_layout);
+                NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
+
+                if (drawerLayout != null && navigationView != null) {
+                    // Cerrar el drawer si está abierto
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    // Obtener el menú y marcar el elemento correcto
+                    Menu menu = navigationView.getMenu();
+                    MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    if (homeMenuItem != null) {
+                        homeMenuItem.setChecked(true);
+                    }
+                }
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), onBackPressedCallback);
     }
 
     @Override

@@ -1,27 +1,37 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-49:/values-land/values-land.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-51:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9e29fca509454577790a50c9d1d52d10\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",
                     "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "41",
-                        "endOffsets": "53"
-                    },
-                    "to": {
-                        "startLines": "5",
-                        "startColumns": "4",
-                        "startOffsets": "264",
-                        "endColumns": "41",
-                        "endOffsets": "301"
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\5db87f100be4683eab019d56d622f596\\transformed\\material-1.12.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "from": {
+                        "startLines": "3,2,1",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "106,58,16",
+                        "endColumns": "51,47,41",
+                        "endOffsets": "153,101,53"
+                    },
+                    "to": {
+                        "startLines": "5,6,7",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "264,316,364",
+                        "endColumns": "51,47,41",
+                        "endOffsets": "311,359,401"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\d8d7c454493e49456a0de531f4bdb90a\\transformed\\material-1.12.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,26,35,40",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -31,22 +41,12 @@
                         "endOffsets": "125,199,272,342,414,484,549,616,686,758,827,896,978,1068,1144,1212,1279,1357,1422,1489,1661,2230,2499,2727"
                     },
                     "to": {
-                        "startLines": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,30,39,44",
+                        "startLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,32,41,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "306,381,455,528,598,670,740,805,872,942,1014,1083,1152,1234,1324,1400,1468,1535,1613,1678,1745,1917,2486,2755",
-                        "endLines": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,29,38,43,46",
+                        "startOffsets": "406,481,555,628,698,770,840,905,972,1042,1114,1183,1252,1334,1424,1500,1568,1635,1713,1778,1845,2017,2586,2855",
+                        "endLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,31,40,45,48",
                         "endColumns": "74,73,72,69,71,69,64,66,69,71,68,68,81,89,75,67,66,77,64,66,10,10,10,10",
-                        "endOffsets": "376,450,523,593,665,735,800,867,937,1009,1078,1147,1229,1319,1395,1463,1530,1608,1673,1740,1912,2481,2750,2978"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\231ca7f2baf69d97b7e6da418815af97\\transformed\\appcompat-1.7.0\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
+                        "endOffsets": "476,550,623,693,765,835,900,967,1037,1109,1178,1247,1329,1419,1495,1563,1630,1708,1773,1840,2012,2581,2850,3078"
                     }
                 }
             ]

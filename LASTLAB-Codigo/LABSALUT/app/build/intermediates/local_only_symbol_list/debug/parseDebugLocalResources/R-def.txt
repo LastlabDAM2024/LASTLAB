@@ -159,6 +159,8 @@ color md_theme_tertiary_mediumContrast
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 dimen botton_fragment
+dimen carousel_interSpacing
+dimen carousel_spacing
 dimen fab_margin
 dimen nav_header_height
 dimen nav_header_vertical_spacing
@@ -172,6 +174,8 @@ drawable ic_menu_send
 drawable ic_menu_share
 drawable ic_menu_slideshow
 drawable icon_mover_list
+drawable icon_ubicacion
+drawable mapa_statico
 drawable nuevo_menu_botom
 drawable puntos_horizontales
 drawable puntos_verticales
@@ -190,8 +194,10 @@ id botonAceptar
 id cancelar_reg
 id cancelar_suscrip
 id card
+id card_carousel
 id card_list
 id card_view
+id carousel_recycler_view
 id checkHuella_sett
 id checkRecord_cita
 id checkRecord_med
@@ -203,6 +209,7 @@ id content_reg
 id deleteItemListCita
 id deleteItemListMed
 id descrip_card
+id descrip_carrusel
 id descrip_cita
 id descrip_list
 id direccion_cita
@@ -213,6 +220,7 @@ id email
 id email_nav_header
 id fab
 id fecha_card
+id fecha_carrusel
 id fecha_cita
 id fecha_list
 id foto_card
@@ -222,15 +230,20 @@ id fragment_registro
 id fragment_settings
 id frecuencia_med
 id guardar_cita
+id guardar_med
 id hora_card
+id hora_carrusel
 id hora_cita
 id iconButton_list
 id icon_list
+id ima1_main
 id imageView
 id linear_cita
 id mail_reg
 id main
+id map_carrusel
 id map_dialog
+id materialCardView
 id medi_sett
 id mobile_navigation
 id nacimiento_reg
@@ -248,6 +261,7 @@ id navigation_home
 id navigation_medicamentos
 id navigation_settings
 id nombre_card
+id nombre_carrusel
 id nombre_cita
 id nombre_list
 id nombre_med
@@ -257,14 +271,13 @@ id pass
 id passRep_reg
 id pass_reg
 id record_card
+id record_carrusel
 id record_cita
 id record_list
 id record_med
 id recordarUsuario
 id recyclerViewCita_home
 id recyclerViewMedi_home
-id sda
-id sdas
 id sheet_card_view
 id spacioList_home
 id suscrip_suscrip
@@ -312,6 +325,7 @@ layout fragment_medicamentos
 layout fragment_registro
 layout fragment_settings
 layout fragment_suscripcion
+layout item_carrusel
 layout list_item
 layout nav_header_menu
 menu activity_menu_drawer
@@ -355,6 +369,7 @@ style DialogFadeAnimation
 style DialogRotateAnimation
 style DialogSlideAnimation
 style DialogZoomAnimation
+style MyDialogTheme
 style ThemeOverlay.AppTheme.HighContrast
 style ThemeOverlay.AppTheme.MediumContrast
 xml backup_rules

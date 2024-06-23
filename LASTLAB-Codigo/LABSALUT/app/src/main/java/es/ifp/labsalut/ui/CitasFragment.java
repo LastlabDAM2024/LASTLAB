@@ -9,32 +9,43 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+import com.google.android.material.carousel.CarouselSnapHelper;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -46,6 +57,7 @@ import java.util.TimeZone;
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentCitasBinding;
 import es.ifp.labsalut.db.BaseDatos;
+import es.ifp.labsalut.negocio.CarruselAdapter;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Usuario;
 
@@ -62,6 +74,7 @@ public class CitasFragment extends Fragment {
     // Usuario actual
     private Usuario user = null;
     private BaseDatos db;
+    private CarruselAdapter carruselAdapter; //adaptador del carrusel
     protected AutocompleteSupportFragment autocompleteDireccion;
 
     // Constructor vacío requerido
@@ -109,6 +122,16 @@ public class CitasFragment extends Fragment {
         db = new BaseDatos(context);
         autocompleteDireccion = (AutocompleteSupportFragment) getChildFragmentManager().findFragmentById(R.id.autocomplete_direccion);
 
+        ArrayList<Serializable> listaCitas = new ArrayList<>(user.getAllCitas());
+        carruselAdapter = new CarruselAdapter(context, requireActivity().getSupportFragmentManager(), listaCitas);
+        carruselAdapter.setRecyclerView(binding.carouselRecyclerView);
+        binding.carouselRecyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.carousel_spacing);
+        int spacingInterPixels = getResources().getDimensionPixelSize(R.dimen.carousel_interSpacing);
+        binding.carouselRecyclerView.addItemDecoration(new SpacesItemDecoration(spacingInPixels, spacingInterPixels));
+        binding.carouselRecyclerView.setAdapter(carruselAdapter);
+
+
         // Configuración del botón de fecha
         binding.textFechaCita.setStartIconOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +164,7 @@ public class CitasFragment extends Fragment {
         binding.guardarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CitaMedica cita = new CitaMedica("Neurologo", "12/05/2024", "08:00", "Fuenlabrada, Madrid, España", "Ir en ayunas", "24 horas antes");
+                CitaMedica cita = new CitaMedica("Neurologo", "12/05/2024", "08:00", "Calle Doctor Barraquer, 23, 28903 Getafe, Madrid, España", "Ir en ayunas", "24 horas antes");
 
 
 
@@ -162,6 +185,21 @@ public class CitasFragment extends Fragment {
                         .replace(R.id.content_menu, HomeFragment.newInstance(user))
                         .addToBackStack(null)
                         .commit();
+                // Actualiza el Navigation Drawer
+                DrawerLayout drawerLayout = requireActivity().findViewById(R.id.drawer_layout);
+                NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
+
+                if (drawerLayout != null && navigationView != null) {
+                    // Cerrar el drawer si está abierto
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    // Obtener el menú y marcar el elemento correcto
+                    Menu menu = navigationView.getMenu();
+                    MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    if (homeMenuItem != null) {
+                        homeMenuItem.setChecked(true);
+                    }
+                }
             }
         });
 
@@ -207,6 +245,35 @@ public class CitasFragment extends Fragment {
                 binding.direccionCita.setEnabled(false);
             }
         });
+
+        // Maneja el comportamiento al presionar el botón de retroceso del dispositivo
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_menu, HomeFragment.newInstance(user))
+                        .addToBackStack(null)
+                        .commit();
+
+                // Actualiza el Navigation Drawer
+                DrawerLayout drawerLayout = requireActivity().findViewById(R.id.drawer_layout);
+                NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
+
+                if (drawerLayout != null && navigationView != null) {
+                    // Cerrar el drawer si está abierto
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    // Obtener el menú y marcar el elemento correcto
+                    Menu menu = navigationView.getMenu();
+                    MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    if (homeMenuItem != null) {
+                        homeMenuItem.setChecked(true);
+                    }
+                }
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), onBackPressedCallback);
 
     }
 

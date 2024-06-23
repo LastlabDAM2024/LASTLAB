@@ -72,9 +72,13 @@ dependencies {
     implementation(libs.security.crypto)
     implementation(libs.material.v1120)
     implementation(libs.places)
+    implementation (libs.viewpager2)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
+    implementation (libs.github.glide)
+    implementation (libs.material.v150)
     implementation(libs.activity)
+    testImplementation(libs.testng)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

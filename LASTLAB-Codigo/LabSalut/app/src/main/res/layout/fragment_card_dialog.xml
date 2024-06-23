@@ -1,18 +1,16 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sheet_card_view"
-    style="@style/Widget.Material3.CardView.Filled"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/md_theme_background"
+    app:cardBackgroundColor="@color/md_theme_background"
     app:cardCornerRadius="25dp">
 
     <LinearLayout
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/foto_card"
@@ -24,15 +22,12 @@
             android:src="@drawable/ic_launcher_foreground"
             android:visibility="gone" />
 
-
-
-            <fragment
-                android:id="@+id/map_dialog"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:visibility="visible" />
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:visibility="visible" />
 
 
         <LinearLayout
@@ -48,7 +43,6 @@
                 android:layout_height="wrap_content" />
 
             <LinearLayout
-                android:id="@+id/sda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -66,7 +60,6 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
-                    android:id="@+id/sdas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

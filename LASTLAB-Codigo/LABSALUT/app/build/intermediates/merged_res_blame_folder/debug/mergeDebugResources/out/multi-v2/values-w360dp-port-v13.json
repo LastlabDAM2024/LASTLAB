@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-49:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-51:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\5db87f100be4683eab019d56d622f596\\transformed\\material-1.12.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\d8d7c454493e49456a0de531f4bdb90a\\transformed\\material-1.12.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

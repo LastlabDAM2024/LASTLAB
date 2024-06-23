@@ -9,23 +9,30 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
+import es.ifp.labsalut.R;
 import es.ifp.labsalut.activities.MenuBottomActivity;
 import es.ifp.labsalut.activities.MenuActivity;
 import es.ifp.labsalut.databinding.FragmentSettingsBinding;
@@ -138,6 +145,34 @@ public class SettingsFragment extends Fragment implements FingerprintHandler.Aut
             binding.checkUISett.setChecked(false);
         }
         uiListener(activity);
+
+        // Maneja el comportamiento al presionar el botón de retroceso del dispositivo
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_menu, HomeFragment.newInstance(user))
+                        .addToBackStack(null)
+                        .commit();
+
+                // Actualiza el Navigation Drawer
+                DrawerLayout drawerLayout = requireActivity().findViewById(R.id.drawer_layout);
+                NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
+
+                if (drawerLayout != null && navigationView != null) {
+                    // Cerrar el drawer si está abierto
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    // Obtener el menú y marcar el elemento correcto
+                    Menu menu = navigationView.getMenu();
+                    MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    if (homeMenuItem != null) {
+                        homeMenuItem.setChecked(true);
+                    }
+                }
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), onBackPressedCallback);
     }
 
     @Override

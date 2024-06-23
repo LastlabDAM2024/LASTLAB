@@ -282,7 +282,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
 
     public ArrayList<Serializable> getAllCitasMedicas(Usuario user) {
-        ArrayList<Serializable> listMedi = new ArrayList<Serializable>();
+        ArrayList<Serializable> listCitas = new ArrayList<Serializable>();
         int id = user.getIdUsuario();
         Cursor resultado = null;
         CitaMedica contenido = new CitaMedica();
@@ -299,10 +299,10 @@ public class BaseDatos extends SQLiteOpenHelper {
                 contenido.setDescripcion(resultado.getString(resultado.getColumnIndex("descripcion")));
                 contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
                 resultado.moveToNext();
-                listMedi.add(contenido);
+                listCitas.add(contenido);
             }
         }
-        return listMedi;
+        return listCitas;
     }
 
     public ArrayList<String> getAllNombreCitas(Usuario user) {

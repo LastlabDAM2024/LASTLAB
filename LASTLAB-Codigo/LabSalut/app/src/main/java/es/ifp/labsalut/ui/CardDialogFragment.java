@@ -17,6 +17,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -33,13 +34,16 @@ import java.util.Objects;
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentCardDialogBinding;
 import es.ifp.labsalut.negocio.CitaMedica;
+import es.ifp.labsalut.negocio.Medicamento;
 
 public class CardDialogFragment extends DialogFragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
 
     private static final String ARG_CITA = "CITA";
+    private static final String ARG_MEDI = "MEDI";
     private static final int ANCHO_DIALOG = 750;
     private FragmentCardDialogBinding binding;
     private CitaMedica cita = null;
+    private Medicamento medicamento = null;
     private GoogleMap mMap;
     private static final String TAG = "CardDialogFragment";
     private double latitud;
@@ -56,40 +60,54 @@ public class CardDialogFragment extends DialogFragment implements OnMapReadyCall
         return fragment;
     }
 
+    public static CardDialogFragment newInstance(Medicamento medicamento) {
+        CardDialogFragment fragment = new CardDialogFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_MEDI, medicamento);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         // Recupera los argumentos pasados al fragmento
         if (getArguments() != null) {
             cita = (CitaMedica) getArguments().getSerializable(ARG_CITA);
+            medicamento = (Medicamento) getArguments().getSerializable(ARG_MEDI);
         }
 
         // Inflar el layout del fragmento
         binding = FragmentCardDialogBinding.inflate(getLayoutInflater());
 
-        // Configurar otros elementos de UI con datos de la cita
-        binding.fotoCard.setImageResource(R.drawable.ic_action_fingerprint);
-        binding.fechaCard.setText("Fecha: " + cita.getFecha());
-        binding.horaCard.setText("Hora: " + cita.getHora());
-        binding.nombreCard.setText(cita.getNombre());
-        binding.descripCard.setText(cita.getDescripcion());
-        binding.recordCard.setText("Recordatorio: " + cita.getRecordatorio());
+        // Configurar el fragmento de mapa
+        binding.mapDialog.onCreate(null);
+
+        if (cita != null) {
+            binding.mapDialog.getMapAsync(this);
+            binding.fechaCard.setText("Fecha: " + cita.getFecha());
+            binding.horaCard.setText("Hora: " + cita.getHora());
+            binding.nombreCard.setText(cita.getNombre());
+            binding.descripCard.setText(cita.getDescripcion());
+            binding.recordCard.setText("Recordatorio: " + cita.getRecordatorio());
+        } else {
+            binding.fotoCard.setVisibility(View.VISIBLE);
+            binding.mapDialog.setVisibility(View.GONE);
+            binding.fotoCard.setImageResource(R.drawable.ic_launcher_foreground);
+            binding.fechaCard.setText("");
+            binding.horaCard.setText("");
+            binding.nombreCard.setText(medicamento.getNombre());
+            binding.descripCard.setText(medicamento.getFrecuencia() + ", " + medicamento.getDosis());
+            binding.recordCard.setText("Recordatorio: " + medicamento.getRecordatorio());
+        }
 
         // Configurar el diálogo
-        Dialog dialog = new Dialog(requireActivity());
+        Dialog dialog = new Dialog(requireActivity(),R.style.MyDialogTheme);
         dialog.setContentView(binding.getRoot());
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().setGravity(Gravity.CENTER);
         dialog.getWindow().setLayout(ANCHO_DIALOG, WRAP_CONTENT);
         dialog.getWindow().setWindowAnimations(R.style.DialogExpandFromTouchAnimation);
-
-        // Configurar el fragmento de mapa
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map_dialog);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        } else {
-            Log.e(TAG, "Error al obtener el SupportMapFragment.");
-        }
 
         return dialog;
     }

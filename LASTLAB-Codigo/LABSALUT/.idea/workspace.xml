@@ -22,11 +22,6 @@
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pruba_maps.xml">
-        <config>
-          <theme>@style/AppTheme</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registro.xml">
         <config>
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
@@ -85,6 +80,16 @@
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_suscripcion.xml">
         <config>
           <theme>@style/Theme.Material3.DynamicColors.Light.NoActionBar</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_carrusel.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_carrusel_dos.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
@@ -189,10 +194,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="XML Properties File" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
         <option value="valueResourceFile" />
       </list>
     </option>
@@ -232,7 +237,7 @@
     "com.google.services.firebase.aqiPopupShown": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Samsung/Desktop/AndroidStudio/LabSalut/app/src/main/res/values-night",
-    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/PruebaMaps",
+    "last_opened_file_path": "C:/Users/josea/AndroidStudioProjects/LASTLAB/LASTLAB-Codigo/LabSalut/app/src/main/res/layout",
     "settings.editor.selected.configurable": "experimental"
   },
   "keyToStringList": {
@@ -260,6 +265,7 @@
       <recent name="es.ifp.labsalut" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="es.ifp.labsalut.negocio" />
       <recent name="es.ifp.labsalut.activities" />
     </key>
   </component>
@@ -787,19 +793,9 @@
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/ModListAdapter.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/MedListAdapter.java</url>
           <line>204</line>
           <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
-          <line>225</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/db/BaseDatos.java</url>
-          <line>165</line>
-          <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
@@ -807,11 +803,41 @@
           <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/MedListAdapter.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/MedListAdapter.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/HomeFragment.java</url>
+          <line>316</line>
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/HomeFragment.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/CitasFragment.java</url>
-          <line>109</line>
-          <option name="timeStamp" value="186" />
+          <line>159</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/SpacesItemDecoration.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="208" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="AndroidRunConfigurationType">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -13,7 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
@@ -28,33 +27,31 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.ui.DeslizarParaAccion;
 
-public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListViewHolder> implements DeslizarParaAccion.ItemTouchHelperContract {
+public class CitasListAdapter extends RecyclerView.Adapter<CitasListAdapter.ListViewHolder> implements DeslizarParaAccion.ItemTouchHelperContract {
 
     private Context context; // Contexto de la aplicación
-    private ArrayList<Serializable> itemList; // Lista de elementos
+    private static ArrayList<Serializable> itemList;// Lista de elementos
     private SparseBooleanArray seleccionados; // Array para elementos seleccionados
     private int colorBack; // Color de fondo
     private boolean select = false; // Bandera para selección múltiple
     private OnDataChangeListener mOnDataChangeListener; // Listener para cambios de datos
-    private static OnItemClickListener mListener;
+    private static OnItemCitaClickListener mListener;
     private RecyclerView recyclerView;
-
 
     // Interfaz para el listener de cambios de datos
     public interface OnDataChangeListener {
         void onDataChanged(boolean select);
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view,int position);
+    public interface OnItemCitaClickListener {
+        void onItemCitaClick(Serializable serializable, int position);
     }
 
     // Constructor del adaptador
-    public ModListAdapter(Context context, ArrayList<Serializable> itemList) {
+    public CitasListAdapter(Context context, ArrayList<Serializable> itemList) {
         this.context = context;
         this.itemList = itemList;
         this.seleccionados = new SparseBooleanArray();
@@ -97,22 +94,13 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
             holder.moverButton.setVisibility(View.VISIBLE);
         }
 
-        // Configuración de los datos según el tipo de elemento
-        if (item instanceof Medicamento) {
-            Medicamento medicamento = (Medicamento) item;
-            holder.titleText.setText(medicamento.getNombre());
-            holder.descriptionText.setText(medicamento.getFrecuencia());
-            holder.fechaText.setText(medicamento.getDosis());
-            holder.recordTex.setText(medicamento.getRecordatorio());
-            holder.avatarImage.setImageResource(R.drawable.ic_launcher_foreground);
-        } else if (item instanceof CitaMedica) {
-            CitaMedica citaMedica = (CitaMedica) item;
-            holder.titleText.setText(citaMedica.getNombre());
-            holder.descriptionText.setText(citaMedica.getHora() + " - " + citaMedica.getDescripcion());
-            holder.fechaText.setText(citaMedica.getFecha());
-            holder.recordTex.setText(citaMedica.getRecordatorio());
-            holder.avatarImage.setImageResource(R.drawable.ic_action_fingerprint);
-        }
+        CitaMedica citaMedica = (CitaMedica) item;
+        holder.titleText.setText(citaMedica.getNombre());
+        holder.descriptionText.setText(citaMedica.getHora() + " - " + citaMedica.getDescripcion());
+        holder.fechaText.setText(citaMedica.getFecha());
+        holder.recordTex.setText(citaMedica.getRecordatorio());
+        holder.avatarImage.setImageResource(R.drawable.icon_ubicacion);
+
 
         // Listener para el cambio de estado del checkbox
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -156,7 +144,7 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
     }
 
     // Configuración del listener de cambios de datos
-    public void setOnItemClickListener(OnItemClickListener onItemClick) {
+    public void setOnItemClickListener(OnItemCitaClickListener onItemClick) {
         mListener = onItemClick;
     }
 
@@ -239,18 +227,29 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
     }
 
     @Override
-    public void onRowSelected(ListViewHolder myViewHolder) {
+    public void onRowSelected(MedListAdapter.ListViewHolder myViewHolder) {
+
+    }
+
+    @Override
+    public void onRowSelected(CitasListAdapter.ListViewHolder myViewHolder) {
+
+    }
+
+    @Override
+    public void onRowClear(MedListAdapter.ListViewHolder myViewHolder) {
 
     }
 
     @Override
     public void onRowClear(ListViewHolder myViewHolder) {
+
     }
 
 
     // Clase ViewHolder para la lista
     public static class ListViewHolder extends RecyclerView.ViewHolder {
-        protected LinearLayout cardView; // Vista de la tarjeta
+        protected LinearLayout cardView;
         protected ImageView avatarImage; // Imagen del avatar
         protected MaterialCheckBox checkBox; // Checkbox
         protected TextView titleText; // Texto del título
@@ -265,7 +264,8 @@ public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(itemView, getAdapterPosition());
+                    Serializable serializable = itemList.get(getAdapterPosition());
+                    mListener.onItemCitaClick(serializable, getAdapterPosition());
                 }
             });
 

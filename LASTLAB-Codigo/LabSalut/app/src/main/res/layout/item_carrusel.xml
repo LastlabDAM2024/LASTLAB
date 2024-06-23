@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_carousel"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginStart="0dp"
+    android:layout_marginEnd="0dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_carrusel"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/nombre_carrusel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="top"
+                    android:paddingBottom="5dp"
+                    android:text="Nombre medi / cita"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/fecha_carrusel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha: 12/02/2024"
+                    android:textAlignment="textEnd"
+                    android:textColor="#888888"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hora_carrusel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora: 08:00"
+                    android:textAlignment="textEnd"
+                    android:textColor="#888888"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/descrip_carrusel"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="top"
+                android:text="Frecuencia de toma"
+                android:textColor="#888888"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/record_carrusel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recordatorio: 2 horas antes"
+                android:textAlignment="textEnd"
+                android:textColor="#888888"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
