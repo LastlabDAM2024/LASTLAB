@@ -1,8 +1,10 @@
 package es.ifp.labsalut.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -106,52 +108,64 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
     }
 
-
     // Método para añadir un usuario a la base de datos
+
     public int addUser(Usuario usuario) {
-        db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         String nombreUser = usuario.getNombre();
         String fechaNacimiento = usuario.getFechaNacimiento();
         String email = usuario.getEmail();
         String pass = usuario.getContrasena();
-        db.execSQL("INSERT INTO Usuario (nombre,fechaNacimiento,email,pass) VALUES ('" + nombreUser + "','" + fechaNacimiento + "','" + email + "','" + pass + "')");
-        int id = -1;
-        Cursor resultado = null;
-        int contenido = -1;
-        if (this.numTotalUsers() > 0) {
-            db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT id FROM Usuario WHERE (nombre='" + nombreUser + "' AND email='" + email + "')", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()) {
-                contenido = resultado.getInt(resultado.getColumnIndex("id"));
-                resultado.moveToNext();
-                id = contenido;
 
-            }
+        ContentValues values = new ContentValues();
+        values.put("nombre", nombreUser);
+        values.put("fechaNacimiento", fechaNacimiento);
+        values.put("email", email);
+        values.put("pass", pass);
+
+        long id = db.insert("Usuario", null, values);
+
+        db.close();
+
+        // Convertir el long id a int
+        if (id == -1) {
+            // Si hubo un error al insertar, devolver un valor que indique error
+            return -1;
+        } else {
+            // Si se insertó correctamente, convertir el long a int
+            return (int) id;
         }
-        return id;
     }
+
+
 
     public Usuario getUser(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        Usuario usuario = new Usuario();
 
-        Cursor resultado = null;
-        Usuario contenido = new Usuario();
-        if (this.numTotalUsers() > 0) {
-            db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT * FROM Usuario WHERE email='" + email + "'", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()) {
-                contenido.setIdUsuario(resultado.getInt(resultado.getColumnIndex("id")));
-                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
-                contenido.setFechaNacimiento(resultado.getString(resultado.getColumnIndex("fechaNacimiento")));
-                contenido.setEmail(resultado.getString(resultado.getColumnIndex("email")));
-                contenido.setContrasena(resultado.getString(resultado.getColumnIndex("pass")));
-                resultado.moveToNext();
+        try {
+            cursor = db.rawQuery("SELECT * FROM Usuario WHERE email=?", new String[]{email});
+
+            if (cursor != null && cursor.moveToFirst()) {
+                usuario.setIdUsuario(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+                usuario.setNombre(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
+                usuario.setFechaNacimiento(cursor.getString(cursor.getColumnIndexOrThrow("fechaNacimiento")));
+                usuario.setEmail(cursor.getString(cursor.getColumnIndexOrThrow("email")));
+                usuario.setContrasena(cursor.getString(cursor.getColumnIndexOrThrow("pass")));
             }
-
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
         }
-        return contenido;
+
+        return usuario;
     }
+
 
 
     public void addUserMedi(Usuario user, Medicamento medicamento) {
@@ -168,27 +182,48 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO UsuarioCitaMedica (idUser,idCitaMedica) VALUES ('" + idUser + "','" + idCita + "')");
     }
 
-    // Método para añadir un medicamento a la base de datos
     public int addMedicamento(Medicamento medicamento) {
-        db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         String nombre = medicamento.getNombre();
         String dosis = medicamento.getDosis();
         String frecuencia = medicamento.getFrecuencia();
         String recordatorio = medicamento.getRecordatorio();
-        db.execSQL("INSERT INTO Medicamento (nombre,dosis,frecuencia,recordatorio) VALUES ('" + nombre + "','" + dosis + "','" + frecuencia + "','" + recordatorio + "')");
-        int id = -1;
-        Cursor resultado = null;
-        int contenido = -1;
-        if (this.numTotalMedicamentos() > 0) {
-            db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT id FROM Medicamento WHERE nombre='" + nombre + "'AND dosis='" + dosis + "'AND frecuencia='" + frecuencia + "' ORDER BY id DESC", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()){
-                contenido = resultado.getInt(resultado.getColumnIndex("id"));
-                resultado.moveToNext();
-            }
+
+        // Insertar el medicamento en la tabla Medicamento
+        ContentValues values = new ContentValues();
+        values.put("nombre", nombre);
+        values.put("dosis", dosis);
+        values.put("frecuencia", frecuencia);
+        values.put("recordatorio", recordatorio);
+
+        long id = db.insert("Medicamento", null, values);
+
+        // Verificar si la inserción fue exitosa
+        if (id == -1) {
+            // Manejar el caso de inserción fallida si es necesario
+            return -1;
         }
-        return id;
+
+        // Obtener el ID del medicamento insertado
+        int insertedId = -1;
+        Cursor cursor = null;
+
+        try {
+            cursor = db.rawQuery("SELECT id FROM Medicamento WHERE nombre=? AND dosis=? AND frecuencia=? ORDER BY id DESC", new String[]{nombre, dosis, frecuencia});
+
+            if (cursor != null && cursor.moveToFirst()) {
+                insertedId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+
+        return insertedId;
     }
 
     // Método para añadir una cita médica a la base de datos
@@ -199,21 +234,30 @@ public class BaseDatos extends SQLiteOpenHelper {
         String hora = citaMedica.getHora();
         String descripcion = citaMedica.getDescripcion();
         String recordatorio = citaMedica.getRecordatorio();
+
+        // Ejecutar la inserción de la cita médica
         db.execSQL("INSERT INTO CitaMedica (nombre,fecha,hora,descripcion,recordatorio) VALUES ('" + nombre + "','" + fecha + "','" + hora + "','" + descripcion + "','" + recordatorio + "')");
+
         int id = -1;
         Cursor resultado = null;
-        int contenido = -1;
-        if (this.numTotalCitas() > 0) {
-            db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT id FROM CitaMedica WHERE nombre='" + nombre + "'AND fecha='" + fecha + "'AND hora='" + hora + "' ORDER BY id DESC", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()) {
-                contenido = resultado.getInt(resultado.getColumnIndex("id"));
-                resultado.moveToNext();
+
+        // Obtener el ID de la cita médica insertada
+        try {
+            resultado = db.rawQuery("SELECT last_insert_rowid()", null);
+            if (resultado.moveToFirst()) {
+                id = resultado.getInt(0);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (resultado != null) {
+                resultado.close();
             }
         }
+
         return id;
     }
+
 
 
     // Método para añadir una suscripción a la base de datos
@@ -235,111 +279,122 @@ public class BaseDatos extends SQLiteOpenHelper {
 
 
     public ArrayList<Medicamento> getAllMedicamentos(Usuario user) {
-        ArrayList<Medicamento> listMedi = new ArrayList<Medicamento>();
+        ArrayList<Medicamento> listMedi = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor resultado = null;
-        Medicamento contenido = new Medicamento();
-        if (this.numTotalMedicamentos() > 0) {
-            db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT * FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()) {
-                contenido.setIdMedicamento(resultado.getInt(resultado.getColumnIndex("id")));
-                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
-                contenido.setDosis(resultado.getString(resultado.getColumnIndex("dosis")));
-                contenido.setFrecuencia(resultado.getString(resultado.getColumnIndex("frecuencia")));
-                contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
-                resultado.moveToNext();
-                listMedi.add(contenido);
-            }
+        Cursor cursor = null;
 
+        try {
+            db = this.getReadableDatabase();
+            cursor = db.rawQuery("SELECT * FROM Medicamento WHERE id IN (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
+
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    Medicamento medicamento = new Medicamento();
+                    medicamento.setIdMedicamento(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+                    medicamento.setNombre(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
+                    medicamento.setDosis(cursor.getString(cursor.getColumnIndexOrThrow("dosis")));
+                    medicamento.setFrecuencia(cursor.getString(cursor.getColumnIndexOrThrow("frecuencia")));
+                    medicamento.setRecordatorio(cursor.getString(cursor.getColumnIndexOrThrow("recordatorio")));
+                    listMedi.add(medicamento);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
         }
+
         return listMedi;
     }
 
 
+
     public ArrayList<String> getAllNombreMedi(Usuario user) {
-        ArrayList<String> listNombresMedi = new ArrayList<String>();
+        ArrayList<String> listNombresMedi = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor resultado = null;
-        String contenido = "";
-        if (this.numTotalMedicamentos() > 0) {
+        Cursor cursor = null;
+
+        try {
             db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT nombre FROM Medicamento WHERE (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()){
-                contenido = resultado.getString(resultado.getColumnIndex("nombre"));
-                resultado.moveToNext();
-                listNombresMedi.add(contenido);
+            cursor = db.rawQuery("SELECT nombre FROM Medicamento WHERE id IN (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
+
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    String nombreMedicamento = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
+                    listNombresMedi.add(nombreMedicamento);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
             }
         }
+
         return listNombresMedi;
     }
 
 
+
     public ArrayList<CitaMedica> getAllCitas(Usuario user) {
-        ArrayList<CitaMedica> listMedi = new ArrayList<CitaMedica>();
+        ArrayList<CitaMedica> listCitas = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor resultado = null;
-        CitaMedica contenido = new CitaMedica();
-        if (this.numTotalCitas() > 0) {
+        Cursor cursor = null;
+
+        try {
             db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()) {
-                contenido.setIdCita(resultado.getInt(resultado.getColumnIndex("id")));
-                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
-                contenido.setFecha(resultado.getString(resultado.getColumnIndex("fecha")));
-                contenido.setHora(resultado.getString(resultado.getColumnIndex("hora")));
-                contenido.setDescripcion(resultado.getString(resultado.getColumnIndex("descripcion")));
-                contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
-                resultado.moveToNext();
-                listMedi.add(contenido);
+            cursor = db.rawQuery("SELECT * FROM CitaMedica WHERE id IN (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
+
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    CitaMedica cita = new CitaMedica();
+                    cita.setIdCita(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+                    cita.setNombre(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
+                    cita.setFecha(cursor.getString(cursor.getColumnIndexOrThrow("fecha")));
+                    cita.setHora(cursor.getString(cursor.getColumnIndexOrThrow("hora")));
+                    cita.setDescripcion(cursor.getString(cursor.getColumnIndexOrThrow("descripcion")));
+                    cita.setRecordatorio(cursor.getString(cursor.getColumnIndexOrThrow("recordatorio")));
+
+                    listCitas.add(cita);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
             }
         }
-        return listMedi;
+
+        return listCitas;
     }
 
     public ArrayList<String> getAllNombreCitas(Usuario user) {
-        ArrayList<String> listNombresCitas = new ArrayList<String>();
+        ArrayList<String> listNombresCitas = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor resultado = null;
-        String contenido = "";
-        if (this.numTotalMedicamentos() > 0) {
+        Cursor cursor = null;
+
+        try {
             db = this.getReadableDatabase();
-            resultado = db.rawQuery("SELECT * FROM CitaMedica WHERE (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
-            resultado.moveToFirst();
-            while (!resultado.isAfterLast()) {
-                contenido = resultado.getString(resultado.getColumnIndex("nombre"));
-                resultado.moveToNext();
-                listNombresCitas.add(contenido);
+            cursor = db.rawQuery("SELECT * FROM CitaMedica WHERE id IN (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
+
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    String nombreCita = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
+                    listNombresCitas.add(nombreCita);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null) {
+                cursor.close();
             }
         }
+
         return listNombresCitas;
-    }
-
-    /*
-
-    @NELLA ESTO NO TIENE SENTIDO EN UNA CLASE DE TIPO DE BASE DE DATOS
-    ESTO DEBERIA DE IR EN EL .JAVA QUE VAYA VINCULADO A LA ACTIVIDAD SUSCRIPCION, EN ESTE CASO
-    SUSCRIPCIONACTIVITY
-
-    // Método para mostrar un diálogo de confirmación de cancelación
-    public void confirmarCancelacion(Context context, DialogInterface.OnClickListener confirmListener) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Confirmar Cancelación");
-        builder.setMessage("¿Estás seguro que deseas cancelar la suscripción?");
-        builder.setPositiveButton("OK", confirmListener);
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
-    */
-    public void cerrarDB() {
-        db.close();
     }
 }
