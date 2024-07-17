@@ -10,8 +10,8 @@ public class Usuario implements Serializable {
     private String fechaNacimiento; // Fecha de nacimiento del usuario
     private String email; // Correo electrónico del usuario
     private String contrasena; // Contraseña del usuario
-    private ArrayList<Serializable> medicamentos; // Lista de medicamentos asociados al usuario
-    private ArrayList<Serializable> citaMedica; // Lista de citas médicas asociadas al usuario
+    private ArrayList<Medicamento> medicamentos; // Lista de medicamentos asociados al usuario
+    private ArrayList<CitaMedica> citaMedica; // Lista de citas médicas asociadas al usuario
     private Suscripcion suscripcion; // Suscripción del usuario
 
     // Constructor por defecto de la clase Usuario
@@ -68,35 +68,33 @@ public class Usuario implements Serializable {
 
     // Método getter para obtener un medicamento específico del usuario según su identificador
     public Medicamento getMedicamentos(int idMedicamento) {
-        return (Medicamento) this.medicamentos.get(idMedicamento);
+        if (idMedicamento >= 0 && idMedicamento < medicamentos.size()) {
+            return medicamentos.get(idMedicamento);
+        }
+        return null; // O podrías lanzar una excepción si no se encuentra
     }
 
     // Método setter para añadir un medicamento al usuario
-    public void setMedicamentos(Medicamento medicamentos) {
-        this.medicamentos.add(medicamentos);
+    public void setMedicamentos(Medicamento medicamento) {
+        this.medicamentos.add(medicamento);
     }
 
     // Método para eliminar un medicamento del usuario
-    public void removeMedicamentos(Medicamento medicamentos) {
-        this.medicamentos.remove(medicamentos);
+    public void removeMedicamentos(Medicamento medicamento) {
+        this.medicamentos.remove(medicamento);
     }
 
     // Método getter para obtener todos los medicamentos asociados al usuario
     public ArrayList<Medicamento> getAllMedicamentos() {
-        ArrayList<Medicamento>listaMed= new ArrayList<Medicamento>();
-        for(int i=0;i< this.medicamentos.size();i++){
-            if (this.medicamentos.get(i) instanceof Medicamento){
-                Medicamento medicamento = (Medicamento) this.medicamentos.get(i);
-                listaMed.add(medicamento);
-            }
-        }
-
-        return listaMed;
+        return medicamentos;
     }
 
     // Método getter para obtener una cita médica específica del usuario según su identificador
     public CitaMedica getCitaMedica(int idCita) {
-        return (CitaMedica) this.citaMedica.get(idCita);
+        if (idCita >= 0 && idCita < citaMedica.size()) {
+            return citaMedica.get(idCita);
+        }
+        return null; // O podrías lanzar una excepción si no se encuentra
     }
 
     // Método setter para añadir una cita médica al usuario
@@ -111,15 +109,7 @@ public class Usuario implements Serializable {
 
     // Método getter para obtener todas las citas médicas asociadas al usuario
     public ArrayList<CitaMedica> getAllCitas() {
-        ArrayList<CitaMedica>listaCita= new ArrayList<CitaMedica>();
-        for(int i=0;i< this.citaMedica.size();i++){
-            if (this.citaMedica.get(i) instanceof CitaMedica){
-                CitaMedica cita = (CitaMedica) this.citaMedica.get(i);
-                listaCita.add(cita);
-            }
-        }
-
-        return listaCita;
+        return citaMedica;
     }
 
     // Método getter para obtener el correo electrónico del usuario
