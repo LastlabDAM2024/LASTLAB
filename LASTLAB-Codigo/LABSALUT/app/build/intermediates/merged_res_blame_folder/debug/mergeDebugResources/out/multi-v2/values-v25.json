@@ -4,7 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

@@ -4,7 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-mr/values-mr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3b3165e253c45a0f171d64d4b048e6cc\\transformed\\navigation-ui-2.6.0\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\3b3165e253c45a0f171d64d4b048e6cc\\transformed\\navigation-ui-2.6.0\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\1c1e2b7bbea1bdc46525fad02f911009\\transformed\\biometric-1.1.0\\res\\values-mr\\values-mr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,162,249,371,500,629,763,895,1029,1125,1269,1414",
-                        "endColumns": "106,86,121,128,128,133,131,133,95,143,144,125",
-                        "endOffsets": "157,244,366,495,624,758,890,1024,1120,1264,1409,1535"
-                    },
-                    "to": {
-                        "startLines": "48,50,55,56,57,58,59,60,61,62,63,64",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4461,4640,5022,5144,5273,5402,5536,5668,5802,5898,6042,6187",
-                        "endColumns": "106,86,121,128,128,133,131,133,95,143,144,125",
-                        "endOffsets": "4563,4722,5139,5268,5397,5531,5663,5797,5893,6037,6182,6308"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\993b6c97eaa06c0c3403c3d65edd0d90\\transformed\\core-1.13.0\\res\\values-mr\\values-mr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,155,259,360,463,565,670,787",
-                        "endColumns": "99,103,100,102,101,104,116,100",
-                        "endOffsets": "150,254,355,458,560,665,782,883"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44,134",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3431,3531,3635,3736,3839,3941,4046,11880",
-                        "endColumns": "99,103,100,102,101,104,116,100",
-                        "endOffsets": "3526,3630,3731,3834,3936,4041,4158,11976"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +57,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\646da461a1a82caec84a3ec6c9a72706\\transformed\\preference-1.2.0\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\993b6c97eaa06c0c3403c3d65edd0d90\\transformed\\core-1.13.0\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,155,259,360,463,565,670,787",
+                        "endColumns": "99,103,100,102,101,104,116,100",
+                        "endOffsets": "150,254,355,458,560,665,782,883"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,134",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3431,3531,3635,3736,3839,3941,4046,11880",
+                        "endColumns": "99,103,100,102,101,104,116,100",
+                        "endOffsets": "3526,3630,3731,3834,3936,4041,4158,11976"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\646da461a1a82caec84a3ec6c9a72706\\transformed\\preference-1.2.0\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -105,6 +88,23 @@
                         "startOffsets": "4568,4847,11268,11428,11981,12150,12230",
                         "endColumns": "71,83,81,136,168,79,77",
                         "endOffsets": "4635,4926,11345,11560,12145,12225,12303"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\1c1e2b7bbea1bdc46525fad02f911009\\transformed\\biometric-1.1.0\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,162,249,371,500,629,763,895,1029,1125,1269,1414",
+                        "endColumns": "106,86,121,128,128,133,131,133,95,143,144,125",
+                        "endOffsets": "157,244,366,495,624,758,890,1024,1120,1264,1409,1535"
+                    },
+                    "to": {
+                        "startLines": "48,50,55,56,57,58,59,60,61,62,63,64",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4461,4640,5022,5144,5273,5402,5536,5668,5802,5898,6042,6187",
+                        "endColumns": "106,86,121,128,128,133,131,133,95,143,144,125",
+                        "endOffsets": "4563,4722,5139,5268,5397,5531,5663,5797,5893,6037,6182,6308"
                     }
                 }
             ]

@@ -4,41 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\646da461a1a82caec84a3ec6c9a72706\\transformed\\preference-1.2.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,175,262,341,492,661,748",
-                        "endColumns": "69,86,78,150,168,86,80",
-                        "endOffsets": "170,257,336,487,656,743,824"
-                    },
-                    "to": {
-                        "startLines": "49,53,127,129,135,136,137",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4629,4917,11476,11632,12209,12378,12465",
-                        "endColumns": "69,86,78,150,168,86,80",
-                        "endOffsets": "4694,4999,11550,11778,12373,12460,12541"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\1c1e2b7bbea1bdc46525fad02f911009\\transformed\\biometric-1.1.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,253,370,509,656,787,917,1061,1162,1296,1440",
-                        "endColumns": "103,93,116,138,146,130,129,143,100,133,143,122",
-                        "endOffsets": "154,248,365,504,651,782,912,1056,1157,1291,1435,1558"
-                    },
-                    "to": {
-                        "startLines": "48,50,55,56,57,58,59,60,61,62,63,64",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4525,4699,5096,5213,5352,5499,5630,5760,5904,6005,6139,6283",
-                        "endColumns": "103,93,116,138,146,130,129,143,100,133,143,122",
-                        "endOffsets": "4624,4788,5208,5347,5494,5625,5755,5899,6000,6134,6278,6401"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,7 +40,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\993b6c97eaa06c0c3403c3d65edd0d90\\transformed\\core-1.13.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\646da461a1a82caec84a3ec6c9a72706\\transformed\\preference-1.2.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,175,262,341,492,661,748",
+                        "endColumns": "69,86,78,150,168,86,80",
+                        "endOffsets": "170,257,336,487,656,743,824"
+                    },
+                    "to": {
+                        "startLines": "49,53,127,129,135,136,137",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "4629,4917,11476,11632,12209,12378,12465",
+                        "endColumns": "69,86,78,150,168,86,80",
+                        "endOffsets": "4694,4999,11550,11778,12373,12460,12541"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\1c1e2b7bbea1bdc46525fad02f911009\\transformed\\biometric-1.1.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,253,370,509,656,787,917,1061,1162,1296,1440",
+                        "endColumns": "103,93,116,138,146,130,129,143,100,133,143,122",
+                        "endOffsets": "154,248,365,504,651,782,912,1056,1157,1291,1435,1558"
+                    },
+                    "to": {
+                        "startLines": "48,50,55,56,57,58,59,60,61,62,63,64",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4525,4699,5096,5213,5352,5499,5630,5760,5904,6005,6139,6283",
+                        "endColumns": "103,93,116,138,146,130,129,143,100,133,143,122",
+                        "endOffsets": "4624,4788,5208,5347,5494,5625,5755,5899,6000,6134,6278,6401"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\993b6c97eaa06c0c3403c3d65edd0d90\\transformed\\core-1.13.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -91,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\3b3165e253c45a0f171d64d4b048e6cc\\transformed\\navigation-ui-2.6.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\3b3165e253c45a0f171d64d4b048e6cc\\transformed\\navigation-ui-2.6.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

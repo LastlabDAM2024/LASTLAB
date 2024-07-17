@@ -4,26 +4,26 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\OneDrive\\Escritorio\\LASTLAB\\LASTLAB\\LASTLAB-Codigo\\LABSALUT\\app\\src\\main\\res\\values-v23\\themes.xml",
                     "from": {
-                        "startLines": "2,5,9,13,16,19,22,25,28,32",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,271,413,574,784,991,1198,1401,1603,1868",
-                        "endLines": "4,8,12,15,18,21,24,27,31,35",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "59",
+                        "endLines": "53",
+                        "endColumns": "12",
+                        "endOffsets": "4002"
                     },
                     "to": {
-                        "startLines": "104,107,111,115,118,121,124,127,130,134",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7280,7496,7638,7799,8009,8216,8423,8626,8828,9093",
-                        "endLines": "106,110,114,117,120,123,126,129,133,137",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "7491,7633,7794,8004,8211,8418,8621,8823,9088,9361"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "52",
+                        "endColumns": "12",
+                        "endOffsets": "3948"
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\9f7c919c9174af6a6eeb763e70aad3ed\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\9f7c919c9174af6a6eeb763e70aad3ed\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -61,22 +61,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josea\\AndroidStudioProjects\\LASTLAB\\LASTLAB-Codigo\\LabSalut\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
                     "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "59",
-                        "endLines": "53",
-                        "endColumns": "12",
-                        "endOffsets": "4002"
+                        "startLines": "2,5,9,13,16,19,22,25,28,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,413,574,784,991,1198,1401,1603,1868",
+                        "endLines": "4,8,12,15,18,21,24,27,31,35",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
                     },
                     "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "52",
-                        "endColumns": "12",
-                        "endOffsets": "3948"
+                        "startLines": "104,107,111,115,118,121,124,127,130,134",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7280,7496,7638,7799,8009,8216,8423,8626,8828,9093",
+                        "endLines": "106,110,114,117,120,123,126,129,133,137",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "7491,7633,7794,8004,8211,8418,8621,8823,9088,9361"
                     }
                 }
             ]
