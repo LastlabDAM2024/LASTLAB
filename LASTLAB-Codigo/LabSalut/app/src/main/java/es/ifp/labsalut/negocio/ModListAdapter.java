@@ -12,25 +12,61 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
 import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.material.checkbox.MaterialCheckBox;
-
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
-
-
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.ui.DeslizarParaAccion;
+
+/**
+ * Esta clase `ModListAdapter` es un adaptador personalizado para un `RecyclerView` en una aplicación Android.
+ * Se encarga de gestionar y presentar una lista de elementos de tipo `Serializable`, permitiendo la interacción
+ * del usuario con cada elemento de la lista. A continuación, se describen las características y funcionalidades
+ * principales de esta clase:
+ *
+ * 1. **Atributos**:
+ *    - `context`: El contexto de la aplicación, necesario para inflar vistas y mostrar elementos UI.
+ *    - `itemList`: Una lista de elementos que se mostrarán en el `RecyclerView`.
+ *    - `seleccionados`: Un objeto `SparseBooleanArray` que mantiene el estado de selección de los elementos.
+ *    - `colorBack`: Color de fondo de los elementos de la lista.
+ *    - `select`: Bandera que indica si está habilitada la selección múltiple de elementos.
+ *    - `mOnDataChangeListener`: Listener para notificar cambios en la selección de datos.
+ *    - `mListener`: Listener para manejar clics en elementos de la lista.
+ *    - `recyclerView`: Referencia al `RecyclerView` asociado.
+ *
+ * 2. **Interfaces**:
+ *    - `OnDataChangeListener`: Interfaz para manejar cambios en el estado de selección.
+ *    - `OnItemClickListener`: Interfaz para manejar clics en los elementos de la lista.
+ *
+ * 3. **Constructores**:
+ *    - Un constructor que recibe el contexto y la lista de elementos, inicializando el adaptador.
+ *
+ * 4. **Métodos**:
+ *    - `onCreateViewHolder`: Infla la vista de cada elemento de la lista.
+ *    - `onBindViewHolder`: Vincula los datos de un elemento a su vista correspondiente.
+ *    - `getItemCount`: Devuelve la cantidad de elementos en la lista.
+ *    - Métodos para agregar y eliminar elementos de la lista, así como para reiniciar la selección.
+ *    - `performClickCheckBox`: Permite simular un clic en el checkbox de un elemento.
+ *    - `onRowMoved`, `onRowSelected`, `onRowClear`: Métodos para manejar el movimiento de filas en la lista.
+ *
+ * 5. **Clase interna `ListViewHolder`**:
+ *    - Esta clase mantiene las referencias a las vistas de cada elemento, optimizando el rendimiento del `RecyclerView`.
+ *
+ * 6. **Menú de opciones**:
+ *    - Implementa un menú emergente (PopupMenu) que permite al usuario seleccionar opciones adicionales para cada
+ *      elemento de la lista, como editar o ampliar.
+ *
+ * Esta clase es fundamental para la gestión y visualización de elementos en la interfaz de usuario, facilitando
+ * la interacción del usuario con los datos en la aplicación.
+ */
 
 public class ModListAdapter extends RecyclerView.Adapter<ModListAdapter.ListViewHolder> implements DeslizarParaAccion.ItemTouchHelperContract {
 

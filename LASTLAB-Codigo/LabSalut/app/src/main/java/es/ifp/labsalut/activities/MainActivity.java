@@ -33,20 +33,39 @@ import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
 import es.ifp.labsalut.ui.ColorStatusBar;
-
+/**
+ * La clase MainActivity maneja la funcionalidad de inicio de sesión, autenticación biométrica
+ * y las interacciones de la interfaz de usuario relacionadas con el inicio de sesión y la
+ * navegación a otras actividades. Utiliza View Binding para la manipulación eficiente de la
+ * interfaz y SharedPreferences para almacenar de forma segura las credenciales del usuario.
+ */
 public class MainActivity extends AppCompatActivity implements FingerprintHandler.AuthenticationCallback {
 
+    // Constante para la clave de las preferencias compartidas para recordar al usuario
     public static final String MY_PREFS_USER = "RECORDARUSUARIO";
+
+    // Objeto de binding para interactuar con las vistas definidas en activity_main.xml
     private ActivityMainBinding binding;
+
+    // Intent para navegar a otras actividades
     private Intent pasarPantalla;
+
+    // Variables para almacenar las credenciales del usuario
     private String email;
     private String password;
+
+    // Objetos relacionados con la base de datos y el usuario
     private BaseDatos db;
     private Usuario user = null;
+
+    // Manejador de huellas dactilares para la autenticación biométrica
     private FingerprintHandler finger = null;
+
+    // Indicadores y objetos de preferencias compartidas
     private boolean activacionHuella = false;
     private SharedPreferences prefs_user = null;
     private SharedPreferences prefs_huella = null;
+
 
 
     @Override

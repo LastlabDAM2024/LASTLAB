@@ -28,7 +28,58 @@ import es.ifp.labsalut.ui.HomeFragment;
 import es.ifp.labsalut.ui.MedicamentosFragment;
 import es.ifp.labsalut.ui.SettingsFragment;
 import es.ifp.labsalut.ui.SuscripcionFragment;
-
+/**
+ * La clase MenuActivity extiende AppCompatActivity y representa una de las actividades principales de la aplicación,
+ * donde el usuario puede navegar entre diferentes secciones a través de un menú lateral (Navigation Drawer).
+ *
+ * Esta actividad ofrece las siguientes funcionalidades:
+ *
+ * 1. **View Binding**:
+ *    - Utiliza la clase generada `ActivityMenuBinding` para acceder a los elementos del diseño (layout) de forma
+ *      más segura y sin necesidad de `findViewById()`.
+ *
+ * 2. **Barra de herramientas (Toolbar)**:
+ *    - Configura la barra de herramientas (toolbar) con un título personalizado y un estilo específico.
+ *      También se configura un `ActionBarDrawerToggle` que permite abrir y cerrar el menú lateral con un ícono
+ *      en la toolbar.
+ *
+ * 3. **Color de la barra de estado**:
+ *    - Usa la clase `ColorStatusBar` para establecer dinámicamente el color de la barra de estado basado en el color de la toolbar.
+ *
+ * 4. **NavigationView (Menú lateral)**:
+ *    - Implementa un menú de navegación lateral (drawer) que permite al usuario seleccionar diferentes secciones de la
+ *      aplicación, tales como:
+ *        - Menú Principal
+ *        - Medicamentos
+ *        - Citas Médicas
+ *        - Suscripción
+ *        - Ajustes
+ *    - La clase implementa el método `onNavigationItemSelected()` para manejar la lógica de navegación entre los diferentes fragmentos.
+ *
+ * 5. **Fragmentos**:
+ *    - Dependiendo de la selección del usuario, se cargan diferentes fragmentos en la pantalla principal:
+ *        - `HomeFragment`: Muestra el menú principal de la aplicación.
+ *        - `MedicamentosFragment`: Sección donde se gestionan los medicamentos.
+ *        - `CitasFragment`: Muestra la interfaz de citas médicas.
+ *        - `SuscripcionFragment`: Muestra la interfaz de suscripción.
+ *        - `SettingsFragment`: Muestra la configuración de la aplicación.
+ *    - Si se recibe un "extra" desde la actividad anterior con el nombre "SETTINGFRAGMENT", se carga el fragmento de Ajustes al iniciar la actividad.
+ *
+ * 6. **FloatingActionButton (FAB)**:
+ *    - Botón flotante que, al hacer clic, muestra un `Snackbar` con un mensaje predeterminado.
+ *
+ * 7. **Callback para el botón "Atrás" (OnBackPressedCallback)**:
+ *    - Gestiona el comportamiento del botón "Atrás" para:
+ *      - Cerrar el menú lateral si está abierto.
+ *      - Volver al "Menú Principal" si el usuario no está ya en él.
+ *      - Cerrar la actividad si el usuario ya está en el "Menú Principal".
+ *
+ * 8. **Cabecera del NavigationView**:
+ *    - Muestra el nombre y el correo electrónico del usuario actual, que se obtienen a través de los "extras" enviados por la actividad anterior.
+ *
+ * En resumen, esta clase gestiona la navegación principal y la lógica asociada para cambiar entre diferentes secciones de la app usando fragmentos,
+ * a la vez que ofrece una interfaz moderna con una toolbar personalizable, un menú lateral y un botón flotante.
+ */
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     // Declaración de variables

@@ -19,6 +19,47 @@ import es.ifp.labsalut.ui.CitasFragment;
 import es.ifp.labsalut.ui.HomeFragment;
 import es.ifp.labsalut.ui.MedicamentosFragment;
 import es.ifp.labsalut.ui.SettingsFragment;
+
+
+/**
+ * La clase MenuBottomActivity extiende AppCompatActivity y es responsable de gestionar la navegación en la
+ * aplicación mediante una barra de navegación inferior (Bottom Navigation Bar).
+ *
+ * Esta actividad permite a los usuarios acceder a diferentes secciones de la aplicación mediante la selección
+ * de fragmentos que representan las siguientes características:
+ *
+ * 1. **View Binding**:
+ *    - Utiliza la clase generada `ActivityMainBottomBinding` para acceder a los elementos del diseño (layout)
+ *      de manera más eficiente y segura, evitando el uso de `findViewById()`.
+ *
+ * 2. **Manejo de Usuario**:
+ *    - Recupera información del usuario a través de un objeto `Usuario` que se pasa a través de un "Intent" al
+ *      iniciar la actividad. Esto permite personalizar la experiencia del usuario en la aplicación.
+ *
+ * 3. **Navegación**:
+ *    - Configura un listener para la barra de navegación inferior que detecta qué elemento ha sido seleccionado
+ *      por el usuario y reemplaza el fragmento visible en la pantalla. Los fragmentos que se pueden seleccionar son:
+ *        - `HomeFragment`: Pantalla principal de la aplicación.
+ *        - `MedicamentosFragment`: Sección dedicada a la gestión de medicamentos.
+ *        - `CitasFragment`: Sección donde se gestionan las citas médicas.
+ *        - `SettingsFragment`: Sección de configuración de la aplicación.
+ *
+ * 4. **Transiciones de Fragmentos**:
+ *    - Al seleccionar un elemento en la barra de navegación, la actividad utiliza `FragmentManager` y `FragmentTransaction`
+ *      para reemplazar el fragmento actual con el fragmento correspondiente al elemento seleccionado, asegurando
+ *      que la interfaz de usuario se actualice correctamente.
+ *
+ * 5. **Selección Inicial de Fragmento**:
+ *    - Al iniciar la actividad, se determina qué fragmento se debe mostrar inicialmente en función del valor de
+ *      la variable `settingFragment`. Si este valor es "SI", se selecciona el `SettingsFragment`; de lo contrario,
+ *      se selecciona el `HomeFragment`.
+ *
+ * `MenuBottomActivity` lo que hace es gestionar la navegación principal de la aplicación a través de una interfaz
+ * de usuario intuitiva que permite a los usuarios acceder a diferentes funcionalidades mediante una barra de
+ * navegación inferior. Esta estructura mejora la experiencia del usuario y organiza la navegación en la
+ * aplicación de manera eficiente.
+ */
+
 public class MenuBottomActivity extends AppCompatActivity {
 
     // Declaración de variables
