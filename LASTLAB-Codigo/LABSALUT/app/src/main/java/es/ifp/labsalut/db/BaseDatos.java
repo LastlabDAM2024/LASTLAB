@@ -7,13 +7,53 @@ import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
-
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Suscripcion;
 import es.ifp.labsalut.negocio.Usuario;
+
+/**
+ * Esta clase `BaseDatos` extiende `SQLiteOpenHelper` y proporciona una interfaz para gestionar la base de datos
+ * en la aplicación. Esta base de datos está diseñada para almacenar información sobre usuarios, medicamentos,
+ * citas médicas y suscripciones. A continuación, se detallan las funcionalidades principales de esta clase:
+ *
+ * 1. **Creación y actualización de tablas**:
+ *    - La clase crea las tablas necesarias (`Usuario`, `Medicamento`, `CitaMedica`, `Suscripcion`,
+ *      `UsuarioMedicamento` y `UsuarioCitaMedica`) en el método `onCreate()`.
+ *    - Si hay cambios en la versión de la base de datos, el método `onUpgrade()` elimina las tablas existentes
+ *      y las vuelve a crear.
+ *
+ * 2. **Gestión de usuarios**:
+ *    - Se pueden añadir nuevos usuarios a la base de datos mediante el método `addUser(Usuario usuario)`.
+ *    - El método `getUser(String email)` permite recuperar un usuario a partir de su dirección de correo electrónico.
+ *
+ * 3. **Gestión de medicamentos**:
+ *    - El método `addMedicamento(Medicamento medicamento)` permite agregar un nuevo medicamento a la base de datos.
+ *    - También se puede recuperar la lista de medicamentos de un usuario mediante el método
+ *      `getAllMedicamentos(Usuario user)`.
+ *
+ * 4. **Gestión de citas médicas**:
+ *    - Las citas médicas se pueden añadir mediante el método `addCita(CitaMedica citaMedica)`.
+ *    - El método `getAllCitas(Usuario user)` permite obtener todas las citas médicas asociadas a un usuario.
+ *
+ * 5. **Gestión de suscripciones**:
+ *    - Los métodos `addSuscripcion(Suscripcion suscripcion)` y `updateSuscripcion(Suscripcion suscripcion)`
+ *      permiten agregar y actualizar la información de suscripciones.
+ *
+ * 6. **Contadores de entradas**:
+ *    - Los métodos `numTotalUsers()`, `numTotalMedicamentos()` y `numTotalCitas()` permiten obtener el número
+ *      total de usuarios, medicamentos y citas médicas en la base de datos, respectivamente.
+ *
+ * 7. **Manejo de errores**:
+ *    - Se implementa el manejo de excepciones para asegurar que las operaciones de base de datos se realicen
+ *      de manera segura, cerrando los cursores y la base de datos adecuadamente.
+ *
+ * Esta clase actúa como el principal punto de interacción con la base de datos SQLite en la aplicación,
+ * facilitando la gestión de datos y asegurando la integridad de la información almacenada.
+ */
+
+
 public class BaseDatos extends SQLiteOpenHelper {
 
     protected SQLiteDatabase db;
