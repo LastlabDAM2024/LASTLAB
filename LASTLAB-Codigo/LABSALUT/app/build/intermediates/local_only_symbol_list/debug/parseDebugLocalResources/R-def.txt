@@ -177,6 +177,7 @@ id app_bar_main
 id app_bar_reg
 id appint_sett
 id botonAceptar
+id btnConfirmarCancelacion
 id btnDelete
 id cancelar_reg
 id cancelar_suscrip
@@ -186,7 +187,6 @@ id checkRecord_cita
 id checkRecord_med
 id checkUI_sett
 id check_list
-id confirmar_cancelacion
 id container
 id content_menu
 id content_reg
@@ -273,6 +273,7 @@ id textoNaci_reg
 id textoPass
 id tipo_suscripcion
 id titulo
+id titulo_cancelacion
 id toolbar
 id toolbar_reg
 id toolbar_title
