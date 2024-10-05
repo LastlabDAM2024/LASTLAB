@@ -4,7 +4,7 @@
 ##  LABSALUT - Gestión Médica Revolucionaria 🚀💊
 
 
-###Descripción
+### Descripción
 ¡Bienvenidos al futuro de la gestión de la salud! 🌍 En un mundo donde la tecnología avanza a pasos agigantados, LABSALUT emerge como una solución revolucionaria para transformar la forma en que las personas, especialmente nuestros queridos adultos mayores, cuidan de su bienestar. ❤️👵👴
 
 Imagina una aplicación móvil que no solo te recuerde tus medicamentos, sino que también te proporcione información detallada sobre dosis, interacciones y efectos secundarios. 💡 Visualiza un sistema de citas médicas intuitivo y fácil de usar, eliminando el estrés de programar y asistir a consultas. 🗓️ LABSALUT no solo es una aplicación, es un aliado de salud personalizado y accesible para todos. 🤝📱
@@ -53,22 +53,22 @@ La estructura del proyecto sigue el patrón MVVC para la organización del códi
 
 ### Diagrama de la Estructura
 
-          +---------------------+
-          |      Cliente         |
-          | (Dispositivo Móvil)  |
-          +---------------------+
-               /          \
-+-----------------+  +----------------------+
-| MainActivity     |  |  CitasFragment       |
-+-----------------+  +----------------------+
-                          |
-                 +-----------------+
-                 | ModListAdapter   |
-                 +-----------------+
-                          |
-                 +-----------------+
-                 |     SQLite       |
-                 +-----------------+
+                  +---------------------+
+                  |      Cliente         |
+                  | (Dispositivo Móvil)  |
+                  +---------------------+
+                       /          \
+        +-----------------+  +----------------------+
+        | MainActivity     |  |  CitasFragment       |
+        +-----------------+  +----------------------+
+                                  |
+                         +-----------------+
+                         | ModListAdapter   |
+                         +-----------------+
+                                  |
+                         +-----------------+
+                         |     SQLite       |
+                         +-----------------+
 
 
 ### Instalación
@@ -137,8 +137,8 @@ Este proyecto está bajo la licencia MIT. Puedes ver los detalles en el archivo 
       
 ### Autores
 
--Teresa Herrera
--Ornella Sofía Gigante
--Benjamín José Ruiz Amara
--José Antonio Moreno Fernández
+        -Teresa Herrera
+        -Ornella Sofía Gigante
+        -Benjamín José Ruiz Amara
+        -José Antonio Moreno Fernández
 
