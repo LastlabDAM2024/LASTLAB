@@ -197,7 +197,7 @@ id descrip_cita
 id descrip_list
 id dosis_med
 id drawer_layout
-id duracion
+id duracion_spinner
 id editar_list
 id email
 id email_nav_header
@@ -266,12 +266,15 @@ id textPass_reg
 id textRecord_cita
 id textRecord_med
 id textUI_sett
+id textViewCuentaBancaria
+id textViewDuracionSuscripcion
+id textViewTipoSuscripcion
 id textnombre_reg
 id textoEmail
 id textoInicioSesion
 id textoNaci_reg
 id textoPass
-id tipo_suscripcion
+id tipo_suscripcion_spinner
 id titulo
 id titulo_cancelacion
 id toolbar

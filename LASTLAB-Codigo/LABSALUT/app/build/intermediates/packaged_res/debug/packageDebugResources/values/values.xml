@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="duracion_array">
-            <item>1 Mes</item>
-            <item>1 Año</item>
+            <item>1 mes</item>
+            <item>6 meses</item>
+            <item>1 año</item>
         </string-array>
     <string-array name="reply_entries">
         <item>Reply</item>

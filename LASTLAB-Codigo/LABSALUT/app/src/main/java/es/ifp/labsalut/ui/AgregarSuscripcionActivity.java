@@ -1,46 +1,49 @@
 package es.ifp.labsalut.ui;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import es.ifp.labsalut.R;
-import es.ifp.labsalut.negocio.Suscripcion;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+
 
 public class AgregarSuscripcionActivity extends AppCompatActivity {
 
-    private EditText cuentaBancariaEditText;
-    private EditText tipoSuscripcionEditText;
-    private EditText duracionEditText;
-    private Button guardarSuscripcionButton;
+    private Spinner tipoSuscripcionSpinner;
+    private Spinner duracionSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_suscripcion);
 
-        cuentaBancariaEditText = findViewById(R.id.cuenta_bancaria);
-        tipoSuscripcionEditText = findViewById(R.id.tipo_suscripcion);
-        duracionEditText = findViewById(R.id.duracion);
-        guardarSuscripcionButton = findViewById(R.id.guardar_suscripcion);
+        tipoSuscripcionSpinner = findViewById(R.id.tipo_suscripcion_spinner);
+        duracionSpinner = findViewById(R.id.duracion_spinner);
+        Button guardarSuscripcion = findViewById(R.id.guardar_suscripcion);
 
-        guardarSuscripcionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String cuentaBancaria = cuentaBancariaEditText.getText().toString();
-                String tipoSuscripcion = tipoSuscripcionEditText.getText().toString();
-                String duracion = duracionEditText.getText().toString();
+        // Configurar los Spinners
+        ArrayAdapter<CharSequence> adapterTipo = ArrayAdapter.createFromResource(this,
+                R.array.tipo_suscripcion_array, android.R.layout.simple_spinner_item);
+        adapterTipo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoSuscripcionSpinner.setAdapter(adapterTipo);
 
-                // Crear y guardar la suscripción
-                Suscripcion nuevaSuscripcion = new Suscripcion("usuario@example.com", true, "2025-12-31", cuentaBancaria, tipoSuscripcion, duracion);
-                // Lógica para guardar la suscripción en el sistema
+        ArrayAdapter<CharSequence> adapterDuracion = ArrayAdapter.createFromResource(this,
+                R.array.duracion_array, android.R.layout.simple_spinner_item);
+        adapterDuracion.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        duracionSpinner.setAdapter(adapterDuracion);
 
-                // Regresar a SuscripcionFragment
-                finish();
-            }
+        // Configura el botón de guardar suscripción
+        guardarSuscripcion.setOnClickListener(v -> {
+            String tipoSuscripcion = tipoSuscripcionSpinner.getSelectedItem().toString();
+            String duracionSuscripcion = duracionSpinner.getSelectedItem().toString();
+            // Aquí puedes agregar la lógica para guardar la suscripción
+
+            // Mostrar un mensaje de confirmación
+            Toast.makeText(this, "Suscripción realizada con éxito: " + tipoSuscripcion + ", " + duracionSuscripcion, Toast.LENGTH_SHORT).show();
+            // Regresar al menú principal si es necesario
+            finish(); // O puedes iniciar el menú principal directamente
         });
     }
 }

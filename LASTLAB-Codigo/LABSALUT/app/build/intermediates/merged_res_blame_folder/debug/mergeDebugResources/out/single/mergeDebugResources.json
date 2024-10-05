@@ -72,10 +72,6 @@
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\xml\\root_preferences.xml"
     },
     {
-        "merged": "es.ifp.labsalut.app-debug-47:/layout_activity_cancelar_suscripcion.xml.flat",
-        "source": "es.ifp.labsalut.app-main-49:/layout/activity_cancelar_suscripcion.xml"
-    },
-    {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-mdpi_puntos_horizontales.png.flat",
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-mdpi\\puntos_horizontales.png"
     },
@@ -106,6 +102,10 @@
     {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xxhdpi_recycler_bin_black.png.flat",
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xxhdpi\\recycler_bin_black.png"
+    },
+    {
+        "merged": "es.ifp.labsalut.app-debug-47:/layout_activity_agregar_suscripcion.xml.flat",
+        "source": "es.ifp.labsalut.app-main-49:/layout/activity_agregar_suscripcion.xml"
     },
     {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\menu_menu_list.xml.flat",
@@ -212,12 +212,12 @@
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-mdpi\\nuevo_menu_botom.png"
     },
     {
-        "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xhdpi_icon_mover_list.png.flat",
-        "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xhdpi\\icon_mover_list.png"
-    },
-    {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\layout_activity_agregar_suscripcion.xml.flat",
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\layout\\activity_agregar_suscripcion.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xhdpi_icon_mover_list.png.flat",
+        "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xhdpi\\icon_mover_list.png"
     },
     {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-ldpi_recycler_bin.png.flat",
