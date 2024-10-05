@@ -41,10 +41,10 @@ es.ifp.labsalut.app-navigation-fragment-2.6.0-39 C:\Users\Ornella Gigante\.gradl
 es.ifp.labsalut.app-lifecycle-livedata-ktx-2.6.2-40 C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e30bce4eaa8ba4f7653585dc8b5ae744\transformed\lifecycle-livedata-ktx-2.6.2\res
 es.ifp.labsalut.app-core-ktx-1.13.0-41 C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e5727e4fccb724ebcd2ca2c3ec135bbf\transformed\core-ktx-1.13.0\res
 es.ifp.labsalut.app-material-1.12.0-42 C:\Users\Ornella Gigante\.gradle\caches\transforms-4\fa42ae36e430a8edb511425f03f342cf\transformed\material-1.12.0\res
-es.ifp.labsalut.app-pngs-43 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\generated\res\pngs\debug
-es.ifp.labsalut.app-resValues-44 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\generated\res\resValues\debug
-es.ifp.labsalut.app-packageDebugResources-45 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-es.ifp.labsalut.app-packageDebugResources-46 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-es.ifp.labsalut.app-debug-47 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\intermediates\merged_res\debug\mergeDebugResources
-es.ifp.labsalut.app-debug-48 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\debug\res
-es.ifp.labsalut.app-main-49 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\res
+es.ifp.labsalut.app-pngs-43 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\generated\res\pngs\debug
+es.ifp.labsalut.app-resValues-44 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\generated\res\resValues\debug
+es.ifp.labsalut.app-packageDebugResources-45 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+es.ifp.labsalut.app-packageDebugResources-46 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+es.ifp.labsalut.app-debug-47 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\build\intermediates\merged_res\debug\mergeDebugResources
+es.ifp.labsalut.app-debug-48 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\debug\res
+es.ifp.labsalut.app-main-49 C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\res
