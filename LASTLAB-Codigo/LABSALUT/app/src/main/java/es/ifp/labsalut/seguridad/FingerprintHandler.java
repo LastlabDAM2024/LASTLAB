@@ -28,6 +28,31 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
+/**
+ * La clase FingerprintHandler gestiona la autenticación biométrica en dispositivos Android
+ * utilizando huellas dactilares. Esta implementación se basa en la API de BiometricPrompt
+ * para ofrecer una experiencia de usuario segura y fluida al acceder a la aplicación.
+ *
+ * La clase proporciona métodos para iniciar el proceso de autenticación, generar
+ * claves criptográficas y manejar el cifrado de datos utilizando el almacén de claves de
+ * Android (AndroidKeyStore).
+ *
+ * Características principales:
+ * - **Autenticación Biométrica**: Permite a los usuarios desbloquear la aplicación
+ *   utilizando su huella dactilar, mejorando la seguridad de la aplicación.
+ * - **Gestión de Claves**: Genera y almacena claves criptográficas en el AndroidKeyStore,
+ *   asegurando que las claves nunca abandonen el dispositivo.
+ * - **Callbacks de Autenticación**: Proporciona un mecanismo para manejar eventos de
+ *   autenticación, permitiendo a los desarrolladores reaccionar a resultados exitosos o
+ *   fallidos.
+ *
+ * Métodos destacados:
+ * - `startAuth()`: Inicia el proceso de autenticación biométrica.
+ * - `generateKey()`: Genera una clave criptográfica en el AndroidKeyStore.
+ * - `cipherInit()`: Inicializa el cifrado utilizando la clave generada.
+ *
+ */
+
 @RequiresApi(api = Build.VERSION_CODES.P)
 public class FingerprintHandler extends BiometricPrompt.AuthenticationCallback {
 
