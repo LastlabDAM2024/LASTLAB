@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [androidx.databinding:viewbinding:8.4.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c7cf7f1ee15c4dacf2766c521e79210d\transformed\viewbinding-8.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\63dec4e2b84bb0f90c8c63d798a09022\transformed\navigation-common-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.6.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cc7c3464b4426cdaa87ce77506fb02f4\transformed\navigation-runtime-2.6.0\AndroidManifest.xml:17:1-22:12
@@ -73,8 +73,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella
 	xmlns:android
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:5-35:19
-INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:5-35:19
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:5-50:19
+INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:5-50:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\fa42ae36e430a8edb511425f03f342cf\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\fa42ae36e430a8edb511425f03f342cf\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1984b33ebf8c4289804355cbf3b9e6c2\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -116,41 +116,57 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.g
 	android:dataExtractionRules
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:7:9-65
 activity#es.ifp.labsalut.activities.MenuActivity
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:15:9-17:40
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:16:9-18:40
 	android:exported
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:17:13-37
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:18:13-37
 	android:name
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:16:13-52
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:17:13-52
 activity#es.ifp.labsalut.activities.MenuBottomActivity
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:18:9-20:40
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:20:9-22:40
 	android:exported
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:20:13-37
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:19:13-58
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:21:13-58
 activity#es.ifp.labsalut.activities.RegistroActivity
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:21:9-23:40
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:23:13-37
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:22:13-56
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:25:13-56
 activity#es.ifp.labsalut.activities.MainActivity
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:25:9-34:20
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:28:9-36:20
 	android:label
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:28:13-45
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:31:13-45
 	android:exported
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:27:13-36
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:26:13-52
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:29:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:29:13-33:29
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:32:17-77
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:34:27-74
+activity#es.ifp.labsalut.ui.AgregarSuscripcionActivity
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:39:9-42:51
+	android:label
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:42:13-48
+	android:exported
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:41:13-36
+	android:name
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:40:13-58
+activity#es.ifp.labsalut.ui.CancelarSuscripcionActivity
+ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:45:9-48:52
+	android:label
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:48:13-49
+	android:exported
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:47:13-36
+	android:name
+		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:46:13-59
 uses-sdk
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml

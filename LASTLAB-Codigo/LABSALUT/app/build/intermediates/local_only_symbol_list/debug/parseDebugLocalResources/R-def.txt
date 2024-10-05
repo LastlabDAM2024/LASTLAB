@@ -1,9 +1,11 @@
 R_DEF: Internal format may change without notice
 local
+array duracion_array
 array reply_entries
 array reply_values
 array simple_horas
 array simple_minutos
+array tipo_suscripcion_array
 color bottom_nav_text_color_selector
 color md_theme_background
 color md_theme_background_highContrast
@@ -184,15 +186,18 @@ id checkRecord_cita
 id checkRecord_med
 id checkUI_sett
 id check_list
+id confirmar_cancelacion
 id container
 id content_menu
 id content_reg
+id cuenta_bancaria
 id deleteItemListCita
 id deleteItemListMed
 id descrip_cita
 id descrip_list
 id dosis_med
 id drawer_layout
+id duracion
 id editar_list
 id email
 id email_nav_header
@@ -205,6 +210,7 @@ id fragment_registro
 id fragment_settings
 id frecuencia_med
 id guardar_cita
+id guardar_suscripcion
 id hora_cita
 id iconButton_list
 id icon_list
@@ -265,6 +271,7 @@ id textoEmail
 id textoInicioSesion
 id textoNaci_reg
 id textoPass
+id tipo_suscripcion
 id titulo
 id toolbar
 id toolbar_reg
@@ -272,6 +279,8 @@ id toolbar_title
 id toolbar_title_reg
 id user_sett
 id usuario_nav_header
+layout activity_agregar_suscripcion
+layout activity_cancelar_suscripcion
 layout activity_main
 layout activity_main_bottom
 layout activity_menu

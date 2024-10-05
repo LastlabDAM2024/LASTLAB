@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
+
         <activity
             android:name=".activities.MenuActivity"
             android:exported="false" />
+
         <activity
             android:name=".activities.MenuBottomActivity"
             android:exported="false" />
+
         <activity
             android:name=".activities.RegistroActivity"
             android:exported="false" />
@@ -28,10 +31,22 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Nueva actividad para agregar suscripción -->
+        <activity
+            android:name=".ui.AgregarSuscripcionActivity"
+            android:exported="true"
+            android:label="Agregar Suscripción" />
+
+        <!-- Nueva actividad para cancelar suscripción -->
+        <activity
+            android:name=".ui.CancelarSuscripcionActivity"
+            android:exported="true"
+            android:label="Cancelar Suscripción" />
+
     </application>
 
 </manifest>

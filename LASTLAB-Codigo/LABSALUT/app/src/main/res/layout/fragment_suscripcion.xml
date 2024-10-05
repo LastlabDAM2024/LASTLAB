@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.SuscripcionFragment">
 
-    <!-- Título -->
-
-    <!-- Botón "Cancelar Suscripción" -->
-
-    <!-- Botón "Suscribirse" -->
-
-    <!-- Botón "Volver" -->
-
     <Button
         android:id="@+id/cancelar_suscrip"
         android:layout_width="0dp"

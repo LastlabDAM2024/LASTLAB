@@ -120,6 +120,10 @@
         "source": "es.ifp.labsalut.app-main-49:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "es.ifp.labsalut.app-debug-47:/layout_activity_cancelar_suscripcion.xml.flat",
+        "source": "es.ifp.labsalut.app-main-49:/layout/activity_cancelar_suscripcion.xml"
+    },
+    {
         "merged": "es.ifp.labsalut.app-debug-47:/drawable-xhdpi_puntos_verticales.png.flat",
         "source": "es.ifp.labsalut.app-main-49:/drawable-xhdpi/puntos_verticales.png"
     },
@@ -158,6 +162,10 @@
     {
         "merged": "es.ifp.labsalut.app-debug-47:/layout_activity_menu.xml.flat",
         "source": "es.ifp.labsalut.app-main-49:/layout/activity_menu.xml"
+    },
+    {
+        "merged": "es.ifp.labsalut.app-debug-47:/layout_activity_agregar_suscripcion.xml.flat",
+        "source": "es.ifp.labsalut.app-main-49:/layout/activity_agregar_suscripcion.xml"
     },
     {
         "merged": "es.ifp.labsalut.app-debug-47:/drawable-xhdpi_ic_action_fingerprint.png.flat",

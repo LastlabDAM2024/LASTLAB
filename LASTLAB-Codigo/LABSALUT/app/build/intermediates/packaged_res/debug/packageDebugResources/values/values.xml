@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="duracion_array">
+            <item>1 Mes</item>
+            <item>1 Año</item>
+        </string-array>
     <string-array name="reply_entries">
         <item>Reply</item>
         <item>Reply to all</item>
@@ -48,6 +52,10 @@
         <item>55 minutos</item>
         <item>1 hora</item>
     </string-array>
+    <string-array name="tipo_suscripcion_array">
+            <item>Normal</item>
+            <item>Premium</item>
+        </string-array>
     <color name="md_theme_background">#F9F9FF</color>
     <color name="md_theme_background_highContrast">#F9F9FF</color>
     <color name="md_theme_background_mediumContrast">#F9F9FF</color>

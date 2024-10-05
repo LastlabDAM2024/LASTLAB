@@ -50,6 +50,18 @@
             </intent-filter>
         </activity>
 
+        <!-- Nueva actividad para agregar suscripción -->
+        <activity
+            android:name="es.ifp.labsalut.ui.AgregarSuscripcionActivity"
+            android:exported="true"
+            android:label="Agregar Suscripción" />
+
+        <!-- Nueva actividad para cancelar suscripción -->
+        <activity
+            android:name="es.ifp.labsalut.ui.CancelarSuscripcionActivity"
+            android:exported="true"
+            android:label="Cancelar Suscripción" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="es.ifp.labsalut.androidx-startup"

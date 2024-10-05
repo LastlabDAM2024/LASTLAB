@@ -49,4 +49,13 @@
         <item>55 minutos</item>
         <item>1 hora</item>
     </string-array>
+        <string-array name="tipo_suscripcion_array">
+            <item>Normal</item>
+            <item>Premium</item>
+        </string-array>
+        <string-array name="duracion_array">
+            <item>1 Mes</item>
+            <item>1 Año</item>
+        </string-array>
+
 </resources>
