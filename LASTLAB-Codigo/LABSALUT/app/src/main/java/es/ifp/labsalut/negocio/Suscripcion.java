@@ -2,7 +2,26 @@ package es.ifp.labsalut.negocio;
 
 import java.io.Serializable;
 
-// Clase Suscripcion que representa la suscripción de un usuario
+/**
+ * La clase Suscripcion representa la suscripción de un usuario a un servicio.
+ *
+ * Esta clase incluye atributos que almacenan información relevante sobre la
+ * suscripción, como el correo electrónico del usuario, un indicador de si
+ * el usuario está suscrito y la fecha de finalización de la suscripción.
+ *
+ * Se proporcionan constructores tanto por defecto como parametrizados para
+ * permitir la creación de instancias de Suscripcion con o sin valores iniciales.
+ * Además, se incluyen métodos getter y setter para acceder y modificar los
+ * atributos de manera segura.
+ *
+ * La implementación de la interfaz Serializable permite que los objetos de
+ * esta clase sean fácilmente serializados, facilitando su almacenamiento
+ * o transmisión a través de redes.
+ *
+ * Ejemplo de uso:
+ * Suscripcion miSuscripcion = new Suscripcion("usuario@example.com", true, "2025-12-31");
+ */
+
 public class Suscripcion implements Serializable {
     private String email; // Correo electrónico del usuario
     private boolean esSuscrito; // Indica si el usuario está suscrito o no

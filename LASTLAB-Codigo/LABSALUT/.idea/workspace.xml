@@ -713,11 +713,6 @@
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/negocio/ModListAdapter.java</url>
-          <line>190</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/es/ifp/labsalut/ui/HomeFragment.java</url>
           <line>92</line>
           <option name="timeStamp" value="173" />
