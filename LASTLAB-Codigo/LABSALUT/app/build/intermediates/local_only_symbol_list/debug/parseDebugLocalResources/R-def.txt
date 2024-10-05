@@ -226,6 +226,7 @@ id nav_citas
 id nav_host_fragment_activity_main
 id nav_host_fragment_content_menu
 id nav_host_fragment_content_reg
+id nav_logout
 id nav_medicamentos
 id nav_menu
 id nav_suscripcion
