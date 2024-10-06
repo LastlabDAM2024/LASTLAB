@@ -4,7 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\therrera\\Desktop\\Tere\\AndroidStudioProjects\\caches\\transforms-4\\60da774b2f109cc75c2f8fb3d66e20f5\\transformed\\material-1.12.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\therrera\\Desktop\\Tere\\AndroidStudioProjects\\caches\\transforms-4\\f5ac0fd9fbe0b9f068d762db14a742b6\\transformed\\material-1.12.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\therrera\\Desktop\\Tere\\AndroidStudioProjects\\caches\\transforms-4\\056209b206b959dbeea0d1c1afd7cbb1\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\therrera\\Desktop\\Tere\\AndroidStudioProjects\\caches\\transforms-4\\52106dce2806c8ff31214e7816096b99\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
