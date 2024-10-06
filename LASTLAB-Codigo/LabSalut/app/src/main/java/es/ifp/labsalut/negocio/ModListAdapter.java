@@ -27,7 +27,7 @@ import es.ifp.labsalut.R;
 import es.ifp.labsalut.ui.DeslizarParaAccion;
 
 /**
- * Esta clase `ModListAdapter` es un adaptador personalizado para un `RecyclerView` en una aplicación Android.
+ * Esta clase `ModListAdapter` es un adaptador personalizado para un `RecyclerView` en la aplicación Android.
  * Se encarga de gestionar y presentar una lista de elementos de tipo `Serializable`, permitiendo la interacción
  * del usuario con cada elemento de la lista. A continuación, se describen las características y funcionalidades
  * principales de esta clase:
