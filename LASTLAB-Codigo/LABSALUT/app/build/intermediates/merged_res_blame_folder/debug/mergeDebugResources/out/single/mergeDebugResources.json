@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-anydpi\\ic_action_fingerprint.xml"
     },
     {
+        "merged": "es.ifp.labsalut.app-debug-47:/menu_bottom_nav_menu.xml.flat",
+        "source": "es.ifp.labsalut.app-main-49:/menu/bottom_nav_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\drawable-xhdpi_puntos_verticales.png.flat",
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\drawable-xhdpi\\puntos_verticales.png"
     },
@@ -66,10 +70,6 @@
     {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-main-49:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "es.ifp.labsalut.app-debug-47:/layout_fragment_medicamentos.xml.flat",
-        "source": "es.ifp.labsalut.app-main-49:/layout/fragment_medicamentos.xml"
     },
     {
         "merged": "C:\\Users\\Ornella Gigante\\.gradle\\daemon\\8.6\\es.ifp.labsalut.app-debug-47:\\xml_root_preferences.xml.flat",

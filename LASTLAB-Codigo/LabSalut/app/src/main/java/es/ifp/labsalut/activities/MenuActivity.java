@@ -1,27 +1,25 @@
 package es.ifp.labsalut.activities;
 
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.core.view.GravityCompat;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-
-
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.ActivityMenuBinding;
 import es.ifp.labsalut.negocio.Usuario;
-
 import es.ifp.labsalut.ui.CitasFragment;
 import es.ifp.labsalut.ui.ColorStatusBar;
 import es.ifp.labsalut.ui.HomeFragment;
@@ -90,6 +88,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     private Bundle extras;
     private Usuario user = null;
     private String settingFragment = null;
+    private SharedPreferences prefs_user;
+    private static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +98,9 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         // Inflar el layout usando View Binding
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Inicializar SharedPreferences
+        prefs_user = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         // Configurar la barra de herramientas
         binding.appBarMain.toolbar.setPopupTheme(com.google.android.material.R.style.Widget_Material3_Light_ActionBar_Solid);
@@ -182,7 +185,6 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Manejar la selección de elementos en el NavigationView
         switch (item.getItemId()) {
             case R.id.nav_menu:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, HomeFragment.newInstance(user)).commit();
@@ -204,10 +206,28 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_menu, SettingsFragment.newInstance(user)).commit();
                 binding.appBarMain.toolbarTitle.setText("Ajustes");
                 break;
+            case R.id.nav_logout:
+                logout();
+                return true;
         }
 
-        // Cerrar el drawer después de seleccionar un elemento
         binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void logout() {
+        // Limpiar datos de sesión
+        SharedPreferences.Editor editor = prefs_user.edit();
+        editor.clear();
+        editor.apply();
+
+        // Mostrar un mensaje de cierre de sesión exitoso
+        Toast.makeText(this, "Sesión cerrada exitosamente", Toast.LENGTH_SHORT).show();
+
+        // Volver a MainActivity
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

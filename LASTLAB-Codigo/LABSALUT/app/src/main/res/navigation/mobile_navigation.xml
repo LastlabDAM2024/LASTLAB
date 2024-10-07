@@ -35,4 +35,6 @@
         android:label="Citas Medicas"
         tools:layout="@layout/fragment_citas" />
 
+
+
 </navigation>
