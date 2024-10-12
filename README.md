@@ -51,7 +51,7 @@ La estructura del proyecto sigue el patrón MVVC para la organización del códi
     SQLite Database (BaseDatos.java): Administra el almacenamiento local de los datos de usuarios, citas, medicamentos, etc.
 
 
-### Diagrama de la Estructura
+### Diagrama de Despliegue
 
 
 ![Diagrama de Despliegue](https://github.com/LastlabDAM2024/LASTLAB/blob/main/DIAGRAMA_DESPLIEGUE.png)
