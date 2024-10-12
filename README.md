@@ -1,7 +1,7 @@
 # INTRODUCCIÓN DEL PROYECTO LABSALUT
 
 
-##  LABSALUT - Gestión Médica Revolucionaria 🚀💊
+## 🚀💊 LABSALUT - Gestión Médica Revolucionaria 🚀💊
 
 
 ### Descripción
