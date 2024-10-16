@@ -14,21 +14,10 @@
     <item
         android:id="@+id/navigation_citas"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Citas Médicas" />
-
-    <item
-        android:id="@+id/nav_suscripcion"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="Suscripción" />
-
+        android:title="Citas Medicas" />
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_launcher_foreground"
         android:title="Ajustes" />
-
-    <item
-        android:id="@+id/nav_logout"
-        android:icon="@drawable/ic_action_fingerprint"
-        android:title="Cerrar sesión" />
 
 </menu>

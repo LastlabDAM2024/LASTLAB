@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -50,6 +50,12 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="dialogTheme">@style/MyDialogTheme</item>
 
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
 </resources>

@@ -18,7 +18,8 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import es.ifp.labsalut.R;
-import es.ifp.labsalut.negocio.ModListAdapter;
+import es.ifp.labsalut.negocio.CitasListAdapter;
+import es.ifp.labsalut.negocio.MedListAdapter;
 
 public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
 
@@ -29,15 +30,21 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
     private int intrinsicWidth;  // Ancho intrínseco del icono de eliminación
     private int intrinsicHeight;  // Altura intrínseca del icono de eliminación
     private final ItemTouchHelperContract mAdapter;  // Interfaz para manejar las acciones de movimiento y selección
-    private final ModListAdapter adaptadorMod;
-    private boolean flagMove=false;
+    private MedListAdapter adaptadorMed;
+    private CitasListAdapter adaptadorCitas;
+    private boolean flagMove = false;
 
     // Constructor de la clase
     DeslizarParaAccion(Context context, ItemTouchHelperContract adapter) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         mContext = context;
         mAdapter = adapter;
-        adaptadorMod = (ModListAdapter) adapter;
+        if (adapter instanceof MedListAdapter) {
+            adaptadorMed = (MedListAdapter) adapter;
+        } else {
+            adaptadorCitas = (CitasListAdapter) adapter;
+
+        }
         backgroundColor = Color.parseColor("#b80f0a");
         mClearPaint = new Paint();
         mClearPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
@@ -59,18 +66,35 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
         dragFlags[0] = ItemTouchHelper.UP | ItemTouchHelper.DOWN; // Permitir movimientos hacia arriba y abajo por defecto
         swipeFlags[0] = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT; // Permitir deslizamientos hacia la izquierda y derecha por defecto
 
-        if (adaptadorMod.getFlagMove()){
-            // Permitir solo movimientos hacia arriba y abajo cuando está seleccionado
-            dragFlags[0] = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
-            // No permitir deslizamientos cuando está seleccionado
-            swipeFlags[0] = 0;
-            // Flags iniciales
+        if (adaptadorMed != null) {
+            if (adaptadorMed.getFlagMove()) {
+                // Permitir solo movimientos hacia arriba y abajo cuando está seleccionado
+                dragFlags[0] = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+                // No permitir deslizamientos cuando está seleccionado
+                swipeFlags[0] = 0;
+                // Flags iniciales
 
+            } else {
+                // Permitir deslizamientos hacia la izquierda y derecha cuando no está seleccionado
+                swipeFlags[0] = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+                // No permitir movimientos cuando no está seleccionado
+                dragFlags[0] = 0;
+            }
         } else {
-            // Permitir deslizamientos hacia la izquierda y derecha cuando no está seleccionado
-            swipeFlags[0] = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
-            // No permitir movimientos cuando no está seleccionado
-            dragFlags[0] = 0;
+
+            if (adaptadorCitas.getFlagMove()) {
+                // Permitir solo movimientos hacia arriba y abajo cuando está seleccionado
+                dragFlags[0] = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+                // No permitir deslizamientos cuando está seleccionado
+                swipeFlags[0] = 0;
+                // Flags iniciales
+
+            } else {
+                // Permitir deslizamientos hacia la izquierda y derecha cuando no está seleccionado
+                swipeFlags[0] = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+                // No permitir movimientos cuando no está seleccionado
+                dragFlags[0] = 0;
+            }
         }
         // Retornar los flags de movimiento actualizados
         return makeMovementFlags(dragFlags[0], swipeFlags[0]);
@@ -101,7 +125,7 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
-        int constant = 40;
+        int constant = 60;
         View itemView = viewHolder.itemView;
         int itemHeight = itemView.getHeight();
 
@@ -151,9 +175,14 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
     public void onSelectedChanged(RecyclerView.ViewHolder viewHolder,
                                   int actionState) {
         if (actionState == ItemTouchHelper.ACTION_STATE_DRAG) {
-            if (viewHolder instanceof ModListAdapter.ListViewHolder) {
-                ModListAdapter.ListViewHolder myViewHolder =
-                        (ModListAdapter.ListViewHolder) viewHolder;
+            if (viewHolder instanceof MedListAdapter.ListViewHolder) {
+                MedListAdapter.ListViewHolder myViewHolder =
+                        (MedListAdapter.ListViewHolder) viewHolder;
+                mAdapter.onRowSelected(myViewHolder);
+            }
+            if (viewHolder instanceof CitasListAdapter.ListViewHolder) {
+                CitasListAdapter.ListViewHolder myViewHolder =
+                        (CitasListAdapter.ListViewHolder) viewHolder;
                 mAdapter.onRowSelected(myViewHolder);
             }
         }
@@ -167,9 +196,14 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
                           RecyclerView.ViewHolder viewHolder) {
         super.clearView(recyclerView, viewHolder);
 
-        if (viewHolder instanceof ModListAdapter.ListViewHolder) {
-            ModListAdapter.ListViewHolder myViewHolder =
-                    (ModListAdapter.ListViewHolder) viewHolder;
+        if (viewHolder instanceof MedListAdapter.ListViewHolder) {
+            MedListAdapter.ListViewHolder myViewHolder =
+                    (MedListAdapter.ListViewHolder) viewHolder;
+            mAdapter.onRowClear(myViewHolder);
+        }
+        if (viewHolder instanceof CitasListAdapter.ListViewHolder) {
+            CitasListAdapter.ListViewHolder myViewHolder =
+                    (CitasListAdapter.ListViewHolder) viewHolder;
             mAdapter.onRowClear(myViewHolder);
         }
     }
@@ -179,8 +213,12 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
 
         void onRowMoved(int fromPosition, int toPosition);
 
-        void onRowSelected(ModListAdapter.ListViewHolder myViewHolder);
+        void onRowSelected(MedListAdapter.ListViewHolder myViewHolder);
 
-        void onRowClear(ModListAdapter.ListViewHolder myViewHolder);
+        void onRowSelected(CitasListAdapter.ListViewHolder myViewHolder);
+
+        void onRowClear(MedListAdapter.ListViewHolder myViewHolder);
+
+        void onRowClear(CitasListAdapter.ListViewHolder myViewHolder);
     }
 }

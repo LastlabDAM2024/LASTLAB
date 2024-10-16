@@ -2,32 +2,7 @@ package es.ifp.labsalut.negocio;
 
 import java.io.Serializable;
 
-/**
- * Esta clase `Medicamento` representa un medicamento en el sistema. Es una clase que implementa la interfaz
- * `Serializable`, lo que permite que las instancias de `Medicamento` se puedan convertir en un flujo de bytes
- * para ser almacenadas o transmitidas de manera más sencilla. A continuación se detallan las características
- * y funcionalidades de esta clase:
- *
- * 1. **Atributos**:
- *    - `idMedicamento`: Un entero que sirve como identificador único del medicamento en la base de datos.
- *    - `nombre`: Una cadena que almacena el nombre del medicamento.
- *    - `dosis`: Una cadena que indica la dosis recomendada del medicamento.
- *    - `frecuencia`: Una cadena que describe la frecuencia con la que debe administrarse el medicamento.
- *    - `recordatorio`: Una cadena que contiene un recordatorio asociado al medicamento, útil para el usuario.
- *
- * 2. **Constructores**:
- *    - Se proporciona un constructor por defecto que inicializa los atributos a cadenas vacías.
- *    - Un constructor parametrizado que permite crear un objeto `Medicamento` con valores específicos para
- *      los atributos `nombre`, `dosis`, `frecuencia` y `recordatorio`.
- *
- * 3. **Métodos Getters y Setters**:
- *    - Se implementan métodos `get` y `set` para cada uno de los atributos. Estos métodos permiten acceder
- *      y modificar los valores de los atributos de forma controlada, lo que fomenta el encapsulamiento.
- *
- * Esta clase se utiliza para crear y gestionar objetos de tipo `Medicamento` dentro de la aplicación,
- * facilitando la manipulación de la información relacionada con los medicamentos de los usuarios.
- */
-
+// Clase Medicamento que representa un medicamento
 public class Medicamento implements Serializable {
     private int idMedicamento; // Identificador único del medicamento
     private String nombre; // Nombre del medicamento
@@ -51,53 +26,52 @@ public class Medicamento implements Serializable {
         this.recordatorio = recordatorio;
     }
 
-    // Getters y Setters
-
+    // Método getter para obtener el ID del medicamento
     public int getIdMedicamento() {
         return idMedicamento;
     }
 
-
+    // Método setter para establecer el ID del medicamento
     public void setIdMedicamento(int idMedicamento) {
         this.idMedicamento = idMedicamento;
     }
 
-
+    // Método getter para obtener el nombre del medicamento
     public String getNombre() {
         return nombre;
     }
 
-
+    // Método setter para establecer el nombre del medicamento
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
+    // Método getter para obtener la dosis del medicamento
     public String getDosis() {
         return dosis;
     }
 
-
+    // Método setter para establecer la dosis del medicamento
     public void setDosis(String dosis) {
         this.dosis = dosis;
     }
 
-
+    // Método getter para obtener la frecuencia del medicamento
     public String getFrecuencia() {
         return frecuencia;
     }
 
-
+    // Método setter para establecer la frecuencia del medicamento
     public void setFrecuencia(String frecuencia) {
         this.frecuencia = frecuencia;
     }
 
-
+    // Método getter para obtener el recordatorio asociado al medicamento
     public String getRecordatorio() {
         return recordatorio;
     }
 
-
+    // Método setter para establecer el recordatorio asociado al medicamento
     public void setRecordatorio(String recordatorio) {
         this.recordatorio = recordatorio;
     }

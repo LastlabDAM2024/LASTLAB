@@ -4,40 +4,13 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-
-
-/**
- * La clase CifradoAES proporciona funcionalidades para cifrar y descifrar
- * datos utilizando el algoritmo AES (Advanced Encryption Standard).
- *
- * Esta clase incluye métodos para generar una clave secreta a partir de una
- * semilla proporcionada, así como para cifrar y descifrar datos. Utiliza un
- * vector de inicialización (IV) aleatorio que se genera al instanciar la
- * clase, garantizando la seguridad del cifrado.
- *
- * Características principales:
- * - **Generación de Clave**: Se genera una clave secreta de 256 bits a partir
- *   del hash SHA-256 de una semilla proporcionada.
- * - **Cifrado**: Permite cifrar datos en texto plano, devolviendo el resultado
- *   en formato hexadecimal.
- * - **Descifrado**: Permite descifrar datos cifrados en formato hexadecimal y
- *   devuelve el texto original.
- *
- * Métodos destacados:
- * - `generarSecretKey(String semilla)`: Genera una clave secreta a partir de
- *   la semilla especificada.
- * - `encrypt(byte[] plaintext, SecretKey key)`: Cifra el texto plano y
- *   devuelve el texto cifrado en formato hexadecimal.
- * - `decrypt(String cipherText, SecretKey key)`: Descifra el texto cifrado y
- *   devuelve el texto original.
- *
- */
-
+// Clase para el cifrado y descifrado de datos utilizando AES
 public class CifradoAES {
     private byte[] IV = new byte[32]; // Vector de inicialización para AES
 

@@ -1,48 +1,35 @@
 package es.ifp.labsalut.ui;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.checkbox.MaterialCheckBox;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 
-import es.ifp.labsalut.R;
-import es.ifp.labsalut.activities.MainActivity;
-import es.ifp.labsalut.activities.MenuActivity;
 import es.ifp.labsalut.databinding.FragmentHomeBinding;
 import es.ifp.labsalut.negocio.CitaMedica;
+import es.ifp.labsalut.negocio.CitasListAdapter;
 import es.ifp.labsalut.negocio.Medicamento;
-import es.ifp.labsalut.negocio.ModListAdapter;
+import es.ifp.labsalut.negocio.MedListAdapter;
 import es.ifp.labsalut.negocio.Usuario;
-import es.ifp.labsalut.seguridad.FingerprintHandler;
 
-public class HomeFragment extends Fragment implements ModListAdapter.OnItemClickListener{
+public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedClickListener, CitasListAdapter.OnItemCitaClickListener {
 
     // Argumentos para la instancia del fragmento
     private static final String ARG_PARAM1 = "EMAIL";
@@ -54,8 +41,8 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
     private String email;
     private String pass;
     private Usuario user = null;
-    private ModListAdapter adapterMed = null;
-    private ModListAdapter adapterCita = null;
+    private MedListAdapter adapterMed = null;
+    private CitasListAdapter adapterCita = null;
     private SparseBooleanArray arrayBoolean = null;
 
     // Constructor por defecto del fragmento
@@ -108,7 +95,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-        Context context = getContext();
+        Context context = root.getContext();
         // Crea listas de datos de medicamentos y citas médicas
         ArrayList<Serializable> dataMed = new ArrayList<>();
         // Agrega datos de ejemplo a la lista de medicamentos
@@ -119,6 +106,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
         dataMed.add(new Medicamento("Ibuprofeno", "1000mg", "Toma cada 8 horas", "5 min antes"));
         dataMed.add(new Medicamento("Desketoprofeno", "200mg", "Toma cada 8 horas", "5 min antes"));
         dataMed.add(new Medicamento("Aerius", "1000mg", "Toma cada 8 horas", "5 min antes"));
+
 
         ArrayList<Serializable> dataCita = new ArrayList<>();
 
@@ -132,8 +120,8 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
         dataCita.add(new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
 
         // Crea adaptadores para las listas de medicamentos y citas médicas
-        adapterMed = new ModListAdapter(context, dataMed);
-        adapterCita = new ModListAdapter(context, dataCita);
+        adapterMed = new MedListAdapter(context, dataMed);
+        adapterCita = new CitasListAdapter(context, dataCita);
 
         // Inicializa las listas en la interfaz de usuario
         iniciarLista(binding.recyclerViewMediHome, adapterMed);
@@ -174,7 +162,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
         });
 
         // Establece un listener para detectar cambios en la selección de elementos en la lista de medicamentos
-        adapterMed.setOnDataChangeListener(new ModListAdapter.OnDataChangeListener() {
+        adapterMed.setOnDataChangeListener(new MedListAdapter.OnDataChangeListener() {
             @Override
             public void onDataChanged(boolean select) {
                 // Muestra u oculta el botón de eliminación según si hay elementos seleccionados
@@ -187,7 +175,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
         });
 
         // Establece un listener para detectar cambios en la selección de elementos en la lista de citas médicas
-        adapterCita.setOnDataChangeListener(new ModListAdapter.OnDataChangeListener() {
+        adapterCita.setOnDataChangeListener(new CitasListAdapter.OnDataChangeListener() {
             @Override
             public void onDataChanged(boolean select) {
                 // Muestra u oculta el botón de eliminación según si hay elementos seleccionados
@@ -198,6 +186,7 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
                 }
             }
         });
+
 
         // Maneja el comportamiento al presionar el botón de retroceso del dispositivo
         OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
@@ -213,7 +202,10 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
                     binding.deleteItemListMed.setVisibility(View.GONE);
                 } else {
                     // Si no hay elementos seleccionados en ninguna lista, finaliza la actividad actual
-                    requireActivity().finish();
+                    FragmentActivity activity = getActivity();
+                    if (activity != null) {
+                        activity.finish();
+                    }
                 }
             }
         };
@@ -222,12 +214,46 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
 
 
     // Activa la funcionalidad de deslizamiento en la lista y maneja el deslizamiento de elementos
-    private void activarDeslizar(RecyclerView recyclerView, ModListAdapter mAdapter) {
+    private void activarDeslizar(RecyclerView recyclerView, MedListAdapter mAdapter) {
         DeslizarParaAccion deslizarParaAccion = new DeslizarParaAccion(getContext(), (DeslizarParaAccion.ItemTouchHelperContract) mAdapter) {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 // Obtiene la posición del elemento deslizado y el elemento correspondiente
-                final int position = viewHolder.getAdapterPosition();
+                final int position = viewHolder.getBindingAdapterPosition();
+                final Serializable item = mAdapter.getData().get(position);
+
+                // Elimina el elemento deslizado de la lista
+                mAdapter.removeItem(position);
+
+                // Muestra una Snackbar para deshacer la acción de eliminación
+                Snackbar snackbar = Snackbar
+                        .make(binding.fragmentHome, "El elemento ha sido borrado", Snackbar.LENGTH_LONG);
+                snackbar.setAction("Deshacer", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Restaura el elemento eliminado a su posición original
+                        mAdapter.restoreItem(item, position);
+                        recyclerView.scrollToPosition(position);
+                    }
+                });
+
+                // Configura el color del texto de la acción de la Snackbar
+                snackbar.setActionTextColor(Color.YELLOW);
+                snackbar.show();
+            }
+        };
+        // Asocia la funcionalidad de deslizamiento con el RecyclerView
+        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(deslizarParaAccion);
+        itemTouchhelper.attachToRecyclerView(recyclerView);
+    }
+
+    // Activa la funcionalidad de deslizamiento en la lista y maneja el deslizamiento de elementos
+    private void activarDeslizar(RecyclerView recyclerView, CitasListAdapter mAdapter) {
+        DeslizarParaAccion deslizarParaAccion = new DeslizarParaAccion(getContext(), (DeslizarParaAccion.ItemTouchHelperContract) mAdapter) {
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                // Obtiene la posición del elemento deslizado y el elemento correspondiente
+                final int position = viewHolder.getBindingAdapterPosition();
                 final Serializable item = mAdapter.getData().get(position);
 
                 // Elimina el elemento deslizado de la lista
@@ -257,7 +283,17 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
     }
 
     // Inicializa una lista en la interfaz de usuario
-    private void iniciarLista(RecyclerView recyclerView, ModListAdapter adapter) {
+    private void iniciarLista(RecyclerView recyclerView, MedListAdapter adapter) {
+        Context context = getContext();
+        adapter.setOnItemClickListener(this);
+        adapter.setRecyclerView(recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        // Activa la funcionalidad de deslizamiento en la lista
+        activarDeslizar(recyclerView, adapter);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void iniciarLista(RecyclerView recyclerView, CitasListAdapter adapter) {
         Context context = getContext();
         adapter.setOnItemClickListener(this);
         adapter.setRecyclerView(recyclerView);
@@ -284,41 +320,43 @@ public class HomeFragment extends Fragment implements ModListAdapter.OnItemClick
         binding.recyclerViewCitaHome.setLayoutParams(params2);
     }
 
+    @Override
+    public void onItemCitaClick(Serializable serializable, int position) {
+        if (binding.deleteItemListCita.getVisibility() == View.VISIBLE) {
+
+            adapterCita.performClickCheckBox(position);
+        } else {
+            if (position<user.getAllCitas().size()) {
+                CitaMedica cita = user.getCitaMedica(position);
+
+                CardDialogFragment dialog = CardDialogFragment.newInstance(cita);
+                dialog.show(requireActivity().getSupportFragmentManager(), "dialog");
+            }
+        }
+    }
+
+    @Override
+    public void onItemMedClick(Serializable serializable, int position) {
+        if (binding.deleteItemListMed.getVisibility() == View.VISIBLE) {
+
+            adapterMed.performClickCheckBox(position);
+        } else {
+            if (position<user.getAllMedicamentos().size()) {
+                Medicamento medicamento = user.getMedicamentos(position);
+
+                CardDialogFragment dialog = CardDialogFragment.newInstance(medicamento);
+                dialog.show(requireActivity().getSupportFragmentManager(), "dialog");
+            }
+        }
+    }
+
+
     // Método llamado cuando la vista del fragmento está siendo destruida
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        binding=null;
     }
 
-    @Override
-    public void onItemClick(int position) {
 
-        if( binding.deleteItemListCita.getVisibility()==View.VISIBLE){
-
-            adapterCita.performClickCheckBox(position);
-        }else {
-            CitaMedica cita = user.getCitaMedica(position);
-            new MaterialAlertDialogBuilder(requireContext())
-                    .setTitle(cita.getNombre())
-                    .setMessage("Descripcion: "+cita.getDescripcion())
-                    .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    })
-                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    })
-                    .show();
-        }
-        if( binding.deleteItemListMed.getVisibility()==View.VISIBLE){
-            adapterMed.performClickCheckBox(position);
-        }else{
-            //codificar abrir la ficha al completo
-        }
-    }
 }

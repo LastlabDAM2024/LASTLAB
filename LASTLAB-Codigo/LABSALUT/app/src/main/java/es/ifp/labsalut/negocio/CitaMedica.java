@@ -9,6 +9,7 @@ public class CitaMedica implements Serializable {
     private String nombre; // Nombre de la cita médica
     private String fecha; // Fecha de la cita médica
     private String hora; // Hora de la cita médica
+    private String direccion; // Direccion de la cita médica
     private String descripcion; // Descripción de la cita médica
     private String recordatorio; // Recordatorio asociado a la cita médica
 
@@ -19,6 +20,7 @@ public class CitaMedica implements Serializable {
         this.hora = "";
         this.descripcion = "";
         this.recordatorio = "";
+        this.direccion = "";
     }
 
     // Constructor parametrizado de la clase CitaMedica
@@ -28,6 +30,18 @@ public class CitaMedica implements Serializable {
         this.hora = hora;
         this.descripcion = descripcion;
         this.recordatorio = recordatorio;
+        this.direccion = "";
+    }
+
+
+    // Constructor parametrizado de la clase CitaMedica
+    public CitaMedica(String nombre, String fecha, String hora, String direccion, String descripcion, String recordatorio) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.descripcion = descripcion;
+        this.recordatorio = recordatorio;
+        this.direccion = direccion;
     }
 
     // Método getter para obtener el ID de la cita médica
@@ -88,5 +102,15 @@ public class CitaMedica implements Serializable {
     // Método setter para establecer el recordatorio asociado a la cita médica
     public void setRecordatorio(String recordatorio) {
         this.recordatorio = recordatorio;
+    }
+
+    // Método getter para obtener la dirección asociada a la cita médica
+    public String getDireccion() {
+        return direccion;
+    }
+
+    // Método setter para establecer la dirección asociada a la cita médica
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 }

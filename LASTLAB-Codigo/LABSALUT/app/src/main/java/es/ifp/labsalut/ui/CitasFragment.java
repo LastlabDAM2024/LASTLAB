@@ -2,76 +2,85 @@ package es.ifp.labsalut.ui;
 
 import static com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+import com.google.android.material.carousel.CarouselSnapHelper;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.Month;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAccessor;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import es.ifp.labsalut.R;
-import es.ifp.labsalut.activities.MenuActivity;
 import es.ifp.labsalut.databinding.FragmentCitasBinding;
+import es.ifp.labsalut.db.BaseDatos;
+import es.ifp.labsalut.negocio.CarruselAdapter;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Usuario;
+
 public class CitasFragment extends Fragment {
 
     // Constantes para los argumentos del fragmento
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private static final String ARG_USER = "USUARIO";
+    private static final String TAG = "CitasFragment";
+    private static final int AUTOCOMPLETE_REQUEST_CODE = 1;
+
     // Binding para el fragmento
     private FragmentCitasBinding binding;
     // Variables para almacenar los parámetros
-    private String mParam1;
-    private String mParam2;
     // Usuario actual
     private Usuario user = null;
-    private Intent pasarPantalla;
+    private BaseDatos db;
+    private CarruselAdapter carruselAdapter; //adaptador del carrusel
+    protected AutocompleteSupportFragment autocompleteDireccion;
 
     // Constructor vacío requerido
     public CitasFragment() {
     }
 
-    // Método estático para crear una nueva instancia del fragmento con dos parámetros
-    public static CitasFragment newInstance(String param1, String param2) {
-        CitasFragment fragment = new CitasFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     // Método estático para crear una nueva instancia del fragmento con un usuario
     public static CitasFragment newInstance(Usuario user) {
@@ -87,9 +96,12 @@ public class CitasFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
             user = (Usuario) getArguments().getSerializable(ARG_USER);
+        }
+        // Inicializar Places con la API key desde secrets.properties
+        String apiKey = loadApiKeyFromAssets(requireContext());
+        if (!Places.isInitialized()) {
+            Places.initialize(requireContext(), apiKey);
         }
     }
 
@@ -106,7 +118,20 @@ public class CitasFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
-        Context context = requireContext();
+        Context context = root.getContext();
+        db = new BaseDatos(context);
+        autocompleteDireccion = (AutocompleteSupportFragment) getChildFragmentManager().findFragmentById(R.id.autocomplete_direccion);
+
+        ArrayList<Serializable> listaCitas = new ArrayList<>(user.getAllCitas());
+        carruselAdapter = new CarruselAdapter(context, requireActivity().getSupportFragmentManager(), listaCitas);
+        carruselAdapter.setRecyclerView(binding.carouselRecyclerView);
+        binding.carouselRecyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.carousel_spacing);
+        int spacingInterPixels = getResources().getDimensionPixelSize(R.dimen.carousel_interSpacing);
+        binding.carouselRecyclerView.addItemDecoration(new SpacesItemDecoration(spacingInPixels, spacingInterPixels));
+        binding.carouselRecyclerView.setAdapter(carruselAdapter);
+
+
         // Configuración del botón de fecha
         binding.textFechaCita.setStartIconOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,27 +164,131 @@ public class CitasFragment extends Fragment {
         binding.guardarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CitaMedica cita = new CitaMedica();
+                CitaMedica cita = new CitaMedica("Neurologo", "12/05/2024", "08:00", "Calle Doctor Barraquer, 23, 28903 Getafe, Madrid, España", "Ir en ayunas", "24 horas antes");
+
+
+
+                /*
                 cita.setNombre(binding.nombreCita.getText().toString());
                 cita.setDescripcion(binding.descripCita.getText().toString());
                 cita.setRecordatorio(binding.recordCita.getText().toString());
                 cita.setFecha(binding.fechaCita.getText().toString());
                 cita.setHora(binding.horaCita.getText().toString());
+
+                 */
+
+                // FALTA CIFRAR DATOS DE LAS CITAS
+                cita.setIdCita(db.addCita(cita));
                 user.setCitaMedica(cita);
+                db.addUserCita(user, cita);
                 requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_menu, HomeFragment.newInstance(user))
                         .addToBackStack(null)
                         .commit();
+                // Actualiza el Navigation Drawer
+                DrawerLayout drawerLayout = requireActivity().findViewById(R.id.drawer_layout);
+                NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
+
+                if (drawerLayout != null && navigationView != null) {
+                    // Cerrar el drawer si está abierto
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    // Obtener el menú y marcar el elemento correcto
+                    Menu menu = navigationView.getMenu();
+                    MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    if (homeMenuItem != null) {
+                        homeMenuItem.setChecked(true);
+                    }
+                }
             }
         });
 
+        new CitaMedica("Neurologo", "12/05/2024", "08:00", "Ir en ayunas", "24 horas antes");
+        new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
+        new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes");
+        new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
+        new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
+        new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes");
+        new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
+
+        if (autocompleteDireccion != null) {
+            autocompleteDireccion.setHint("");
+            autocompleteDireccion.requireView().findViewById(com.google.android.libraries.places.R.id.places_autocomplete_search_button).setVisibility(View.INVISIBLE);
+            autocompleteDireccion.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS));
+            autocompleteDireccion.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+                @Override
+                public void onPlaceSelected(@NonNull Place place) {
+                    // Manejar el lugar seleccionado
+                    binding.direccionCita.setText(place.getAddress());
+                    binding.direccionCita.setEnabled(true);
+                    // Limpiar texto ingresado
+                    autocompleteDireccion.setText("");
+                    // Ocultar AutocompleteSupportFragment
+                    toggleAutocompleteVisibility();
+                }
+
+                @Override
+                public void onError(@NonNull Status status) {
+                    // Manejar el error
+                    Log.i(TAG, "Ocurrió un error: " + status);
+                }
+            });
+        }
+
+
+        binding.textDireccionCita.setEndIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleAutocompleteVisibility();
+                autocompleteDireccion.setText("");
+                binding.direccionCita.setText("");
+                binding.direccionCita.setEnabled(false);
+            }
+        });
+
+        // Maneja el comportamiento al presionar el botón de retroceso del dispositivo
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_menu, HomeFragment.newInstance(user))
+                        .addToBackStack(null)
+                        .commit();
+
+                // Actualiza el Navigation Drawer
+                DrawerLayout drawerLayout = requireActivity().findViewById(R.id.drawer_layout);
+                NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
+
+                if (drawerLayout != null && navigationView != null) {
+                    // Cerrar el drawer si está abierto
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                    // Obtener el menú y marcar el elemento correcto
+                    Menu menu = navigationView.getMenu();
+                    MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    if (homeMenuItem != null) {
+                        homeMenuItem.setChecked(true);
+                    }
+                }
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), onBackPressedCallback);
+
     }
 
-    // Método llamado cuando la vista del fragmento es destruida
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    // Método para cambiar la visibilidad de AutocompleteSupportFragment
+    private void toggleAutocompleteVisibility() {
+        if (autocompleteDireccion != null && autocompleteDireccion.getView() != null) {
+            int visibility = autocompleteDireccion.getView().getVisibility();
+            if (visibility == View.VISIBLE) {
+                autocompleteDireccion.getView().setVisibility(View.GONE);
+            } else {
+                autocompleteDireccion.getView().setVisibility(View.VISIBLE);
+            }
+        }
     }
+
 
     // Método para mostrar el selector de fecha
     private void mostrarDatePicker() {
@@ -239,5 +368,26 @@ public class CitasFragment extends Fragment {
                 binding.horaCita.setText(horaFormateada + " : " + minutoFormateado);
             }
         });
+    }
+
+    // Método para cargar la clave de API desde el archivo secrets.properties en assets
+    private String loadApiKeyFromAssets(@NonNull Context context) {
+        Properties properties = new Properties();
+        try {
+            AssetManager assetManager = context.getAssets();
+            InputStream inputStream = assetManager.open("secrets.properties");
+            properties.load(inputStream);
+            return properties.getProperty("PLACES_API_KEY");
+        } catch (IOException e) {
+            Log.e(TAG, "Error al cargar la clave API desde assets", e);
+            return ""; // Manejar el error según sea necesario
+        }
+    }
+
+    // Método llamado cuando la vista del fragmento es destruida
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

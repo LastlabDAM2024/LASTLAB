@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Slide animation style -->
+    <style name="DialogSlideAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
 
+    <!-- Fade animation style -->
+    <style name="DialogFadeAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
 
+    <!-- Zoom animation style -->
+    <style name="DialogZoomAnimation">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
+    </style>
+
+    <!-- Rotate animation style -->
+    <style name="DialogRotateAnimation">
+        <item name="android:windowEnterAnimation">@anim/rotate_in</item>
+        <item name="android:windowExitAnimation">@anim/rotate_out</item>
+    </style>
+
+    <!-- Expand from touch animation style -->
+    <style name="DialogExpandFromTouchAnimation">
+        <item name="android:windowEnterAnimation">@anim/expand_from_touch</item>
+        <item name="android:windowExitAnimation">@anim/shrink_and_fade_out</item>
+    </style>
 </resources>

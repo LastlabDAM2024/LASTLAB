@@ -1,10 +1,16 @@
 package es.ifp.labsalut.activities;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS;
+import static android.Manifest.permission.ACCESS_NETWORK_STATE;
+import static android.Manifest.permission.INTERNET;
 import static es.ifp.labsalut.ui.SettingsFragment.MY_PREFS_HUELLA;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +20,8 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
@@ -23,6 +31,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.crypto.SecretKey;
 
@@ -33,39 +43,21 @@ import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
 import es.ifp.labsalut.ui.ColorStatusBar;
-/**
- * La clase MainActivity maneja la funcionalidad de inicio de sesión, autenticación biométrica
- * y las interacciones de la interfaz de usuario relacionadas con el inicio de sesión y la
- * navegación a otras actividades. Utiliza View Binding para la manipulación eficiente de la
- * interfaz y SharedPreferences para almacenar de forma segura las credenciales del usuario.
- */
+
 public class MainActivity extends AppCompatActivity implements FingerprintHandler.AuthenticationCallback {
 
-    // Constante para la clave de las preferencias compartidas para recordar al usuario
     public static final String MY_PREFS_USER = "RECORDARUSUARIO";
-
-    // Objeto de binding para interactuar con las vistas definidas en activity_main.xml
+    private int PERMISSION_REQUEST_CODE;
     private ActivityMainBinding binding;
-
-    // Intent para navegar a otras actividades
     private Intent pasarPantalla;
-
-    // Variables para almacenar las credenciales del usuario
     private String email;
     private String password;
-
-    // Objetos relacionados con la base de datos y el usuario
     private BaseDatos db;
     private Usuario user = null;
-
-    // Manejador de huellas dactilares para la autenticación biométrica
     private FingerprintHandler finger = null;
-
-    // Indicadores y objetos de preferencias compartidas
     private boolean activacionHuella = false;
     private SharedPreferences prefs_user = null;
     private SharedPreferences prefs_huella = null;
-
 
 
     @Override
@@ -76,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
         ColorStatusBar.colorDinamicStatusBar(this, ColorStatusBar.obtenerColorBackground(this));
 
         db = new BaseDatos(this);
-
+        checkAndRequestPermissions();
         // Configurar el título de la aplicación centrado en un fondo negro y blanco
         binding.titulo.setBackgroundColor(getResources().getColor(R.color.md_theme_onPrimaryFixedVariant));
         binding.titulo.setTextColor(getResources().getColor(R.color.md_theme_onPrimary));
@@ -283,6 +275,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             usuario.setFechaNacimiento(aes.decrypt(usuario.getFechaNacimiento(), secretKey));
             usuario.setEmail(aes.decrypt(usuario.getEmail(), secretKey));
             usuario.setContrasena(aes.decrypt(usuario.getContrasena(), secretKey));
+            usuario.setAllCitas(db.getAllCitasMedicas(usuario));
         } else {
             usuario = null;
         }
@@ -336,6 +329,24 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                     Snackbar.make(binding.activityMain, "Vuelva a intentarlo en 30 segundos", Snackbar.LENGTH_LONG).show();
                 }
             });
+        }
+    }
+
+    // Método para verificar y solicitar permisos necesarios
+    private void checkAndRequestPermissions() {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, INTERNET) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(MainActivity.this, ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(MainActivity.this, ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(MainActivity.this, ACCESS_LOCATION_EXTRA_COMMANDS) == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(MainActivity.this, ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
+
+            Snackbar.make(binding.activityMain, "Permisos concedidos", Snackbar.LENGTH_LONG).show();
+
+        } else {
+            PERMISSION_REQUEST_CODE = 500;
+            ActivityCompat.requestPermissions(MainActivity.this,
+                    new String[]{INTERNET, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, ACCESS_LOCATION_EXTRA_COMMANDS, ACCESS_NETWORK_STATE}, PERMISSION_REQUEST_CODE);
+
         }
     }
 }
