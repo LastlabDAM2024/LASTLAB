@@ -119,7 +119,7 @@ public class CitasFragment extends Fragment {
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
         Context context = root.getContext();
-        db = new BaseDatos(context);
+        db = new BaseDatos(requireActivity());
         autocompleteDireccion = (AutocompleteSupportFragment) getChildFragmentManager().findFragmentById(R.id.autocomplete_direccion);
 
         ArrayList<Serializable> listaCitas = new ArrayList<>(user.getAllCitas());
@@ -164,20 +164,16 @@ public class CitasFragment extends Fragment {
         binding.guardarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CitaMedica cita = new CitaMedica("Neurologo", "12/05/2024", "08:00", "Calle Doctor Barraquer, 23, 28903 Getafe, Madrid, España", "Ir en ayunas", "24 horas antes");
+                CitaMedica cita = new CitaMedica();
 
-
-
-                /*
                 cita.setNombre(binding.nombreCita.getText().toString());
                 cita.setDescripcion(binding.descripCita.getText().toString());
                 cita.setRecordatorio(binding.recordCita.getText().toString());
                 cita.setFecha(binding.fechaCita.getText().toString());
                 cita.setHora(binding.horaCita.getText().toString());
 
-                 */
-
                 // FALTA CIFRAR DATOS DE LAS CITAS
+
                 cita.setIdCita(db.addCita(cita));
                 user.setCitaMedica(cita);
                 db.addUserCita(user, cita);
@@ -202,14 +198,6 @@ public class CitasFragment extends Fragment {
                 }
             }
         });
-
-        new CitaMedica("Neurologo", "12/05/2024", "08:00", "Ir en ayunas", "24 horas antes");
-        new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
-        new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes");
-        new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
-        new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
-        new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes");
-        new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes");
 
         if (autocompleteDireccion != null) {
             autocompleteDireccion.setHint("");
@@ -318,14 +306,12 @@ public class CitasFragment extends Fragment {
 
                 Locale locale = new Locale("es", "ES");
                 Month mMonth = null;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    mMonth = Month.of(month);
-                    String monthName = mMonth.getDisplayName(TextStyle.FULL, locale);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {;
                     String fechaCita = "";
                     if (day < 10) {
-                        fechaCita = "0" + day + "  /  " + monthName + "  /  " + year;
+                        fechaCita = "0" + day + "/" + month + "/" + year;
                     } else {
-                        fechaCita = day + "  /  " + monthName + "  /  " + year;
+                        fechaCita = day + "/" + month + "/" + year;
                     }
                     binding.fechaCita.setText(fechaCita);
                 }

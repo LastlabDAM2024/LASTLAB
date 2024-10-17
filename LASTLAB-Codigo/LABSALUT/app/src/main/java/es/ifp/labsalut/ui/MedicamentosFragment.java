@@ -88,17 +88,14 @@ public class MedicamentosFragment extends Fragment {
         binding.guardarMed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Medicamento medicamento = new Medicamento("Paracetamol", "500mg", "Toma cada 8 horas", "5 min antes");
+                Medicamento medicamento = new Medicamento();
 
-
-
-                /*
                 medicamento.setNombre(binding.nombreMed.getText().toString());
                 medicamento.setDosis(binding.dosisMed.getText().toString());
                 medicamento.setFrecuencia(binding.frecuenciaMed.getText().toString());
                 medicamento.setRecordatorio(binding.recordMed.getText().toString());
 
-                 */
+
 
                 // FALTA CIFRAR DATOS DE LOS MEDICAMENTOS
                 medicamento.setIdMedicamento(db.addMedicamento(medicamento));

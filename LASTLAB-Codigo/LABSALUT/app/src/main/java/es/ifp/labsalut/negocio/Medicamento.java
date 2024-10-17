@@ -26,6 +26,14 @@ public class Medicamento implements Serializable {
         this.recordatorio = recordatorio;
     }
 
+    // Constructor parametrizado de la clase Medicamento
+    public Medicamento(String nombre) {
+        this.nombre = nombre;
+        this.dosis = "dosis";
+        this.frecuencia = "frecuencia";
+        this.recordatorio = "recordatorio";
+    }
+
     // Método getter para obtener el ID del medicamento
     public int getIdMedicamento() {
         return idMedicamento;

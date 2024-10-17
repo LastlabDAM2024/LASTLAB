@@ -4,16 +4,18 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Suscripcion;
 import es.ifp.labsalut.negocio.Usuario;
+
 public class BaseDatos extends SQLiteOpenHelper {
 
     protected SQLiteDatabase db;
@@ -27,10 +29,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         // Aquí se crean las tablas si no existen
         db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis TEXT, frecuencia TEXT, recordatorio TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT, descripcion TEXT, recordatorio TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT,direccion TEXT, descripcion TEXT, recordatorio TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (idUser INTEGER PRIMARY KEY, idMedicamento INTEGER)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (idUser INTEGER PRIMARY KEY, idCitaMedica INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idMedicamento INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idCitaMedica INTEGER)");
     }
 
     @Override
@@ -87,83 +89,133 @@ public class BaseDatos extends SQLiteOpenHelper {
      */
     public void borrarAllMedicamentos(Usuario user) {
         db = this.getWritableDatabase();
-        ArrayList<Medicamento> medicamentos = user.getAllMedicamentos();
-        int id = 0;
-        for (int i = 0; i < medicamentos.size(); i++) {
-            id = medicamentos.get(i).getIdMedicamento();
-            db.execSQL("DELETE FROM Medicamentos WHERE id=" + id);
+        ArrayList<Serializable> medicamentos = user.getAllMedicamentos();
+
+        // Usamos una transacción para mejorar el rendimiento y la seguridad.
+        db.beginTransaction();
+        try {
+            // Preparamos la consulta SQL
+            String sql = "DELETE FROM Medicamentos WHERE id = ?";
+            SQLiteStatement statement = db.compileStatement(sql);
+
+            for (Serializable med : medicamentos) {
+                Medicamento medicamento = (Medicamento) med;
+                int id = medicamento.getIdMedicamento();
+                // Asignamos el id a la declaración preparada
+                statement.bindLong(1, id);
+                statement.execute();
+            }
+
+            db.setTransactionSuccessful(); // Confirmamos sitodo sale bien.
+        } catch (Exception e) {
+            // Manejo de errores
+            e.printStackTrace();
+        } finally {
+            db.endTransaction(); // Cerramos la transacción.
         }
     }
+
 
     /*
     Metodo que borra las citasMedicas del Usuario
      */
     public void borrarAllCitas(Usuario user) {
         db = this.getWritableDatabase();
-        ArrayList<CitaMedica> citas = user.getAllCitas();
-        int id = 0;
-        for (int i = 0; i < citas.size(); i++) {
-            id = citas.get(i).getIdCita();
-            db.execSQL("DELETE FROM CitaMedica WHERE id=" + id);
+        ArrayList<Serializable> citas = user.getAllCitas();
+
+        // Usamos una transacción para mejorar el rendimiento y la seguridad.
+        db.beginTransaction();
+        try {
+            // Preparamos la consulta SQL
+            String sql = "DELETE FROM CitaMedica WHERE id = ?";
+            SQLiteStatement statement = db.compileStatement(sql);
+
+            for (Serializable cit : citas) {
+                CitaMedica cita = (CitaMedica) cit;
+                int id = cita.getIdCita();
+                // Asignamos el id a la declaración preparada
+                statement.bindLong(1, id);
+                statement.execute();
+            }
+
+            db.setTransactionSuccessful(); // Confirmamos la transacción si todo sale bien.
+        } catch (Exception e) {
+            // Manejo de errores
+            e.printStackTrace();
+        } finally {
+            db.endTransaction(); // Cerramos la transacción.
         }
     }
+
+
 
     // Método para añadir un usuario a la base de datos
-
     public int addUser(Usuario usuario) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String nombreUser = usuario.getNombre();
-        String fechaNacimiento = usuario.getFechaNacimiento();
-        String email = usuario.getEmail();
-        String pass = usuario.getContrasena();
+        db = this.getWritableDatabase();
+        int id = -1;
 
-        ContentValues values = new ContentValues();
-        values.put("nombre", nombreUser);
-        values.put("fechaNacimiento", fechaNacimiento);
-        values.put("email", email);
-        values.put("pass", pass);
+        // Usamos una transacción para mejorar el rendimiento y la seguridad.
+        db.beginTransaction();
+        try {
+            // Preparamos la consulta de inserción
+            String sql = "INSERT INTO Usuario (nombre, fechaNacimiento, email, pass) VALUES (?, ?, ?, ?)";
+            SQLiteStatement statement = db.compileStatement(sql);
 
-        long id = db.insert("Usuario", null, values);
+            // Asignamos los valores a la declaración preparada
+            statement.bindString(1, usuario.getNombre());
+            statement.bindString(2, usuario.getFechaNacimiento());
+            statement.bindString(3, usuario.getEmail());
+            statement.bindString(4, usuario.getContrasena());
 
-        db.close();
+            // Ejecutamos la inserción
+            statement.executeInsert();
 
-        // Convertir el long id a int
-        if (id == -1) {
-            // Si hubo un error al insertar, devolver un valor que indique error
-            return -1;
-        } else {
-            // Si se insertó correctamente, convertir el long a int
-            return (int) id;
+            // Obtener el ID del nuevo usuario insertado
+            String query = "SELECT id FROM Usuario WHERE nombre = ? AND email = ?";
+            Cursor resultado = db.rawQuery(query, new String[]{usuario.getNombre(), usuario.getEmail()});
+
+            if (resultado.moveToFirst()) {
+                id = resultado.getInt(resultado.getColumnIndex("id"));
+            }
+
+            db.setTransactionSuccessful(); // Confirmamos la transacción si todo sale bien.
+        } catch (Exception e) {
+            // Manejo de errores
+            e.printStackTrace();
+        } finally {
+            db.endTransaction(); // Cerramos la transacción.
         }
-    }
 
+        return id;
+    }
 
 
     public Usuario getUser(String email) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = null;
-        Usuario usuario = new Usuario();
+        Cursor resultado = null;
+        Usuario contenido = null; // Cambiar a null para identificar si no se encuentra el usuario.
 
-        try {
-            cursor = db.rawQuery("SELECT * FROM Usuario WHERE email=?", new String[]{email});
+        if (this.numTotalUsers() > 0) {
+            db = this.getReadableDatabase();
 
-            if (cursor != null && cursor.moveToFirst()) {
-                usuario.setIdUsuario(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
-                usuario.setNombre(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
-                usuario.setFechaNacimiento(cursor.getString(cursor.getColumnIndexOrThrow("fechaNacimiento")));
-                usuario.setEmail(cursor.getString(cursor.getColumnIndexOrThrow("email")));
-                usuario.setContrasena(cursor.getString(cursor.getColumnIndexOrThrow("pass")));
+            // Usamos una consulta preparada para evitar inyecciones SQL.
+            String query = "SELECT * FROM Usuario WHERE email = ?";
+            resultado = db.rawQuery(query, new String[]{email});
+
+            if (resultado.moveToFirst()) {
+                contenido = new Usuario(); // Instanciar contenido solo si se encuentra un usuario.
+                contenido.setIdUsuario(resultado.getInt(resultado.getColumnIndex("id")));
+                contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
+                contenido.setFechaNacimiento(resultado.getString(resultado.getColumnIndex("fechaNacimiento")));
+                contenido.setEmail(resultado.getString(resultado.getColumnIndex("email")));
+                contenido.setContrasena(resultado.getString(resultado.getColumnIndex("pass")));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-            db.close();
         }
 
-        return usuario;
+        if (resultado != null) {
+            resultado.close(); // Cerramos el cursor para liberar recursos.
+        }
+
+        return contenido; // Retorna el usuario o null si no se encontró.
     }
 
 
@@ -172,58 +224,40 @@ public class BaseDatos extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         int idUser = user.getIdUsuario();
         int idMedi = medicamento.getIdMedicamento();
-        db.execSQL("INSERT INTO UsuarioMedicamento (idUser,idMedicamento) VALUES ('" + idUser + "','" + idMedi + "')");
+
+        // Usamos una consulta preparada para evitar inyecciones SQL.
+        String query = "INSERT INTO UsuarioMedicamento (idUser, idMedicamento) VALUES (?, ?)";
+        db.execSQL(query, new Object[]{idUser, idMedi});
     }
+
 
     public void addUserCita(Usuario user, CitaMedica cita) {
         db = this.getWritableDatabase();
         int idUser = user.getIdUsuario();
         int idCita = cita.getIdCita();
-        db.execSQL("INSERT INTO UsuarioCitaMedica (idUser,idCitaMedica) VALUES ('" + idUser + "','" + idCita + "')");
+
+        // Usamos una consulta preparada para evitar inyecciones SQL.
+        String query = "INSERT INTO UsuarioCitaMedica (idUser, idCitaMedica) VALUES (?, ?)";
+        db.execSQL(query, new Object[]{idUser, idCita});
     }
 
+
     public int addMedicamento(Medicamento medicamento) {
+        // Abrir la base de datos en modo escritura
         SQLiteDatabase db = this.getWritableDatabase();
-        String nombre = medicamento.getNombre();
-        String dosis = medicamento.getDosis();
-        String frecuencia = medicamento.getFrecuencia();
-        String recordatorio = medicamento.getRecordatorio();
 
-        // Insertar el medicamento en la tabla Medicamento
+        // Usar ContentValues para evitar inyecciones SQL
         ContentValues values = new ContentValues();
-        values.put("nombre", nombre);
-        values.put("dosis", dosis);
-        values.put("frecuencia", frecuencia);
-        values.put("recordatorio", recordatorio);
+        values.put("nombre", medicamento.getNombre());
+        values.put("dosis", medicamento.getDosis());
+        values.put("frecuencia", medicamento.getFrecuencia());
+        values.put("recordatorio", medicamento.getRecordatorio());
 
+        // Insertar el medicamento en la base de datos
         long id = db.insert("Medicamento", null, values);
 
-        // Verificar si la inserción fue exitosa
-        if (id == -1) {
-            // Manejar el caso de inserción fallida si es necesario
-            return -1;
-        }
-
-        // Obtener el ID del medicamento insertado
-        int insertedId = -1;
-        Cursor cursor = null;
-
-        try {
-            cursor = db.rawQuery("SELECT id FROM Medicamento WHERE nombre=? AND dosis=? AND frecuencia=? ORDER BY id DESC", new String[]{nombre, dosis, frecuencia});
-
-            if (cursor != null && cursor.moveToFirst()) {
-                insertedId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-            db.close();
-        }
-
-        return insertedId;
+        // Comprobar si la inserción fue exitosa
+        return (id != -1) ? (int) id : -1; // Retornar el ID del medicamento o -1 si hubo un error
     }
 
     // Método para añadir una cita médica a la base de datos
@@ -232,27 +266,35 @@ public class BaseDatos extends SQLiteOpenHelper {
         String nombre = citaMedica.getNombre();
         String fecha = citaMedica.getFecha();
         String hora = citaMedica.getHora();
+        String direccion = citaMedica.getDireccion();
         String descripcion = citaMedica.getDescripcion();
         String recordatorio = citaMedica.getRecordatorio();
 
-        // Ejecutar la inserción de la cita médica
-        db.execSQL("INSERT INTO CitaMedica (nombre,fecha,hora,descripcion,recordatorio) VALUES ('" + nombre + "','" + fecha + "','" + hora + "','" + descripcion + "','" + recordatorio + "')");
+        // Usamos una consulta preparada para evitar inyecciones SQL
+        String insertQuery = "INSERT INTO CitaMedica (nombre, fecha, hora, direccion, descripcion, recordatorio) VALUES (?, ?, ?, ?, ?, ?)";
+        db.execSQL(insertQuery, new Object[]{nombre, fecha, hora, direccion, descripcion, recordatorio});
 
         int id = -1;
         Cursor resultado = null;
+        int contenido = -1;
 
-        // Obtener el ID de la cita médica insertada
-        try {
-            resultado = db.rawQuery("SELECT last_insert_rowid()", null);
+        // Solo hacemos la consulta para obtener el ID si hay citas registradas
+        if (this.numTotalCitas() > 0) {
+            db = this.getReadableDatabase();
+
+            // Consulta preparada para obtener el ID de la cita
+            String selectQuery = "SELECT id FROM CitaMedica WHERE nombre=? AND fecha=? AND hora=? ORDER BY id DESC";
+            resultado = db.rawQuery(selectQuery, new String[]{nombre, fecha, hora});
+
             if (resultado.moveToFirst()) {
-                id = resultado.getInt(0);
+                contenido = resultado.getInt(resultado.getColumnIndex("id"));
+                id = contenido;  // Guardamos el ID de la última cita registrada
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (resultado != null) {
-                resultado.close();
-            }
+        }
+
+        // Cerrar el cursor si no es nulo
+        if (resultado != null) {
+            resultado.close();
         }
 
         return id;
@@ -266,72 +308,93 @@ public class BaseDatos extends SQLiteOpenHelper {
         String email = suscripcion.getEmail();
         String finSuscripcion = suscripcion.getFinSuscripcion();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("INSERT INTO Suscripcion (email, esSuscrito, finSuscripcion) VALUES (?, ?, ?)", new Object[]{email, esSuscrito, finSuscripcion});
+
+        // Usamos una consulta preparada para evitar inyecciones SQL
+        String insertQuery = "INSERT INTO Suscripcion (email, esSuscrito, finSuscripcion) VALUES (?, ?, ?)";
+        db.execSQL(insertQuery, new Object[]{email, esSuscrito ? 1 : 0, finSuscripcion});
     }
+
 
     // Método para actualizar una suscripción en la base de datos
     public void updateSuscripcion(Suscripcion suscripcion) {
         db = this.getWritableDatabase();
         String email = suscripcion.getEmail();
         boolean esSuscrito = suscripcion.getEsSuscrito();
-        db.execSQL("UPDATE Suscripcion SET esSuscrito='" + esSuscrito + "' WHERE email='" + email + "'");
+
+        // Usamos una consulta preparada para evitar inyecciones SQL
+        String updateQuery = "UPDATE Suscripcion SET esSuscrito = ? WHERE email = ?";
+        db.execSQL(updateQuery, new Object[]{esSuscrito ? 1 : 0, email});
     }
 
 
-    public ArrayList<Medicamento> getAllMedicamentos(Usuario user) {
-        ArrayList<Medicamento> listMedi = new ArrayList<>();
+
+    public ArrayList<Serializable> getAllMedicamentos(Usuario user) {
+        ArrayList<Serializable> listMedi = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor cursor = null;
+        Cursor resultado = null;
 
-        try {
+        // Verificar si hay medicamentos
+        if (this.numTotalMedicamentos() > 0) {
             db = this.getReadableDatabase();
-            cursor = db.rawQuery("SELECT * FROM Medicamento WHERE id IN (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
 
-            if (cursor != null && cursor.moveToFirst()) {
+            // Usar JOIN para obtener los medicamentos de un usuario específico
+            resultado = db.rawQuery(
+                    "SELECT m.* FROM Medicamento m " +
+                            "INNER JOIN UsuarioMedicamento um ON m.id = um.idMedicamento " +
+                            "WHERE um.idUser = ? " +
+                            "ORDER BY m.id ASC",
+                    new String[]{String.valueOf(id)} // Usar parámetros para evitar inyección SQL
+            );
+
+            // Iterar a través de los resultados
+            if (resultado != null && resultado.moveToFirst()) {
                 do {
-                    Medicamento medicamento = new Medicamento();
-                    medicamento.setIdMedicamento(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
-                    medicamento.setNombre(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
-                    medicamento.setDosis(cursor.getString(cursor.getColumnIndexOrThrow("dosis")));
-                    medicamento.setFrecuencia(cursor.getString(cursor.getColumnIndexOrThrow("frecuencia")));
-                    medicamento.setRecordatorio(cursor.getString(cursor.getColumnIndexOrThrow("recordatorio")));
-                    listMedi.add(medicamento);
-                } while (cursor.moveToNext());
+                    // Crear una nueva instancia de Medicamento por cada registro
+                    Medicamento contenido = new Medicamento();
+                    contenido.setIdMedicamento(resultado.getInt(resultado.getColumnIndex("id")));
+                    contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
+                    contenido.setDosis(resultado.getString(resultado.getColumnIndex("dosis")));
+                    contenido.setFrecuencia(resultado.getString(resultado.getColumnIndex("frecuencia")));
+                    contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
+
+                    // Agregar el nuevo medicamento a la lista
+                    listMedi.add(contenido);
+                } while (resultado.moveToNext()); // Cambiar a moveToNext() aquí
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null) {
-                cursor.close();
+
+            // Cerrar el cursor al final
+            if (resultado != null) {
+                resultado.close();
             }
         }
-
         return listMedi;
     }
-
 
 
     public ArrayList<String> getAllNombreMedi(Usuario user) {
         ArrayList<String> listNombresMedi = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor cursor = null;
+        Cursor resultado = null;
 
-        try {
+        if (this.numTotalMedicamentos() > 0) {
             db = this.getReadableDatabase();
-            cursor = db.rawQuery("SELECT nombre FROM Medicamento WHERE id IN (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser='" + id + "') ORDER BY id DESC", null);
 
-            if (cursor != null && cursor.moveToFirst()) {
-                do {
-                    String nombreMedicamento = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
-                    listNombresMedi.add(nombreMedicamento);
-                } while (cursor.moveToNext());
+            // Consulta mejorada para evitar inyecciones SQL
+            String query = "SELECT nombre FROM Medicamento WHERE id IN (SELECT idMedicamento FROM UsuarioMedicamento WHERE idUser = ?) ORDER BY id DESC";
+
+            resultado = db.rawQuery(query, new String[]{String.valueOf(id)});
+            resultado.moveToFirst();
+
+            while (!resultado.isAfterLast()) {
+                String contenido = resultado.getString(resultado.getColumnIndex("nombre"));
+                listNombresMedi.add(contenido);
+                resultado.moveToNext();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
+        }
+
+        // Cerrar el cursor después de usarlo para liberar recursos
+        if (resultado != null) {
+            resultado.close();
         }
 
         return listNombresMedi;
@@ -339,62 +402,82 @@ public class BaseDatos extends SQLiteOpenHelper {
 
 
 
-    public ArrayList<CitaMedica> getAllCitas(Usuario user) {
-        ArrayList<CitaMedica> listCitas = new ArrayList<>();
+    public ArrayList<Serializable> getAllCitasMedicas(Usuario user) {
+        ArrayList<Serializable> listCitas = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor cursor = null;
+        Cursor resultado = null;
 
-        try {
+        // Verificar si hay citas médicas
+        if (this.numTotalCitas() > 0) {
             db = this.getReadableDatabase();
-            cursor = db.rawQuery("SELECT * FROM CitaMedica WHERE id IN (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
 
-            if (cursor != null && cursor.moveToFirst()) {
+            // Usar JOIN para obtener las citas médicas del usuario específico
+            resultado = db.rawQuery(
+                    "SELECT cm.* FROM CitaMedica cm " +
+                            "INNER JOIN UsuarioCitaMedica uc ON cm.id = uc.idCitaMedica " +
+                            "WHERE uc.idUser = ? " +
+                            "ORDER BY cm.id ASC",
+                    new String[]{String.valueOf(id)} // Usar parámetros para evitar inyección SQL
+            );
+
+            // Iterar a través de los resultados
+            if (resultado != null && resultado.moveToFirst()) {
                 do {
-                    CitaMedica cita = new CitaMedica();
-                    cita.setIdCita(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
-                    cita.setNombre(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
-                    cita.setFecha(cursor.getString(cursor.getColumnIndexOrThrow("fecha")));
-                    cita.setHora(cursor.getString(cursor.getColumnIndexOrThrow("hora")));
-                    cita.setDescripcion(cursor.getString(cursor.getColumnIndexOrThrow("descripcion")));
-                    cita.setRecordatorio(cursor.getString(cursor.getColumnIndexOrThrow("recordatorio")));
+                    // Crear una nueva instancia de CitaMedica por cada registro
+                    CitaMedica contenido = new CitaMedica();
+                    contenido.setIdCita(resultado.getInt(resultado.getColumnIndex("id")));
+                    contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
+                    contenido.setFecha(resultado.getString(resultado.getColumnIndex("fecha")));
+                    contenido.setHora(resultado.getString(resultado.getColumnIndex("hora")));
+                    contenido.setDireccion(resultado.getString(resultado.getColumnIndex("direccion")));
+                    contenido.setDescripcion(resultado.getString(resultado.getColumnIndex("descripcion")));
+                    contenido.setRecordatorio(resultado.getString(resultado.getColumnIndex("recordatorio")));
 
-                    listCitas.add(cita);
-                } while (cursor.moveToNext());
+                    // Agregar la nueva cita a la lista
+                    listCitas.add(contenido);
+                } while (resultado.moveToNext()); // Cambiar a moveToNext() aquí
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null) {
-                cursor.close();
+
+            // Cerrar el cursor al final
+            if (resultado != null) {
+                resultado.close();
             }
         }
-
         return listCitas;
     }
+
 
     public ArrayList<String> getAllNombreCitas(Usuario user) {
         ArrayList<String> listNombresCitas = new ArrayList<>();
         int id = user.getIdUsuario();
-        Cursor cursor = null;
+        Cursor resultado = null;
 
-        try {
+        if (this.numTotalCitas() > 0) { // Cambia aquí para verificar el número de citas
             db = this.getReadableDatabase();
-            cursor = db.rawQuery("SELECT * FROM CitaMedica WHERE id IN (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser='" + id + "') ORDER BY id DESC", null);
 
-            if (cursor != null && cursor.moveToFirst()) {
-                do {
-                    String nombreCita = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
-                    listNombresCitas.add(nombreCita);
-                } while (cursor.moveToNext());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (cursor != null) {
-                cursor.close();
+            // Consulta mejorada para evitar inyecciones SQL
+            String query = "SELECT nombre FROM CitaMedica WHERE id IN (SELECT idCitaMedica FROM UsuarioCitaMedica WHERE idUser = ?) ORDER BY id DESC";
+
+            resultado = db.rawQuery(query, new String[]{String.valueOf(id)});
+            resultado.moveToFirst();
+
+            while (!resultado.isAfterLast()) {
+                String contenido = resultado.getString(resultado.getColumnIndex("nombre"));
+                listNombresCitas.add(contenido);
+                resultado.moveToNext();
             }
         }
 
+        // Cerrar el cursor después de usarlo para liberar recursos
+        if (resultado != null) {
+            resultado.close();
+        }
+
         return listNombresCitas;
+    }
+
+
+    public void cerrarDB() {
+        db.close();
     }
 }

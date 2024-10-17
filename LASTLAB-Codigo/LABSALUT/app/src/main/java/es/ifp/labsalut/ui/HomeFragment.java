@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import es.ifp.labsalut.databinding.FragmentHomeBinding;
+import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.CitasListAdapter;
 import es.ifp.labsalut.negocio.Medicamento;
@@ -40,10 +41,12 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
     // Variables de instancia
     private String email;
     private String pass;
+    private BaseDatos db;
     private Usuario user = null;
     private MedListAdapter adapterMed = null;
     private CitasListAdapter adapterCita = null;
     private SparseBooleanArray arrayBoolean = null;
+
 
     // Constructor por defecto del fragmento
     public HomeFragment() {
@@ -96,38 +99,39 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
     public void onViewCreated(@NonNull View root, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(root, savedInstanceState);
         Context context = root.getContext();
-        // Crea listas de datos de medicamentos y citas médicas
+        db = new BaseDatos(requireActivity());
         ArrayList<Serializable> dataMed = new ArrayList<>();
-        // Agrega datos de ejemplo a la lista de medicamentos
-        dataMed.add(new Medicamento("Paracetamol", "500mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Ibuprofeno", "1000mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Desketoprofeno", "200mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Aerius", "1000mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Ibuprofeno", "1000mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Desketoprofeno", "200mg", "Toma cada 8 horas", "5 min antes"));
-        dataMed.add(new Medicamento("Aerius", "1000mg", "Toma cada 8 horas", "5 min antes"));
+        ArrayList<Serializable> dataCita= new ArrayList<>();
+        // Crea listas de datos de medicamentos y citas médicasç
+        if(user!=null){
+            if(!user.getAllMedicamentos().isEmpty()){
+                dataMed = user.getAllMedicamentos();
 
+            }
+            else{
+                for (int i = 0; i < 4; i++) {
+                    Medicamento medi = new Medicamento("VACIO");
+                    dataMed.add(medi);
+                }
+            }
 
-        ArrayList<Serializable> dataCita = new ArrayList<>();
+            if(!user.getAllCitas().isEmpty()){
+                dataCita = user.getAllCitas();
+            }else{
+                for (int i = 0; i < 4; i++) {
+                    CitaMedica cita = new CitaMedica("VACIO");
+                    dataCita.add(cita);
+                }
+            }
+        }
 
-        // Agrega datos de ejemplo a la lista de citas médicas
-        dataCita.add(new CitaMedica("Neurologo", "12/05/2024", "08:00", "Ir en ayunas", "24 horas antes"));
-        dataCita.add(new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
-        dataCita.add(new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes"));
-        dataCita.add(new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
-        dataCita.add(new CitaMedica("Endocrino", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
-        dataCita.add(new CitaMedica("Gastroscopia", "12/08/2024", "12:30", "Ir en ayunas", "24 horas antes"));
-        dataCita.add(new CitaMedica("Ambulatorio", "27/05/2024", "09:35", "Ir en ayunas", "24 horas antes"));
-
-        // Crea adaptadores para las listas de medicamentos y citas médicas
-        adapterMed = new MedListAdapter(context, dataMed);
         adapterCita = new CitasListAdapter(context, dataCita);
-
-        // Inicializa las listas en la interfaz de usuario
-        iniciarLista(binding.recyclerViewMediHome, adapterMed);
         iniciarLista(binding.recyclerViewCitaHome, adapterCita);
-        // Ajusta el tamaño de las listas en la interfaz de usuario
+        adapterMed = new MedListAdapter(context, dataMed);
+        iniciarLista(binding.recyclerViewMediHome, adapterMed);
         ajustarSizeList();
+
+
 
         // Maneja los clics en los botones para eliminar elementos de las listas de medicamentos y citas médicas
         binding.deleteItemListMed.setOnClickListener(new View.OnClickListener() {

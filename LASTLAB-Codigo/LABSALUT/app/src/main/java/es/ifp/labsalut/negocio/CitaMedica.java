@@ -43,6 +43,15 @@ public class CitaMedica implements Serializable {
         this.recordatorio = recordatorio;
         this.direccion = direccion;
     }
+    // Constructor parametrizado de la clase CitaMedica
+    public CitaMedica(String nombre) {
+        this.nombre = nombre;
+        this.fecha = "fecha";
+        this.hora = "hora";
+        this.descripcion = "descripcion";
+        this.recordatorio = "recordatorio";
+        this.direccion = "direccion";
+    }
 
     // Método getter para obtener el ID de la cita médica
     public int getIdCita() {
