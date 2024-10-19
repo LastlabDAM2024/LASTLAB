@@ -6,18 +6,28 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_launcher_foreground"
             android:title="Menú principal" />
         <item
             android:id="@+id/nav_medicamentos"
+            android:icon="@drawable/ic_launcher_foreground"
             android:title="Medicamentos" />
         <item
             android:id="@+id/nav_citas"
+            android:icon="@drawable/ic_launcher_foreground"
             android:title="Citas Médicas" />
         <item
             android:id="@+id/nav_suscripcion"
+            android:icon="@drawable/ic_launcher_foreground"
             android:title="Suscripción" />
         <item
             android:id="@+id/nav_ajustes"
+            android:icon="@drawable/ic_launcher_foreground"
             android:title="Ajustes" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_action_fingerprint"
+            android:title="Cerrar sesión" />
+
     </group>
 </menu>
