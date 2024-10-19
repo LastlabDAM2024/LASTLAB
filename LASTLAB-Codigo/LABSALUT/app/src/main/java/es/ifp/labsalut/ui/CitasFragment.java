@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -363,12 +364,14 @@ public class CitasFragment extends Fragment {
             AssetManager assetManager = context.getAssets();
             InputStream inputStream = assetManager.open("secrets.properties");
             properties.load(inputStream);
-            return properties.getProperty("PLACES_API_KEY");
+            return properties.getProperty("PLACES_API_KEY", "");
         } catch (IOException e) {
             Log.e(TAG, "Error al cargar la clave API desde assets", e);
+            Toast.makeText(context, "Error al cargar API Key", Toast.LENGTH_SHORT).show();
             return ""; // Manejar el error según sea necesario
         }
     }
+
 
     // Método llamado cuando la vista del fragmento es destruida
     @Override
