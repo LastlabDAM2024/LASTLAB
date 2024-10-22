@@ -110,10 +110,10 @@ public class RegistroFragment extends Fragment {
         super.onViewCreated(root, savedInstanceState);
 
         Context context = root.getContext();
-        Activity activity = getActivity();
+        Activity activity = requireActivity();
 
         // Inicializa la base de datos
-        db = new BaseDatos(context);
+        db = new BaseDatos(activity);
 
         // Configura el icono de inicio en el campo de texto de la fecha de nacimiento para mostrar el DatePicker
         binding.textoNaciReg.setStartIconOnClickListener(new View.OnClickListener() {
@@ -129,7 +129,7 @@ public class RegistroFragment extends Fragment {
             public void onClick(View v) {
                 // Verifica si todos los campos están completos
                 if (binding.nombreReg.getText().toString().isEmpty() || binding.mailReg.getText().toString().isEmpty()
-                        || fechaNacimiento.equals("dd  /  mes  /  aaaa") || binding.passReg.getText().toString().isEmpty()
+                        || fechaNacimiento.equals("dd/mes/aaaa") || binding.passReg.getText().toString().isEmpty()
                         || binding.passRepReg.getText().toString().isEmpty()) {
                     Snackbar.make(binding.fragmentRegistro, "Todos los campos son obligatorios", Snackbar.LENGTH_LONG).show();
                 } else {

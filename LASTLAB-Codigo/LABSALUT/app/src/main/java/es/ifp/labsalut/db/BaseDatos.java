@@ -192,8 +192,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     public Usuario getUser(String email) {
         Cursor resultado = null;
-        Usuario contenido = null; // Cambiar a null para identificar si no se encuentra el usuario.
-
+        Usuario contenido = new Usuario();
         if (this.numTotalUsers() > 0) {
             db = this.getReadableDatabase();
 
@@ -202,7 +201,6 @@ public class BaseDatos extends SQLiteOpenHelper {
             resultado = db.rawQuery(query, new String[]{email});
 
             if (resultado.moveToFirst()) {
-                contenido = new Usuario(); // Instanciar contenido solo si se encuentra un usuario.
                 contenido.setIdUsuario(resultado.getInt(resultado.getColumnIndex("id")));
                 contenido.setNombre(resultado.getString(resultado.getColumnIndex("nombre")));
                 contenido.setFechaNacimiento(resultado.getString(resultado.getColumnIndex("fechaNacimiento")));
