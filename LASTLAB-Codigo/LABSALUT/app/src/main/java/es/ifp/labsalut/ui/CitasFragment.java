@@ -2,7 +2,6 @@ package es.ifp.labsalut.ui;
 
 import static com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Build;
@@ -22,7 +21,6 @@ import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.common.api.Status;
@@ -30,7 +28,6 @@ import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
-import com.google.android.material.carousel.CarouselSnapHelper;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -44,16 +41,15 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.time.Instant;
 import java.time.Month;
-import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Properties;
 import java.util.TimeZone;
+
+import javax.crypto.SecretKey;
 
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentCitasBinding;
@@ -61,6 +57,7 @@ import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.CarruselAdapter;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Usuario;
+import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class CitasFragment extends Fragment {
 
@@ -74,6 +71,7 @@ public class CitasFragment extends Fragment {
     // Variables para almacenar los parámetros
     // Usuario actual
     private Usuario user = null;
+    private CifradoAES aes;
     private BaseDatos db;
     private CarruselAdapter carruselAdapter; //adaptador del carrusel
     protected AutocompleteSupportFragment autocompleteDireccion;
@@ -170,14 +168,37 @@ public class CitasFragment extends Fragment {
                 cita.setNombre(binding.nombreCita.getText().toString());
                 cita.setDescripcion(binding.descripCita.getText().toString());
                 cita.setRecordatorio(binding.recordCita.getText().toString());
+                cita.setDireccion(binding.direccionCita.getText().toString());
                 cita.setFecha(binding.fechaCita.getText().toString());
                 cita.setHora(binding.horaCita.getText().toString());
 
-                // FALTA CIFRAR DATOS DE LAS CITAS
+                aes = new CifradoAES();
+                String semilla = user.getEmail() + user.getContrasena();
+                SecretKey secretKey = aes.generarSecretKey(semilla);
+                String encryptNombreCita = "";
+                String encryptDecrip = "";
+                String encryptRecord = "";
+                String encryptDireccion = "";
+                String encryptFecha = "";
+                String encryptHora = "";
+                // Cifrado de datos
+                try {
+                    // Encripta los datos del usuario
+                    encryptNombreCita = aes.encrypt(binding.nombreCita.getText().toString().getBytes(), secretKey);
+                    encryptDecrip = aes.encrypt(binding.descripCita.getText().toString().getBytes(), secretKey);
+                    encryptRecord = aes.encrypt(binding.recordCita.getText().toString().getBytes(), secretKey);
+                    encryptDireccion = aes.encrypt(binding.direccionCita.getText().toString().getBytes(), secretKey);
+                    encryptFecha = aes.encrypt(binding.fechaCita.getText().toString().getBytes(), secretKey);
+                    encryptHora = aes.encrypt(binding.horaCita.getText().toString().getBytes(), secretKey);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
 
-                cita.setIdCita(db.addCita(cita));
+                CitaMedica encrypCita = new CitaMedica(encryptNombreCita,encryptDecrip,encryptRecord,encryptDireccion,encryptFecha,encryptHora);
+                cita.setIdCita(db.addCita(encrypCita));
+                encrypCita.setIdCita(cita.getIdCita());
                 user.setCitaMedica(cita);
-                db.addUserCita(user, cita);
+                db.addUserCita(user, encrypCita);
                 requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_menu, HomeFragment.newInstance(user))
                         .addToBackStack(null)
@@ -352,7 +373,7 @@ public class CitasFragment extends Fragment {
                 } else {
                     horaFormateada = String.valueOf(picker.getHour());
                 }
-                binding.horaCita.setText(horaFormateada + " : " + minutoFormateado);
+                binding.horaCita.setText(horaFormateada + ":" + minutoFormateado);
             }
         });
     }

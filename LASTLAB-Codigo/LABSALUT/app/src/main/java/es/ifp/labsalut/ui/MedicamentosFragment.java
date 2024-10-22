@@ -15,17 +15,18 @@ import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.material.navigation.NavigationView;
 
+import javax.crypto.SecretKey;
+
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentMedicamentosBinding;
-import es.ifp.labsalut.databinding.FragmentSettingsBinding;
 import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Usuario;
+import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class MedicamentosFragment extends Fragment {
 
@@ -36,6 +37,8 @@ public class MedicamentosFragment extends Fragment {
     private FragmentMedicamentosBinding binding;
     private Usuario user = null;
     private BaseDatos db;
+    private CifradoAES aes;
+
     // Constructor vacío requerido
     public MedicamentosFragment() {
     }
@@ -95,9 +98,32 @@ public class MedicamentosFragment extends Fragment {
                 medicamento.setFrecuencia(binding.frecuenciaMed.getText().toString());
                 medicamento.setRecordatorio(binding.recordMed.getText().toString());
 
+                aes = new CifradoAES();
+                String semilla = user.getEmail() + user.getContrasena();
+                SecretKey secretKey = aes.generarSecretKey(semilla);
+                String encryptNombreMed = "";
+                String encryptDosisMed = "";
+                String encryptFrecuenciaMed = "";
+                String encryptRecordMed = "";
+
+                // Cifrado de datos
+                try {
+                    // Encripta los datos del usuario
+                    encryptNombreMed = aes.encrypt(binding.nombreMed.getText().toString().getBytes(), secretKey);
+                    encryptDosisMed = aes.encrypt(binding.dosisMed.getText().toString().getBytes(), secretKey);
+                    encryptFrecuenciaMed = aes.encrypt(binding.frecuenciaMed.getText().toString().getBytes(), secretKey);
+                    encryptRecordMed = aes.encrypt(binding.recordMed.getText().toString().getBytes(), secretKey);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+                Medicamento encrypMed = new Medicamento(encryptNombreMed, encryptDosisMed,encryptFrecuenciaMed,encryptRecordMed);
+                medicamento.setIdMedicamento(db.addMedicamento(encrypMed));
+                encrypMed.setIdMedicamento(medicamento.getIdMedicamento());
+                user.setMedicamentos(medicamento);
+                db.addUserMedi(user, encrypMed);
 
 
-                // FALTA CIFRAR DATOS DE LOS MEDICAMENTOS
                 medicamento.setIdMedicamento(db.addMedicamento(medicamento));
                 user.setMedicamentos(medicamento);
                 db.addUserMedi(user, medicamento);

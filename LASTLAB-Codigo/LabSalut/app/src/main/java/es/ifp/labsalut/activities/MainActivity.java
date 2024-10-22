@@ -14,14 +14,11 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
@@ -30,15 +27,17 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.crypto.SecretKey;
 
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.ActivityMainBinding;
 import es.ifp.labsalut.db.BaseDatos;
+import es.ifp.labsalut.negocio.CitaMedica;
+import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
 import es.ifp.labsalut.seguridad.FingerprintHandler;
@@ -275,8 +274,30 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             usuario.setFechaNacimiento(aes.decrypt(usuario.getFechaNacimiento(), secretKey));
             usuario.setEmail(aes.decrypt(usuario.getEmail(), secretKey));
             usuario.setContrasena(aes.decrypt(usuario.getContrasena(), secretKey));
-            usuario.setAllCitas(db.getAllCitasMedicas(usuario));
-            usuario.setAllMedicamentos(db.getAllMedicamentos(usuario));
+            ArrayList<Serializable>listEncrypCitas = db.getAllCitasMedicas(usuario);
+            for(int i=0;i<listEncrypCitas.size();i++){
+                CitaMedica citaEncryp = (CitaMedica) listEncrypCitas.get(i);
+                CitaMedica citaDecryp = new CitaMedica();
+                citaDecryp.setIdCita(citaEncryp.getIdCita());
+                citaDecryp.setNombre(aes.decrypt(citaEncryp.getNombre(),secretKey));
+                citaDecryp.setDireccion(aes.decrypt(citaEncryp.getDireccion(),secretKey));
+                citaDecryp.setDescripcion(aes.decrypt(citaEncryp.getDescripcion(),secretKey));
+                citaDecryp.setRecordatorio(aes.decrypt(citaEncryp.getRecordatorio(),secretKey));
+                citaDecryp.setFecha(aes.decrypt(citaEncryp.getFecha(),secretKey));
+                citaDecryp.setHora(aes.decrypt(citaEncryp.getHora(),secretKey));
+                usuario.setCitaMedica(citaDecryp);
+            }
+            ArrayList<Serializable> listEncrypMed = db.getAllMedicamentos(usuario);
+            for(int i = 0; i< listEncrypMed.size(); i++){
+                Medicamento medEncryp = (Medicamento) listEncrypMed.get(i);
+                Medicamento medDecryp = new Medicamento();
+                medDecryp.setIdMedicamento(medEncryp.getIdMedicamento());
+                medDecryp.setNombre(aes.decrypt(medEncryp.getNombre(),secretKey));
+                medDecryp.setDosis(aes.decrypt(medEncryp.getDosis(),secretKey));
+                medDecryp.setFrecuencia(aes.decrypt(medEncryp.getFrecuencia(),secretKey));
+                medDecryp.setRecordatorio(aes.decrypt(medEncryp.getRecordatorio(),secretKey));
+                usuario.setMedicamentos(medDecryp);
+            }
         } else {
             usuario = null;
         }
