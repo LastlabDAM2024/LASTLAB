@@ -85,6 +85,32 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
 
     /*
+    Método que borra un medicamento específico del Usuario usando su ID.
+*/
+    public void borrarMedicamento(int idMedicamento) {
+        db = this.getWritableDatabase();
+
+        // Usamos una transacción para mejorar el rendimiento y la seguridad.
+        db.beginTransaction();
+        try {
+            // Preparamos la consulta SQL
+            String sql = "DELETE FROM Medicamentos WHERE id = ?";
+            SQLiteStatement statement = db.compileStatement(sql);
+
+            // Asignamos el id del medicamento a la declaración preparada
+            statement.bindLong(1, idMedicamento);
+            statement.execute();
+
+            db.setTransactionSuccessful(); // Confirmamos la transacción si todo sale bien.
+        } catch (Exception e) {
+            // Manejo de errores
+            e.printStackTrace();
+        } finally {
+            db.endTransaction(); // Cerramos la transacción.
+        }
+    }
+
+    /*
     Metodo que borra las medicamentos del Usuario
      */
     public void borrarAllMedicamentos(Usuario user) {
@@ -115,6 +141,31 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
     }
 
+    /*
+        Método que borra una citaMedica específica del Usuario usando su ID.
+    */
+    public void borrarCita(int idCita) {
+        db = this.getWritableDatabase();
+
+        // Usamos una transacción para mejorar el rendimiento y la seguridad.
+        db.beginTransaction();
+        try {
+            // Preparamos la consulta SQL
+            String sql = "DELETE FROM CitaMedica WHERE id = ?";
+            SQLiteStatement statement = db.compileStatement(sql);
+
+            // Asignamos el id de la cita a la declaración preparada
+            statement.bindLong(1, idCita);
+            statement.execute();
+
+            db.setTransactionSuccessful(); // Confirmamos la transacción si todo sale bien.
+        } catch (Exception e) {
+            // Manejo de errores
+            e.printStackTrace();
+        } finally {
+            db.endTransaction(); // Cerramos la transacción.
+        }
+    }
 
     /*
     Metodo que borra las citasMedicas del Usuario
@@ -228,6 +279,19 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(query, new Object[]{idUser, idMedi});
     }
 
+    /*
+    Método que elimina un medicamento específico asociado a un usuario.
+*/
+    public void eliminarUserMedi(Usuario user, Medicamento medicamento) {
+        db = this.getWritableDatabase();
+        int idUser = user.getIdUsuario();
+        int idMedi = medicamento.getIdMedicamento();
+
+        // Usamos una consulta preparada para evitar inyecciones SQL.
+        String query = "DELETE FROM UsuarioMedicamento WHERE idUser = ? AND idMedicamento = ?";
+        db.execSQL(query, new Object[]{idUser, idMedi});
+    }
+
 
     public void addUserCita(Usuario user, CitaMedica cita) {
         db = this.getWritableDatabase();
@@ -236,6 +300,19 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         // Usamos una consulta preparada para evitar inyecciones SQL.
         String query = "INSERT INTO UsuarioCitaMedica (idUser, idCitaMedica) VALUES (?, ?)";
+        db.execSQL(query, new Object[]{idUser, idCita});
+    }
+
+    /*
+    Método que elimina una cita médica específica asociada a un usuario.
+*/
+    public void eliminarUserCita(Usuario user, CitaMedica cita) {
+        db = this.getWritableDatabase();
+        int idUser = user.getIdUsuario();
+        int idCita = cita.getIdCita();
+
+        // Usamos una consulta preparada para evitar inyecciones SQL.
+        String query = "DELETE FROM UsuarioCitaMedica WHERE idUser = ? AND idCitaMedica = ?";
         db.execSQL(query, new Object[]{idUser, idCita});
     }
 

@@ -142,6 +142,8 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 if (arrayBoolean.size() != 0) {
                     for (int i = arrayBoolean.size() - 1; i >= 0; i--) {
                         adapterMed.removeItem(arrayBoolean.keyAt(i));
+                        db.borrarMedicamento(i);
+                        db.eliminarUserMedi(user,user.getMedicamentos(i));
                     }
                 }
                 adapterMed.reiniciarSparse();
@@ -158,6 +160,8 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 if (arrayBoolean.size() != 0) {
                     for (int i = arrayBoolean.size() - 1; i >= 0; i--) {
                         adapterCita.removeItem(arrayBoolean.keyAt(i));
+                        db.borrarCita(i);
+                        db.eliminarUserCita(user,user.getCitaMedica(i));
                     }
                 }
                 adapterCita.reiniciarSparse();
@@ -228,6 +232,8 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
 
                 // Elimina el elemento deslizado de la lista
                 mAdapter.removeItem(position);
+                db.borrarMedicamento(position);
+                db.eliminarUserMedi(user,user.getMedicamentos(position));
 
                 // Muestra una Snackbar para deshacer la acción de eliminación
                 Snackbar snackbar = Snackbar
@@ -262,6 +268,8 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
 
                 // Elimina el elemento deslizado de la lista
                 mAdapter.removeItem(position);
+                db.borrarCita(position);
+                db.eliminarUserCita(user,user.getCitaMedica(position));
 
                 // Muestra una Snackbar para deshacer la acción de eliminación
                 Snackbar snackbar = Snackbar

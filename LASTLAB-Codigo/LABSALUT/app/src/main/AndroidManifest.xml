@@ -21,10 +21,10 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${PLACES_API_KEY}" /><!-- va en secrets.properties y se parametriza mediante una funcion-->
+            android:value="${MAPS_API_KEY}" /><!-- va en secrets.properties y se parametriza mediante una funcion-->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" /><!-- va en secrets.properties y se parametriza mediante una funcion-->
+            android:value="@integer/google_play_services_version" />
 
         <activity
             android:name=".activities.MenuActivity"
