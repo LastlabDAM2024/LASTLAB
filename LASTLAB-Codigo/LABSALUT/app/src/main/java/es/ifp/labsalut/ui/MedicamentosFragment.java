@@ -8,10 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -93,6 +95,7 @@ public class MedicamentosFragment extends Fragment {
             public void onClick(View v) {
                 Medicamento medicamento = new Medicamento();
 
+                medicamento.setIdMedicamento(user.getAllMedicamentos().size()+1);
                 medicamento.setNombre(binding.nombreMed.getText().toString());
                 medicamento.setDosis(binding.dosisMed.getText().toString());
                 medicamento.setFrecuencia(binding.frecuenciaMed.getText().toString());
@@ -109,24 +112,21 @@ public class MedicamentosFragment extends Fragment {
                 // Cifrado de datos
                 try {
                     // Encripta los datos del usuario
-                    encryptNombreMed = aes.encrypt(binding.nombreMed.getText().toString().getBytes(), secretKey);
-                    encryptDosisMed = aes.encrypt(binding.dosisMed.getText().toString().getBytes(), secretKey);
-                    encryptFrecuenciaMed = aes.encrypt(binding.frecuenciaMed.getText().toString().getBytes(), secretKey);
-                    encryptRecordMed = aes.encrypt(binding.recordMed.getText().toString().getBytes(), secretKey);
+                    encryptNombreMed = aes.encrypt(medicamento.getNombre().getBytes(), secretKey);
+                    encryptDosisMed = aes.encrypt(medicamento.getDosis().getBytes(), secretKey);
+                    encryptFrecuenciaMed = aes.encrypt(medicamento.getFrecuencia().getBytes(), secretKey);
+                    encryptRecordMed = aes.encrypt(medicamento.getRecordatorio().getBytes(), secretKey);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
 
-                Medicamento encrypMed = new Medicamento(encryptNombreMed, encryptDosisMed,encryptFrecuenciaMed,encryptRecordMed);
-                medicamento.setIdMedicamento(db.addMedicamento(encrypMed));
-                encrypMed.setIdMedicamento(medicamento.getIdMedicamento());
+                Medicamento encrypMed = new Medicamento(medicamento.getIdMedicamento(),encryptNombreMed,encryptDosisMed,encryptFrecuenciaMed,encryptRecordMed);
                 user.setMedicamentos(medicamento);
+                encrypMed.setIdMedicamento(medicamento.getIdMedicamento());
+                db.addMedicamento(encrypMed);
+
                 db.addUserMedi(user, encrypMed);
 
-
-                medicamento.setIdMedicamento(db.addMedicamento(medicamento));
-                user.setMedicamentos(medicamento);
-                db.addUserMedi(user, medicamento);
                 requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_menu, HomeFragment.newInstance(user))
                         .addToBackStack(null)
@@ -170,6 +170,10 @@ public class MedicamentosFragment extends Fragment {
                     // Obtener el menú y marcar el elemento correcto
                     Menu menu = navigationView.getMenu();
                     MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    AppCompatActivity activity = SingletonManager.getCurrentActivity();
+                    TextView toolbarText = activity.findViewById(R.id.app_bar_main).findViewById(R.id.toolbar).findViewById(R.id.toolbar_title);
+                    toolbarText.setText("Menú Principal");
+
                     if (homeMenuItem != null) {
                         homeMenuItem.setChecked(true);
                     }

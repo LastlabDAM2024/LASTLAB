@@ -121,7 +121,7 @@ public class MedListAdapter extends RecyclerView.Adapter<MedListAdapter.ListView
                 mOnDataChangeListener.onDataChanged(true);
             }
             if (seleccionados.size() > 1) {
-                notifyItemChanged(holder.getAdapterPosition());
+                notifyItemChanged(holder.getAbsoluteAdapterPosition());
             } else {
                 notifyDataSetChanged();
             }
@@ -263,8 +263,8 @@ public class MedListAdapter extends RecyclerView.Adapter<MedListAdapter.ListView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Serializable serializable = itemList.get(getAdapterPosition());
-                    mListener.onItemMedClick(serializable, getAdapterPosition());
+                    Serializable serializable = itemList.get(getAbsoluteAdapterPosition());
+                    mListener.onItemMedClick(serializable, getAbsoluteAdapterPosition());
                 }
             });
 

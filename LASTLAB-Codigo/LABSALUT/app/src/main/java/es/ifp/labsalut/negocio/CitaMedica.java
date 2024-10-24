@@ -24,7 +24,8 @@ public class CitaMedica implements Serializable {
     }
 
     // Constructor parametrizado de la clase CitaMedica
-    public CitaMedica(String nombre, String fecha, String hora, String descripcion, String recordatorio) {
+    public CitaMedica(int id, String nombre, String fecha, String hora, String descripcion, String recordatorio) {
+        this.idCita = id;
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
@@ -35,7 +36,8 @@ public class CitaMedica implements Serializable {
 
 
     // Constructor parametrizado de la clase CitaMedica
-    public CitaMedica(String nombre, String fecha, String hora, String direccion, String descripcion, String recordatorio) {
+    public CitaMedica(int id,String nombre, String fecha, String hora, String direccion, String descripcion, String recordatorio) {
+        this.idCita = id;
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;

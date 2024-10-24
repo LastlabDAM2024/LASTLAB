@@ -6,10 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -81,6 +83,10 @@ public class SuscripcionFragment extends Fragment {
                     // Obtener el menú y marcar el elemento correcto
                     Menu menu = navigationView.getMenu();
                     MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    AppCompatActivity activity = SingletonManager.getCurrentActivity();
+                    TextView toolbarText = activity.findViewById(R.id.app_bar_main).findViewById(R.id.toolbar).findViewById(R.id.toolbar_title);
+                    toolbarText.setText("Menú Principal");
+
                     if (homeMenuItem != null) {
                         homeMenuItem.setChecked(true);
                     }

@@ -121,7 +121,7 @@ public class CitasListAdapter extends RecyclerView.Adapter<CitasListAdapter.List
                 mOnDataChangeListener.onDataChanged(true);
             }
             if (seleccionados.size() > 1) {
-                notifyItemChanged(holder.getAdapterPosition());
+                notifyItemChanged(holder.getAbsoluteAdapterPosition());
             } else {
                 notifyDataSetChanged();
             }
@@ -264,8 +264,8 @@ public class CitasListAdapter extends RecyclerView.Adapter<CitasListAdapter.List
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Serializable serializable = itemList.get(getAdapterPosition());
-                    mListener.onItemCitaClick(serializable, getAdapterPosition());
+                    Serializable serializable = itemList.get(getAbsoluteAdapterPosition());
+                    mListener.onItemCitaClick(serializable, getAbsoluteAdapterPosition());
                 }
             });
 

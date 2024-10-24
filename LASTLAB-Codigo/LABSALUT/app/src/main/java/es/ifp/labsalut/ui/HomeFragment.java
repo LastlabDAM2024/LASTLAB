@@ -7,10 +7,13 @@ import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -22,6 +25,10 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.crypto.SecretKey;
+
+import es.ifp.labsalut.R;
+import es.ifp.labsalut.databinding.AppBarMenuBinding;
 import es.ifp.labsalut.databinding.FragmentHomeBinding;
 import es.ifp.labsalut.db.BaseDatos;
 import es.ifp.labsalut.negocio.CitaMedica;
@@ -29,6 +36,7 @@ import es.ifp.labsalut.negocio.CitasListAdapter;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.MedListAdapter;
 import es.ifp.labsalut.negocio.Usuario;
+import es.ifp.labsalut.seguridad.CifradoAES;
 
 public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedClickListener, CitasListAdapter.OnItemCitaClickListener {
 
@@ -91,7 +99,7 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
         // Infla el diseño de la vista del fragmento
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        return root;
+                return root;
     }
 
     // Método llamado después de que la vista haya sido creada
@@ -100,6 +108,7 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
         super.onViewCreated(root, savedInstanceState);
         Context context = root.getContext();
         db = new BaseDatos(requireActivity());
+
         ArrayList<Serializable> dataMed = new ArrayList<>();
         ArrayList<Serializable> dataCita= new ArrayList<>();
         // Crea listas de datos de medicamentos y citas médicasç
@@ -218,6 +227,7 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), onBackPressedCallback);
+
     }
 
 
@@ -250,6 +260,40 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 // Configura el color del texto de la acción de la Snackbar
                 snackbar.setActionTextColor(Color.YELLOW);
                 snackbar.show();
+            }
+
+            @Override
+            public void onMoved(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, int fromPos, @NonNull RecyclerView.ViewHolder target, int toPos, int x, int y) {
+                super.onMoved(recyclerView, viewHolder, fromPos, target, toPos, x, y);
+
+                ArrayList<Serializable> medicamentos = mAdapter.getData();
+                db.borrarAllMedicamentos(user);
+                db.eliminarUserAllMedi(user,medicamentos);
+                for(int i=0;i<medicamentos.size();i++){
+                    Medicamento medicamento = (Medicamento) medicamentos.get(i);
+                    medicamento.setIdMedicamento(i+1);
+                    CifradoAES aes = new CifradoAES();
+                    String semilla = user.getEmail() + user.getContrasena();
+                    SecretKey secretKey = aes.generarSecretKey(semilla);
+                    String encryptNombreMed = "";
+                    String encryptDosisMed = "";
+                    String encryptFrecuenciaMed = "";
+                    String encryptRecordMed = "";
+                    // Cifrado de datos
+                    try {
+                        // Encripta los datos del usuario
+                        encryptNombreMed = aes.encrypt(medicamento.getNombre().getBytes(), secretKey);
+                        encryptDosisMed = aes.encrypt(medicamento.getDosis().getBytes(), secretKey);
+                        encryptFrecuenciaMed = aes.encrypt(medicamento.getFrecuencia().getBytes(), secretKey);
+                        encryptRecordMed = aes.encrypt(medicamento.getRecordatorio().getBytes(), secretKey);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    Medicamento encrypMed = new Medicamento(medicamento.getIdMedicamento(),encryptNombreMed,encryptDosisMed,encryptFrecuenciaMed,encryptRecordMed);
+                    db.addMedicamento(encrypMed);
+                    db.addUserMedi(user,encrypMed);
+                }
+                user.setAllMedicamentos(medicamentos);
             }
         };
         // Asocia la funcionalidad de deslizamiento con el RecyclerView
@@ -286,6 +330,43 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 // Configura el color del texto de la acción de la Snackbar
                 snackbar.setActionTextColor(Color.YELLOW);
                 snackbar.show();
+            }
+
+            @Override
+            public void onMoved(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, int fromPos, @NonNull RecyclerView.ViewHolder target, int toPos, int x, int y) {
+                super.onMoved(recyclerView, viewHolder, fromPos, target, toPos, x, y);
+                ArrayList<Serializable> citas = mAdapter.getData();
+                db.borrarAllCitas(user);
+                db.eliminarUserAllCitas(user,citas);
+                for(int i=0;i<citas.size();i++){
+                    CitaMedica citaMedica = (CitaMedica) citas.get(i);
+                    citaMedica.setIdCita(i+1);
+                    CifradoAES aes = new CifradoAES();
+                    String semilla = user.getEmail() + user.getContrasena();
+                    SecretKey secretKey = aes.generarSecretKey(semilla);
+                    String encryptNombreCita = "";
+                    String encryptDecrip = "";
+                    String encryptRecord = "";
+                    String encryptDireccion = "";
+                    String encryptFecha = "";
+                    String encryptHora = "";
+                    // Cifrado de datos
+                    try {
+                        // Encripta los datos del usuario
+                        encryptNombreCita = aes.encrypt(citaMedica.getNombre().getBytes(), secretKey);
+                        encryptDecrip = aes.encrypt(citaMedica.getDescripcion().getBytes(), secretKey);
+                        encryptRecord = aes.encrypt(citaMedica.getRecordatorio().getBytes(), secretKey);
+                        encryptDireccion = aes.encrypt(citaMedica.getDireccion().getBytes(), secretKey);
+                        encryptFecha = aes.encrypt(citaMedica.getFecha().getBytes(), secretKey);
+                        encryptHora = aes.encrypt(citaMedica.getHora().getBytes(), secretKey);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    CitaMedica encrypCita = new CitaMedica(citaMedica.getIdCita(),encryptNombreCita,encryptDecrip,encryptRecord,encryptDireccion,encryptFecha,encryptHora);
+                    db.addCita(encrypCita);
+                    db.addUserCita(user,encrypCita);
+                }
+                user.setAllCitas(citas);
             }
         };
 

@@ -104,7 +104,7 @@ public class DeslizarParaAccion extends ItemTouchHelper.SimpleCallback {
     @Override
     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
                           RecyclerView.ViewHolder target) {
-        mAdapter.onRowMoved(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+        mAdapter.onRowMoved(viewHolder.getAbsoluteAdapterPosition(), target.getAbsoluteAdapterPosition());
         return true;
     }
 

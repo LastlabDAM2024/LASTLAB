@@ -28,8 +28,8 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Aquí se crean las tablas si no existen
         db.execSQL("CREATE TABLE IF NOT EXISTS Usuario (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fechaNacimiento TEXT, email TEXT, pass TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, dosis TEXT, frecuencia TEXT, recordatorio TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT, fecha TEXT,hora TEXT,direccion TEXT, descripcion TEXT, recordatorio TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Medicamento (id INTEGER PRIMARY KEY NOT NULL, nombre TEXT, dosis TEXT, frecuencia TEXT, recordatorio TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS CitaMedica (id INTEGER PRIMARY KEY NOT NULL, nombre TEXT, fecha TEXT,hora TEXT,direccion TEXT, descripcion TEXT, recordatorio TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Suscripcion (email TEXT, esSuscrito BOOLEAN, finSuscripcion TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioMedicamento (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idMedicamento INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS UsuarioCitaMedica (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idUser INTEGER , idCitaMedica INTEGER)");
@@ -292,6 +292,24 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(query, new Object[]{idUser, idMedi});
     }
 
+    /*
+   Método que elimina una cita médica específica asociada a un usuario.
+   */
+    public void eliminarUserAllMedi(Usuario user, ArrayList<Serializable> medicamentos) {
+
+        db = this.getWritableDatabase();
+        int idUser = user.getIdUsuario();
+
+        for(int i=0; i < medicamentos.size();i++){
+            Medicamento medicamento = (Medicamento) medicamentos.get(i);
+            int idMedi = medicamento.getIdMedicamento();
+
+            // Usamos una consulta preparada para evitar inyecciones SQL.
+            String query = "DELETE FROM UsuarioMedicamento WHERE idUser = ? AND idCitaMedica = ?";
+            db.execSQL(query, new Object[]{idUser, idMedi});
+        }
+    }
+
 
     public void addUserCita(Usuario user, CitaMedica cita) {
         db = this.getWritableDatabase();
@@ -305,7 +323,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     /*
     Método que elimina una cita médica específica asociada a un usuario.
-*/
+    */
     public void eliminarUserCita(Usuario user, CitaMedica cita) {
         db = this.getWritableDatabase();
         int idUser = user.getIdUsuario();
@@ -316,63 +334,59 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(query, new Object[]{idUser, idCita});
     }
 
+    /*
+    Método que elimina una cita médica específica asociada a un usuario.
+    */
+    public void eliminarUserAllCitas(Usuario user, ArrayList<Serializable> citas) {
 
-    public int addMedicamento(Medicamento medicamento) {
+        db = this.getWritableDatabase();
+        int idUser = user.getIdUsuario();
+
+        for(int i=0; i < citas.size();i++){
+            CitaMedica cita = (CitaMedica) citas.get(i);
+            int idCita = cita.getIdCita();
+
+            // Usamos una consulta preparada para evitar inyecciones SQL.
+            String query = "DELETE FROM UsuarioCitaMedica WHERE idUser = ? AND idCitaMedica = ?";
+            db.execSQL(query, new Object[]{idUser, idCita});
+        }
+    }
+
+
+    public void addMedicamento(Medicamento medicamento) {
         // Abrir la base de datos en modo escritura
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
 
         // Usar ContentValues para evitar inyecciones SQL
         ContentValues values = new ContentValues();
+        values.put("id", medicamento.getIdMedicamento());
         values.put("nombre", medicamento.getNombre());
         values.put("dosis", medicamento.getDosis());
         values.put("frecuencia", medicamento.getFrecuencia());
         values.put("recordatorio", medicamento.getRecordatorio());
 
         // Insertar el medicamento en la base de datos
-        long id = db.insert("Medicamento", null, values);
-
-        // Comprobar si la inserción fue exitosa
-        return (id != -1) ? (int) id : -1; // Retornar el ID del medicamento o -1 si hubo un error
+        db.insert("Medicamento", null, values);
     }
 
     // Método para añadir una cita médica a la base de datos
-    public int addCita(CitaMedica citaMedica) {
+    public void addCita(CitaMedica citaMedica) {
         db = this.getWritableDatabase();
-        String nombre = citaMedica.getNombre();
-        String fecha = citaMedica.getFecha();
-        String hora = citaMedica.getHora();
-        String direccion = citaMedica.getDireccion();
-        String descripcion = citaMedica.getDescripcion();
-        String recordatorio = citaMedica.getRecordatorio();
 
-        // Usamos una consulta preparada para evitar inyecciones SQL
-        String insertQuery = "INSERT INTO CitaMedica (nombre, fecha, hora, direccion, descripcion, recordatorio) VALUES (?, ?, ?, ?, ?, ?)";
-        db.execSQL(insertQuery, new Object[]{nombre, fecha, hora, direccion, descripcion, recordatorio});
+        // Usar ContentValues para evitar inyecciones SQL
+        ContentValues values = new ContentValues();
+        values.put("id", citaMedica.getIdCita());
+        values.put("nombre", citaMedica.getNombre());
+        values.put("fecha", citaMedica.getFecha());
+        values.put("hora", citaMedica.getHora());
+        values.put("direccion", citaMedica.getDireccion());
+        values.put("descripcion", citaMedica.getDescripcion());
+        values.put("recordatorio", citaMedica.getRecordatorio());
 
-        int id = -1;
-        Cursor resultado = null;
-        int contenido = -1;
 
-        // Solo hacemos la consulta para obtener el ID si hay citas registradas
-        if (this.numTotalCitas() > 0) {
-            db = this.getReadableDatabase();
+        // Insertar el medicamento en la base de datos
+        db.insert("CitaMedica", null, values);
 
-            // Consulta preparada para obtener el ID de la cita
-            String selectQuery = "SELECT id FROM CitaMedica WHERE nombre=? AND fecha=? AND hora=? ORDER BY id DESC";
-            resultado = db.rawQuery(selectQuery, new String[]{nombre, fecha, hora});
-
-            if (resultado.moveToFirst()) {
-                contenido = resultado.getInt(resultado.getColumnIndex("id"));
-                id = contenido;  // Guardamos el ID de la última cita registrada
-            }
-        }
-
-        // Cerrar el cursor si no es nulo
-        if (resultado != null) {
-            resultado.close();
-        }
-
-        return id;
     }
 
 

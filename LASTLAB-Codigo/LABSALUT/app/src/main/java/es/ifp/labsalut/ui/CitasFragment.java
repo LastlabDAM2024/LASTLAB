@@ -13,11 +13,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -165,6 +168,7 @@ public class CitasFragment extends Fragment {
             public void onClick(View v) {
                 CitaMedica cita = new CitaMedica();
 
+                cita.setIdCita(user.getAllCitas().size()+1);
                 cita.setNombre(binding.nombreCita.getText().toString());
                 cita.setDescripcion(binding.descripCita.getText().toString());
                 cita.setRecordatorio(binding.recordCita.getText().toString());
@@ -184,21 +188,22 @@ public class CitasFragment extends Fragment {
                 // Cifrado de datos
                 try {
                     // Encripta los datos del usuario
-                    encryptNombreCita = aes.encrypt(binding.nombreCita.getText().toString().getBytes(), secretKey);
-                    encryptDecrip = aes.encrypt(binding.descripCita.getText().toString().getBytes(), secretKey);
-                    encryptRecord = aes.encrypt(binding.recordCita.getText().toString().getBytes(), secretKey);
-                    encryptDireccion = aes.encrypt(binding.direccionCita.getText().toString().getBytes(), secretKey);
-                    encryptFecha = aes.encrypt(binding.fechaCita.getText().toString().getBytes(), secretKey);
-                    encryptHora = aes.encrypt(binding.horaCita.getText().toString().getBytes(), secretKey);
+                    encryptNombreCita = aes.encrypt(cita.getNombre().getBytes(), secretKey);
+                    encryptDecrip = aes.encrypt(cita.getDescripcion().getBytes(), secretKey);
+                    encryptRecord = aes.encrypt(cita.getRecordatorio().getBytes(), secretKey);
+                    encryptDireccion = aes.encrypt(cita.getDireccion().getBytes(), secretKey);
+                    encryptFecha = aes.encrypt(cita.getFecha().getBytes(), secretKey);
+                    encryptHora = aes.encrypt(cita.getHora().getBytes(), secretKey);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
 
-                CitaMedica encrypCita = new CitaMedica(encryptNombreCita,encryptDecrip,encryptRecord,encryptDireccion,encryptFecha,encryptHora);
-                cita.setIdCita(db.addCita(encrypCita));
-                encrypCita.setIdCita(cita.getIdCita());
+                CitaMedica encrypCita = new CitaMedica(cita.getIdCita(),encryptNombreCita,encryptDecrip,encryptRecord,encryptDireccion,encryptFecha,encryptHora);
                 user.setCitaMedica(cita);
+                encrypCita.setIdCita(cita.getIdCita());
+                db.addCita(encrypCita);
                 db.addUserCita(user, encrypCita);
+
                 requireActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content_menu, HomeFragment.newInstance(user))
                         .addToBackStack(null)
@@ -214,6 +219,10 @@ public class CitasFragment extends Fragment {
                     // Obtener el menú y marcar el elemento correcto
                     Menu menu = navigationView.getMenu();
                     MenuItem homeMenuItem = menu.findItem(R.id.nav_menu); // Asegúrate de que el ID del menú sea correcto
+                    AppCompatActivity activity = SingletonManager.getCurrentActivity();
+                    TextView toolbarText = activity.findViewById(R.id.app_bar_main).findViewById(R.id.toolbar).findViewById(R.id.toolbar_title);
+                    toolbarText.setText("Menú Principal");
+
                     if (homeMenuItem != null) {
                         homeMenuItem.setChecked(true);
                     }

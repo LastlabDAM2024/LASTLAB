@@ -19,7 +19,8 @@ public class Medicamento implements Serializable {
     }
 
     // Constructor parametrizado de la clase Medicamento
-    public Medicamento(String nombre, String dosis, String frecuencia, String recordatorio) {
+    public Medicamento(int id, String nombre, String dosis, String frecuencia, String recordatorio) {
+        this.idMedicamento = id;
         this.nombre = nombre;
         this.dosis = dosis;
         this.frecuencia = frecuencia;

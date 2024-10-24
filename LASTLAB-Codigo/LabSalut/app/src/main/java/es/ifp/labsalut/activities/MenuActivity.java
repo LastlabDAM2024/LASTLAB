@@ -26,6 +26,7 @@ import es.ifp.labsalut.ui.ColorStatusBar;
 import es.ifp.labsalut.ui.HomeFragment;
 import es.ifp.labsalut.ui.MedicamentosFragment;
 import es.ifp.labsalut.ui.SettingsFragment;
+import es.ifp.labsalut.ui.SingletonManager;
 import es.ifp.labsalut.ui.SuscripcionFragment;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,6 +51,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         // Configurar la barra de herramientas
         binding.appBarMain.toolbar.setPopupTheme(com.google.android.material.R.style.Widget_Material3_Light_ActionBar_Solid);
         binding.appBarMain.toolbar.setTitle("");
+        SingletonManager.setCurrentActivity(this);
 
         // Configurar el color de la barra de estado
         ColorStatusBar.colorDinamicStatusBar(this, ColorStatusBar.obtenerColorToolbar(binding.appBarMain.toolbar));
