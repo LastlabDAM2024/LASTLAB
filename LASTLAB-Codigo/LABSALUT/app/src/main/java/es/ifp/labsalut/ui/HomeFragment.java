@@ -269,12 +269,12 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 ArrayList<Serializable> medicamentos = mAdapter.getData();
                 db.borrarAllMedicamentos(user);
                 db.eliminarUserAllMedi(user,medicamentos);
-                for(int i=0;i<medicamentos.size();i++){
+                CifradoAES aes = new CifradoAES();
+                String semilla = user.getEmail() + user.getContrasena();
+                SecretKey secretKey = aes.generarSecretKey(semilla);
+                for(int i=0;i < medicamentos.size();i++){
                     Medicamento medicamento = (Medicamento) medicamentos.get(i);
                     medicamento.setIdMedicamento(i+1);
-                    CifradoAES aes = new CifradoAES();
-                    String semilla = user.getEmail() + user.getContrasena();
-                    SecretKey secretKey = aes.generarSecretKey(semilla);
                     String encryptNombreMed = "";
                     String encryptDosisMed = "";
                     String encryptFrecuenciaMed = "";
@@ -338,12 +338,12 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 ArrayList<Serializable> citas = mAdapter.getData();
                 db.borrarAllCitas(user);
                 db.eliminarUserAllCitas(user,citas);
+                CifradoAES aes = new CifradoAES();
+                String semilla = user.getEmail() + user.getContrasena();
+                SecretKey secretKey = aes.generarSecretKey(semilla);
                 for(int i=0;i<citas.size();i++){
                     CitaMedica citaMedica = (CitaMedica) citas.get(i);
                     citaMedica.setIdCita(i+1);
-                    CifradoAES aes = new CifradoAES();
-                    String semilla = user.getEmail() + user.getContrasena();
-                    SecretKey secretKey = aes.generarSecretKey(semilla);
                     String encryptNombreCita = "";
                     String encryptDecrip = "";
                     String encryptRecord = "";

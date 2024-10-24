@@ -139,6 +139,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         } finally {
             db.endTransaction(); // Cerramos la transacción.
         }
+
     }
 
     /*
@@ -305,7 +306,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             int idMedi = medicamento.getIdMedicamento();
 
             // Usamos una consulta preparada para evitar inyecciones SQL.
-            String query = "DELETE FROM UsuarioMedicamento WHERE idUser = ? AND idCitaMedica = ?";
+            String query = "DELETE FROM UsuarioMedicamento WHERE idUser = ? AND idMedicamento = ?";
             db.execSQL(query, new Object[]{idUser, idMedi});
         }
     }

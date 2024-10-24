@@ -124,7 +124,6 @@ public class MedicamentosFragment extends Fragment {
                 user.setMedicamentos(medicamento);
                 encrypMed.setIdMedicamento(medicamento.getIdMedicamento());
                 db.addMedicamento(encrypMed);
-
                 db.addUserMedi(user, encrypMed);
 
                 requireActivity().getSupportFragmentManager().beginTransaction()
