@@ -89,17 +89,17 @@ public class Usuario implements Serializable {
     }
 
     // Método getter para obtener un medicamento específico del usuario según su identificador
-    public Medicamento getMedicamentos(int idMedicamento) {
+    public Medicamento getMedicamento(int idMedicamento) {
         return (Medicamento) this.medicamentos.get(idMedicamento);
     }
 
     // Método setter para añadir un medicamento al usuario
-    public void setMedicamentos(Medicamento medicamentos) {
+    public void setMedicamento(Medicamento medicamentos) {
         this.medicamentos.add(medicamentos);
     }
 
     // Método para eliminar un medicamento del usuario
-    public void removeMedicamentos(Medicamento medicamentos) {
+    public void removeMedicamento(Medicamento medicamentos) {
         this.medicamentos.remove(medicamentos);
     }
 

@@ -152,7 +152,7 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                     for (int i = arrayBoolean.size() - 1; i >= 0; i--) {
                         adapterMed.removeItem(arrayBoolean.keyAt(i));
                         db.borrarMedicamento(i);
-                        db.eliminarUserMedi(user,user.getMedicamentos(i));
+                        db.eliminarUserMedi(user,user.getMedicamento(i));
                     }
                 }
                 adapterMed.reiniciarSparse();
@@ -243,7 +243,7 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
                 // Elimina el elemento deslizado de la lista
                 mAdapter.removeItem(position);
                 db.borrarMedicamento(position);
-                db.eliminarUserMedi(user,user.getMedicamentos(position));
+                db.eliminarUserMedi(user,user.getMedicamento(position));
 
                 // Muestra una Snackbar para deshacer la acción de eliminación
                 Snackbar snackbar = Snackbar
@@ -435,7 +435,7 @@ public class HomeFragment extends Fragment implements MedListAdapter.OnItemMedCl
             adapterMed.performClickCheckBox(position);
         } else {
             if (position<user.getAllMedicamentos().size()) {
-                Medicamento medicamento = user.getMedicamentos(position);
+                Medicamento medicamento = user.getMedicamento(position);
 
                 CardDialogFragment dialog = CardDialogFragment.newInstance(medicamento);
                 dialog.show(requireActivity().getSupportFragmentManager(), "dialog");

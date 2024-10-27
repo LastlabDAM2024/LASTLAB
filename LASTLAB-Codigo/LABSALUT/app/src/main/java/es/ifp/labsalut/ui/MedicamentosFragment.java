@@ -25,7 +25,6 @@ import javax.crypto.SecretKey;
 import es.ifp.labsalut.R;
 import es.ifp.labsalut.databinding.FragmentMedicamentosBinding;
 import es.ifp.labsalut.db.BaseDatos;
-import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
@@ -121,7 +120,7 @@ public class MedicamentosFragment extends Fragment {
                 }
 
                 Medicamento encrypMed = new Medicamento(medicamento.getIdMedicamento(),encryptNombreMed,encryptDosisMed,encryptFrecuenciaMed,encryptRecordMed);
-                user.setMedicamentos(medicamento);
+                user.setMedicamento(medicamento);
                 encrypMed.setIdMedicamento(medicamento.getIdMedicamento());
                 db.addMedicamento(encrypMed);
                 db.addUserMedi(user, encrypMed);

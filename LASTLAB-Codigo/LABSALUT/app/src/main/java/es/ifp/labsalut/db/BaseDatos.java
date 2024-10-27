@@ -121,7 +121,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.beginTransaction();
         try {
             // Preparamos la consulta SQL
-            String sql = "DELETE FROM Medicamentos WHERE id = ?";
+            String sql = "DELETE FROM Medicamento WHERE id = ?";
             SQLiteStatement statement = db.compileStatement(sql);
 
             for (Serializable med : medicamentos) {
@@ -132,14 +132,13 @@ public class BaseDatos extends SQLiteOpenHelper {
                 statement.execute();
             }
 
-            db.setTransactionSuccessful(); // Confirmamos sitodo sale bien.
+            db.setTransactionSuccessful(); // Confirmamos la transacción si todo sale bien.
         } catch (Exception e) {
             // Manejo de errores
             e.printStackTrace();
         } finally {
             db.endTransaction(); // Cerramos la transacción.
         }
-
     }
 
     /*

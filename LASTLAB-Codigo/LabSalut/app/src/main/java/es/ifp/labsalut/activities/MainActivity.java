@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
             usuario.setEmail(aes.decrypt(usuario.getEmail(), secretKey));
             usuario.setContrasena(aes.decrypt(usuario.getContrasena(), secretKey));
             ArrayList<Serializable>listEncrypCitas = db.getAllCitasMedicas(usuario);
-            for(int i=0;i<listEncrypCitas.size();i++){
+            for(int i=0;i < listEncrypCitas.size();i++){
                 CitaMedica citaEncryp = (CitaMedica) listEncrypCitas.get(i);
                 CitaMedica citaDecryp = new CitaMedica();
                 citaDecryp.setIdCita(citaEncryp.getIdCita());
@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                 usuario.setCitaMedica(citaDecryp);
             }
             ArrayList<Serializable> listEncrypMed = db.getAllMedicamentos(usuario);
-            for(int i = 0; i< listEncrypMed.size(); i++){
+            for(int i = 0; i < listEncrypMed.size(); i++){
                 Medicamento medEncryp = (Medicamento) listEncrypMed.get(i);
                 Medicamento medDecryp = new Medicamento();
                 medDecryp.setIdMedicamento(medEncryp.getIdMedicamento());
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity implements FingerprintHandle
                 medDecryp.setDosis(aes.decrypt(medEncryp.getDosis(),secretKey));
                 medDecryp.setFrecuencia(aes.decrypt(medEncryp.getFrecuencia(),secretKey));
                 medDecryp.setRecordatorio(aes.decrypt(medEncryp.getRecordatorio(),secretKey));
-                usuario.setMedicamentos(medDecryp);
+                usuario.setMedicamento(medDecryp);
             }
         } else {
             usuario = null;
