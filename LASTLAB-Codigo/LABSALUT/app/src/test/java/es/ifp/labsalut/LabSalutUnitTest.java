@@ -67,6 +67,8 @@ public void setUp(){
         assertEquals("nells@gmail.com", usuario.getEmail());
         assertEquals("1993-01-01", usuario.getFechaNacimiento());
         assertEquals("123", usuario.getContrasena());
+
+        mostrarCreaciónUsuario();
     }
 
 
@@ -114,6 +116,9 @@ public void setUp(){
         Medicamento medicamentoRecuperado = (Medicamento) medicamentos.get(0);
         assertEquals("Valium", medicamentoRecuperado.getNombre());
         assertEquals("500 mg", medicamentoRecuperado.getDosis());
+
+
+        mostrarMedicacion();
     }
 
     // Método para mostrar los datos del medicamento creado
@@ -163,12 +168,15 @@ public void setUp(){
         } catch (Exception e) {
             fail("No debería haber excepciones en el proceso de cifrado/descifrado!!");
         }
+
+        mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
     }
 
 
     // Método para mostrar los resultados de cifrado y descifrado
     private void mostrarResultadosCifradoDescifrado(String original, String cifrado, String descifrado) {
-        System.out.println("=== Resultados de Cifrado y Descifrado ===");
+        System.out.println("===========================================");
+        System.out.println("Resultados de Cifrado y Descifrado:");
         System.out.println("Texto Original: " + original);
         System.out.println("Texto Cifrado: " + cifrado);
         System.out.println("Texto Descifrado: " + descifrado);
@@ -201,24 +209,46 @@ public void setUp(){
         assertEquals("Dr. Test", citaRecuperada.getNombre());
         assertEquals("2024-11-02", citaRecuperada.getFecha());
         assertEquals("10:30", citaRecuperada.getHora());
+
+
+        // Imprimir detalles de la cita médica en consola
+        mostrarDetallesCita(citaRecuperada);
     }
 
 
-    // Llama a los métodos de los test para ver los resultados por consola impresos
-    // Se usa el @Afterclass para que todos los resultados de los tests se impriman a lo último juntos y no haya repetición
-
-    @AfterClass
-    public static void imprimeConsola() {
+    // Método para mostrar los detalles de la cita médica
+    private void mostrarDetallesCita(CitaMedica cita) {
         System.out.println("===========================================");
-
-        // Se crea una isntancia de la clase
-        LabSalutUnitTest testInstance = new LabSalutUnitTest();
-        // Se llama luego a cada método
-        testInstance.mostrarCreaciónUsuario();
-        testInstance.mostrarMedicacion();
-        testInstance.mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
-
+        System.out.println("Detalles de la cita médica:");
+        System.out.println("Nombre del médico: " + cita.getNombre());
+        System.out.println("Fecha: " + cita.getFecha());
+        System.out.println("Hora: " + cita.getHora());
+        System.out.println("Descripción: " + cita.getDescripcion());
         System.out.println("===========================================");
     }
+
+
+    /**
+     *     // Llama a los métodos de los test para ver los resultados por consola impresos
+     *     // Se usa el @Afterclass para que todos los resultados de los tests se impriman a lo último juntos y no haya repetición
+     *
+     *     @AfterClass
+     *     public static void imprimeConsola() {
+     *         System.out.println("===========================================");
+     *
+     *         // Se crea una isntancia de la clase
+     *         LabSalutUnitTest testInstance = new LabSalutUnitTest();
+     *         // Se llama luego a cada método
+     *         testInstance.mostrarCreaciónUsuario();
+     *         testInstance.mostrarMedicacion();
+     *         testInstance.mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
+     *
+     *     }
+     */
+
+
+
+
+
 
 }
