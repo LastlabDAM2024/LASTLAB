@@ -238,7 +238,7 @@
       <recent name="es.ifp.labsalut.activities" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LabSalutUnitTest">
+  <component name="RunManager" selected="Gradle.LabSalutUnitTest.testCreacionUsuario">
     <configuration name="MainActivity (1)" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="LabSalut.app.main" />
       <option name="DEPLOY" value="true" />
@@ -643,8 +643,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LabSalutUnitTest" />
         <item itemvalue="Gradle.LabSalutUnitTest.testCreacionUsuario" />
+        <item itemvalue="Gradle.LabSalutUnitTest" />
         <item itemvalue="Gradle.LabSalutUnitTest.testCreaciondeUsuario" />
       </list>
     </recent_temporary>

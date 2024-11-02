@@ -36,7 +36,7 @@ public class LabSalutUnitTest {
 
 @Before
 public void setUp(){
-    usuario =  new Usuario("Test User", "1993-01-01", "nells@gmail.com", "123");
+    usuario =  new Usuario("Nella", "1993-01-01", "nells@gmail.com", "123");
     cifrado = new CifradoAES();
     secretKey = cifrado.generarSecretKey("semillaPrueba");
 }
@@ -61,31 +61,69 @@ public void setUp(){
         // Se verifica después que cada campo tiene el valor que se espera
         // Los datos usados son los mocks creados en el paso anterior!
 
-        assertEquals("Test User", usuario.getNombre());
+        assertEquals("Nella", usuario.getNombre());
         assertEquals("nells@gmail.com", usuario.getEmail());
         assertEquals("1993-01-01", usuario.getFechaNacimiento());
         assertEquals("123", usuario.getContrasena());
     }
 
 
-    // Método para mostrar la URL de la aplicación mock y credenciales
-    public void mostrarAccesoAplicacion() {
-        System.out.println("Credenciales de prueba:");
+    // Método para mostrar  los datos del usuario creado
+    public void mostrarCreaciónUsuario() {
+        System.out.println("Creación de usuario:");
+        System.out.println("Nombre: Nella");
         System.out.println("Usuario: nells@gmail.com");
         System.out.println("Contraseña: 123");
     }
 
 
-    // Llama a mostrarAccesoAplicacion al final del test para imprimir la información
-    @After
-    public void imprimeConsola() {
-        mostrarAccesoAplicacion();
+
+//Segundo Test: Gestión de medicamentos
+
+
+    @Test
+    public void testGestionMedicamentos(){
+
+        //Creación de medicamento mock con sus respectivos parámetros
+
+        Medicamento medicamento = new Medicamento();
+        medicamento.setNombre("Valium");
+        medicamento.setDosis("500 mg");
+        medicamento.setFrecuencia("Cada 12 hs");
+
+
+        //Añadir medicamento al usuario
+
+
+        usuario.setMedicamento(medicamento);
+
+        //Se verifica que el usuario se haya añadido bien
+
+        ArrayList medicamentos = usuario.getAllMedicamentos();
+        assertTrue("La lista de medicamentos no tiene que estar vacía!", medicamentos.size() > 0);
+        assertEquals("Tendría que haber exactamente 1 medicamento", 1, medicamentos.size());
+
+        // Verificamos que los datos del medicamento son correctos
+        Medicamento medicamentoRecuperado = (Medicamento) medicamentos.get(0);
+        assertEquals("Valium", medicamentoRecuperado.getNombre());
+        assertEquals("500 mg", medicamentoRecuperado.getDosis());
+    }
+
+    // Método para mostrar los datos del medicamento creado
+    public void mostrarMedicacion() {
+        System.out.println("Creación de medicamento:");
+        System.out.println("Nombre medicamento: Valium");
+        System.out.println("Dosis: 500 mg");
     }
 
 
 
 
-
-
+    // Llama a los métodos de los test para ver los resultados por consola impresos
+    @After
+    public void imprimeConsola() {
+        mostrarCreaciónUsuario();
+        mostrarMedicacion();
+    }
 
 }
