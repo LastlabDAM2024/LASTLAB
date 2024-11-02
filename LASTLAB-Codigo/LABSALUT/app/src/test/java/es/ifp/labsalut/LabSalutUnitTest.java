@@ -4,8 +4,10 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import org.junit.AfterClass;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -134,9 +136,9 @@ public void setUp(){
      */
 
 
-    private String textoOriginal;
-    private String textoCifrado;
-    private String textoDescifrado;
+    private static String textoOriginal;
+    private static String textoCifrado;
+    private static String textoDescifrado;
 
     @Test
     public void testCifradoDescifrado() {
@@ -203,12 +205,19 @@ public void setUp(){
 
 
     // Llama a los métodos de los test para ver los resultados por consola impresos
-    @After
-    public void imprimeConsola() {
+    // Se usa el @Afterclass para que todos los resultados de los tests se impriman a lo último juntos y no haya repetición
+
+    @AfterClass
+    public static void imprimeConsola() {
         System.out.println("===========================================");
-        mostrarCreaciónUsuario();
-        mostrarMedicacion();
-        mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
+
+        // Se crea una isntancia de la clase
+        LabSalutUnitTest testInstance = new LabSalutUnitTest();
+        // Se llama luego a cada método
+        testInstance.mostrarCreaciónUsuario();
+        testInstance.mostrarMedicacion();
+        testInstance.mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
+
         System.out.println("===========================================");
     }
 
