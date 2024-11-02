@@ -80,6 +80,11 @@ public void setUp(){
 
 //Segundo Test: Gestión de medicamentos
 
+    /**
+     * Este segundo Test Unitario lo que hará es crear de manera ficticia un medicamento con sus respectivos parámetros y a través del método
+     * mostrarMedicacion() imprimirá en consola los detalles de los datos ingresados en caso de que el test de positivo
+     */
+
 
     @Test
     public void testGestionMedicamentos(){
@@ -111,19 +116,73 @@ public void setUp(){
 
     // Método para mostrar los datos del medicamento creado
     public void mostrarMedicacion() {
+        System.out.println("===========================================");
         System.out.println("Creación de medicamento:");
         System.out.println("Nombre medicamento: Valium");
         System.out.println("Dosis: 500 mg");
+        System.out.println("===========================================");
     }
 
 
+    // Tercer Test: Sistema de cifrado
+
+    /**
+     * Esta tercera prueba unitaria es para ver qe el sistema de cifrado funcione correctamente
+     * Al igual que las últimas dos pruebas, se mostrará impreso en consola los datos fake/ mock en casod e que la prueba
+     * de positiva.
+     * De esta manera verificamos que el sistema de seguridad de la app sea funcional y protega los datos del usuario.
+     */
+
+
+    private String textoOriginal;
+    private String textoCifrado;
+    private String textoDescifrado;
+
+    @Test
+    public void testCifradoDescifrado() {
+        try {
+            // Texto que vamos a cifrar
+            textoOriginal = "Holis! Esto es un texto de prueba para cifrar";
+
+            // Ciframos el texto
+            textoCifrado = cifrado.encrypt(textoOriginal.getBytes(), secretKey);
+
+            // Verificamos que el texto cifrado no es igual al original
+            assertNotEquals("El texto cifrado debe ser diferente al original!",
+                    textoOriginal, textoCifrado);
+
+            // Desciframos el texto
+            textoDescifrado = cifrado.decrypt(textoCifrado, secretKey);
+
+            // Verificamos que el texto descifrado es igual al original
+            assertEquals("El texto descifrado debe ser igual al original",
+                    textoOriginal, textoDescifrado);
+
+        } catch (Exception e) {
+            fail("No debería haber excepciones en el proceso de cifrado/descifrado!!");
+        }
+    }
+
+
+    // Método para mostrar los resultados de cifrado y descifrado
+    private void mostrarResultadosCifradoDescifrado(String original, String cifrado, String descifrado) {
+        System.out.println("=== Resultados de Cifrado y Descifrado ===");
+        System.out.println("Texto Original: " + original);
+        System.out.println("Texto Cifrado: " + cifrado);
+        System.out.println("Texto Descifrado: " + descifrado);
+        System.out.println("===========================================");
+    }
 
 
     // Llama a los métodos de los test para ver los resultados por consola impresos
     @After
     public void imprimeConsola() {
+        System.out.println("===========================================");
         mostrarCreaciónUsuario();
         mostrarMedicacion();
+        mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
+        System.out.println("===========================================");
     }
+
 
 }

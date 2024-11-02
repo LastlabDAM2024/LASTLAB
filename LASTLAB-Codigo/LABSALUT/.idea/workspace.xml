@@ -202,8 +202,10 @@
     "Android App.MainActivity.executor": "Run",
     "Android App.app.executor": "Run",
     "Gradle.LabSalutUnitTest.executor": "Run",
+    "Gradle.LabSalutUnitTest.testCifradoDescifrado.executor": "Run",
     "Gradle.LabSalutUnitTest.testCreacionUsuario.executor": "Run",
     "Gradle.LabSalutUnitTest.testCreaciondeUsuario.executor": "Run",
+    "Gradle.LabSalutUnitTest.testGestionMedicamentos.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -238,7 +240,7 @@
       <recent name="es.ifp.labsalut.activities" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LabSalutUnitTest.testCreacionUsuario">
+  <component name="RunManager" selected="Gradle.LabSalutUnitTest.testCifradoDescifrado">
     <configuration name="MainActivity (1)" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="LabSalut.app.main" />
       <option name="DEPLOY" value="true" />
@@ -593,6 +595,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="LabSalutUnitTest.testCifradoDescifrado" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+            <option value="--tests" />
+            <option value="&quot;es.ifp.labsalut.LabSalutUnitTest.testCifradoDescifrado&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="LabSalutUnitTest.testCreacionUsuario" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -641,8 +667,34 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="LabSalutUnitTest.testGestionMedicamentos" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+            <option value="--tests" />
+            <option value="&quot;es.ifp.labsalut.LabSalutUnitTest.testGestionMedicamentos&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LabSalutUnitTest.testCifradoDescifrado" />
+        <item itemvalue="Gradle.LabSalutUnitTest.testGestionMedicamentos" />
         <item itemvalue="Gradle.LabSalutUnitTest.testCreacionUsuario" />
         <item itemvalue="Gradle.LabSalutUnitTest" />
         <item itemvalue="Gradle.LabSalutUnitTest.testCreaciondeUsuario" />
