@@ -4,23 +4,27 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import org.junit.AfterClass;
-
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-
 import java.util.ArrayList;
 import es.ifp.labsalut.negocio.CitaMedica;
 import es.ifp.labsalut.negocio.Medicamento;
 import es.ifp.labsalut.negocio.Usuario;
 import es.ifp.labsalut.seguridad.CifradoAES;
-
 import javax.crypto.SecretKey;
+
+
+/**
+ * En esta clase se llevan a cabo test unitarios de diferentes features de la aplicación
+ * - Creación de Usuario
+ * - Creación de medicamentos
+ * - Creación de Cita Médica
+ * - Cifrado y descifrado de la aplicación
+ * Si los tests dan positivos, se verán refleados en consola con los respectivos datos mock usados
+ */
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = 33) // Importante poner esto! O no funcionará Robotics para el mock data (su versión máxima es 33)
