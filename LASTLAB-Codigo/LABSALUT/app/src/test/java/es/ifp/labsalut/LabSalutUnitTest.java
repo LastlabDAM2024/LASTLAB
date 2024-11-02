@@ -174,6 +174,34 @@ public void setUp(){
     }
 
 
+
+
+    // CUARTO TEST: Gestión de citas médicas
+    @Test
+    public void testGestionCitasMedicas() {
+        // Creamos una nueva cita médica
+        CitaMedica cita = new CitaMedica();
+        cita.setNombre("Dr. Test");
+        cita.setFecha("2024-11-02");
+        cita.setHora("10:30");
+        cita.setDescripcion("Revisión general");
+
+        // Añadimos la cita al usuario
+        usuario.setCitaMedica(cita);
+
+        // Verificamos que se añadió correctamente
+        ArrayList citas = usuario.getAllCitas();
+        assertTrue("La lista de citas no debería estar vacía", citas.size() > 0);
+        assertEquals("Debería haber exactamente 1 cita", 1, citas.size());
+
+        // Verificamos que los datos de la cita son correctos
+        CitaMedica citaRecuperada = (CitaMedica) citas.get(0);
+        assertEquals("Dr. Test", citaRecuperada.getNombre());
+        assertEquals("2024-11-02", citaRecuperada.getFecha());
+        assertEquals("10:30", citaRecuperada.getHora());
+    }
+
+
     // Llama a los métodos de los test para ver los resultados por consola impresos
     @After
     public void imprimeConsola() {
@@ -183,6 +211,5 @@ public void setUp(){
         mostrarResultadosCifradoDescifrado(textoOriginal, textoCifrado, textoDescifrado);
         System.out.println("===========================================");
     }
-
 
 }
