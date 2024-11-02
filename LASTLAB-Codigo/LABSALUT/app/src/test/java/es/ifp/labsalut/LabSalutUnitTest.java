@@ -191,6 +191,13 @@ public void setUp(){
 
 
     // CUARTO TEST: Gestión de citas médicas
+
+    /**
+     * Este test unitario se basa en el feature de creación de cita médica, donde se agregan con mocks usando Robotics datos falsos
+     * para rellenar los parámetros del objeto cita de la clae CitaMedica, y si el test da positivo, los resultados se verán impresos
+     * en consola a través del método mostrarDetallesCita()
+     */
+
     @Test
     public void testGestionCitasMedicas() {
         // Creamos una nueva cita médica
