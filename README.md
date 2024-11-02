@@ -1,7 +1,7 @@
 # INTRODUCCIÓN DEL PROYECTO LABSALUT
 
 
-##  LABSALUT - Gestión Médica Revolucionaria 🚀💊
+## 🚀💊 LABSALUT - Gestión Médica Revolucionaria 🚀💊
 
 
 ### Descripción
@@ -41,7 +41,7 @@ La estructura del proyecto sigue el patrón MVVC para la organización del códi
       - RegistroFragment.java
       - SettingsFragment.java
 
-      
+
 ### Componentes Principales
 
 
@@ -51,24 +51,41 @@ La estructura del proyecto sigue el patrón MVVC para la organización del códi
     SQLite Database (BaseDatos.java): Administra el almacenamiento local de los datos de usuarios, citas, medicamentos, etc.
 
 
-### Diagrama de la Estructura
+### Diagrama de Despliegue
 
-                  +---------------------+
-                  |      Cliente         |
-                  | (Dispositivo Móvil)  |
-                  +---------------------+
-                       /          \
-        +-----------------+  +----------------------+
-        | MainActivity     |  |  CitasFragment       |
-        +-----------------+  +----------------------+
-                                  |
-                         +-----------------+
-                         | ModListAdapter   |
-                         +-----------------+
-                                  |
-                         +-----------------+
-                         |     SQLite       |
-                         +-----------------+
+
+![Diagrama de Despliegue](https://github.com/LastlabDAM2024/LASTLAB/blob/main/DIAGRAMA_DESPLIEGUE.png)
+
+
+        Explicación de los componentes:
+        
+        Cliente (Dispositivo Móvil):
+        
+        Representa el dispositivo del usuario final donde se ejecuta la aplicación.
+        
+        
+        MainActivity:
+        
+        Es la actividad principal de la aplicación Android.
+        Sirve como punto de entrada y controla la navegación general.
+        
+        
+        CitasFragment:
+        
+        Un fragmento que maneja la interfaz de usuario para la gestión de citas.
+        Probablemente muestra una lista de citas y permite interacciones como agregar, editar o eliminar citas.
+        
+        
+        ModListAdapter:
+        
+        Adaptador personalizado para la lista de citas.
+        Se encarga de vincular los datos de las citas con la vista de lista en la interfaz de usuario.
+        
+        
+        SQLite:
+        
+        Base de datos local utilizada para almacenar y gestionar los datos de las citas en el dispositivo.
+        Proporciona persistencia de datos y operaciones CRUD (Crear, Leer, Actualizar, Eliminar).
 
 
 ### Instalación
@@ -76,7 +93,7 @@ La estructura del proyecto sigue el patrón MVVC para la organización del códi
 1) Clonar el repositorio:
 
         git clone https://github.com/usuario/labsalut-app.git
-   
+
 2)Abrir el proyecto en Android Studio:
 
       Una vez clonado el repositorio, abre Android Studio y selecciona la opción "Open an existing Android Studio project". Navega hasta el directorio donde clonaste el repositorio y ábrelo.
@@ -104,7 +121,7 @@ La estructura del proyecto sigue el patrón MVVC para la organización del códi
      - Seguridad:  
       Se incluye un sistema de seguridad básico con cifrado AES (CifradoAES.java) para proteger la información sensible de los usuarios. 🔒
 
-      
+
 ### Contribuciones
 
 Pasos para contribuir a este proyecto:
@@ -116,7 +133,7 @@ Pasos para contribuir a este proyecto:
 
       git checkout -b feature/nueva-caracteristica
 3)Realiza los cambios y haz commit:
-      
+
       git commit -m "Descripción de los cambios"
 Envía tu rama a GitHub:
 
@@ -134,11 +151,10 @@ Este proyecto está bajo la licencia MIT. Puedes ver los detalles en el archivo 
       Guía del patrón MVVC
       Documentación SQLite para Android
 
-      
+
 ### Autores
 
         -Teresa Herrera
         -Ornella Sofía Gigante
         -Benjamín José Ruiz Amara
         -José Antonio Moreno Fernández
-
