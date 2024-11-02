@@ -8,194 +8,266 @@
 8        android:minSdkVersion="21"
 9        android:targetSdkVersion="34" />
 10
-11    <!-- Permisos para internet y estado de la red -->
-12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:6:5-67
-12-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:6:22-64
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 13-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:7:5-79
 13-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:7:22-76
-14
-15    <!-- Permiso para usar autenticación biométrica -->
-16    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-16-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:10:5-72
-16-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:10:22-69
-17
-18    <!-- suppress DeprecatedClassUsageInspection -->
-19    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-19-->[androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1c1e2b7bbea1bdc46525fad02f911009\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
-19-->[androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1c1e2b7bbea1bdc46525fad02f911009\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
-20
-21    <permission
-21-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\993b6c97eaa06c0c3403c3d65edd0d90\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-22        android:name="es.ifp.labsalut.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-22-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\993b6c97eaa06c0c3403c3d65edd0d90\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-23        android:protectionLevel="signature" />
-23-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\993b6c97eaa06c0c3403c3d65edd0d90\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-24
-25    <uses-permission android:name="es.ifp.labsalut.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-25-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\993b6c97eaa06c0c3403c3d65edd0d90\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-25-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\993b6c97eaa06c0c3403c3d65edd0d90\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-26
-27    <application
-27-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:12:5-57:19
-28        android:allowBackup="true"
-28-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:13:9-35
-29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\993b6c97eaa06c0c3403c3d65edd0d90\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-30        android:dataExtractionRules="@xml/data_extraction_rules"
-30-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:14:9-65
-31        android:debuggable="true"
-32        android:extractNativeLibs="true"
-33        android:fullBackupContent="@xml/backup_rules"
-33-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:15:9-54
-34        android:icon="@mipmap/ic_launcher"
-34-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:16:9-43
-35        android:label="@string/app_name"
-35-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:17:9-41
-36        android:roundIcon="@mipmap/ic_launcher_round"
-36-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:18:9-54
-37        android:supportsRtl="true"
-37-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:19:9-35
-38        android:testOnly="true"
-39        android:theme="@style/AppTheme" >
-39-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:20:9-40
-40        <activity
-40-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:23:9-25:40
-41            android:name="es.ifp.labsalut.activities.MenuActivity"
-41-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:24:13-52
-42            android:exported="false" />
-42-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:25:13-37
-43        <activity
-43-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:27:9-29:40
-44            android:name="es.ifp.labsalut.activities.MenuBottomActivity"
-44-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:28:13-58
-45            android:exported="false" />
-45-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:29:13-37
-46        <activity
-46-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:31:9-33:40
-47            android:name="es.ifp.labsalut.activities.RegistroActivity"
-47-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:32:13-56
-48            android:exported="false" />
-48-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:33:13-37
-49        <activity
-49-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:35:9-43:20
-50            android:name="es.ifp.labsalut.activities.MainActivity"
-50-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:36:13-52
-51            android:exported="true"
-51-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:37:13-36
-52            android:label="@string/app_name" >
-52-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:38:13-45
-53            <intent-filter>
-53-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:39:13-42:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:40:17-69
-54-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:40:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:41:17-77
-56-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:41:27-74
-57            </intent-filter>
-58        </activity>
-59
-60        <!-- Nueva actividad para agregar suscripción -->
+14    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+14-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:8:5-89
+14-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:8:22-86
+15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+15-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:9:5-81
+15-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:9:22-78
+16    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
+16-->[androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:24:5-72
+16-->[androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:24:22-69
+17    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+17-->[androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
+17-->[androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
+18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+18-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:11:5-76
+18-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:11:22-73
+19
+20    <uses-feature
+20-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+21        android:glEsVersion="0x00020000"
+21-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+22        android:required="true" />
+22-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+23
+24    <queries>
+24-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
+25
+26        <!-- Needs to be explicitly declared on Android R+ -->
+27        <package android:name="com.google.android.apps.maps" />
+27-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+27-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+28    </queries>
+29
+30    <permission
+30-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+31        android:name="es.ifp.labsalut.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="es.ifp.labsalut.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+35
+36    <application
+36-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:11:5-48:19
+37        android:allowBackup="true"
+37-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:12:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+39        android:dataExtractionRules="@xml/data_extraction_rules"
+39-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:13:9-65
+40        android:debuggable="true"
+41        android:extractNativeLibs="true"
+42        android:fullBackupContent="@xml/backup_rules"
+42-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:14:9-54
+43        android:icon="@mipmap/ic_launcher"
+43-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:15:9-43
+44        android:label="@string/app_name"
+44-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:16:9-41
+45        android:roundIcon="@mipmap/ic_launcher_round"
+45-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:17:9-54
+46        android:supportsRtl="true"
+46-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:18:9-35
+47        android:theme="@style/AppTheme" >
+47-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:19:9-40
+48        <meta-data
+49            android:name="com.google.android.geo.API_KEY"
+49-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:23:13-58
+50            android:value="AIzaSyDON50Tjg4daoZcK1khXZlEtHrDNEulVNw" /> <!-- va en secrets.properties y se parametriza mediante una funcion -->
+50-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:24:13-44
+51        <meta-data
+51-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:25:9-27:69
+52            android:name="com.google.android.gms.version"
+52-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:26:13-58
+53            android:value="@integer/google_play_services_version" />
+53-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:27:13-66
+54
+55        <activity
+55-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:29:9-31:40
+56            android:name="es.ifp.labsalut.activities.MenuActivity"
+56-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:30:13-52
+57            android:exported="false" />
+57-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:31:13-37
+58        <activity
+58-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:32:9-34:40
+59            android:name="es.ifp.labsalut.activities.MenuBottomActivity"
+59-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:33:13-58
+60            android:exported="false" />
+60-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:34:13-37
 61        <activity
-61-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:46:9-49:51
-62            android:name="es.ifp.labsalut.ui.AgregarSuscripcionActivity"
-62-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:47:13-58
-63            android:exported="true"
-63-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:48:13-36
-64            android:label="Agregar Suscripción" />
-64-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:49:13-48
-65
-66        <!-- Nueva actividad para cancelar suscripción -->
-67        <activity
-67-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:52:9-55:52
-68            android:name="es.ifp.labsalut.ui.CancelarSuscripcionActivity"
-68-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:53:13-59
-69            android:exported="true"
-69-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:54:13-36
-70            android:label="Cancelar Suscripción" />
-70-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:55:13-49
-71
-72        <provider
-72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-73            android:name="androidx.startup.InitializationProvider"
-73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-74            android:authorities="es.ifp.labsalut.androidx-startup"
-74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-75            android:exported="false" >
-75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-76            <meta-data
-76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-78                android:value="androidx.startup" />
-78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\74096b23618645401bd16134b6592bd8\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-79            <meta-data
-79-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\34f72e72eb8d0bf108a923fe64ccb0cb\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-80-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\34f72e72eb8d0bf108a923fe64ccb0cb\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-81                android:value="androidx.startup" />
-81-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\34f72e72eb8d0bf108a923fe64ccb0cb\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-82            <meta-data
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-84                android:value="androidx.startup" />
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-85        </provider>
-86
-87        <uses-library
-87-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7a43ee64166dc8a0dc452dd8f53c69c2\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-88            android:name="androidx.window.extensions"
-88-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7a43ee64166dc8a0dc452dd8f53c69c2\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-89            android:required="false" />
-89-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7a43ee64166dc8a0dc452dd8f53c69c2\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-90        <uses-library
-90-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7a43ee64166dc8a0dc452dd8f53c69c2\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-91            android:name="androidx.window.sidecar"
-91-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7a43ee64166dc8a0dc452dd8f53c69c2\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-92            android:required="false" />
-92-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7a43ee64166dc8a0dc452dd8f53c69c2\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-93
-94        <receiver
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-95            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-96            android:directBootAware="false"
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-97            android:enabled="true"
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-98            android:exported="true"
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-99            android:permission="android.permission.DUMP" >
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-101                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-104                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-107                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-108            </intent-filter>
-109            <intent-filter>
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-110                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\237abdfec630cefed86bc1db714c9b22\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-111            </intent-filter>
-112        </receiver>
-113    </application>
-114
-115</manifest>
+61-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:35:9-37:40
+62            android:name="es.ifp.labsalut.activities.RegistroActivity"
+62-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:36:13-56
+63            android:exported="false" />
+63-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:37:13-37
+64        <activity
+64-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:38:9-47:20
+65            android:name="es.ifp.labsalut.activities.MainActivity"
+65-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:39:13-52
+66            android:exported="true"
+66-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:40:13-36
+67            android:label="@string/app_name" >
+67-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:41:13-45
+68            <intent-filter>
+68-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:42:13-46:29
+69                <action android:name="android.intent.action.MAIN" />
+69-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:43:17-69
+69-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:43:25-66
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+71-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:45:17-77
+71-->C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:45:27-74
+72            </intent-filter>
+73        </activity>
+74        <activity
+74-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:15:9-21:20
+75            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
+75-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:16:13-91
+76            android:exported="false"
+76-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:17:13-37
+77            android:label="@string/places_autocomplete_label"
+77-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:18:13-62
+78            android:theme="@style/PlacesAutocompleteOverlay"
+78-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:19:13-61
+79            android:windowSoftInputMode="adjustResize" >
+79-->[com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:20:13-55
+80        </activity> <!-- Needs to be explicitly declared on P+ -->
+81        <uses-library
+81-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+82            android:name="org.apache.http.legacy"
+82-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+83            android:required="false" />
+83-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+84
+85        <activity
+85-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+86            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+86-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+87            android:exported="false"
+87-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+88-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+89
+90        <provider
+90-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+91            android:name="androidx.startup.InitializationProvider"
+91-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+92            android:authorities="es.ifp.labsalut.androidx-startup"
+92-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+93            android:exported="false" >
+93-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+94            <meta-data
+94-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+95-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+96                android:value="androidx.startup" />
+96-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+98-->[androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:30:17-78
+99                android:value="androidx.startup" />
+99-->[androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:31:17-49
+100            <meta-data
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+101                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+102                android:value="androidx.startup" />
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+103        </provider>
+104
+105        <uses-library
+105-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+106            android:name="androidx.window.extensions"
+106-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+107            android:required="false" />
+107-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+108        <uses-library
+108-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+109            android:name="androidx.window.sidecar"
+109-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+110            android:required="false" />
+110-->[androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131
+132        <service
+132-->[com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:26:9-32:19
+133            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+133-->[com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:27:13-103
+134            android:exported="false" >
+134-->[com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:28:13-37
+135            <meta-data
+135-->[com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:29:13-31:39
+136                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+136-->[com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:30:17-94
+137                android:value="cct" />
+137-->[com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:31:17-36
+138        </service>
+139        <service
+139-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:24:9-28:19
+140            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+140-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:25:13-117
+141            android:exported="false"
+141-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:26:13-37
+142            android:permission="android.permission.BIND_JOB_SERVICE" >
+142-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:27:13-69
+143        </service>
+144
+145        <receiver
+145-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:30:9-32:40
+146            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+146-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:31:13-132
+147            android:exported="false" />
+147-->[com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:32:13-37
+148    </application>
+149
+150</manifest>

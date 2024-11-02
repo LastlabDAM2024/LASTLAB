@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="duracion_array">
-            <item>1 mes</item>
-            <item>6 meses</item>
-            <item>1 año</item>
-        </string-array>
+        <item>1 Mes</item>
+        <item>1 Año</item>
+    </string-array>
     <string-array name="reply_entries">
         <item>Reply</item>
         <item>Reply to all</item>
@@ -54,9 +53,9 @@
         <item>1 hora</item>
     </string-array>
     <string-array name="tipo_suscripcion_array">
-            <item>Normal</item>
-            <item>Premium</item>
-        </string-array>
+        <item>Normal</item>
+        <item>Premium</item>
+    </string-array>
     <color name="md_theme_background">#F9F9FF</color>
     <color name="md_theme_background_highContrast">#F9F9FF</color>
     <color name="md_theme_background_mediumContrast">#F9F9FF</color>
@@ -200,6 +199,9 @@
     <color name="md_theme_tertiary_mediumContrast">#523A58</color>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="botton_fragment">30dp</dimen>
+    <dimen name="carousel_interSpacing">8dp</dimen>
+    <dimen name="carousel_spacing">24dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
@@ -219,6 +221,7 @@
     <string name="attachment_title">Download incoming attachments</string>
     <string name="desc_fingerprint">Coloque la yema del dedo en el escáner para verificar su identidad</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="maps_api_key" translatable="false">AIzaSyDON50Tjg4daoZcK1khXZlEtHrDNEulVNw</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_home">Home</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -229,6 +232,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="note">(El inicio de sesión con la huella dactilar hace que la aplicación inicie sesión mucho más rápido. Su dispositivo debe tener al menos una huella digital registrada en la configuración del dispositivo)</string>
+    <string name="places_api_key" translatable="false">AIzaSyC8xD4v8L_r9hASyPePdsB8IJCqeSMlcog</string>
     <string name="reply_title">Default reply action</string>
     <string name="signature_title">Your signature</string>
     <string name="sync_header">Sync</string>
@@ -237,7 +241,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_fingerprint">Logueo con un toque</string>
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -286,7 +290,32 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="dialogTheme">@style/MyDialogTheme</item>
 
+    </style>
+    <style name="DialogExpandFromTouchAnimation">
+        <item name="android:windowEnterAnimation">@anim/expand_from_touch</item>
+        <item name="android:windowExitAnimation">@anim/shrink_and_fade_out</item>
+    </style>
+    <style name="DialogFadeAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+    <style name="DialogRotateAnimation">
+        <item name="android:windowEnterAnimation">@anim/rotate_in</item>
+        <item name="android:windowExitAnimation">@anim/rotate_out</item>
+    </style>
+    <style name="DialogSlideAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+    <style name="DialogZoomAnimation">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out</item>
+    </style>
+    <style name="MyDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
     <style name="ThemeOverlay.AppTheme.HighContrast" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary_highContrast</item>
@@ -335,6 +364,8 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer_highContrast</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh_highContrast</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_highContrast</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
     <style name="ThemeOverlay.AppTheme.MediumContrast" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary_mediumContrast</item>
@@ -383,5 +414,7 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer_mediumContrast</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh_mediumContrast</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_mediumContrast</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

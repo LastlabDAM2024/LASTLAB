@@ -141,7 +141,7 @@
     <color name="md_theme_tertiaryFixed_mediumContrast">#FAD8FD</color>
     <color name="md_theme_tertiary_highContrast">#FFF9FA</color>
     <color name="md_theme_tertiary_mediumContrast">#E1C0E5</color>
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
@@ -190,6 +190,11 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="dialogTheme">@style/MyDialogTheme</item>
+    </style>
+    <style name="MyDialogTheme" parent="Theme.Material3.Dark.Dialog">
+        <item name="android:windowBackground">@color/md_theme_background</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
     <style name="ThemeOverlay.AppTheme.HighContrast" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary_highContrast</item>
@@ -238,6 +243,8 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer_highContrast</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh_highContrast</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_highContrast</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
     <style name="ThemeOverlay.AppTheme.MediumContrast" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary_mediumContrast</item>
@@ -286,5 +293,7 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer_mediumContrast</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh_mediumContrast</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_mediumContrast</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

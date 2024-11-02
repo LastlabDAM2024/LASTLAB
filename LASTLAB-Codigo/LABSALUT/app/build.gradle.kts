@@ -49,6 +49,17 @@ android {
             )
         }
     }
+
+    //Agregando bloque para el testeo
+
+    testOptions {
+        unitTests.apply {
+            isIncludeAndroidResources = true
+            isReturnDefaultValues = true
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -78,7 +89,20 @@ dependencies {
     implementation (libs.github.glide)
     implementation (libs.material.v150)
     implementation(libs.activity)
+    implementation(libs.annotation)
     testImplementation(libs.testng)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // NUEVAS DEPENDENCIAS PARA TESTING AGREGADAS
+    testImplementation(libs.junit)
+    testImplementation(libs.androidx.test)
+    testImplementation(libs.androidx.test.rules)
+    testImplementation(libs.androidx.test.runner)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.robolectric)
+
+
+
+
 }

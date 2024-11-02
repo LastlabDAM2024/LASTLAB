@@ -1,67 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-45:/values-v23/values-v23.xml",
+            "outputFile": "es.ifp.labsalut.app-mergeDebugResources-51:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ornella Gigante\\OneDrive\\Escritorio\\LASTLAB\\LASTLAB-Codigo\\LABSALUT\\app\\src\\main\\res\\values-v23\\themes.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "59",
-                        "endLines": "53",
-                        "endColumns": "12",
-                        "endOffsets": "4002"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "52",
-                        "endColumns": "12",
-                        "endOffsets": "3948"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\9f7c919c9174af6a6eeb763e70aad3ed\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "101",
-                        "startColumns": "4",
-                        "startOffsets": "7130",
-                        "endLines": "103",
-                        "endColumns": "12",
-                        "endOffsets": "7275"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\044d6b9db9f19cb356b8bf4ba89bd7f9\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
-                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
-                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
-                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
-                    },
-                    "to": {
-                        "startLines": "53,54,55,56,57,71,85,86,87,90,94,95,96,97",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3953,4088,4223,4298,4385,5123,5873,5992,6119,6341,6565,6680,6787,6900",
-                        "endLines": "53,54,55,56,70,84,85,86,89,93,94,95,96,100",
-                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
-                        "endOffsets": "4083,4218,4293,4380,5118,5868,5987,6114,6336,6560,6675,6782,6895,7125"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\fa42ae36e430a8edb511425f03f342cf\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\731ef7658cf17e991c864f1007be0d46\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -71,12 +14,69 @@
                         "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
                     },
                     "to": {
-                        "startLines": "104,107,111,115,118,121,124,127,130,134",
+                        "startLines": "109,112,116,120,123,126,129,132,135,139",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7280,7496,7638,7799,8009,8216,8423,8626,8828,9093",
-                        "endLines": "106,110,114,117,120,123,126,129,133,137",
+                        "startOffsets": "7541,7757,7899,8060,8270,8477,8684,8887,9089,9354",
+                        "endLines": "111,115,119,122,125,128,131,134,138,142",
                         "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "7491,7633,7794,8004,8211,8418,8621,8823,9088,9361"
+                        "endOffsets": "7752,7894,8055,8265,8472,8679,8882,9084,9349,9622"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\7391698ac8fc7ce073b40c97324813dc\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "102",
+                        "startColumns": "4",
+                        "startOffsets": "7188",
+                        "endLines": "104",
+                        "endColumns": "12",
+                        "endOffsets": "7333"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\OneDrive\\Escritorio\\LASTLAB\\LASTLAB-Codigo\\LABSALUT\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "from": {
+                        "startLines": "3,56",
+                        "startColumns": "4,4",
+                        "startOffsets": "59,4069",
+                        "endLines": "54,59",
+                        "endColumns": "12,12",
+                        "endOffsets": "4061,4270"
+                    },
+                    "to": {
+                        "startLines": "2,105",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,7338",
+                        "endLines": "53,108",
+                        "endColumns": "12,12",
+                        "endOffsets": "4006,7536"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\00809b3e2e0fc0c978ebd4c7ddc2f40d\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
+                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
+                    },
+                    "to": {
+                        "startLines": "54,55,56,57,58,72,86,87,88,91,95,96,97,98",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4011,4146,4281,4356,4443,5181,5931,6050,6177,6399,6623,6738,6845,6958",
+                        "endLines": "54,55,56,57,71,85,86,87,90,94,95,96,97,101",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "4141,4276,4351,4438,5176,5926,6045,6172,6394,6618,6733,6840,6953,7183"
                     }
                 }
             ]

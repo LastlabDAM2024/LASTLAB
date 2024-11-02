@@ -24,6 +24,14 @@ securityCrypto = "1.1.0-alpha06"
 activity = "1.9.0"
 viewpager2 = "1.1.0"
 testng = "6.9.6"
+annotation = "1.9.1"
+androidxTest = "1.5.0"
+androidxTestCoreVersion = "1.5.0"
+androidxTestRulesVersion = "1.5.0"
+androidxTestRunnerVersion = "1.5.0"
+mockitoCoreVersion = "5.3.1"
+robolectricVersion = "4.10.3"
+
 
 [libraries]
 design = { module = "com.android.support:design", version.ref = "design" }
@@ -50,6 +58,16 @@ security-crypto = { module = "androidx.security:security-crypto", version.ref = 
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 testng = { group = "org.testng", name = "testng", version.ref = "testng" }
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+
+# Nuevas librerías para testing
+androidx-test = { module = "androidx.test:core", version.ref = "androidxTest" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "androidxTestRulesVersion" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunnerVersion" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockitoCoreVersion" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectricVersion" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
