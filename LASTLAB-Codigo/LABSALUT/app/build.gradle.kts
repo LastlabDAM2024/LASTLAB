@@ -91,6 +91,9 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.annotation)
     testImplementation(libs.testng)
+    testImplementation(libs.androidx.fragment.testing)
+    testImplementation(libs.androidx.fragment.testing)
+    testImplementation(libs.ext.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
@@ -101,8 +104,10 @@ dependencies {
     testImplementation(libs.androidx.test.runner)
     testImplementation(libs.mockito.core)
     testImplementation(libs.robolectric)
-
-
-
-
+    testImplementation(libs.androidx.fragment.testing.v155)
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
+    androidTestImplementation(libs.androidx.fragment.testing.v185)
+    androidTestImplementation(libs.androidx.junit.v121)
+    androidTestImplementation(libs.androidx.espresso.core.v361)
 }
