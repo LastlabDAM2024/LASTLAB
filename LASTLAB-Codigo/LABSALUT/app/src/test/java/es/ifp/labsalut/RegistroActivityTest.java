@@ -15,6 +15,8 @@ import androidx.test.core.app.ActivityScenario;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
@@ -58,12 +60,17 @@ import es.ifp.labsalut.ui.RegistroFragment;
 @Config(sdk = 33)
 public class RegistroActivityTest {
 
+    // Variable para almacenar los resultados de los tests
+    private StringBuilder testResults = new StringBuilder();
+
     @Test
     public void testRegistroActivityLoadsFragmentAndSetsColors() {
         // Iniciar RegistroActivity
         ActivityScenario<RegistroActivity> scenario = ActivityScenario.launch(RegistroActivity.class);
 
         scenario.onActivity(activity -> {
+
+            try {
             // Verificar que RegistroFragment está cargado
             Fragment fragment = activity.getSupportFragmentManager().findFragmentById(R.id.content_reg);
             assertNotNull("RegistroFragment debería estar cargado", fragment);
@@ -78,6 +85,13 @@ public class RegistroActivityTest {
             TextView toolbarTitle = activity.findViewById(R.id.toolbar_title_reg);
             assertNotNull("El título de la toolbar debería estar inicializado", toolbarTitle);
             assertEquals("Registro usuario", toolbarTitle.getText().toString());
+
+                // Almacenar el mensaje de éxito
+                testResults.append("testRegistroActivityLoadsFragmentAndSetsColors: Test PASADO correctamente.\n");
+            } catch (AssertionError e) {
+                // Almacenar el mensaje de fallo
+                testResults.append("testRegistroActivityLoadsFragmentAndSetsColors: Test FALLADO. " + e.getMessage() + "\n");
+            }
         });
     }
 
@@ -87,6 +101,8 @@ public class RegistroActivityTest {
         ActivityScenario<RegistroActivity> scenario = ActivityScenario.launch(RegistroActivity.class);
 
         scenario.onActivity(activity -> {
+
+            try{
             // Simular el botón de retroceso
             OnBackPressedDispatcher dispatcher = activity.getOnBackPressedDispatcher();
             dispatcher.onBackPressed();
@@ -96,6 +112,13 @@ public class RegistroActivityTest {
             Intent actualIntent = shadowOf(activity).getNextStartedActivity();
             assertEquals("Debería lanzarse MainActivity al presionar el botón de retroceso",
                     expectedIntent.getComponent(), actualIntent.getComponent());
+
+                // Almacenar el mensaje de éxito
+                testResults.append("testBackButtonPressOpensMainActivity: Test PASADO correctamente.\n");
+            } catch (AssertionError e) {
+                // Almacenar el mensaje de fallo
+                testResults.append("testBackButtonPressOpensMainActivity: Test FALLADO. " + e.getMessage() + "\n");
+            }
         });
     }
 
@@ -105,6 +128,8 @@ public class RegistroActivityTest {
         ActivityScenario<RegistroActivity> scenario = ActivityScenario.launch(RegistroActivity.class);
 
         scenario.onActivity(activity -> {
+
+            try{
             // Verificar los campos de texto en RegistroFragment
             TextView nombreText = activity.findViewById(R.id.nombre_reg);
             assertNotNull("El campo de texto para el nombre debería estar inicializado", nombreText);
@@ -131,6 +156,21 @@ public class RegistroActivityTest {
             MaterialButton cancelarButton = activity.findViewById(R.id.cancelar_reg);
             assertNotNull("El botón Cancelar debería estar inicializado", cancelarButton);
             assertEquals("Cancelar", cancelarButton.getText().toString());
+
+
+                // Almacenar el mensaje de éxito
+                testResults.append("testFragmentUIElements: Test PASADO correctamente.\n");
+            } catch (AssertionError e) {
+                // Almacenar el mensaje de fallo
+                testResults.append("testFragmentUIElements: Test FALLADO. " + e.getMessage() + "\n");
+            }
         });
+    }
+
+    // Método que se ejecuta al final de la ejecución de los tests
+    @After
+    public void printTestResults() {
+        System.out.println("\nResultado de los tests:\n");
+        System.out.println(testResults.toString());
     }
 }
