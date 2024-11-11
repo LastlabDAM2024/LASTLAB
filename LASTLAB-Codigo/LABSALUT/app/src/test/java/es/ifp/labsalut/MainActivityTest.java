@@ -17,6 +17,32 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import es.ifp.labsalut.activities.MainActivity;
 
+/**
+ * Esta clase contiene los casos de prueba unitarios para la actividad `MainActivity`.
+ * Los tests se realizan utilizando el framework de Robolectric y JUnit, permitiendo la simulación
+ * de la actividad en un entorno controlado sin necesidad de un dispositivo físico.
+ *
+ * Se incluyen pruebas para verificar el correcto funcionamiento de elementos de la interfaz
+ * de usuario en la `MainActivity`, como botones, campos de texto y checkboxes. Cada prueba
+ * se asegura de que los elementos sean inicializados correctamente, que contengan los textos esperados
+ * y que las interacciones del usuario funcionen según lo previsto.
+ *
+ * Casos de prueba:
+ * - Verificación de la visibilidad y el texto de un `TextView` para el título de la aplicación.
+ * - Comprobación de la inicialización y el texto de un botón para la acción de aceptar.
+ * - Verificación de un botón para crear un nuevo usuario.
+ * - Comprobación de que los campos de email y contraseña estén correctamente inicializados.
+ * - Verificación del estado del checkbox para recordar al usuario y la interacción con él.
+ *
+ * La clase está configurada para ejecutarse en un entorno simulado con la versión de Android especificada
+ * (Android TIRAMISU) y utiliza Robolectric para crear una instancia de la actividad y realizar las pruebas.
+ *
+ * @see MainActivity
+ * @see Robolectric
+ * @see org.junit.Test
+ */
+
+
 @Config(sdk = Build.VERSION_CODES.TIRAMISU)
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
