@@ -4,7 +4,109 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-51:/values-ru/values-ru.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\962e6606f0cb9af305c811284e867591\\transformed\\play-services-base-18.5.0\\res\\values-ru\\values.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\ef6527dd3b5e87046d6144959867b135\\transformed\\core-1.13.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,356,457,562,665,782",
+                        "endColumns": "97,101,100,100,104,102,116,100",
+                        "endOffsets": "148,250,351,452,557,660,777,878"
+                    },
+                    "to": {
+                        "startLines": "40,41,42,43,44,45,46,162",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3577,3675,3777,3878,3979,4084,4187,15088",
+                        "endColumns": "97,101,100,100,104,102,116,100",
+                        "endOffsets": "3670,3772,3873,3974,4079,4182,4299,15184"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\4b389da8dcb9f911a4c0879fee819ad0\\transformed\\places-3.5.0\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "0,0,0,0,0,0,0,0",
+                        "startOffsets": "184,262,324,428,496,541,608,692",
+                        "endColumns": "77,61,103,67,44,66,83,50",
+                        "endOffsets": "261,323,427,495,540,607,691,742"
+                    },
+                    "to": {
+                        "startLines": "149,150,151,152,153,154,155,156",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "14021,14103,14169,14277,14349,14398,14469,14557",
+                        "endColumns": "81,65,107,71,48,70,87,54",
+                        "endOffsets": "14098,14164,14272,14344,14393,14464,14552,14607"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\7054c8d8e0043fd29853d6a3639012e8\\transformed\\appcompat-1.7.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,220,322,421,507,612,733,812,888,980,1074,1169,1262,1357,1451,1547,1642,1734,1826,1915,2021,2128,2226,2335,2442,2556,2722,2822",
+                        "endColumns": "114,101,98,85,104,120,78,75,91,93,94,92,94,93,95,94,91,91,88,105,106,97,108,106,113,165,99,81",
+                        "endOffsets": "215,317,416,502,607,728,807,883,975,1069,1164,1257,1352,1446,1542,1637,1729,1821,1910,2016,2123,2221,2330,2437,2551,2717,2817,2899"
+                    },
+                    "to": {
+                        "startLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,158",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "431,546,648,747,833,938,1059,1138,1214,1306,1400,1495,1588,1683,1777,1873,1968,2060,2152,2241,2347,2454,2552,2661,2768,2882,3048,14757",
+                        "endColumns": "114,101,98,85,104,120,78,75,91,93,94,92,94,93,95,94,91,91,88,105,106,97,108,106,113,165,99,81",
+                        "endOffsets": "541,643,742,828,933,1054,1133,1209,1301,1395,1490,1583,1678,1772,1868,1963,2055,2147,2236,2342,2449,2547,2656,2763,2877,3043,3143,14834"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\5b6c160241e88c449c2009c6381ed4a5\\transformed\\biometric-1.1.0\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,162,257,377,508,650,789,921,1064,1163,1304,1461",
+                        "endColumns": "106,94,119,130,141,138,131,142,98,140,156,124",
+                        "endOffsets": "157,252,372,503,645,784,916,1059,1158,1299,1456,1581"
+                    },
+                    "to": {
+                        "startLines": "68,70,75,76,77,78,79,80,81,82,83,84",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "6903,7084,7511,7631,7762,7904,8043,8175,8318,8417,8558,8715",
+                        "endColumns": "106,94,119,130,141,138,131,142,98,140,156,124",
+                        "endOffsets": "7005,7174,7626,7757,7899,8038,8170,8313,8412,8553,8710,8835"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\e68c9cb9ca6e4dc3a116e3134c7a9d47\\transformed\\play-services-basement-18.4.0\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "152",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "58",
+                        "startColumns": "4",
+                        "startOffsets": "5629",
+                        "endColumns": "156",
+                        "endOffsets": "5781"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\9f54913848410433cacb6d16beffef0d\\transformed\\preference-1.2.1\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,179,271,348,493,662,744",
+                        "endColumns": "73,91,76,144,168,81,77",
+                        "endOffsets": "174,266,343,488,657,739,817"
+                    },
+                    "to": {
+                        "startLines": "69,73,147,157,163,164,165",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "7010,7320,13864,14612,15189,15358,15440",
+                        "endColumns": "73,91,76,144,168,81,77",
+                        "endOffsets": "7079,7407,13936,14752,15353,15435,15513"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\79f512a6ebdbc4ce2277ce4882eb888e\\transformed\\play-services-base-18.5.0\\res\\values-ru\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +123,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\731ef7658cf17e991c864f1007be0d46\\transformed\\material-1.12.0\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\f500aa1c832ef1adf38e1f02379eb3ca\\transformed\\material-1.12.0\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,41 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\5e3f9c97227982d0f736f1593677d48c\\transformed\\biometric-1.1.0\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,162,257,377,508,650,789,921,1064,1163,1304,1461",
-                        "endColumns": "106,94,119,130,141,138,131,142,98,140,156,124",
-                        "endOffsets": "157,252,372,503,645,784,916,1059,1158,1299,1456,1581"
-                    },
-                    "to": {
-                        "startLines": "68,70,75,76,77,78,79,80,81,82,83,84",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "6903,7084,7511,7631,7762,7904,8043,8175,8318,8417,8558,8715",
-                        "endColumns": "106,94,119,130,141,138,131,142,98,140,156,124",
-                        "endOffsets": "7005,7174,7626,7757,7899,8038,8170,8313,8412,8553,8710,8835"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\00809b3e2e0fc0c978ebd4c7ddc2f40d\\transformed\\appcompat-1.7.0\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,220,322,421,507,612,733,812,888,980,1074,1169,1262,1357,1451,1547,1642,1734,1826,1915,2021,2128,2226,2335,2442,2556,2722,2822",
-                        "endColumns": "114,101,98,85,104,120,78,75,91,93,94,92,94,93,95,94,91,91,88,105,106,97,108,106,113,165,99,81",
-                        "endOffsets": "215,317,416,502,607,728,807,883,975,1069,1164,1257,1352,1446,1542,1637,1729,1821,1910,2016,2123,2221,2330,2437,2551,2717,2817,2899"
-                    },
-                    "to": {
-                        "startLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,158",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "431,546,648,747,833,938,1059,1138,1214,1306,1400,1495,1588,1683,1777,1873,1968,2060,2152,2241,2347,2454,2552,2661,2768,2882,3048,14757",
-                        "endColumns": "114,101,98,85,104,120,78,75,91,93,94,92,94,93,95,94,91,91,88,105,106,97,108,106,113,165,99,81",
-                        "endOffsets": "541,643,742,828,933,1054,1133,1209,1301,1395,1490,1583,1678,1772,1868,1963,2055,2147,2236,2342,2449,2547,2656,2763,2877,3043,3143,14834"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\e3b62bf66e5bb5d2c9da190ac7659b4e\\transformed\\navigation-ui-2.7.7\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\62ebb1d06101e701882e4e446e3e13c5\\transformed\\navigation-ui-2.7.7\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -88,74 +156,6 @@
                         "startOffsets": "13637,13745",
                         "endColumns": "107,118",
                         "endOffsets": "13740,13859"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\963f17f3bf3a64b4b772bbc9c329926f\\transformed\\preference-1.2.1\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,179,271,348,493,662,744",
-                        "endColumns": "73,91,76,144,168,81,77",
-                        "endOffsets": "174,266,343,488,657,739,817"
-                    },
-                    "to": {
-                        "startLines": "69,73,147,157,163,164,165",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "7010,7320,13864,14612,15189,15358,15440",
-                        "endColumns": "73,91,76,144,168,81,77",
-                        "endOffsets": "7079,7407,13936,14752,15353,15435,15513"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\ef694e42057f795da836d55bf0517be4\\transformed\\core-1.13.0\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,356,457,562,665,782",
-                        "endColumns": "97,101,100,100,104,102,116,100",
-                        "endOffsets": "148,250,351,452,557,660,777,878"
-                    },
-                    "to": {
-                        "startLines": "40,41,42,43,44,45,46,162",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3577,3675,3777,3878,3979,4084,4187,15088",
-                        "endColumns": "97,101,100,100,104,102,116,100",
-                        "endOffsets": "3670,3772,3873,3974,4079,4182,4299,15184"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\cb051495136538d08ce1a784e5c94a97\\transformed\\play-services-basement-18.4.0\\res\\values-ru\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "152",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "58",
-                        "startColumns": "4",
-                        "startOffsets": "5629",
-                        "endColumns": "156",
-                        "endOffsets": "5781"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\5752b2bef6cd58e68beef793ffbe13da\\transformed\\places-3.5.0\\res\\values-ru\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11",
-                        "startColumns": "0,0,0,0,0,0,0,0",
-                        "startOffsets": "184,262,324,428,496,541,608,692",
-                        "endColumns": "77,61,103,67,44,66,83,50",
-                        "endOffsets": "261,323,427,495,540,607,691,742"
-                    },
-                    "to": {
-                        "startLines": "149,150,151,152,153,154,155,156",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "14021,14103,14169,14277,14349,14398,14469,14557",
-                        "endColumns": "81,65,107,71,48,70,87,54",
-                        "endOffsets": "14098,14164,14272,14344,14393,14464,14552,14607"
                     }
                 }
             ]

@@ -11,80 +11,80 @@ ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\L
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-50:12
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-50:12
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:1-50:12
-MERGED from [androidx.databinding:viewbinding:8.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3b4a6a9efacb034d87f066a9fd93615\transformed\viewbinding-8.5.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a24cd37f5a1ee82373fd44d90154fca3\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c5d49a355fbb984bc67b575b192fc7de\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ced8e218e19077ee5fb308628a7bc842\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e3b62bf66e5bb5d2c9da190ac7659b4e\transformed\navigation-ui-2.7.7\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\731ef7658cf17e991c864f1007be0d46\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3136269b74bbbf1957c0f56c03bfb57e\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.preference:preference:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\963f17f3bf3a64b4b772bbc9c329926f\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:2:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b68c81836aeb6ed508a4c9800604b884\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\00809b3e2e0fc0c978ebd4c7ddc2f40d\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e191888390abbb7edf5136e04a3a2c9e\transformed\recyclerview-1.3.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager2:viewpager2:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6929b787d43222a94db8b273db4f52cb\transformed\viewpager2-1.1.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:17:1-44:12
-MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79dbcc70df7ac901895a5e6c3e9525f0\transformed\glide-4.16.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f94b7073859cdff78d3430228ed461\transformed\play-services-location-21.3.0\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3f831aeb59ba4c3e094f97241ac15da\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\84328f9744819b45b723adf3eae9f1ef\transformed\fragment-1.6.2\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.fragment:fragment-ktx:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7e13bd4d12a59d40042f509ef9a8f7ae\transformed\fragment-ktx-1.6.2\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\9040100d8824c5a9f88ba51aa6148afa\transformed\activity-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.activity:activity:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\31a83e6fe6afcb4cead2d63acf51baa7\transformed\activity-1.9.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1be7f949ab3ee4739653965ffce1c11b\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dff9fb8fab88330a59ad291b063909b0\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
-MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d39e9ebd0313ee71b1f171c654b65f22\transformed\core-ktx-1.13.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\07c1e4b8e3ebe55a34caacb66a172b64\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3f14671c9282552f90e920304b1b3907\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a95212e1c99bc695f36d2124bb0e5f05\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.transition:transition:1.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3b4a1387d8fb628605eda3080f31e405\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5dda33fe325aa04f3f585c3b4f9728fe\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\abeee89150818b60b884aa33b4810c1a\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c65c47af35979c315fd000992996c91\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\50df2db0a1ee3cd6129d6a8656826673\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\956827a1a0aaa73519de3b8bf6869cf6\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a5c96f3163c384d115f7aa9d56d30217\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7e8768164b9c1aa41fab36658e9d7b1d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:17:1-30:12
-MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bc019d58d19cfade68e766fdf21a9ab4\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b26a2ac716cab330214d692c7924b8ab\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b704a5677544a13e52973b08775d4aa5\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5358bb659109772c3aea72bbe2d6f1d5\transformed\lifecycle-viewmodel-2.8.2\AndroidManifest.xml:2:1-5:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f75567ad6a18ce14a49efe762916d017\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a5386c7f347043ed5de8a13a2e35ca93\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\507b8516952ee475b1c8a3a13b80bcd8\transformed\lifecycle-viewmodel-savedstate-2.8.2\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\36063c980a358d2221886a9d2c89e195\transformed\lifecycle-livedata-core-2.8.2\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c4c1bf981ff36a3783e55b15e91fcf3c\transformed\lifecycle-livedata-core-ktx-2.8.2\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c490ce87ef7c670289f9ff83afabff6\transformed\lifecycle-livedata-2.8.2\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\efec983c06b83f69c8c28146f0467445\transformed\lifecycle-viewmodel-ktx-2.8.2\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\95243aa4141e1a511ca6884825d24323\transformed\lifecycle-livedata-ktx-2.8.2\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb1541524507c9a3ab2f8024a96dabbc\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8ead1ad9f159fbcbb12f69964c95bfbe\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7391698ac8fc7ce073b40c97324813dc\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e61ef61bef3dfbac3ee51f75c4b59c2b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:15:1-35:12
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:15:1-39:12
-MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\64be74450831f63002bae1d93e3cc035\transformed\transport-api-3.1.0\AndroidManifest.xml:15:1-20:12
-MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\97c161a5b0b73a47d3482406aac81081\transformed\gifdecoder-4.16.0\AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\698c0ff7084f49e3b06fe37e4f64cf00\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c5953bcc8735e2e68c273a65969a7ccf\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\efa5ccbd37433c00a7c8894033ff9890\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6ce5028f80fcf20db1708191b4e57092\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\29bfee4bf9b2468029ed87a3143207be\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ce1a3e06f5f8630b15641a8c8f38302d\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\83976325308c55e76872c27dad195e8b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\371d45a4ac0797b806e56b20f22d18dc\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\47ffcee1ebe2ebb008058f731f7064f1\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c13a99e3ba2a8ff19b132d289f32c8d0\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3e65cbe0bdecf6dd6aa192ea4f8a780\transformed\viewbinding-8.6.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1c4e68af03ab0fb4ffe492e97c41895f\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ed3e388ffb3d8accac1671fc2667c479\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1b66fa64a365c7424865649b8ce77ac1\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62ebb1d06101e701882e4e446e3e13c5\transformed\navigation-ui-2.7.7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f500aa1c832ef1adf38e1f02379eb3ca\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d783e509348d6793c8093d51cf24166d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\9f54913848410433cacb6d16beffef0d\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\06c534974e237fd590476e24de688e45\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7054c8d8e0043fd29853d6a3639012e8\transformed\appcompat-1.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\674076f11211d933d62523c25f2afddb\transformed\recyclerview-1.3.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\91bbf31396cedab524542761f6eea5bf\transformed\viewpager2-1.1.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:17:1-44:12
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\52e99332b7aa645679d7b200a0534c8d\transformed\glide-4.16.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3d5cffcc8ff99122abf903ea282ca167\transformed\play-services-location-21.3.0\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62e05b99419c922d97e8b5a575ef6166\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4bcb58c071eecfcbe31df416245d2311\transformed\fragment-1.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\2422ec6bb4f44df56c15cfc0f4a3903f\transformed\fragment-ktx-1.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\41d7b43cc963334474efbac19564c4b1\transformed\activity-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1e9bc5e0ec89f9b0105189f6ecd11cb8\transformed\activity-1.9.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8946ab0668b74af02ca5387b26101388\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\decae86d248f23b30185d40717ce822c\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\247fbe61f05c2da040e0ec8a436de58b\transformed\core-ktx-1.13.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\75f1e59ecaa2c2e96415dd9e1f6a038b\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f6029122bda85c2b3791053e12070b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7d165c0cecc44296c886af38b8d6aed5\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5006bda9d94098412e368a8a792c5b7c\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\132ec6919246a253cec2cb0af9a96622\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0c88c7bdf456ad8fcfd04706217310b6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\92a2447feee9140363ba1e2f5e9cb8c2\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a36d590f3220292a3d051513583169b9\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\053e10aff2e1b37ec9343b53b0800ab6\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\681ee7ea8eb8aff8c8afc850439a6801\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\26d2b6bdb5b4376ff52d015b128f88be\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0b3cc8e88393a78da54023054fbe4b69\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\94b81339a528793ef1ec1e28967f6b13\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bb02ff2afbb1b76ccd640a9123cab086\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8ae05cd55f66d1fe670ca479744a6fc6\transformed\lifecycle-viewmodel-2.8.2\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\af26eee689a2189c94d4920194f4924c\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\98e725056ffaf12be87d53f6b5fefa70\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\14386c2fc091057b2b01457cabf7fa1a\transformed\lifecycle-viewmodel-savedstate-2.8.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3f3a9a3cf000b2e2c899f8ae0ec6b39c\transformed\lifecycle-livedata-core-2.8.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bd039f44a02185d0456e32bac8722784\transformed\lifecycle-livedata-core-ktx-2.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dd58bd319287f550d37be32ce39ec54e\transformed\lifecycle-livedata-2.8.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\308b232dad38879b076afed4b44b4bfd\transformed\lifecycle-viewmodel-ktx-2.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ed149033adf3df7a0f27ba64b5bba9b2\transformed\lifecycle-livedata-ktx-2.8.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ede45eede97b83358bea2d439de0b413\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dd68595ccd6902bfd933a4b570fcbef9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0b49a5f88f3be090b1c248d9fd4fff7c\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\35d9fe01f4707fd16aed3787c14d4a85\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:15:1-35:12
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\29c3bba43adabcb4d7a00a1b802ac1bd\transformed\transport-api-3.1.0\AndroidManifest.xml:15:1-20:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c7f562de1a5dd3e4d72c0c74dafc32c0\transformed\gifdecoder-4.16.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\40093c9331ca8958906f039566828238\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a8175c1e4b8fc6fc28e95e9ac7ad2422\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ff7ba15e59261040d837a9a1c7083ec9\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\557794f97ec70d83cc035ed48f7f6062\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\863f1c9951e2275c96d7ba29fe1f2233\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d911ca529aded93eec4e6bcc7158b6a7\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cca28881a3a5fd7d2c6a563c479c1f3c\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0a5ce14b4ae871b581c54cf9ae7eefd6\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0e96ed0066b4eb5562b44d591e531206\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\756a53a9a95d342393d03540b15c0fa4\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
 	package
 		INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -97,28 +97,28 @@ MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\c
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:5-67
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:12:5-67
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:12:5-67
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:12:5-67
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:12:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:6:5-79
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:10:5-79
 	android:name
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:20:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:20:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:20:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:20:5-79
 	android:name
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
@@ -127,51 +127,51 @@ ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\L
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:8:22-86
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:9:5-81
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:9:5-81
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:9:5-81
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:9:5-81
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:9:5-81
 	android:name
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:9:22-78
 application
 ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:11:5-48:19
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:11:5-48:19
-MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\731ef7658cf17e991c864f1007be0d46\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\731ef7658cf17e991c864f1007be0d46\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3136269b74bbbf1957c0f56c03bfb57e\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3136269b74bbbf1957c0f56c03bfb57e\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:14:5-22:19
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:14:5-22:19
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
-MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f94b7073859cdff78d3430228ed461\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
-MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f94b7073859cdff78d3430228ed461\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
-MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
-MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
-MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3f831aeb59ba4c3e094f97241ac15da\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
-MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3f831aeb59ba4c3e094f97241ac15da\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
-MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
-MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
-MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e61ef61bef3dfbac3ee51f75c4b59c2b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e61ef61bef3dfbac3ee51f75c4b59c2b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:25:5-33:19
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:25:5-33:19
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:23:5-37:19
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:23:5-37:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f500aa1c832ef1adf38e1f02379eb3ca\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f500aa1c832ef1adf38e1f02379eb3ca\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d783e509348d6793c8093d51cf24166d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d783e509348d6793c8093d51cf24166d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3d5cffcc8ff99122abf903ea282ca167\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3d5cffcc8ff99122abf903ea282ca167\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62e05b99419c922d97e8b5a575ef6166\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62e05b99419c922d97e8b5a575ef6166\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\35d9fe01f4707fd16aed3787c14d4a85\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\35d9fe01f4707fd16aed3787c14d4a85\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:25:5-33:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:25:5-33:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:23:5-37:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:23:5-37:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
 		INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:18:9-35
 	android:label
@@ -192,8 +192,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.g
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:13:9-65
 meta-data#com.google.android.gms.version
 ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:25:9-27:69
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
 	android:value
 		ADDED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml:27:13-66
 	android:name
@@ -238,335 +238,335 @@ uses-sdk
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml
-MERGED from [androidx.databinding:viewbinding:8.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3b4a6a9efacb034d87f066a9fd93615\transformed\viewbinding-8.5.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.databinding:viewbinding:8.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3b4a6a9efacb034d87f066a9fd93615\transformed\viewbinding-8.5.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a24cd37f5a1ee82373fd44d90154fca3\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a24cd37f5a1ee82373fd44d90154fca3\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c5d49a355fbb984bc67b575b192fc7de\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c5d49a355fbb984bc67b575b192fc7de\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ced8e218e19077ee5fb308628a7bc842\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ced8e218e19077ee5fb308628a7bc842\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e3b62bf66e5bb5d2c9da190ac7659b4e\transformed\navigation-ui-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e3b62bf66e5bb5d2c9da190ac7659b4e\transformed\navigation-ui-2.7.7\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\731ef7658cf17e991c864f1007be0d46\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\731ef7658cf17e991c864f1007be0d46\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3136269b74bbbf1957c0f56c03bfb57e\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3136269b74bbbf1957c0f56c03bfb57e\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.preference:preference:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\963f17f3bf3a64b4b772bbc9c329926f\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.preference:preference:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\963f17f3bf3a64b4b772bbc9c329926f\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:7:5-44
-MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:7:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b68c81836aeb6ed508a4c9800604b884\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b68c81836aeb6ed508a4c9800604b884\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\00809b3e2e0fc0c978ebd4c7ddc2f40d\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\00809b3e2e0fc0c978ebd4c7ddc2f40d\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e191888390abbb7edf5136e04a3a2c9e\transformed\recyclerview-1.3.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e191888390abbb7edf5136e04a3a2c9e\transformed\recyclerview-1.3.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6929b787d43222a94db8b273db4f52cb\transformed\viewpager2-1.1.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6929b787d43222a94db8b273db4f52cb\transformed\viewpager2-1.1.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
-MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79dbcc70df7ac901895a5e6c3e9525f0\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79dbcc70df7ac901895a5e6c3e9525f0\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f94b7073859cdff78d3430228ed461\transformed\play-services-location-21.3.0\AndroidManifest.xml:4:5-44
-MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f94b7073859cdff78d3430228ed461\transformed\play-services-location-21.3.0\AndroidManifest.xml:4:5-44
-MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
-MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
-MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3f831aeb59ba4c3e094f97241ac15da\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
-MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d3f831aeb59ba4c3e094f97241ac15da\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
-MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cb051495136538d08ce1a784e5c94a97\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
-MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\84328f9744819b45b723adf3eae9f1ef\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\84328f9744819b45b723adf3eae9f1ef\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment-ktx:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7e13bd4d12a59d40042f509ef9a8f7ae\transformed\fragment-ktx-1.6.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment-ktx:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7e13bd4d12a59d40042f509ef9a8f7ae\transformed\fragment-ktx-1.6.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\9040100d8824c5a9f88ba51aa6148afa\transformed\activity-ktx-1.9.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\9040100d8824c5a9f88ba51aa6148afa\transformed\activity-ktx-1.9.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.activity:activity:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\31a83e6fe6afcb4cead2d63acf51baa7\transformed\activity-1.9.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\31a83e6fe6afcb4cead2d63acf51baa7\transformed\activity-1.9.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1be7f949ab3ee4739653965ffce1c11b\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1be7f949ab3ee4739653965ffce1c11b\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dff9fb8fab88330a59ad291b063909b0\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
-MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dff9fb8fab88330a59ad291b063909b0\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
-MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d39e9ebd0313ee71b1f171c654b65f22\transformed\core-ktx-1.13.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d39e9ebd0313ee71b1f171c654b65f22\transformed\core-ktx-1.13.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\07c1e4b8e3ebe55a34caacb66a172b64\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\07c1e4b8e3ebe55a34caacb66a172b64\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3f14671c9282552f90e920304b1b3907\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3f14671c9282552f90e920304b1b3907\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a95212e1c99bc695f36d2124bb0e5f05\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a95212e1c99bc695f36d2124bb0e5f05\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3b4a1387d8fb628605eda3080f31e405\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.transition:transition:1.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3b4a1387d8fb628605eda3080f31e405\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5dda33fe325aa04f3f585c3b4f9728fe\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5dda33fe325aa04f3f585c3b4f9728fe\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\abeee89150818b60b884aa33b4810c1a\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\abeee89150818b60b884aa33b4810c1a\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c65c47af35979c315fd000992996c91\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c65c47af35979c315fd000992996c91\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\50df2db0a1ee3cd6129d6a8656826673\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\50df2db0a1ee3cd6129d6a8656826673\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\956827a1a0aaa73519de3b8bf6869cf6\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\956827a1a0aaa73519de3b8bf6869cf6\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a5c96f3163c384d115f7aa9d56d30217\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a5c96f3163c384d115f7aa9d56d30217\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7e8768164b9c1aa41fab36658e9d7b1d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7e8768164b9c1aa41fab36658e9d7b1d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bc019d58d19cfade68e766fdf21a9ab4\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bc019d58d19cfade68e766fdf21a9ab4\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b26a2ac716cab330214d692c7924b8ab\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b26a2ac716cab330214d692c7924b8ab\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b704a5677544a13e52973b08775d4aa5\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\b704a5677544a13e52973b08775d4aa5\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5358bb659109772c3aea72bbe2d6f1d5\transformed\lifecycle-viewmodel-2.8.2\AndroidManifest.xml:4:5-43
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5358bb659109772c3aea72bbe2d6f1d5\transformed\lifecycle-viewmodel-2.8.2\AndroidManifest.xml:4:5-43
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f75567ad6a18ce14a49efe762916d017\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f75567ad6a18ce14a49efe762916d017\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a5386c7f347043ed5de8a13a2e35ca93\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a5386c7f347043ed5de8a13a2e35ca93\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:21:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\507b8516952ee475b1c8a3a13b80bcd8\transformed\lifecycle-viewmodel-savedstate-2.8.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\507b8516952ee475b1c8a3a13b80bcd8\transformed\lifecycle-viewmodel-savedstate-2.8.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\36063c980a358d2221886a9d2c89e195\transformed\lifecycle-livedata-core-2.8.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\36063c980a358d2221886a9d2c89e195\transformed\lifecycle-livedata-core-2.8.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c4c1bf981ff36a3783e55b15e91fcf3c\transformed\lifecycle-livedata-core-ktx-2.8.2\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c4c1bf981ff36a3783e55b15e91fcf3c\transformed\lifecycle-livedata-core-ktx-2.8.2\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c490ce87ef7c670289f9ff83afabff6\transformed\lifecycle-livedata-2.8.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c490ce87ef7c670289f9ff83afabff6\transformed\lifecycle-livedata-2.8.2\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\efec983c06b83f69c8c28146f0467445\transformed\lifecycle-viewmodel-ktx-2.8.2\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\efec983c06b83f69c8c28146f0467445\transformed\lifecycle-viewmodel-ktx-2.8.2\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\95243aa4141e1a511ca6884825d24323\transformed\lifecycle-livedata-ktx-2.8.2\AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\95243aa4141e1a511ca6884825d24323\transformed\lifecycle-livedata-ktx-2.8.2\AndroidManifest.xml:5:5-44
-MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb1541524507c9a3ab2f8024a96dabbc\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:20:5-44
-MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb1541524507c9a3ab2f8024a96dabbc\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8ead1ad9f159fbcbb12f69964c95bfbe\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8ead1ad9f159fbcbb12f69964c95bfbe\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7391698ac8fc7ce073b40c97324813dc\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7391698ac8fc7ce073b40c97324813dc\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e61ef61bef3dfbac3ee51f75c4b59c2b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e61ef61bef3dfbac3ee51f75c4b59c2b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:18:5-44
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:18:5-44
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:18:5-44
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:18:5-44
-MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\64be74450831f63002bae1d93e3cc035\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
-MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\64be74450831f63002bae1d93e3cc035\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
-MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\97c161a5b0b73a47d3482406aac81081\transformed\gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\97c161a5b0b73a47d3482406aac81081\transformed\gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\698c0ff7084f49e3b06fe37e4f64cf00\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\698c0ff7084f49e3b06fe37e4f64cf00\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c5953bcc8735e2e68c273a65969a7ccf\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c5953bcc8735e2e68c273a65969a7ccf\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\efa5ccbd37433c00a7c8894033ff9890\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\efa5ccbd37433c00a7c8894033ff9890\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6ce5028f80fcf20db1708191b4e57092\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6ce5028f80fcf20db1708191b4e57092\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\29bfee4bf9b2468029ed87a3143207be\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\29bfee4bf9b2468029ed87a3143207be\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ce1a3e06f5f8630b15641a8c8f38302d\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ce1a3e06f5f8630b15641a8c8f38302d\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\83976325308c55e76872c27dad195e8b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\83976325308c55e76872c27dad195e8b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\371d45a4ac0797b806e56b20f22d18dc\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\371d45a4ac0797b806e56b20f22d18dc\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\47ffcee1ebe2ebb008058f731f7064f1\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\47ffcee1ebe2ebb008058f731f7064f1\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c13a99e3ba2a8ff19b132d289f32c8d0\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
-MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c13a99e3ba2a8ff19b132d289f32c8d0\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3e65cbe0bdecf6dd6aa192ea4f8a780\transformed\viewbinding-8.6.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.6.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3e65cbe0bdecf6dd6aa192ea4f8a780\transformed\viewbinding-8.6.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1c4e68af03ab0fb4ffe492e97c41895f\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1c4e68af03ab0fb4ffe492e97c41895f\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ed3e388ffb3d8accac1671fc2667c479\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ed3e388ffb3d8accac1671fc2667c479\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1b66fa64a365c7424865649b8ce77ac1\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1b66fa64a365c7424865649b8ce77ac1\transformed\navigation-fragment-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62ebb1d06101e701882e4e446e3e13c5\transformed\navigation-ui-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.7.7] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62ebb1d06101e701882e4e446e3e13c5\transformed\navigation-ui-2.7.7\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f500aa1c832ef1adf38e1f02379eb3ca\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\f500aa1c832ef1adf38e1f02379eb3ca\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d783e509348d6793c8093d51cf24166d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d783e509348d6793c8093d51cf24166d\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\9f54913848410433cacb6d16beffef0d\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\9f54913848410433cacb6d16beffef0d\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:7:5-44
+MERGED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:7:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\06c534974e237fd590476e24de688e45\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\06c534974e237fd590476e24de688e45\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7054c8d8e0043fd29853d6a3639012e8\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7054c8d8e0043fd29853d6a3639012e8\transformed\appcompat-1.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\674076f11211d933d62523c25f2afddb\transformed\recyclerview-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\674076f11211d933d62523c25f2afddb\transformed\recyclerview-1.3.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\91bbf31396cedab524542761f6eea5bf\transformed\viewpager2-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\91bbf31396cedab524542761f6eea5bf\transformed\viewpager2-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\52e99332b7aa645679d7b200a0534c8d\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\52e99332b7aa645679d7b200a0534c8d\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3d5cffcc8ff99122abf903ea282ca167\transformed\play-services-location-21.3.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3d5cffcc8ff99122abf903ea282ca167\transformed\play-services-location-21.3.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62e05b99419c922d97e8b5a575ef6166\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\62e05b99419c922d97e8b5a575ef6166\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e68c9cb9ca6e4dc3a116e3134c7a9d47\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
+MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4bcb58c071eecfcbe31df416245d2311\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4bcb58c071eecfcbe31df416245d2311\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\2422ec6bb4f44df56c15cfc0f4a3903f\transformed\fragment-ktx-1.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\2422ec6bb4f44df56c15cfc0f4a3903f\transformed\fragment-ktx-1.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\41d7b43cc963334474efbac19564c4b1\transformed\activity-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\41d7b43cc963334474efbac19564c4b1\transformed\activity-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1e9bc5e0ec89f9b0105189f6ecd11cb8\transformed\activity-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1e9bc5e0ec89f9b0105189f6ecd11cb8\transformed\activity-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8946ab0668b74af02ca5387b26101388\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8946ab0668b74af02ca5387b26101388\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\decae86d248f23b30185d40717ce822c\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\decae86d248f23b30185d40717ce822c\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\247fbe61f05c2da040e0ec8a436de58b\transformed\core-ktx-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\247fbe61f05c2da040e0ec8a436de58b\transformed\core-ktx-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\75f1e59ecaa2c2e96415dd9e1f6a038b\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\75f1e59ecaa2c2e96415dd9e1f6a038b\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f6029122bda85c2b3791053e12070b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\30f6029122bda85c2b3791053e12070b\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7d165c0cecc44296c886af38b8d6aed5\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7d165c0cecc44296c886af38b8d6aed5\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5006bda9d94098412e368a8a792c5b7c\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5006bda9d94098412e368a8a792c5b7c\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\132ec6919246a253cec2cb0af9a96622\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\132ec6919246a253cec2cb0af9a96622\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0c88c7bdf456ad8fcfd04706217310b6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0c88c7bdf456ad8fcfd04706217310b6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\92a2447feee9140363ba1e2f5e9cb8c2\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\92a2447feee9140363ba1e2f5e9cb8c2\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a36d590f3220292a3d051513583169b9\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a36d590f3220292a3d051513583169b9\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\053e10aff2e1b37ec9343b53b0800ab6\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\053e10aff2e1b37ec9343b53b0800ab6\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\681ee7ea8eb8aff8c8afc850439a6801\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\681ee7ea8eb8aff8c8afc850439a6801\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\26d2b6bdb5b4376ff52d015b128f88be\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\26d2b6bdb5b4376ff52d015b128f88be\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0b3cc8e88393a78da54023054fbe4b69\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0b3cc8e88393a78da54023054fbe4b69\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\94b81339a528793ef1ec1e28967f6b13\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\94b81339a528793ef1ec1e28967f6b13\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bb02ff2afbb1b76ccd640a9123cab086\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bb02ff2afbb1b76ccd640a9123cab086\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8ae05cd55f66d1fe670ca479744a6fc6\transformed\lifecycle-viewmodel-2.8.2\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8ae05cd55f66d1fe670ca479744a6fc6\transformed\lifecycle-viewmodel-2.8.2\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\af26eee689a2189c94d4920194f4924c\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\af26eee689a2189c94d4920194f4924c\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\98e725056ffaf12be87d53f6b5fefa70\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\98e725056ffaf12be87d53f6b5fefa70\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\14386c2fc091057b2b01457cabf7fa1a\transformed\lifecycle-viewmodel-savedstate-2.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\14386c2fc091057b2b01457cabf7fa1a\transformed\lifecycle-viewmodel-savedstate-2.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3f3a9a3cf000b2e2c899f8ae0ec6b39c\transformed\lifecycle-livedata-core-2.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3f3a9a3cf000b2e2c899f8ae0ec6b39c\transformed\lifecycle-livedata-core-2.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bd039f44a02185d0456e32bac8722784\transformed\lifecycle-livedata-core-ktx-2.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\bd039f44a02185d0456e32bac8722784\transformed\lifecycle-livedata-core-ktx-2.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dd58bd319287f550d37be32ce39ec54e\transformed\lifecycle-livedata-2.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dd58bd319287f550d37be32ce39ec54e\transformed\lifecycle-livedata-2.8.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\308b232dad38879b076afed4b44b4bfd\transformed\lifecycle-viewmodel-ktx-2.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\308b232dad38879b076afed4b44b4bfd\transformed\lifecycle-viewmodel-ktx-2.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ed149033adf3df7a0f27ba64b5bba9b2\transformed\lifecycle-livedata-ktx-2.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ed149033adf3df7a0f27ba64b5bba9b2\transformed\lifecycle-livedata-ktx-2.8.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ede45eede97b83358bea2d439de0b413\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:20:5-44
+MERGED from [androidx.security:security-crypto:1.1.0-alpha06] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ede45eede97b83358bea2d439de0b413\transformed\security-crypto-1.1.0-alpha06\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dd68595ccd6902bfd933a4b570fcbef9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\dd68595ccd6902bfd933a4b570fcbef9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0b49a5f88f3be090b1c248d9fd4fff7c\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0b49a5f88f3be090b1c248d9fd4fff7c\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\35d9fe01f4707fd16aed3787c14d4a85\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\35d9fe01f4707fd16aed3787c14d4a85\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\29c3bba43adabcb4d7a00a1b802ac1bd\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\29c3bba43adabcb4d7a00a1b802ac1bd\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c7f562de1a5dd3e4d72c0c74dafc32c0\transformed\gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c7f562de1a5dd3e4d72c0c74dafc32c0\transformed\gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\40093c9331ca8958906f039566828238\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\40093c9331ca8958906f039566828238\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a8175c1e4b8fc6fc28e95e9ac7ad2422\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a8175c1e4b8fc6fc28e95e9ac7ad2422\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ff7ba15e59261040d837a9a1c7083ec9\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ff7ba15e59261040d837a9a1c7083ec9\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\557794f97ec70d83cc035ed48f7f6062\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\557794f97ec70d83cc035ed48f7f6062\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\863f1c9951e2275c96d7ba29fe1f2233\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\863f1c9951e2275c96d7ba29fe1f2233\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d911ca529aded93eec4e6bcc7158b6a7\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d911ca529aded93eec4e6bcc7158b6a7\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cca28881a3a5fd7d2c6a563c479c1f3c\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\cca28881a3a5fd7d2c6a563c479c1f3c\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0a5ce14b4ae871b581c54cf9ae7eefd6\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0a5ce14b4ae871b581c54cf9ae7eefd6\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0e96ed0066b4eb5562b44d591e531206\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\0e96ed0066b4eb5562b44d591e531206\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\756a53a9a95d342393d03540b15c0fa4\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\756a53a9a95d342393d03540b15c0fa4\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
 	android:targetSdkVersion
 		INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\Users\Ornella Gigante\OneDrive\Escritorio\LASTLAB\LASTLAB-Codigo\LABSALUT\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.USE_BIOMETRIC
-ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:24:5-72
+ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:24:5-72
 	android:name
-		ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:24:22-69
+		ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:24:22-69
 uses-permission#android.permission.USE_FINGERPRINT
-ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
+ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
 	android:name
-		ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5e3f9c97227982d0f736f1593677d48c\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
+		ADDED from [androidx.biometric:biometric:1.1.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5b6c160241e88c449c2009c6381ed4a5\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:11:5-76
+ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:11:5-76
 	android:name
-		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:11:22-73
+		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:11:22-73
 activity#com.google.android.libraries.places.widget.AutocompleteActivity
-ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:15:9-21:20
+ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:15:9-21:20
 	android:label
-		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:18:13-62
+		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:18:13-62
 	android:windowSoftInputMode
-		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:20:13-55
+		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:20:13-55
 	android:exported
-		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:17:13-37
+		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:17:13-37
 	android:theme
-		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:19:13-61
+		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:19:13-61
 	android:name
-		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\5752b2bef6cd58e68beef793ffbe13da\transformed\places-3.5.0\AndroidManifest.xml:16:13-91
+		ADDED from [com.google.android.libraries.places:places:3.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4b389da8dcb9f911a4c0879fee819ad0\transformed\places-3.5.0\AndroidManifest.xml:16:13-91
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
 queries
-ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 package#com.google.android.apps.maps
-ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
 uses-library#org.apache.http.legacy
-ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7acb8c0f027daa04318b95c81fbb600d\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\7540b314ee5fa8cd7f5953a089fff341\transformed\play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\962e6606f0cb9af305c811284e867591\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\79f512a6ebdbc4ce2277ce4882eb888e\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
 provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
-MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\8cdad65d0b915dff5eac5b09ee600444\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\23489519496ee71fb0eba55b980e6967\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
 	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
 	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
 	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
 meta-data#androidx.emoji2.text.EmojiCompatInitializer
-ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\eb291aba3159c6b3f99b4b8c63cba8db\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3e99a0331977ca6fb69023fa07415b87\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 uses-library#androidx.window.extensions
-ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
 	android:required
-		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
 uses-library#androidx.window.sidecar
-ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
 	android:required
-		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
 	android:name
-		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a3521aac495df406945b991c20b80ed3\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\6be566cdff9ad003a4dc3b7788597354\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 permission#es.ifp.labsalut.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 uses-permission#es.ifp.labsalut.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
-ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
 	android:name
-		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef694e42057f795da836d55bf0517be4\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+		ADDED from [androidx.core:core:1.13.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\ef6527dd3b5e87046d6144959867b135\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 meta-data#androidx.lifecycle.ProcessLifecycleInitializer
-ADDED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\1dee6fae8044e05e2cbe8997ee14017b\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:30:17-78
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.2] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\3c957e17018288b63c9b974bddfa614d\transformed\lifecycle-process-2.8.2\AndroidManifest.xml:30:17-78
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
 receiver#androidx.profileinstaller.ProfileInstallReceiver
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
 	android:enabled
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
 	android:exported
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
 	android:permission
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
 	android:directBootAware
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
 intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
 action#androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
 intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
 action#androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
 intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
 action#androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
 intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
 action#androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\d52c5dc97774150104fd73eeb7f44ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\a4c51d3f80175529b5c5a3e14d120d06\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
 service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
-ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:26:9-32:19
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:34:9-36:40
-MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:34:9-36:40
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:26:9-32:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:34:9-36:40
+MERGED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:34:9-36:40
 	android:exported
-		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:28:13-37
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:27:13-103
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:27:13-103
 meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
-ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:29:13-31:39
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:29:13-31:39
 	android:value
-		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:31:17-36
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:31:17-36
 	android:name
-		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\c779faee205692af105b10cf5e2a0316\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:30:17-94
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\e79b519808bbaa8d57f893dceab20b21\transformed\transport-backend-cct-3.2.0\AndroidManifest.xml:30:17-94
 service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
-ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:24:9-28:19
+ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:24:9-28:19
 	android:exported
-		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:26:13-37
+		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:26:13-37
 	android:permission
-		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:27:13-69
+		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:27:13-69
 	android:name
-		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:25:13-117
+		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:25:13-117
 receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
-ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:30:9-32:40
+ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:30:9-32:40
 	android:exported
-		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:32:13-37
+		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\4570c4350834473841acbcc642db4cd4\transformed\transport-runtime-3.2.0\AndroidManifest.xml:31:13-132
+		ADDED from [com.google.android.datatransport:transport-runtime:3.2.0] C:\Users\Ornella Gigante\.gradle\caches\transforms-4\521f91c68631c63c18fa547ec2d23f5a\transformed\transport-runtime-3.2.0\AndroidManifest.xml:31:13-132

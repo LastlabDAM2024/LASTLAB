@@ -4,26 +4,7 @@
             "outputFile": "es.ifp.labsalut.app-mergeDebugResources-51:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\731ef7658cf17e991c864f1007be0d46\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,5,9,13,16,19,22,25,28,32",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,271,413,574,784,991,1198,1401,1603,1868",
-                        "endLines": "4,8,12,15,18,21,24,27,31,35",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
-                    },
-                    "to": {
-                        "startLines": "109,112,116,120,123,126,129,132,135,139",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7541,7757,7899,8060,8270,8477,8684,8887,9089,9354",
-                        "endLines": "111,115,119,122,125,128,131,134,138,142",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "7752,7894,8055,8265,8472,8679,8882,9084,9349,9622"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\7391698ac8fc7ce073b40c97324813dc\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\0b49a5f88f3be090b1c248d9fd4fff7c\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -39,6 +20,25 @@
                         "endLines": "104",
                         "endColumns": "12",
                         "endOffsets": "7333"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\f500aa1c832ef1adf38e1f02379eb3ca\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,5,9,13,16,19,22,25,28,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,413,574,784,991,1198,1401,1603,1868",
+                        "endLines": "4,8,12,15,18,21,24,27,31,35",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
+                    },
+                    "to": {
+                        "startLines": "109,112,116,120,123,126,129,132,135,139",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7541,7757,7899,8060,8270,8477,8684,8887,9089,9354",
+                        "endLines": "111,115,119,122,125,128,131,134,138,142",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "7752,7894,8055,8265,8472,8679,8882,9084,9349,9622"
                     }
                 },
                 {
@@ -61,7 +61,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\00809b3e2e0fc0c978ebd4c7ddc2f40d\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Ornella Gigante\\.gradle\\caches\\transforms-4\\7054c8d8e0043fd29853d6a3639012e8\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
