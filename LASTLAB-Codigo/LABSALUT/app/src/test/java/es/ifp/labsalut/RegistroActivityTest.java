@@ -4,17 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.robolectric.Shadows.shadowOf;
-
 import android.content.Intent;
 import android.widget.TextView;
-
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.fragment.app.Fragment;
 import androidx.test.core.app.ActivityScenario;
-
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;
@@ -22,7 +18,6 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-
 import es.ifp.labsalut.activities.MainActivity;
 import es.ifp.labsalut.activities.RegistroActivity;
 import es.ifp.labsalut.ui.ColorStatusBar;

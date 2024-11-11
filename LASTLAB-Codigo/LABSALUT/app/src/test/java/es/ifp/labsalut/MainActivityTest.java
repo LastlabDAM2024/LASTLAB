@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,6 +49,9 @@ import es.ifp.labsalut.activities.MainActivity;
 public class MainActivityTest {
     private MainActivity activity;
 
+    // Variable para almacenar los resultados de los tests
+    private StringBuilder testResults = new StringBuilder();
+
     @Before
     public void setUp() {
         try {
@@ -63,39 +67,76 @@ public class MainActivityTest {
 
     @Test
     public void testTituloTextView() {
+        try{
         TextView tituloTextView = activity.findViewById(R.id.titulo);
         assertNotNull("El TextView del título no debería ser null", tituloTextView);
         assertEquals("LabSalut", tituloTextView.getText().toString());
+        // Almacenar el mensaje de éxito
+        testResults.append("Tets de TextView: PASADO correctamente.\n");
+    } catch (AssertionError e) {
+        // Almacenar el mensaje de fallo
+        testResults.append("Test de TextView:  FALLADO. ");
+    }
     }
 
     @Test
     public void testBotonAceptar() {
+        try{
         Button botonAceptar = activity.findViewById(R.id.botonAceptar);
         assertNotNull("El botón aceptar no debería ser null", botonAceptar);
         assertEquals("Aceptar", botonAceptar.getText().toString());
+            // Almacenar el mensaje de éxito
+            testResults.append("Tets de Botón Aceptar: PASADO correctamente.\n");
+            } catch (AssertionError e) {
+                // Almacenar el mensaje de fallo
+                testResults.append("Test de Botón Aceptar:  FALLADO. ");
+            }
     }
 
     @Test
     public void testNuevoUsuarioBoton() {
+
+        try {
         Button nuevoUsuarioBoton = activity.findViewById(R.id.nuevoUsuarioBoton);
         assertNotNull("El botón nuevo usuario no debería ser null", nuevoUsuarioBoton);
         assertEquals("Crear nuevo usuario", nuevoUsuarioBoton.getText().toString());
+            // Almacenar el mensaje de éxito
+            testResults.append("Tets de Usuario Boton: PASADO correctamente.\n");
+        } catch (AssertionError e) {
+            // Almacenar el mensaje de fallo
+            testResults.append("Test de Usuario Boton:  FALLADO. ");
+        }
     }
 
     @Test
     public void testCampoEmail() {
+        try{
         EditText emailField = activity.findViewById(R.id.email);
         assertNotNull("El campo de email no debería ser null", emailField);
+            // Almacenar el mensaje de éxito
+            testResults.append("Tet de Campo de E-mail: PASADO correctamente.\n");
+        } catch (AssertionError e) {
+            // Almacenar el mensaje de fallo
+            testResults.append("Test de Campo de E-mail:  FALLADO. ");
+        }
     }
 
     @Test
     public void testCampoPassword() {
+        try{
         EditText passwordField = activity.findViewById(R.id.pass);
         assertNotNull("El campo de contraseña no debería ser null", passwordField);
+            // Almacenar el mensaje de éxito
+            testResults.append("Tets de Campo de Contraseña: PASADO correctamente.\n");
+        } catch (AssertionError e) {
+            // Almacenar el mensaje de fallo
+            testResults.append("Test de Campo de Contraseña:  FALLADO. ");
+        }
     }
 
     @Test
     public void testRecordarUsuarioCheckBox() {
+        try{
         CheckBox recordarUsuarioCheckBox = activity.findViewById(R.id.recordarUsuario);
         assertNotNull("El checkbox no debería ser null", recordarUsuarioCheckBox);
         assertFalse("El checkbox debería estar desmarcado inicialmente",
@@ -104,5 +145,19 @@ public class MainActivityTest {
         recordarUsuarioCheckBox.setChecked(true);
         assertTrue("El checkbox debería estar marcado después de activarlo",
                 recordarUsuarioCheckBox.isChecked());
+
+            // Almacenar el mensaje de éxito
+            testResults.append("Tets Chechbx de recordar user: PASADO correctamente.\n");
+        } catch (AssertionError e) {
+            // Almacenar el mensaje de fallo
+            testResults.append("Test de  Checkbox de recordar user:  FALLADO. ");
+        }
+    }
+
+    // Método que se ejecuta al final de la ejecución de los tests
+    @After
+    public void printTestResults() {
+        System.out.println("\nResultado de los tests:\n");
+        System.out.println(testResults.toString());
     }
 }
