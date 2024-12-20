@@ -151,6 +151,10 @@ Este proyecto está bajo la licencia MIT. Puedes ver los detalles en el archivo 
       Guía del patrón MVVC
       Documentación SQLite para Android
 
+## Gitbook 
+
+[Documentación oficial](https://documentation-31.gitbook.io/documentation-docs) 
+
 
 ### Autores
 
